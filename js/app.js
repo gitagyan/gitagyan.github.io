@@ -119,6 +119,7 @@ function showVerse(verse) {
     const audioSrc = `./gita-main/data/verse_recitation/${verse.chapter_number}/${verse.verse_number}.mp3`;
     audioPlayer.src = audioSrc;
     audioPlayer.load();
+    audioPlayer.currentTime = 0;
     playPauseBtn.innerHTML = '<i class="fas fa-play"></i> Play';
     seekSlider.value = 0;
     currentTimeEl.textContent = '0:00';
