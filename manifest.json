@@ -1,11 +1,11 @@
 {
-    "name": "Bhagavad Gita PWA",
-    "short_name": "Gita PWA",
+    "name": "Bhagavad Gita",
+    "short_name": "Gita",
     "description": "A Progressive Web App for reading the Bhagavad Gita with translations and commentaries.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#FFF8E1",
-    "theme_color": "#FF9800",
+    "theme_color": "#FFB84D",
     "icons": [
         {
             "src": "images/icon-192.png",
