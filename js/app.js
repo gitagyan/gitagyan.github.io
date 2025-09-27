@@ -64,7 +64,7 @@ function renderChapters() {
         card.innerHTML = `
             <div class="chapter-header">
                 <span class="chapter-number">${chapter.chapter_number}</span>
-                <h3>📖 ${chapter.name} (${chapter.name_meaning})</h3>
+                <h3>📖 ${chapter.name} <br/> (${chapter.name_meaning})</h3>
             </div>
             <p>${chapter.chapter_summary.substring(0, 150)}...</p>
         `;
