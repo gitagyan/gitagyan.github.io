@@ -33,7 +33,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(90deg, #FFD700, #FFA500);
+    background: #FFB84D;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     padding: 10px 20px;
@@ -49,7 +49,10 @@ header h1 {
     flex: 1;
     text-align: center;
     font-size: 2.7rem;
-    color: #D32F2F;
+    background: linear-gradient(45deg, #D32F2F, #B71C1C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: 700;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
@@ -114,7 +117,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: linear-gradient(90deg, #FFD700, #FFA500);
+    background: #FFB84D;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     padding: 10px;
@@ -249,7 +252,7 @@ footer p {
 }
 
 .verse-number {
-    background: rgba(255, 152, 0, 0.8);
+    background: #FFB84D;
     color: white;
     border-radius: 50%;
     width: 40px;
@@ -260,7 +263,7 @@ footer p {
     font-weight: bold;
     font-size: 16px;
     flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 184, 77, 0.3);
 }
 
 .verse-text {
@@ -283,9 +286,9 @@ footer p {
 }
 
 .verse-item:hover .verse-number {
-    background: rgba(255, 152, 0, 1);
+    background: #FF9A33;
     transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4);
+    box-shadow: 0 6px 16px rgba(255, 184, 77, 0.4);
 }
 
 /* Verse detail */
@@ -347,7 +350,7 @@ footer p {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(90deg, #FFD700, #FFA500);
+    background: #FFB84D;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.3);
