@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhagavad Gita PWA</title>
+    <title>Bhagavad Gita</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/styles.css">
-    <meta name="theme-color" content="#FFB84D">
+    <meta name="theme-color" content="#E6A623">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,6 @@
     <header id="header">
         <button id="back-btn" style="display:none;"><i class="fas fa-arrow-left"></i></button>
         <h1>भगवद् गीता</h1>
-        <button id="lang-switcher">🇬🇧</button>
     </header>
     <main id="main-content">
         <div id="chapters-screen" class="screen active">
@@ -27,6 +26,10 @@
             <div id="verses-list"></div>
         </div>
         <div id="verse-detail-screen" class="screen">
+            <div id="language-switcher-pills">
+                <button id="hindi-pill" class="language-pill active">हिंदी</button>
+                <button id="english-pill" class="language-pill">English</button>
+            </div>
             <div id="verse-content">
                 <div id="verse-text"></div>
                 <div id="verse-transliteration"></div>
@@ -49,15 +52,15 @@
     </div>
     <div id="floating-audio-btn" style="display: none;">
         <div class="progress-ring">
-            <svg class="progress-ring-svg" width="70" height="70">
+            <svg class="progress-ring-svg" width="49" height="49">
                 <circle
                     class="progress-ring-circle"
-                    stroke="#D32F2F"
-                    stroke-width="3"
+                    stroke="#A5252C"
+                    stroke-width="2"
                     fill="transparent"
-                    r="31"
-                    cx="35"
-                    cy="35"/>
+                    r="22"
+                    cx="24.5"
+                    cy="24.5"/>
             </svg>
             <button id="floating-play-pause">
                 <i class="fas fa-play"></i>

@@ -33,7 +33,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #FFB84D;
+    background: #E6A623;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     padding: 10px 20px;
@@ -49,19 +49,19 @@ header h1 {
     flex: 1;
     text-align: center;
     font-size: 2.7rem;
-    background: linear-gradient(45deg, #D32F2F, #B71C1C);
+    background: linear-gradient(45deg, #A5252C, #8E1E24);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: 700;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 #back-btn {
     position: absolute;
     left: 20px;
     background: transparent;
-    color: #D32F2F;
+    color: #A5252C;
     border: none;
     padding: 0;
     border-radius: 0;
@@ -75,18 +75,8 @@ header h1 {
     transform: scale(1.1);
 }
 
-#lang-switcher {
-    position: absolute;
-    right: 20px;
-    background: transparent;
-    color: #D32F2F;
-    border: none;
-    padding: 0;
-    border-radius: 0;
-    cursor: pointer;
-    transition: all 0.3s;
-    backdrop-filter: none;
-    font-size: 1.5rem;
+#lang-switcher-old {
+    display: none;
 }
 
 #lang-switcher:hover {
@@ -117,7 +107,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: #FFB84D;
+    background: #E6A623;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     padding: 10px;
@@ -128,7 +118,7 @@ footer {
 }
 
 footer p {
-    color: #D32F2F;
+    color: #A5252C;
     margin: 0;
 }
 
@@ -189,8 +179,8 @@ footer p {
 }
 
 .chapter-number {
-    background: #FFB84D;
-    color: #D32F2F;
+    background: #E6A623;
+    color: #A5252C;
     border: none;
     border-radius: 50%;
     width: 49px;
@@ -205,9 +195,9 @@ footer p {
 }
 
 .chapter-card:hover .chapter-number {
-    background: #FF9A33;
+    background: #D49A21;
     transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(211, 47, 47, 0.4);
+    box-shadow: 0 6px 16px rgba(165, 37, 44, 0.4);
 }
 
 .chapter-card p {
@@ -252,8 +242,8 @@ footer p {
 }
 
 .verse-number {
-    background: #FFB84D;
-    color: #D32F2F;
+    background: #E6A623;
+    color: #A5252C;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -286,12 +276,48 @@ footer p {
 }
 
 .verse-item:hover .verse-number {
-    background: #FF9A33;
+    background: #D49A21;
     transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(211, 47, 47, 0.4);
+    box-shadow: 0 6px 16px rgba(165, 37, 44, 0.4);
 }
 
 /* Verse detail */
+#language-switcher-pills {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.language-pill {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(165, 37, 44, 0.3);
+    border-radius: 25px;
+    padding: 8px 20px;
+    color: #A5252C;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.language-pill.active {
+    background: #A5252C;
+    color: white;
+    border-color: #A5252C;
+    box-shadow: 0 4px 12px rgba(165, 37, 44, 0.3);
+}
+
+.language-pill:hover:not(.active) {
+    background: rgba(165, 37, 44, 0.1);
+    border-color: #A5252C;
+    transform: translateY(-2px);
+}
+
 #verse-content {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(25px);
@@ -350,7 +376,7 @@ footer p {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #FFB84D;
+    background: #E6A623;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -426,8 +452,8 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
+    width: 49px;
+    height: 49px;
 }
 
 .progress-ring-svg {
@@ -435,26 +461,28 @@ footer p {
     top: 0;
     left: 0;
     transform: rotate(-90deg);
+    width: 49px;
+    height: 49px;
 }
 
 .progress-ring-circle {
-    stroke-dasharray: 194.78;
-    stroke-dashoffset: 194.78;
+    stroke-dasharray: 138.23;
+    stroke-dashoffset: 138.23;
     transition: stroke-dashoffset 0.1s ease;
 }
 
 #floating-play-pause {
-    background: #FFB84D;
+    background: #E6A623;
     border: none;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 20px;
-    color: #D32F2F;
+    font-size: 14px;
+    color: #A5252C;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -473,8 +501,8 @@ footer p {
     transform: translateX(-50%);
     font-size: 12px;
     font-weight: bold;
-    color: #D32F2F;
-    background: rgba(255, 184, 77, 0.9);
+    color: #A5252C;
+    background: rgba(230, 166, 35, 0.9);
     padding: 4px 10px;
     border-radius: 12px;
     backdrop-filter: blur(5px);
@@ -488,7 +516,7 @@ footer p {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #FFB84D;
+    background: #E6A623;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     padding: 15px 20px;
@@ -501,7 +529,7 @@ footer p {
 }
 
 #prev-verse-btn, #next-verse-btn {
-    background: #D32F2F;
+    background: #A5252C;
     color: white;
     border: none;
     border-radius: 50%;
@@ -517,13 +545,13 @@ footer p {
 }
 
 #prev-verse-btn:hover, #next-verse-btn:hover {
-    background: #B71C1C;
+    background: #8E1E24;
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+    box-shadow: 0 4px 12px rgba(165, 37, 44, 0.4);
 }
 
 #prev-verse-btn:disabled, #next-verse-btn:disabled {
-    background: rgba(211, 47, 47, 0.5);
+    background: rgba(165, 37, 44, 0.5);
     cursor: not-allowed;
     transform: none;
 }
@@ -542,7 +570,7 @@ footer p {
     -webkit-appearance: none;
     appearance: none;
     height: 6px;
-    background: rgba(211, 47, 47, 0.3);
+    background: rgba(165, 37, 44, 0.3);
     border-radius: 3px;
     outline: none;
     margin-bottom: 5px;
@@ -553,10 +581,10 @@ footer p {
     appearance: none;
     width: 20px;
     height: 20px;
-    background: #D32F2F;
+    background: #A5252C;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(211, 47, 47, 0.4);
+    box-shadow: 0 2px 6px rgba(165, 37, 44, 0.4);
 }
 
 #verse-slider::-moz-range-thumb {
@@ -572,7 +600,7 @@ footer p {
 #verse-counter {
     font-size: 14px;
     font-weight: bold;
-    color: #D32F2F;
+    color: #A5252C;
     text-align: center;
 }
 

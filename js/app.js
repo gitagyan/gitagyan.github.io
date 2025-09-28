@@ -26,7 +26,6 @@ const seekSlider = document.getElementById('seek-slider');
 const currentTimeEl = document.getElementById('current-time');
 const durationEl = document.getElementById('duration');
 const audioPlayer = document.getElementById('audio-player');
-const langSwitcher = document.getElementById('lang-switcher');
 const backBtn = document.getElementById('back-btn');
 
 // Initialize app
@@ -46,9 +45,6 @@ async function init() {
         setupNavigation();
         setupLangSwitcher();
         setupSwipeGestures();
-
-        // Initially hide language switcher (only show on verse detail)
-        langSwitcher.style.display = 'none';
     } catch (error) {
         console.error('Error loading data:', error);
         // Fallback: show error message
@@ -129,10 +125,11 @@ function showVerse(verse) {
     
     floatingBtn.innerHTML = '<i class="fas fa-play"></i>';
     floatingTime.textContent = '0:00';
-    progressCircle.style.strokeDashoffset = 194.78;
+    progressCircle.style.strokeDashoffset = 138.23;
 
     setupFloatingAudioControls();
     setupVerseNavigation();
+    setupLanguagePills();
 
     switchScreen(verseDetailScreen);
     document.getElementById('footer').style.display = 'none';
@@ -189,16 +186,60 @@ function handleVerseSliderChange(e) {
     }
 }
 
-// Setup language switcher
-function setupLangSwitcher() {
-    langSwitcher.textContent = currentLang === 'english' ? '🇬🇧' : '🇮🇳';
-    langSwitcher.addEventListener('click', () => {
-        currentLang = currentLang === 'english' ? 'hindi' : 'english';
-        langSwitcher.textContent = currentLang === 'english' ? '🇬🇧' : '🇮🇳';
+// Setup language pills
+function setupLanguagePills() {
+    const hindiPill = document.getElementById('hindi-pill');
+    const englishPill = document.getElementById('english-pill');
+    
+    // Update active state based on current language
+    updatePillsActiveState();
+    
+    // Remove existing listeners
+    hindiPill.removeEventListener('click', switchToHindi);
+    englishPill.removeEventListener('click', switchToEnglish);
+    
+    // Add new listeners
+    hindiPill.addEventListener('click', switchToHindi);
+    englishPill.addEventListener('click', switchToEnglish);
+}
+
+function switchToHindi() {
+    if (currentLang !== 'hindi') {
+        currentLang = 'hindi';
+        updatePillsActiveState();
         if (currentVerse) {
             updateVerseContent();
         }
-    });
+    }
+}
+
+function switchToEnglish() {
+    if (currentLang !== 'english') {
+        currentLang = 'english';
+        updatePillsActiveState();
+        if (currentVerse) {
+            updateVerseContent();
+        }
+    }
+}
+
+function updatePillsActiveState() {
+    const hindiPill = document.getElementById('hindi-pill');
+    const englishPill = document.getElementById('english-pill');
+    
+    if (currentLang === 'hindi') {
+        hindiPill.classList.add('active');
+        englishPill.classList.remove('active');
+    } else {
+        englishPill.classList.add('active');
+        hindiPill.classList.remove('active');
+    }
+}
+
+// Setup language switcher (legacy - keeping for compatibility)
+function setupLangSwitcher() {
+    // This function is now handled by setupLanguagePills
+    return;
 }
 
 // Setup swipe gestures for verse navigation
@@ -332,7 +373,7 @@ function updateFloatingTime() {
         floatingTime.textContent = formatTime(remaining);
         
         // Update progress ring
-        const circumference = 194.78;
+        const circumference = 138.23;
         const progress = current / duration;
         const offset = circumference - (progress * circumference);
         progressCircle.style.strokeDashoffset = offset;
@@ -352,7 +393,7 @@ function resetFloatingButton() {
     
     floatingBtn.innerHTML = '<i class="fas fa-play"></i>';
     floatingTime.textContent = formatTime(audioPlayer.duration);
-    progressCircle.style.strokeDashoffset = 194.78;
+    progressCircle.style.strokeDashoffset = 138.23;
 }
 
 function formatTime(seconds) {
@@ -379,13 +420,9 @@ function setupNavigation() {
 function switchScreen(screen) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     screen.classList.add('active');
-
-    // Control language switcher visibility
-    if (screen === verseDetailScreen) {
-        langSwitcher.style.display = 'block';
-    } else {
-        langSwitcher.style.display = 'none';
-    }
+    
+    // Language pills are now handled within the verse detail screen itself
+    // No need to control visibility here
 }
 
 // Register service worker
