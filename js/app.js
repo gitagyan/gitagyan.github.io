@@ -45,6 +45,7 @@ async function init() {
         // Setup navigation
         setupNavigation();
         setupLangSwitcher();
+        setupSwipeGestures();
 
         // Initially hide language switcher (only show on verse detail)
         langSwitcher.style.display = 'none';
@@ -126,7 +127,6 @@ function showVerse(verse) {
     durationEl.textContent = '0:00';
 
     setupAudioControls();
-    setupSwipeGestures();
 
     switchScreen(verseDetailScreen);
     document.getElementById('footer').style.display = 'none';
@@ -148,45 +148,90 @@ function setupLangSwitcher() {
 // Setup swipe gestures for verse navigation
 function setupSwipeGestures() {
     const verseScreen = document.getElementById('verse-detail-screen');
+    
+    // Remove existing listeners to prevent duplicates
+    verseScreen.removeEventListener('touchstart', handleTouchStart);
+    verseScreen.removeEventListener('touchend', handleTouchEnd);
+    
+    // Add new listeners
+    verseScreen.addEventListener('touchstart', handleTouchStart);
+    verseScreen.addEventListener('touchend', handleTouchEnd);
+}
 
-    verseScreen.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-    });
+function handleTouchStart(e) {
+    startX = e.touches[0].clientX;
+}
 
-    verseScreen.addEventListener('touchend', (e) => {
-        endX = e.changedTouches[0].clientX;
-        handleSwipe();
-    });
+function handleTouchEnd(e) {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
 }
 
 function handleSwipe() {
+    if (!currentVerse) {
+        console.log('No current verse set');
+        return;
+    }
+    
     const deltaX = endX - startX;
     const threshold = 50; // Minimum swipe distance
+    
+    console.log('Swipe detected:', { deltaX, startX, endX, threshold });
 
     if (Math.abs(deltaX) > threshold) {
         if (deltaX > 0) {
             // Swipe right - previous verse
+            console.log('Swipe right - going to previous verse');
             goToPreviousVerse();
         } else {
             // Swipe left - next verse
+            console.log('Swipe left - going to next verse');
             goToNextVerse();
         }
     }
 }
 
 function goToNextVerse() {
+    if (!currentVerse) {
+        console.log('No current verse for next navigation');
+        return;
+    }
+    
     const chapterVerses = verses.filter(v => v.chapter_number === currentVerse.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
     const currentIndex = chapterVerses.findIndex(v => v.id === currentVerse.id);
-    if (currentIndex < chapterVerses.length - 1) {
+    
+    console.log('Next verse navigation:', { 
+        currentVerseId: currentVerse.id, 
+        currentIndex, 
+        totalVerses: chapterVerses.length 
+    });
+    
+    if (currentIndex >= 0 && currentIndex < chapterVerses.length - 1) {
         showVerse(chapterVerses[currentIndex + 1]);
+    } else {
+        console.log('Already at last verse or verse not found');
     }
 }
 
 function goToPreviousVerse() {
+    if (!currentVerse) {
+        console.log('No current verse for previous navigation');
+        return;
+    }
+    
     const chapterVerses = verses.filter(v => v.chapter_number === currentVerse.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
     const currentIndex = chapterVerses.findIndex(v => v.id === currentVerse.id);
+    
+    console.log('Previous verse navigation:', { 
+        currentVerseId: currentVerse.id, 
+        currentIndex, 
+        totalVerses: chapterVerses.length 
+    });
+    
     if (currentIndex > 0) {
         showVerse(chapterVerses[currentIndex - 1]);
+    } else {
+        console.log('Already at first verse');
     }
 }
 
