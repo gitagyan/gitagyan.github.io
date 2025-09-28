@@ -121,16 +121,72 @@ function showVerse(verse) {
     audioPlayer.src = audioSrc;
     audioPlayer.load();
     audioPlayer.currentTime = 0;
-    playPauseBtn.innerHTML = '<i class="fas fa-play"></i> Play';
-    seekSlider.value = 0;
-    currentTimeEl.textContent = '0:00';
-    durationEl.textContent = '0:00';
+    
+    // Update floating button
+    const floatingBtn = document.getElementById('floating-play-pause');
+    const floatingTime = document.getElementById('floating-time');
+    const progressCircle = document.querySelector('.progress-ring-circle');
+    
+    floatingBtn.innerHTML = '<i class="fas fa-play"></i>';
+    floatingTime.textContent = '0:00';
+    progressCircle.style.strokeDashoffset = 194.78;
 
-    setupAudioControls();
+    setupFloatingAudioControls();
+    setupVerseNavigation();
 
     switchScreen(verseDetailScreen);
     document.getElementById('footer').style.display = 'none';
-    document.getElementById('audio-controls').style.display = 'flex';
+    document.getElementById('floating-audio-btn').style.display = 'block';
+    document.getElementById('verse-navigation').style.display = 'flex';
+}
+
+// Setup verse navigation
+function setupVerseNavigation() {
+    if (!currentVerse || !currentChapter) return;
+    
+    const chapterVerses = verses.filter(v => v.chapter_number === currentVerse.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
+    const currentIndex = chapterVerses.findIndex(v => v.id === currentVerse.id);
+    
+    // Update slider and counter
+    const verseSlider = document.getElementById('verse-slider');
+    const verseCounter = document.getElementById('verse-counter');
+    const prevBtn = document.getElementById('prev-verse-btn');
+    const nextBtn = document.getElementById('next-verse-btn');
+    
+    verseSlider.max = chapterVerses.length;
+    verseSlider.value = currentIndex + 1;
+    verseCounter.textContent = `${currentIndex + 1}/${chapterVerses.length}`;
+    
+    // Update button states
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex === chapterVerses.length - 1;
+    
+    // Remove existing listeners
+    prevBtn.removeEventListener('click', handlePrevVerse);
+    nextBtn.removeEventListener('click', handleNextVerse);
+    verseSlider.removeEventListener('input', handleVerseSliderChange);
+    
+    // Add new listeners
+    prevBtn.addEventListener('click', handlePrevVerse);
+    nextBtn.addEventListener('click', handleNextVerse);
+    verseSlider.addEventListener('input', handleVerseSliderChange);
+}
+
+function handlePrevVerse() {
+    goToPreviousVerse();
+}
+
+function handleNextVerse() {
+    goToNextVerse();
+}
+
+function handleVerseSliderChange(e) {
+    const chapterVerses = verses.filter(v => v.chapter_number === currentVerse.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
+    const selectedIndex = parseInt(e.target.value) - 1;
+    
+    if (selectedIndex >= 0 && selectedIndex < chapterVerses.length) {
+        showVerse(chapterVerses[selectedIndex]);
+    }
 }
 
 // Setup language switcher
@@ -235,39 +291,68 @@ function goToPreviousVerse() {
     }
 }
 
-// Setup audio controls
-function setupAudioControls() {
-    playPauseBtn.addEventListener('click', togglePlayPause);
-    seekSlider.addEventListener('input', seekAudio);
-    audioPlayer.addEventListener('timeupdate', updateTime);
-    audioPlayer.addEventListener('loadedmetadata', () => {
-        durationEl.textContent = formatTime(audioPlayer.duration);
-    });
-    audioPlayer.addEventListener('ended', () => {
-        playPauseBtn.innerHTML = '<i class="fas fa-play"></i> Play';
-    });
+// Setup floating audio controls
+function setupFloatingAudioControls() {
+    const floatingBtn = document.getElementById('floating-play-pause');
+    const floatingTime = document.getElementById('floating-time');
+    const progressCircle = document.querySelector('.progress-ring-circle');
+    
+    // Remove existing listeners to prevent duplicates
+    floatingBtn.removeEventListener('click', toggleFloatingPlayPause);
+    audioPlayer.removeEventListener('timeupdate', updateFloatingTime);
+    audioPlayer.removeEventListener('loadedmetadata', updateFloatingDuration);
+    audioPlayer.removeEventListener('ended', resetFloatingButton);
+    
+    // Add new listeners
+    floatingBtn.addEventListener('click', toggleFloatingPlayPause);
+    audioPlayer.addEventListener('timeupdate', updateFloatingTime);
+    audioPlayer.addEventListener('loadedmetadata', updateFloatingDuration);
+    audioPlayer.addEventListener('ended', resetFloatingButton);
 }
 
-function togglePlayPause() {
+function toggleFloatingPlayPause() {
+    const floatingBtn = document.getElementById('floating-play-pause');
     if (audioPlayer.paused) {
         audioPlayer.play();
-        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+        floatingBtn.innerHTML = '<i class="fas fa-pause"></i>';
     } else {
         audioPlayer.pause();
-        playPauseBtn.innerHTML = '<i class="fas fa-play"></i> Play';
+        floatingBtn.innerHTML = '<i class="fas fa-play"></i>';
     }
 }
 
-function seekAudio() {
-    const seekTime = (seekSlider.value / 100) * audioPlayer.duration;
-    audioPlayer.currentTime = seekTime;
-}
-
-function updateTime() {
+function updateFloatingTime() {
+    const floatingTime = document.getElementById('floating-time');
+    const progressCircle = document.querySelector('.progress-ring-circle');
     const current = audioPlayer.currentTime;
     const duration = audioPlayer.duration;
-    seekSlider.value = (current / duration) * 100;
-    currentTimeEl.textContent = formatTime(current);
+    
+    if (duration) {
+        const remaining = duration - current;
+        floatingTime.textContent = formatTime(remaining);
+        
+        // Update progress ring
+        const circumference = 194.78;
+        const progress = current / duration;
+        const offset = circumference - (progress * circumference);
+        progressCircle.style.strokeDashoffset = offset;
+    }
+}
+
+function updateFloatingDuration() {
+    // Initial setup when audio metadata loads
+    const floatingTime = document.getElementById('floating-time');
+    floatingTime.textContent = formatTime(audioPlayer.duration);
+}
+
+function resetFloatingButton() {
+    const floatingBtn = document.getElementById('floating-play-pause');
+    const floatingTime = document.getElementById('floating-time');
+    const progressCircle = document.querySelector('.progress-ring-circle');
+    
+    floatingBtn.innerHTML = '<i class="fas fa-play"></i>';
+    floatingTime.textContent = formatTime(audioPlayer.duration);
+    progressCircle.style.strokeDashoffset = 194.78;
 }
 
 function formatTime(seconds) {
@@ -282,7 +367,8 @@ function setupNavigation() {
         if (verseDetailScreen.classList.contains('active')) {
             switchScreen(versesScreen);
             document.getElementById('footer').style.display = 'block';
-            document.getElementById('audio-controls').style.display = 'none';
+            document.getElementById('floating-audio-btn').style.display = 'none';
+            document.getElementById('verse-navigation').style.display = 'none';
         } else if (versesScreen.classList.contains('active')) {
             switchScreen(chaptersScreen);
             backBtn.style.display = 'none';

@@ -35,6 +35,36 @@
             </div>
         </div>
     </main>
+    <div id="verse-navigation" style="display: none;">
+        <button id="prev-verse-btn">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div id="verse-slider-container">
+            <input type="range" id="verse-slider" min="1" max="47" value="1">
+            <div id="verse-counter">1/47</div>
+        </div>
+        <button id="next-verse-btn">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    <div id="floating-audio-btn" style="display: none;">
+        <div class="progress-ring">
+            <svg class="progress-ring-svg" width="70" height="70">
+                <circle
+                    class="progress-ring-circle"
+                    stroke="#D32F2F"
+                    stroke-width="3"
+                    fill="transparent"
+                    r="31"
+                    cx="35"
+                    cy="35"/>
+            </svg>
+            <button id="floating-play-pause">
+                <i class="fas fa-play"></i>
+            </button>
+            <div id="floating-time">0:00</div>
+        </div>
+    </div>
     <div id="audio-controls" style="display: none;">
         <button id="play-pause-btn"><i class="fas fa-play"></i> Play</button>
         <input type="range" id="seek-slider" min="0" max="100" value="0">
