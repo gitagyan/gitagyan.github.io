@@ -622,7 +622,7 @@
     },
     {
         "id": 28,
-        "sloka": "1.28 1.29",
+        "sloka": "1.28",
         "verse_id": 28,
         "verseNumber": 28,
         "languages": {
@@ -645,7 +645,7 @@
     },
     {
         "id": 29,
-        "sloka": "1.28 1.29",
+        "sloka": "1.29",
         "verse_id": 29,
         "verseNumber": 29,
         "languages": {
@@ -1149,7 +1149,6 @@
             }
         }
     },
-    [
     {
         "id": 51,
         "sloka": "2.4",
