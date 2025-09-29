@@ -311,8 +311,12 @@ function handleBookmarkClick() {
     }
 }
 
-// Setup swipe gestures for verse navigation
+// Setup swipe gestures for verse navigation and global navigation
 function setupSwipeGestures() {
+    // Setup global swipe gestures on body
+    setupGlobalSwipeGestures();
+    
+    // Setup verse-specific swipe gestures
     const verseScreen = document.getElementById('verse-detail-screen');
     
     // Remove existing listeners to prevent duplicates
@@ -324,25 +328,98 @@ function setupSwipeGestures() {
     verseScreen.addEventListener('touchend', handleTouchEnd);
 }
 
+// Global swipe gestures for screen navigation
+function setupGlobalSwipeGestures() {
+    const body = document.body;
+    
+    // Remove existing listeners to prevent duplicates
+    body.removeEventListener('touchstart', handleGlobalTouchStart);
+    body.removeEventListener('touchend', handleGlobalTouchEnd);
+    
+    // Add global swipe listeners
+    body.addEventListener('touchstart', handleGlobalTouchStart);
+    body.addEventListener('touchend', handleGlobalTouchEnd);
+}
+
+let globalStartX = 0;
+let globalEndX = 0;
+
+function handleGlobalTouchStart(e) {
+    globalStartX = e.touches[0].clientX;
+}
+
+function handleGlobalTouchEnd(e) {
+    globalEndX = e.changedTouches[0].clientX;
+    handleGlobalSwipe();
+}
+
+function handleGlobalSwipe() {
+    const deltaX = globalEndX - globalStartX;
+    const threshold = 100; // Larger threshold for screen navigation
+    const screenWidth = window.innerWidth;
+    const edgeThreshold = screenWidth * 0.1; // 10% of screen width from edge
+    
+    // Only trigger if swipe starts from left edge and is a right swipe
+    if (globalStartX <= edgeThreshold && deltaX > threshold) {
+        // Left edge right swipe - go to previous screen
+        console.log('Left edge swipe detected - going to previous screen');
+        goToPreviousScreen();
+    }
+}
+
+function goToPreviousScreen() {
+    const currentActiveScreen = document.querySelector('.screen.active');
+    
+    if (!currentActiveScreen) return;
+    
+    // Determine which screen to go back to
+    if (currentActiveScreen === verseDetailScreen) {
+        if (previousScreen === aiChatScreen) {
+            switchScreen(aiChatScreen);
+        } else {
+            switchScreen(versesScreen);
+        }
+    } else if (currentActiveScreen === versesScreen) {
+        switchScreen(chaptersScreen);
+        backBtn.style.display = 'none';
+    } else if (currentActiveScreen === aiSetupScreen || currentActiveScreen === aiChatScreen) {
+        switchScreen(chaptersScreen);
+        backBtn.style.display = 'none';
+    } else if (currentActiveScreen === settingsScreen || currentActiveScreen === bookmarksScreen) {
+        switchScreen(chaptersScreen);
+        backBtn.style.display = 'none';
+    }
+}
+
 function handleTouchStart(e) {
     startX = e.touches[0].clientX;
 }
 
 function handleTouchEnd(e) {
     endX = e.changedTouches[0].clientX;
-    handleSwipe();
+    // Only handle verse navigation if we're on verse detail screen
+    if (document.getElementById('verse-detail-screen').classList.contains('active')) {
+        handleVerseSwipe();
+    }
 }
 
-function handleSwipe() {
+function handleVerseSwipe() {
     if (!currentVerse) {
         console.log('No current verse set');
         return;
     }
     
     const deltaX = endX - startX;
-    const threshold = 50; // Minimum swipe distance
+    const threshold = 50; // Minimum swipe distance for verse navigation
+    const screenWidth = window.innerWidth;
+    const edgeThreshold = screenWidth * 0.1; // 10% of screen width from edge
     
-    console.log('Swipe detected:', { deltaX, startX, endX, threshold });
+    // Don't handle verse navigation if swipe starts from left edge (reserved for screen navigation)
+    if (startX <= edgeThreshold) {
+        return;
+    }
+    
+    console.log('Verse swipe detected:', { deltaX, startX, endX, threshold });
 
     if (Math.abs(deltaX) > threshold) {
         if (deltaX > 0) {
@@ -949,6 +1026,14 @@ function handleAIButtonClick() {
         // Show chat screen
         switchScreen(aiChatScreen);
         initializeChatScreen();
+        // Ensure starter prompts are visible by default
+        setTimeout(() => {
+            const starterPrompts = document.getElementById('ai-starter-prompts');
+            if (starterPrompts) {
+                starterPrompts.style.display = 'flex';
+                console.log('Starter prompts should now be visible');
+            }
+        }, 100);
     } else {
         // Show setup screen
         switchScreen(aiSetupScreen);
@@ -992,6 +1077,8 @@ function initializeChatScreen() {
     const messagesContainer = document.getElementById('ai-chat-messages');
     const starterPrompts = document.getElementById('ai-starter-prompts');
     
+    console.log('Initializing chat screen...');
+    
     // Try to load chat history first
     const hasHistory = loadChatHistory();
     
@@ -999,15 +1086,32 @@ function initializeChatScreen() {
         // Clear previous messages if no history
         messagesContainer.innerHTML = '';
         
-        // Show starter prompts if no messages
-        starterPrompts.style.display = 'flex';
-        
         // Add welcome message
         addMessage('ai', 'Hello! I am Sarthi AI. I can help you find relevant verses from the Bhagavad Gita to answer your questions. Please ask your question.');
-    } else {
-        // Hide starter prompts if we have history
-        starterPrompts.style.display = 'none';
     }
+    
+    // Check if there are any user messages (not just AI welcome message)
+    const hasUserMessages = hasHistory && checkForUserMessages();
+    
+    console.log('Has history:', hasHistory, 'Has user messages:', hasUserMessages);
+    
+    if (!hasUserMessages) {
+        // Show starter prompts if no user messages
+        starterPrompts.style.display = 'flex';
+        console.log('Showing starter prompts');
+    } else {
+        // Hide starter prompts if we have user messages
+        starterPrompts.style.display = 'none';
+        console.log('Hiding starter prompts');
+    }
+}
+
+function checkForUserMessages() {
+    const savedHistory = localStorage.getItem('sarthiChatHistory');
+    if (!savedHistory) return false;
+    
+    const messages = JSON.parse(savedHistory);
+    return messages.some(message => message.sender === 'user');
 }
 
 async function sendMessage() {

@@ -834,22 +834,24 @@ footer p {
     text-decoration: underline;
 }
 
-/* AI Chat Styles */
+/* AI Chat Styles - Full Glass Page */
 #ai-chat-container {
     display: flex;
     flex-direction: column;
     height: calc(100vh - 140px); /* Account for navbar (60px) and footer (80px) */
     max-width: 100%;
     margin: 0;
-    padding: 0 10px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
 }
 
 #ai-chat-header {
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px 20px 0 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 15px 20px;
     display: flex;
     align-items: center;
@@ -885,11 +887,7 @@ footer p {
 
 #ai-chat-messages {
     flex: 1;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
     padding: 20px;
     overflow-y: auto;
     display: flex;
@@ -964,11 +962,9 @@ footer p {
     flex-wrap: wrap;
     gap: 10px;
     padding: 15px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    min-height: 60px;
+    align-items: center;
 }
 
 /* Chat message markdown styles */
@@ -1033,30 +1029,33 @@ footer p {
 }
 
 .starter-prompt {
-    background: rgba(255, 193, 7, 0.2);
-    color: #E65100;
-    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #A5252C;
+    padding: 10px 16px;
     border-radius: 20px;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s;
-    border: 1px solid rgba(255, 193, 7, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .starter-prompt:hover {
-    background: rgba(255, 193, 7, 0.3);
+    background: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 #ai-chat-input-container {
     display: flex;
     padding: 20px;
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 0 0 20px 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     gap: 10px;
 }
 
