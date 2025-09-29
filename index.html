@@ -16,6 +16,9 @@
     <header id="header">
         <button id="back-btn" style="display:none;"><i class="fas fa-arrow-left"></i></button>
         <h1>भगवद् गीता</h1>
+        <button id="ai-btn">
+            <img src="images/SarthiAI.png" alt="Sarthi AI" class="ai-icon-img">
+        </button>
     </header>
     <main id="main-content">
         <div id="chapters-screen" class="screen active">
@@ -38,6 +41,57 @@
                     <button id="gujarati-pill" class="language-pill">ગુજરાતી</button>
                 </div>
                 <div id="verse-translation"></div>
+            </div>
+        </div>
+        <div id="ai-setup-screen" class="screen">
+            <div class="glass-card ai-setup-card">
+                <div class="ai-setup-header">
+                    <img src="images/SarthiAI.png" alt="Sarthi AI" class="ai-icon-img ai-setup-icon">
+                    <h2>Sarthi AI</h2>
+                    <p>Your spiritual guide through the Bhagavad Gita</p>
+                </div>
+                <div class="ai-setup-content">
+                    <p>To use Sarthi AI, please enter your Gemini API Key:</p>
+                    <div class="api-key-input-group">
+                        <input type="password" id="api-key-input" placeholder="Enter your Gemini API Key" />
+                        <button id="toggle-api-key-visibility">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <button id="save-api-key-btn" class="ai-save-btn">Save & Continue</button>
+                    <div class="api-key-help">
+                        <p><small>Get your free API key from <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ai-chat-screen" class="screen">
+            <div id="ai-chat-container">
+                <div id="ai-chat-header">
+                    <img src="images/SarthiAI.png" alt="Sarthi AI" class="ai-icon-img">
+                    <span>Sarthi AI</span>
+                    <button id="clear-chat-btn" title="Clear Chat History">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <div id="ai-chat-messages"></div>
+                <div id="ai-starter-prompts">
+                    <div class="starter-prompt" data-prompt="I am feeling lost and confused about my life purpose">
+                        Life Purpose & Direction
+                    </div>
+                    <div class="starter-prompt" data-prompt="I am struggling with anger and negative emotions">
+                        Anger & Emotional Control
+                    </div>
+                    <div class="starter-prompt" data-prompt="I am worried about results and outcomes of my actions">
+                        Worry & Attachment to Results
+                    </div>
+                </div>
+                <div id="ai-chat-input-container">
+                    <input type="text" id="ai-chat-input" placeholder="Ask your question..." />
+                    <button id="ai-send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </main>

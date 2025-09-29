@@ -7,11 +7,15 @@ let currentVerse = null;
 let currentLang = 'hindi'; // 'english', 'hindi', or 'gujarati'
 let startX = 0;
 let endX = 0;
+let geminiApiKey = null;
+let previousScreen = null; // Track where user came from
 
 // DOM elements
 const chaptersScreen = document.getElementById('chapters-screen');
 const versesScreen = document.getElementById('verses-screen');
 const verseDetailScreen = document.getElementById('verse-detail-screen');
+const aiSetupScreen = document.getElementById('ai-setup-screen');
+const aiChatScreen = document.getElementById('ai-chat-screen');
 const chaptersList = document.getElementById('chapters-list');
 const versesList = document.getElementById('verses-list');
 const chapterTitle = document.getElementById('chapter-title');
@@ -24,6 +28,7 @@ const currentTimeEl = document.getElementById('current-time');
 const durationEl = document.getElementById('duration');
 const audioPlayer = document.getElementById('audio-player');
 const backBtn = document.getElementById('back-btn');
+const aiBtn = document.getElementById('ai-btn');
 
 // Initialize app
 async function init() {
@@ -32,6 +37,9 @@ async function init() {
         chapters = await fetch('./assets/chapters.json').then(r => r.json());
         verses = await fetch('./assets/verse.json').then(r => r.json());
         translations = await fetch('./assets/verse-translations.json').then(r => r.json());
+
+        // Initialize AI
+        initAI();
 
         // Render chapters
         renderChapters();
@@ -92,7 +100,6 @@ function showChapter(chapter) {
     });
     switchScreen(versesScreen);
     backBtn.style.display = 'block';
-    document.getElementById('footer').style.display = 'block';
 }
 
 // Update verse content based on current language
@@ -116,7 +123,7 @@ function showVerse(verse) {
     // Update Sanskrit card with sloka number pill
     const sanskritCard = document.getElementById('verse-sanskrit-card');
     sanskritCard.innerHTML = `
-        <div class="sloka-number-pill">श्लोक ${verse.verse_number}</div>
+        <div class="sloka-number-pill">श्लोक ${verse.chapter_number}.${verse.verse_number}</div>
         <div id="verse-text">${verse.text.replace(/।/, '।<br>')}</div>
         <div id="verse-transliteration">${verse.transliteration.replace(/।/, '।<br>')}</div>
     `;
@@ -147,9 +154,6 @@ function showVerse(verse) {
     setupLanguagePills();
 
     switchScreen(verseDetailScreen);
-    document.getElementById('footer').style.display = 'none';
-    document.getElementById('floating-audio-btn').style.display = 'block';
-    document.getElementById('verse-navigation').style.display = 'flex';
 }
 
 // Setup verse navigation
@@ -463,11 +467,16 @@ function formatTime(seconds) {
 function setupNavigation() {
     backBtn.addEventListener('click', () => {
         if (verseDetailScreen.classList.contains('active')) {
-            switchScreen(versesScreen);
-            document.getElementById('footer').style.display = 'block';
-            document.getElementById('floating-audio-btn').style.display = 'none';
-            document.getElementById('verse-navigation').style.display = 'none';
+            // Check if we came from AI chat screen
+            if (previousScreen === aiChatScreen) {
+                switchScreen(aiChatScreen);
+            } else {
+                switchScreen(versesScreen);
+            }
         } else if (versesScreen.classList.contains('active')) {
+            switchScreen(chaptersScreen);
+            backBtn.style.display = 'none';
+        } else if (aiSetupScreen.classList.contains('active') || aiChatScreen.classList.contains('active')) {
             switchScreen(chaptersScreen);
             backBtn.style.display = 'none';
         }
@@ -475,11 +484,39 @@ function setupNavigation() {
 }
 
 function switchScreen(screen) {
+    // Track current active screen before switching
+    const currentActiveScreen = document.querySelector('.screen.active');
+    if (currentActiveScreen && currentActiveScreen !== screen) {
+        previousScreen = currentActiveScreen;
+    }
+    
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     screen.classList.add('active');
     
-    // Language pills are now handled within the verse detail screen itself
-    // No need to control visibility here
+    // Show/hide back button based on screen
+    if (screen === chaptersScreen) {
+        backBtn.style.display = 'none';
+    } else {
+        backBtn.style.display = 'block';
+    }
+    
+    // Handle footer visibility and AI button
+    if (screen === verseDetailScreen) {
+        document.getElementById('footer').style.display = 'none';
+        document.getElementById('floating-audio-btn').style.display = 'block';
+        document.getElementById('verse-navigation').style.display = 'flex';
+        aiBtn.style.display = 'block';
+    } else if (screen === aiChatScreen || screen === aiSetupScreen) {
+        document.getElementById('footer').style.display = 'block';
+        document.getElementById('floating-audio-btn').style.display = 'none';
+        document.getElementById('verse-navigation').style.display = 'none';
+        aiBtn.style.display = 'none'; // Hide AI button when on AI screens
+    } else {
+        document.getElementById('footer').style.display = 'block';
+        document.getElementById('floating-audio-btn').style.display = 'none';
+        document.getElementById('verse-navigation').style.display = 'none';
+        aiBtn.style.display = 'block';
+    }
 }
 
 // Register service worker
@@ -489,6 +526,393 @@ if ('serviceWorker' in navigator) {
             .then(registration => console.log('SW registered'))
             .catch(error => console.log('SW registration failed'));
     });
+}
+
+// Chat history functions
+function saveChatHistory() {
+    const messages = [];
+    const messageElements = document.querySelectorAll('.chat-message');
+    
+    messageElements.forEach(messageEl => {
+        const sender = messageEl.classList.contains('user') ? 'user' : 'ai';
+        const bubble = messageEl.querySelector('.message-bubble');
+        
+        if (sender === 'ai' && bubble.querySelector('.sloka-pills-container')) {
+            // AI message with sloka pills
+            const responseText = bubble.querySelector('.sarthi-response').innerHTML;
+            const slokaPills = Array.from(bubble.querySelectorAll('.sloka-pill')).map(pill => 
+                pill.getAttribute('data-sloka')
+            );
+            messages.push({
+                sender: 'ai',
+                text: responseText,
+                slokaNumbers: slokaPills,
+                isHTML: true
+            });
+        } else {
+            // Regular message
+            const text = sender === 'ai' ? bubble.innerHTML : bubble.textContent;
+            messages.push({
+                sender,
+                text,
+                isHTML: sender === 'ai'
+            });
+        }
+    });
+    
+    localStorage.setItem('sarthiChatHistory', JSON.stringify(messages));
+}
+
+function loadChatHistory() {
+    const savedHistory = localStorage.getItem('sarthiChatHistory');
+    if (!savedHistory) return false;
+    
+    const messages = JSON.parse(savedHistory);
+    const messagesContainer = document.getElementById('ai-chat-messages');
+    
+    // Clear current messages
+    messagesContainer.innerHTML = '';
+    
+    // Restore messages
+    messages.forEach(message => {
+        if (message.sender === 'ai' && message.slokaNumbers) {
+            // Restore AI message with sloka pills
+            addMessage('ai', message.text, message.slokaNumbers, true);
+        } else {
+            // Restore regular message
+            addMessage(message.sender, message.text, null, message.isHTML);
+        }
+    });
+    
+    return messages.length > 0;
+}
+
+function clearChatHistory() {
+    localStorage.removeItem('sarthiChatHistory');
+}
+
+// AI Functions
+function initAI() {
+    // Check if API key exists in localStorage
+    geminiApiKey = localStorage.getItem('geminiApiKey');
+    
+    // Setup AI button click handler
+    aiBtn.addEventListener('click', handleAIButtonClick);
+    
+    // Setup API key save functionality
+    document.getElementById('save-api-key-btn').addEventListener('click', saveApiKey);
+    document.getElementById('toggle-api-key-visibility').addEventListener('click', toggleApiKeyVisibility);
+    
+    // Setup chat functionality
+    document.getElementById('ai-send-btn').addEventListener('click', sendMessage);
+    document.getElementById('ai-chat-input').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+    
+    // Setup starter prompts
+    document.querySelectorAll('.starter-prompt').forEach(prompt => {
+        prompt.addEventListener('click', () => {
+            const message = prompt.getAttribute('data-prompt');
+            document.getElementById('ai-chat-input').value = message;
+            sendMessage();
+        });
+    });
+    
+    // Setup clear chat button
+    document.getElementById('clear-chat-btn').addEventListener('click', () => {
+        if (confirm('Are you sure you want to clear the chat history?')) {
+            clearChatHistory();
+            initializeChatScreen();
+        }
+    });
+}
+
+function handleAIButtonClick() {
+    if (geminiApiKey) {
+        // Show chat screen
+        switchScreen(aiChatScreen);
+        initializeChatScreen();
+    } else {
+        // Show setup screen
+        switchScreen(aiSetupScreen);
+    }
+}
+
+function saveApiKey() {
+    const apiKey = document.getElementById('api-key-input').value.trim();
+    
+    if (!apiKey) {
+        alert('Please enter a valid API key');
+        return;
+    }
+    
+    // Save to localStorage
+    localStorage.setItem('geminiApiKey', apiKey);
+    geminiApiKey = apiKey;
+    
+    // Show success message and switch to chat
+    alert('API key saved successfully!');
+    switchScreen(aiChatScreen);
+    initializeChatScreen();
+}
+
+function toggleApiKeyVisibility() {
+    const input = document.getElementById('api-key-input');
+    const icon = document.querySelector('#toggle-api-key-visibility i');
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    } else {
+        input.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    }
+}
+
+function initializeChatScreen() {
+    const messagesContainer = document.getElementById('ai-chat-messages');
+    const starterPrompts = document.getElementById('ai-starter-prompts');
+    
+    // Try to load chat history first
+    const hasHistory = loadChatHistory();
+    
+    if (!hasHistory) {
+        // Clear previous messages if no history
+        messagesContainer.innerHTML = '';
+        
+        // Show starter prompts if no messages
+        starterPrompts.style.display = 'flex';
+        
+        // Add welcome message
+        addMessage('ai', 'Hello! I am Sarthi AI. I can help you find relevant verses from the Bhagavad Gita to answer your questions. Please ask your question.');
+    } else {
+        // Hide starter prompts if we have history
+        starterPrompts.style.display = 'none';
+    }
+}
+
+async function sendMessage() {
+    const input = document.getElementById('ai-chat-input');
+    const message = input.value.trim();
+    
+    if (!message) return;
+    
+    // Hide starter prompts
+    document.getElementById('ai-starter-prompts').style.display = 'none';
+    
+    // Add user message
+    addMessage('user', message);
+    
+    // Clear input
+    input.value = '';
+    
+    // Show typing indicator
+    showTypingIndicator();
+    
+    try {
+        // Make API call to Gemini
+        const response = await callGeminiAPI(message);
+        
+        // Remove typing indicator
+        removeTypingIndicator();
+        
+        // Parse response and show slokas
+        displaySlokaResponse(response);
+        
+    } catch (error) {
+        console.error('AI Error:', error);
+        removeTypingIndicator();
+        addMessage('ai', 'Sorry, there was a technical issue. Please try again later.');
+    }
+}
+
+async function callGeminiAPI(userMessage) {
+    const systemPrompt = `You are "Sarthi AI", a spiritual guide who helps users find relevant verses from the Bhagavad Gita based on their life questions or situations. You have deep knowledge of the Bhagavad Gita and can relate modern life problems to ancient wisdom.
+
+**IMPORTANT INSTRUCTIONS:**
+1. You must ALWAYS respond only in English language, regardless of the user's input language
+2. Never respond in Hindi, Sanskrit, or any other language - only English
+3. For each user query, recommend exactly 3 relevant slokas (verses) from the Bhagavad Gita
+4. Keep your response concise and focused on practical spiritual guidance
+
+**Response Format (MUST be followed exactly):**
+Briefly acknowledge the user's concern and provide spiritual guidance in 2-3 sentences.
+
+**Recommended Slokas:**
+Chapter X, Verse Y: [One sentence explaining why this verse is relevant]
+Chapter X, Verse Y: [One sentence explaining why this verse is relevant]  
+Chapter X, Verse Y: [One sentence explaining why this verse is relevant]
+
+**Important Guidelines:**
+- All responses must be in English only
+- Only recommend verses that exist in the Bhagavad Gita (Chapters 1-18)
+- Keep explanations brief and practical
+- Focus on actionable spiritual wisdom
+- Be compassionate and understanding
+- Do not include Sanskrit text or translations in your response`;
+
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${geminiApiKey}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            contents: [{
+                parts: [
+                    { text: systemPrompt },
+                    { text: `User Input: ${userMessage}` }
+                ]
+            }],
+            generationConfig: {
+                temperature: 0.7,
+                maxOutputTokens: 500,
+            }
+        })
+    });
+
+    if (!response.ok) {
+        throw new Error('API call failed');
+    }
+
+    const data = await response.json();
+    return data.candidates[0].content.parts[0].text.trim();
+}
+
+function displaySlokaResponse(response) {
+    // Extract sloka numbers from the response using regex
+    const slokaPattern = /Chapter\s+(\d+),\s+Verse\s+(\d+)/gi;
+    const matches = [...response.matchAll(slokaPattern)];
+    const slokaNumbers = matches.map(match => `${match[1]}.${match[2]}`);
+    
+    // Add the AI's complete response
+    addMessage('ai', response, slokaNumbers.length > 0 ? slokaNumbers : null);
+}
+
+// Markdown rendering function
+function parseMarkdown(text) {
+    // Bold
+    text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    text = text.replace(/__(.*?)__/g, '<strong>$1</strong>');
+    
+    // Italic
+    text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    text = text.replace(/_(.*?)_/g, '<em>$1</em>');
+    
+    // Headers
+    text = text.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+    text = text.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+    text = text.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+    
+    // Code blocks (triple backticks)
+    text = text.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+    
+    // Inline code
+    text = text.replace(/`(.*?)`/g, '<code>$1</code>');
+    
+    // Line breaks
+    text = text.replace(/\n/g, '<br>');
+    
+    // Lists
+    text = text.replace(/^\- (.*$)/gim, '<li>$1</li>');
+    text = text.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
+    
+    return text;
+}
+
+function addMessage(sender, text, slokaNumbers = null, isHTML = false) {
+    const messagesContainer = document.getElementById('ai-chat-messages');
+    
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${sender}`;
+    
+    const bubbleDiv = document.createElement('div');
+    bubbleDiv.className = 'message-bubble';
+    
+    if (sender === 'ai' && slokaNumbers) {
+        // AI message with sloka pills - render markdown or use HTML
+        const renderedText = isHTML ? text : parseMarkdown(text);
+        bubbleDiv.innerHTML = `
+            <div class="sarthi-response">${renderedText}</div>
+            <div class="sloka-pills-container">
+                ${slokaNumbers.map(sloka => 
+                    `<button class="sloka-pill" data-sloka="${sloka}">Verse ${sloka}</button>`
+                ).join('')}
+            </div>
+        `;
+        
+        // Add click handlers to sloka pills
+        setTimeout(() => {
+            messageDiv.querySelectorAll('.sloka-pill').forEach(pill => {
+                pill.addEventListener('click', () => {
+                    const slokaRef = pill.getAttribute('data-sloka');
+                    navigateToSloka(slokaRef);
+                });
+            });
+        }, 100);
+    } else if (sender === 'ai') {
+        // AI message without sloka pills - render markdown or use HTML
+        bubbleDiv.innerHTML = isHTML ? text : parseMarkdown(text);
+    } else {
+        // User message - plain text
+        bubbleDiv.textContent = text;
+    }
+    
+    messageDiv.appendChild(bubbleDiv);
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    
+    // Save chat history after adding message
+    saveChatHistory();
+}
+
+function navigateToSloka(slokaRef) {
+    // Parse chapter.verse format
+    const [chapterNum, verseNum] = slokaRef.split('.').map(n => parseInt(n));
+    
+    // Find the chapter and verse
+    const chapter = chapters.find(c => c.chapter_number === chapterNum);
+    const verse = verses.find(v => v.chapter_number === chapterNum && v.verse_number === verseNum);
+    
+    if (chapter && verse) {
+        // Set current chapter and verse
+        currentChapter = chapter;
+        currentVerse = verse;
+        
+        // Navigate to verse detail screen
+        showVerse(verse);
+    } else {
+        alert('Sloka not found. Please try again later.');
+    }
+}
+
+function showTypingIndicator() {
+    const messagesContainer = document.getElementById('ai-chat-messages');
+    
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'chat-message ai typing-indicator-message';
+    typingDiv.innerHTML = `
+        <div class="typing-indicator">
+            <div class="typing-dots">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+    `;
+    
+    messagesContainer.appendChild(typingDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+function removeTypingIndicator() {
+    const typingIndicator = document.querySelector('.typing-indicator-message');
+    if (typingIndicator) {
+        typingIndicator.remove();
+    }
 }
 
 // Start app
