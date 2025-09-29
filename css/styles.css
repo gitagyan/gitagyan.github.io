@@ -49,12 +49,9 @@ header h1 {
     flex: 1;
     text-align: center;
     font-size: 2.7rem;
-    background: linear-gradient(45deg, #A5252C, #8E1E24);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 900;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    color: #A5252C;
+    font-weight: 950;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 #back-btn {
@@ -95,8 +92,8 @@ header h1 {
 }
 
 .ai-icon-img {
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     transition: all 0.3s;
 }
@@ -368,7 +365,7 @@ footer p {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 0 0 20px 0;
+    margin: 0;
     padding: 0;
 }
 
@@ -736,6 +733,7 @@ footer p {
     }
     header h1 {
         font-size: 1.8rem;
+        font-weight: 950;
     }
     main {
         padding: 70px 5px 50px 5px;
@@ -1194,4 +1192,467 @@ footer p {
         transform: scale(1);
         opacity: 1;
     }
+}
+
+/* Floating Settings Button */
+.floating-settings-btn {
+    position: fixed;
+    bottom: 55px;
+    right: 5px;
+    z-index: 1000;
+}
+
+.main-floating-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #E6A623;
+    border: none;
+    color: #A5252C;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-floating-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.floating-menu {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.floating-menu.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.floating-option-btn {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #E6A623;
+    border: none;
+    color: #A5252C;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+}
+
+.floating-option-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Position each button with proper spacing */
+.floating-option-btn:nth-child(1) { /* Settings button */
+    bottom: 55px;
+}
+
+.floating-option-btn:nth-child(2) { /* Bookmarks button */
+    bottom: 100px;
+}
+
+/* Remove the close button styling since we'll use main button transformation */
+.close-btn {
+    display: none;
+}
+
+/* Animation for showing buttons */
+.floating-menu:not(.show) .floating-option-btn {
+    transform: scale(0) rotate(180deg);
+    opacity: 0;
+}
+
+.floating-menu.show .floating-option-btn {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+}
+
+.floating-menu.show .floating-option-btn:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.floating-menu.show .floating-option-btn:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+/* Main button icon transformation */
+.main-floating-btn i {
+    transition: all 0.3s ease;
+}
+
+.main-floating-btn.opened i::before {
+    content: "\f00d"; /* FontAwesome times/X icon */
+}
+
+.main-floating-btn.opened {
+    transform: rotate(45deg);
+}
+
+/* Settings Screen Styles */
+.settings-card {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 30px;
+}
+
+.settings-header h2 {
+    color: #A5252C;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.settings-header p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.setting-item {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.setting-item h3 {
+    color: #A5252C;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.setting-item p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.api-key-btn {
+    background: linear-gradient(135deg, #E6A623, #D4A017);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.api-key-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(230, 166, 35, 0.4);
+}
+
+/* Settings API Key Input Styles */
+#settings-api-key-input {
+    width: 100%;
+    padding: 12px 50px 12px 16px;
+    border: 2px solid rgba(165, 37, 44, 0.2);
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #333;
+    font-family: inherit;
+    height: 42px;
+}
+
+#settings-api-key-input:focus {
+    border-color: #A5252C;
+    box-shadow: 0 0 0 3px rgba(165, 37, 44, 0.1);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#settings-api-key-input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+#toggle-settings-api-key-visibility {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #A5252C;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#toggle-settings-api-key-visibility:hover {
+    background: rgba(165, 37, 44, 0.1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.setting-item .api-key-input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.api-key-btn.remove-btn {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+}
+
+.api-key-btn.remove-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+}
+
+.api-key-help {
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    background: rgba(230, 166, 35, 0.1);
+    border-left: 3px solid #E6A623;
+    border-radius: 0 8px 8px 0;
+}
+
+.api-key-help small {
+    color: #8D6E63;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.api-key-help a {
+    color: #A5252C;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.api-key-help a:hover {
+    color: #E6A623;
+    text-decoration: underline;
+}
+
+.api-key-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.api-key-btn i {
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.setting-item h3 i {
+    margin-right: 10px;
+    color: #E6A623;
+}
+
+.sarthi-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.api-key-btn.icon-btn {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+.api-key-btn.icon-btn i {
+    margin: 0;
+}
+
+.remove-btn {
+    background: linear-gradient(135deg, #D32F2F, #B71C1C);
+}
+
+.remove-btn:hover {
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+}
+
+/* Bookmarks Screen Styles */
+.bookmarks-header {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.bookmarks-header h2 {
+    color: #A5252C;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.bookmarks-header p {
+    color: #666;
+}
+
+.bookmarks-list {
+    padding: 0 20px 20px;
+}
+
+.bookmark-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    margin-bottom: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.bookmark-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.bookmark-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bookmark-sloka-number {
+    background: linear-gradient(135deg, #E6A623, #D4A017);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.remove-bookmark-btn {
+    background: none;
+    border: none;
+    color: #D32F2F;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.remove-bookmark-btn:hover {
+    background: rgba(211, 47, 47, 0.1);
+    transform: scale(1.1);
+}
+
+.bookmark-text {
+    color: #8B1538;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.bookmark-translation {
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Verse Card Header */
+.verse-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+#language-switcher-pills {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.bookmark-btn {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(165, 37, 44, 0.3);
+    border-radius: 15px;
+    padding: 4px 8px;
+    color: #A5252C;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 11px;
+    min-width: 35px;
+    min-height: 28px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.bookmark-btn:hover:not(.bookmarked) {
+    background: rgba(165, 37, 44, 0.1);
+    border-color: #A5252C;
+    transform: translateY(-2px);
+}
+
+.bookmark-btn.bookmarked {
+    background: #A5252C;
+    color: white;
+    border-color: #A5252C;
+    box-shadow: 0 4px 12px rgba(165, 37, 44, 0.3);
+}
+
+.bookmark-btn.bookmarked:hover {
+    background: #8B1F24;
+    border-color: #8B1F24;
+}
+
+/* Hide floating settings button on specific screens */
+.screen.active ~ .floating-settings-btn {
+    display: block;
+}
+
+#verse-detail-screen.active ~ .floating-settings-btn,
+#ai-chat-screen.active ~ .floating-settings-btn,
+#ai-setup-screen.active ~ .floating-settings-btn {
+    display: none;
 }

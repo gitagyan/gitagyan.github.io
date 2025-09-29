@@ -16,6 +16,8 @@ const versesScreen = document.getElementById('verses-screen');
 const verseDetailScreen = document.getElementById('verse-detail-screen');
 const aiSetupScreen = document.getElementById('ai-setup-screen');
 const aiChatScreen = document.getElementById('ai-chat-screen');
+const settingsScreen = document.getElementById('settings-screen');
+const bookmarksScreen = document.getElementById('bookmarks-screen');
 const chaptersList = document.getElementById('chapters-list');
 const versesList = document.getElementById('verses-list');
 const chapterTitle = document.getElementById('chapter-title');
@@ -29,6 +31,9 @@ const durationEl = document.getElementById('duration');
 const audioPlayer = document.getElementById('audio-player');
 const backBtn = document.getElementById('back-btn');
 const aiBtn = document.getElementById('ai-btn');
+const mainFloatingBtn = document.getElementById('main-floating-btn');
+const floatingMenu = document.getElementById('floating-menu');
+const bookmarkBtn = document.getElementById('bookmark-btn');
 
 // Initialize app
 async function init() {
@@ -40,6 +45,9 @@ async function init() {
 
         // Initialize AI
         initAI();
+        
+        // Initialize floating menu
+        initFloatingMenu();
 
         // Render chapters
         renderChapters();
@@ -152,6 +160,7 @@ function showVerse(verse) {
     setupFloatingAudioControls();
     setupVerseNavigation();
     setupLanguagePills();
+    setupBookmarkButton();
 
     switchScreen(verseDetailScreen);
 }
@@ -279,6 +288,27 @@ function updatePillsActiveState() {
 function setupLangSwitcher() {
     // This function is now handled by setupLanguagePills
     return;
+}
+
+// Setup bookmark button
+function setupBookmarkButton() {
+    updateBookmarkButton();
+    
+    // Remove existing listener
+    bookmarkBtn.removeEventListener('click', handleBookmarkClick);
+    
+    // Add new listener
+    bookmarkBtn.addEventListener('click', handleBookmarkClick);
+}
+
+function handleBookmarkClick() {
+    if (!currentVerse) return;
+    
+    if (isBookmarked(currentVerse.id)) {
+        removeBookmark(currentVerse.id);
+    } else {
+        addBookmark(currentVerse);
+    }
 }
 
 // Setup swipe gestures for verse navigation
@@ -479,6 +509,9 @@ function setupNavigation() {
         } else if (aiSetupScreen.classList.contains('active') || aiChatScreen.classList.contains('active')) {
             switchScreen(chaptersScreen);
             backBtn.style.display = 'none';
+        } else if (settingsScreen.classList.contains('active') || bookmarksScreen.classList.contains('active')) {
+            switchScreen(chaptersScreen);
+            backBtn.style.display = 'none';
         }
     });
 }
@@ -506,16 +539,25 @@ function switchScreen(screen) {
         document.getElementById('floating-audio-btn').style.display = 'block';
         document.getElementById('verse-navigation').style.display = 'flex';
         aiBtn.style.display = 'block';
+        document.getElementById('floating-settings-btn').style.display = 'none';
     } else if (screen === aiChatScreen || screen === aiSetupScreen) {
         document.getElementById('footer').style.display = 'block';
         document.getElementById('floating-audio-btn').style.display = 'none';
         document.getElementById('verse-navigation').style.display = 'none';
         aiBtn.style.display = 'none'; // Hide AI button when on AI screens
+        document.getElementById('floating-settings-btn').style.display = 'none';
+    } else if (screen === settingsScreen || screen === bookmarksScreen) {
+        document.getElementById('footer').style.display = 'block';
+        document.getElementById('floating-audio-btn').style.display = 'none';
+        document.getElementById('verse-navigation').style.display = 'none';
+        aiBtn.style.display = 'block';
+        document.getElementById('floating-settings-btn').style.display = 'none';
     } else {
         document.getElementById('footer').style.display = 'block';
         document.getElementById('floating-audio-btn').style.display = 'none';
         document.getElementById('verse-navigation').style.display = 'none';
         aiBtn.style.display = 'block';
+        document.getElementById('floating-settings-btn').style.display = 'block';
     }
 }
 
@@ -591,10 +633,283 @@ function clearChatHistory() {
     localStorage.removeItem('sarthiChatHistory');
 }
 
+// Floating Menu Functions
+function initFloatingMenu() {
+    // Remove any existing listeners first
+    const newMainFloatingBtn = mainFloatingBtn.cloneNode(true);
+    mainFloatingBtn.parentNode.replaceChild(newMainFloatingBtn, mainFloatingBtn);
+    
+    // Update the reference
+    const updatedMainFloatingBtn = document.getElementById('main-floating-btn');
+    const updatedFloatingMenu = document.getElementById('floating-menu');
+    
+    // Toggle menu visibility
+    updatedMainFloatingBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = updatedFloatingMenu.classList.contains('show');
+        
+        if (isOpen) {
+            // Close menu
+            updatedFloatingMenu.classList.remove('show');
+            updatedMainFloatingBtn.classList.remove('opened');
+            updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
+        } else {
+            // Open menu
+            updatedFloatingMenu.classList.add('show');
+            updatedMainFloatingBtn.classList.add('opened');
+            updatedMainFloatingBtn.innerHTML = '<i class="fas fa-times"></i>';
+        }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.floating-settings-btn')) {
+            updatedFloatingMenu.classList.remove('show');
+            updatedMainFloatingBtn.classList.remove('opened');
+            updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
+        }
+    });
+    
+    // Settings button
+    document.getElementById('settings-btn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        switchScreen(settingsScreen);
+        updatedFloatingMenu.classList.remove('show');
+        updatedMainFloatingBtn.classList.remove('opened');
+        updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
+    });
+    
+    // Bookmarks button
+    document.getElementById('bookmarks-btn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        switchScreen(bookmarksScreen);
+        renderBookmarks();
+        updatedFloatingMenu.classList.remove('show');
+        updatedMainFloatingBtn.classList.remove('opened');
+        updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
+    });
+}
+
+// Bookmark Functions
+function getBookmarks() {
+    const bookmarks = localStorage.getItem('gita_bookmarks');
+    return bookmarks ? JSON.parse(bookmarks) : [];
+}
+
+function saveBookmarks(bookmarks) {
+    localStorage.setItem('gita_bookmarks', JSON.stringify(bookmarks));
+}
+
+function isBookmarked(verseId) {
+    const bookmarks = getBookmarks();
+    return bookmarks.some(bookmark => bookmark.verseId === verseId);
+}
+
+function addBookmark(verse) {
+    const bookmarks = getBookmarks();
+    const translation = translations.find(t => t.verse_id === verse.id);
+    
+    const bookmark = {
+        verseId: verse.id,
+        chapterNumber: verse.chapter_number,
+        verseNumber: verse.verse_number,
+        text: verse.text,
+        transliteration: verse.transliteration,
+        translation: translation ? translation.languages[currentLang]?.description || 'Translation not available' : 'Translation not available',
+        language: currentLang,
+        dateAdded: new Date().toISOString()
+    };
+    
+    bookmarks.push(bookmark);
+    saveBookmarks(bookmarks);
+    updateBookmarkButton();
+}
+
+function removeBookmark(verseId) {
+    const bookmarks = getBookmarks();
+    const filteredBookmarks = bookmarks.filter(bookmark => bookmark.verseId !== verseId);
+    saveBookmarks(filteredBookmarks);
+    updateBookmarkButton();
+}
+
+function updateBookmarkButton() {
+    if (!currentVerse || !bookmarkBtn) return;
+    
+    if (isBookmarked(currentVerse.id)) {
+        bookmarkBtn.classList.add('bookmarked');
+        bookmarkBtn.innerHTML = '<i class="fas fa-heart"></i>';
+    } else {
+        bookmarkBtn.classList.remove('bookmarked');
+        bookmarkBtn.innerHTML = '<i class="far fa-heart"></i>';
+    }
+}
+
+function renderBookmarks() {
+    const bookmarksList = document.getElementById('bookmarks-list');
+    const bookmarks = getBookmarks();
+    
+    if (bookmarks.length === 0) {
+        bookmarksList.innerHTML = `
+            <div class="glass-card" style="text-align: center; padding: 40px; margin: 20px;">
+                <i class="fas fa-heart" style="font-size: 48px; color: #ccc; margin-bottom: 20px;"></i>
+                <h3 style="color: #666; margin-bottom: 10px;">No Bookmarks Yet</h3>
+                <p style="color: #999;">Start bookmarking your favorite verses to see them here.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    bookmarksList.innerHTML = '';
+    bookmarks.reverse().forEach(bookmark => {
+        const bookmarkItem = document.createElement('div');
+        bookmarkItem.className = 'bookmark-item';
+        bookmarkItem.innerHTML = `
+            <div class="bookmark-header">
+                <span class="bookmark-sloka-number">श्लोक ${bookmark.chapterNumber}.${bookmark.verseNumber}</span>
+                <button class="remove-bookmark-btn" data-verse-id="${bookmark.verseId}">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="bookmark-text">${bookmark.text.replace(/।/, '।<br>')}</div>
+            <div class="bookmark-translation">${bookmark.translation}</div>
+        `;
+        
+        // Add click handler to navigate to verse
+        bookmarkItem.addEventListener('click', (e) => {
+            if (!e.target.closest('.remove-bookmark-btn')) {
+                navigateToBookmarkedVerse(bookmark);
+            }
+        });
+        
+        // Add remove handler
+        const removeBtn = bookmarkItem.querySelector('.remove-bookmark-btn');
+        removeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            removeBookmark(bookmark.verseId);
+            renderBookmarks();
+        });
+        
+        bookmarksList.appendChild(bookmarkItem);
+    });
+}
+
+function navigateToBookmarkedVerse(bookmark) {
+    // Find the chapter and verse
+    const chapter = chapters.find(c => c.chapter_number === bookmark.chapterNumber);
+    const verse = verses.find(v => v.id === bookmark.verseId);
+    
+    if (chapter && verse) {
+        currentChapter = chapter;
+        currentVerse = verse;
+        showVerse(verse);
+    }
+}
+
+// Settings Functions
+function initSettings() {
+    // Load current API key into settings
+    const settingsApiKeyInput = document.getElementById('settings-api-key-input');
+    if (geminiApiKey) {
+        settingsApiKeyInput.value = geminiApiKey;
+        // Show visual indication that API key is configured
+        settingsApiKeyInput.style.borderColor = '#28a745';
+        settingsApiKeyInput.style.background = 'rgba(40, 167, 69, 0.1)';
+    }
+    
+    // Toggle API key visibility in settings
+    document.getElementById('toggle-settings-api-key-visibility').addEventListener('click', () => {
+        const input = document.getElementById('settings-api-key-input');
+        const icon = document.querySelector('#toggle-settings-api-key-visibility i');
+        
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        } else {
+            input.type = 'password';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        }
+    });
+    
+    // Update API key
+    document.getElementById('update-api-key-btn').addEventListener('click', () => {
+        const apiKey = settingsApiKeyInput.value.trim();
+        const updateBtn = document.getElementById('update-api-key-btn');
+        
+        if (!apiKey) {
+            // Visual feedback for empty input
+            settingsApiKeyInput.style.borderColor = '#dc3545';
+            settingsApiKeyInput.focus();
+            setTimeout(() => {
+                settingsApiKeyInput.style.borderColor = '';
+            }, 2000);
+            return;
+        }
+        
+        // Basic validation for API key format
+        if (apiKey.length < 10) {
+            settingsApiKeyInput.style.borderColor = '#dc3545';
+            settingsApiKeyInput.focus();
+            setTimeout(() => {
+                settingsApiKeyInput.style.borderColor = '';
+            }, 2000);
+            return;
+        }
+        
+        // Show loading state
+        updateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        updateBtn.disabled = true;
+        
+        setTimeout(() => {
+            localStorage.setItem('geminiApiKey', apiKey);
+            geminiApiKey = apiKey;
+            
+            // Success feedback
+            updateBtn.innerHTML = '<i class="fas fa-check"></i>';
+            settingsApiKeyInput.style.borderColor = '#28a745';
+            
+            setTimeout(() => {
+                updateBtn.innerHTML = '<i class="fas fa-save"></i>';
+                updateBtn.disabled = false;
+                settingsApiKeyInput.style.borderColor = '';
+            }, 2000);
+        }, 500);
+    });
+    
+    // Remove API key
+    document.getElementById('remove-api-key-btn').addEventListener('click', () => {
+        const removeBtn = document.getElementById('remove-api-key-btn');
+        
+        if (confirm('Are you sure you want to remove your API key? You will need to re-enter it to use Sarthi AI.')) {
+            // Show loading state
+            removeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            removeBtn.disabled = true;
+            
+            setTimeout(() => {
+                localStorage.removeItem('geminiApiKey');
+                geminiApiKey = null;
+                settingsApiKeyInput.value = '';
+                
+                // Success feedback
+                removeBtn.innerHTML = '<i class="fas fa-check"></i>';
+                
+                setTimeout(() => {
+                    removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
+                    removeBtn.disabled = false;
+                }, 2000);
+            }, 500);
+        }
+    });
+}
+
 // AI Functions
 function initAI() {
     // Check if API key exists in localStorage
     geminiApiKey = localStorage.getItem('geminiApiKey');
+    
+    // Initialize settings
+    initSettings();
     
     // Setup AI button click handler
     aiBtn.addEventListener('click', handleAIButtonClick);

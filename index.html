@@ -35,10 +35,15 @@
             </div>
             
             <div id="verse-translation-card" class="glass-card">
-                <div id="language-switcher-pills">
-                    <button id="hindi-pill" class="language-pill active">हिंदी</button>
-                    <button id="english-pill" class="language-pill">English</button>
-                    <button id="gujarati-pill" class="language-pill">ગુજરાતી</button>
+                <div class="verse-card-header">
+                    <div id="language-switcher-pills">
+                        <button id="hindi-pill" class="language-pill active">हिंदी</button>
+                        <button id="english-pill" class="language-pill">English</button>
+                        <button id="gujarati-pill" class="language-pill">ગુજરાતી</button>
+                    </div>
+                    <button id="bookmark-btn" class="bookmark-btn" title="Bookmark this verse">
+                        <i class="fas fa-heart"></i>
+                    </button>
                 </div>
                 <div id="verse-translation"></div>
             </div>
@@ -94,7 +99,66 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Settings Screen -->
+        <div id="settings-screen" class="screen">
+            <div class="glass-card settings-card">
+                <div class="settings-header">
+                    <h2>Settings</h2>
+                    <p>Manage your app preferences</p>
+                </div>
+                <div class="settings-content">
+                    <div class="setting-item">
+                        <h3><img src="images/SarthiAI.png" alt="Sarthi AI" class="sarthi-icon"> Sarthi AI Configuration</h3>
+                        <p>Enter your Google Gemini API key to enable AI-powered spiritual guidance and verse recommendations</p>
+                        <div class="api-key-input-group">
+                            <input type="password" id="settings-api-key-input" placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+                            <button id="toggle-settings-api-key-visibility" title="Show/Hide API Key">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="api-key-help">
+                            <small><i class="fas fa-info-circle"></i> Get your free API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></small>
+                        </div>
+                        <div class="api-key-buttons">
+                            <button id="update-api-key-btn" class="api-key-btn icon-btn" title="Update API Key">
+                                <i class="fas fa-save"></i>
+                            </button>
+                            <button id="remove-api-key-btn" class="api-key-btn remove-btn icon-btn" title="Remove API Key">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bookmarks Screen -->
+        <div id="bookmarks-screen" class="screen">
+            <div class="bookmarks-header">
+                <h2>Bookmarked Slokas</h2>
+                <p>Your favorite verses from the Bhagavad Gita</p>
+            </div>
+            <div id="bookmarks-list" class="bookmarks-list">
+                <!-- Bookmarked verses will be dynamically added here -->
+            </div>
+        </div>
     </main>
+    
+    <!-- Floating Settings/Bookmarks Button -->
+    <div id="floating-settings-btn" class="floating-settings-btn">
+        <button id="main-floating-btn" class="main-floating-btn">
+            <i class="fas fa-cog"></i>
+        </button>
+        <div id="floating-menu" class="floating-menu">
+            <button id="settings-btn" class="floating-option-btn" title="Settings">
+                <i class="fas fa-cog"></i>
+            </button>
+            <button id="bookmarks-btn" class="floating-option-btn" title="Bookmarks">
+                <i class="fas fa-heart"></i>
+            </button>
+        </div>
+    </div>
     <div id="verse-navigation" style="display: none;">
         <button id="prev-verse-btn">
             <i class="fas fa-chevron-left"></i>
@@ -132,7 +196,7 @@
     </div>
     <audio id="audio-player"></audio>
     <footer id="footer">
-        <p>Spoken by Lord Krishna 5000 years ago</p>
+        <p>🙏 सर्वधर्मान् परित्यज्य मामेकं शरणं व्रज 🙏</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/js/all.min.js"></script>
     <script src="js/app.js"></script>
