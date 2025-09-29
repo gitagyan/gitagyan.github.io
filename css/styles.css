@@ -574,8 +574,8 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 49px;
-    height: 49px;
+    width: 64px;
+    height: 64px;
 }
 
 .progress-ring-svg {
@@ -583,13 +583,13 @@ footer p {
     top: 0;
     left: 0;
     transform: rotate(-90deg);
-    width: 49px;
-    height: 49px;
+    width: 64px;
+    height: 64px;
 }
 
 .progress-ring-circle {
-    stroke-dasharray: 138.23;
-    stroke-dashoffset: 138.23;
+    stroke-dasharray: 182.21;
+    stroke-dashoffset: 182.21;
     transition: stroke-dashoffset 0.1s ease;
 }
 
@@ -597,13 +597,13 @@ footer p {
     background: #E6A623;
     border: none;
     border-radius: 50%;
-    width: 42px;
-    height: 42px;
+    width: 55px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 18px;
     color: #A5252C;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
@@ -1202,13 +1202,13 @@ footer p {
 }
 
 .main-floating-btn {
-    width: 42px;
-    height: 42px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background: #E6A623;
     border: none;
     color: #A5252C;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
@@ -1242,13 +1242,13 @@ footer p {
 
 .floating-option-btn {
     position: absolute;
-    width: 42px;
-    height: 42px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background: #E6A623;
     border: none;
     color: #A5252C;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
@@ -1267,11 +1267,11 @@ footer p {
 
 /* Position each button with proper spacing */
 .floating-option-btn:nth-child(1) { /* Settings button */
-    bottom: 55px;
+    bottom: 65px;
 }
 
 .floating-option-btn:nth-child(2) { /* Bookmarks button */
-    bottom: 100px;
+    bottom: 125px;
 }
 
 /* Remove the close button styling since we'll use main button transformation */
@@ -1485,18 +1485,27 @@ footer p {
 }
 
 .api-key-btn.icon-btn {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 28px;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    font-size: 16px;
+    border-radius: 14px;
+    font-size: 14px;
 }
 
 .api-key-btn.icon-btn i {
     margin: 0;
+}
+
+#update-api-key-btn {
+    background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+#update-api-key-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
 }
 
 .remove-btn {

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gita-pwa-v7';
+const CACHE_NAME = 'gita-pwa-v8';
 const urlsToCache = [
     '/',
     '/index.html',

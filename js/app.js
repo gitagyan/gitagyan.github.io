@@ -155,7 +155,7 @@ function showVerse(verse) {
     
     floatingBtn.innerHTML = '<i class="fas fa-play"></i>';
     floatingTime.textContent = '0:00';
-    progressCircle.style.strokeDashoffset = 138.23;
+    progressCircle.style.strokeDashoffset = 182.21;
 
     setupFloatingAudioControls();
     setupVerseNavigation();
@@ -519,7 +519,7 @@ function updateFloatingTime() {
         floatingTime.textContent = formatTime(remaining);
         
         // Update progress ring
-        const circumference = 138.23;
+        const circumference = 182.21;
         const progress = current / duration;
         const offset = circumference - (progress * circumference);
         progressCircle.style.strokeDashoffset = offset;
@@ -539,7 +539,7 @@ function resetFloatingButton() {
     
     floatingBtn.innerHTML = '<i class="fas fa-play"></i>';
     floatingTime.textContent = formatTime(audioPlayer.duration);
-    progressCircle.style.strokeDashoffset = 138.23;
+    progressCircle.style.strokeDashoffset = 182.21;
     
     // Auto-play next verse feature
     if (currentVerse) {
