@@ -2,11 +2,9 @@
 let chapters = [];
 let verses = [];
 let translations = [];
-let commentaries = [];
-let authors = [];
 let currentChapter = null;
 let currentVerse = null;
-let currentLang = 'english'; // 'english' or 'hindi'
+let currentLang = 'hindi'; // 'english', 'hindi', or 'gujarati'
 let startX = 0;
 let endX = 0;
 
@@ -20,7 +18,6 @@ const chapterTitle = document.getElementById('chapter-title');
 const verseText = document.getElementById('verse-text');
 const verseTransliteration = document.getElementById('verse-transliteration');
 const verseTranslation = document.getElementById('verse-translation');
-const verseCommentary = document.getElementById('verse-commentary');
 const playPauseBtn = document.getElementById('play-pause-btn');
 const seekSlider = document.getElementById('seek-slider');
 const currentTimeEl = document.getElementById('current-time');
@@ -31,12 +28,10 @@ const backBtn = document.getElementById('back-btn');
 // Initialize app
 async function init() {
     try {
-        // Load data
-        chapters = await fetch('./gita-main/data/chapters.json').then(r => r.json());
-        verses = await fetch('./gita-main/data/verse.json').then(r => r.json());
-        translations = await fetch('./gita-main/data/translation.json').then(r => r.json());
-        commentaries = await fetch('./gita-main/data/commentary.json').then(r => r.json());
-        authors = await fetch('./gita-main/data/authors.json').then(r => r.json());
+        // Load data from assets folder
+        chapters = await fetch('./assets/chapters.json').then(r => r.json());
+        verses = await fetch('./assets/verse.json').then(r => r.json());
+        translations = await fetch('./assets/verse-translations.json').then(r => r.json());
 
         // Render chapters
         renderChapters();
@@ -61,7 +56,13 @@ function renderChapters() {
         card.innerHTML = `
             <div class="chapter-header">
                 <span class="chapter-number">${chapter.chapter_number}</span>
-                <h3>📖 ${chapter.name} <br/> (${chapter.name_meaning})</h3>
+                <div class="chapter-info">
+                    <h3>${chapter.name}</h3>
+                    <div class="chapter-meaning">(${chapter.name_meaning})</div>
+                    <div class="chapter-stats">
+                        <span class="verse-count">${chapter.verses_count} श्लोक</span>
+                    </div>
+                </div>
             </div>
             <p>${chapter.chapter_summary.substring(0, 150)}...</p>
         `;
@@ -73,7 +74,10 @@ function renderChapters() {
 // Show chapter verses
 function showChapter(chapter) {
     currentChapter = chapter;
-    chapterTitle.innerHTML = `${chapter.name}<br>${chapter.name_meaning}`;
+    chapterTitle.innerHTML = `
+        <div class="chapter-title-name">${chapter.name}</div>
+        <div class="chapter-title-meaning">(${chapter.name_meaning})</div>
+    `;
     const chapterVerses = verses.filter(v => v.chapter_number === chapter.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
     versesList.innerHTML = '';
     chapterVerses.forEach(verse => {
@@ -95,25 +99,36 @@ function showChapter(chapter) {
 function updateVerseContent() {
     if (!currentVerse) return;
 
-    // Find translation
-    const translation = translations.find(t => t.verse_id === currentVerse.id && t.lang === currentLang);
-    verseTranslation.innerHTML = translation ? translation.description : 'Translation not available';
-
-    // Find commentary
-    const commentary = commentaries.find(c => c.verse_id === currentVerse.id && c.lang === currentLang);
-    verseCommentary.innerHTML = commentary ? commentary.description : 'Commentary not available';
+    // Find translation for current verse
+    const translation = translations.find(t => t.verse_id === currentVerse.id);
+    
+    if (translation && translation.languages && translation.languages[currentLang]) {
+        verseTranslation.innerHTML = translation.languages[currentLang].description;
+    } else {
+        verseTranslation.innerHTML = 'Translation not available';
+    }
 }
 
 // Show verse detail
 function showVerse(verse) {
     currentVerse = verse;
-    verseText.innerHTML = verse.text.replace(/।/, '।<br>');
-    verseTransliteration.innerHTML = verse.transliteration.replace(/।/, '।<br>');
+    
+    // Update Sanskrit card with sloka number pill
+    const sanskritCard = document.getElementById('verse-sanskrit-card');
+    sanskritCard.innerHTML = `
+        <div class="sloka-number-pill">श्लोक ${verse.verse_number}</div>
+        <div id="verse-text">${verse.text.replace(/।/, '।<br>')}</div>
+        <div id="verse-transliteration">${verse.transliteration.replace(/।/, '।<br>')}</div>
+    `;
+    
+    // Update verse elements references since we recreated the content
+    const verseText = document.getElementById('verse-text');
+    const verseTransliteration = document.getElementById('verse-transliteration');
 
     updateVerseContent();
 
-    // Audio
-    const audioSrc = `./gita-main/data/verse_recitation/${verse.chapter_number}/${verse.verse_number}.mp3`;
+    // Audio - using assets folder structure
+    const audioSrc = `./assets/verse_recitation/${verse.chapter_number}/${verse.verse_number}.mp3`;
     audioPlayer.src = audioSrc;
     audioPlayer.load();
     audioPlayer.currentTime = 0;
@@ -190,6 +205,7 @@ function handleVerseSliderChange(e) {
 function setupLanguagePills() {
     const hindiPill = document.getElementById('hindi-pill');
     const englishPill = document.getElementById('english-pill');
+    const gujaratiPill = document.getElementById('gujarati-pill');
     
     // Update active state based on current language
     updatePillsActiveState();
@@ -197,10 +213,12 @@ function setupLanguagePills() {
     // Remove existing listeners
     hindiPill.removeEventListener('click', switchToHindi);
     englishPill.removeEventListener('click', switchToEnglish);
+    gujaratiPill.removeEventListener('click', switchToGujarati);
     
     // Add new listeners
     hindiPill.addEventListener('click', switchToHindi);
     englishPill.addEventListener('click', switchToEnglish);
+    gujaratiPill.addEventListener('click', switchToGujarati);
 }
 
 function switchToHindi() {
@@ -223,16 +241,33 @@ function switchToEnglish() {
     }
 }
 
+function switchToGujarati() {
+    if (currentLang !== 'gujarati') {
+        currentLang = 'gujarati';
+        updatePillsActiveState();
+        if (currentVerse) {
+            updateVerseContent();
+        }
+    }
+}
+
 function updatePillsActiveState() {
     const hindiPill = document.getElementById('hindi-pill');
     const englishPill = document.getElementById('english-pill');
+    const gujaratiPill = document.getElementById('gujarati-pill');
     
+    // Remove active class from all pills
+    hindiPill.classList.remove('active');
+    englishPill.classList.remove('active');
+    gujaratiPill.classList.remove('active');
+    
+    // Add active class to current language pill
     if (currentLang === 'hindi') {
         hindiPill.classList.add('active');
-        englishPill.classList.remove('active');
-    } else {
+    } else if (currentLang === 'english') {
         englishPill.classList.add('active');
-        hindiPill.classList.remove('active');
+    } else if (currentLang === 'gujarati') {
+        gujaratiPill.classList.add('active');
     }
 }
 
@@ -394,6 +429,28 @@ function resetFloatingButton() {
     floatingBtn.innerHTML = '<i class="fas fa-play"></i>';
     floatingTime.textContent = formatTime(audioPlayer.duration);
     progressCircle.style.strokeDashoffset = 138.23;
+    
+    // Auto-play next verse feature
+    if (currentVerse) {
+        const chapterVerses = verses.filter(v => v.chapter_number === currentVerse.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
+        const currentIndex = chapterVerses.findIndex(v => v.id === currentVerse.id);
+        
+        // If there's a next verse, move to it and start playing
+        if (currentIndex >= 0 && currentIndex < chapterVerses.length - 1) {
+            setTimeout(() => {
+                showVerse(chapterVerses[currentIndex + 1]);
+                // Start playing after a short delay to ensure audio is loaded
+                setTimeout(() => {
+                    audioPlayer.play().then(() => {
+                        const newFloatingBtn = document.getElementById('floating-play-pause');
+                        newFloatingBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    }).catch(error => {
+                        console.log('Auto-play failed:', error);
+                    });
+                }, 500);
+            }, 100);
+        }
+    }
 }
 
 function formatTime(seconds) {

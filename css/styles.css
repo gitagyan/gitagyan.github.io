@@ -173,9 +173,46 @@ footer p {
 
 .chapter-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 15px;
     margin-bottom: 10px;
+}
+
+.chapter-header .chapter-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.chapter-header h3 {
+    color: #A5252C;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.chapter-meaning {
+    font-size: 0.85rem;
+    color: #8D6E63;
+    font-style: italic;
+    margin: 2px 0;
+}
+
+.chapter-stats {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.verse-count {
+    background: rgba(255, 193, 7, 0.2);
+    color: #E65100;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 193, 7, 0.4);
 }
 
 .chapter-number {
@@ -214,13 +251,23 @@ footer p {
 }
 
 #chapter-title {
-    color: #D32F2F;
-    font-size: 1.5rem;
-    font-weight: 600;
     text-align: center;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     line-height: 1.3;
+}
+
+.chapter-title-name {
+    color: #A5252C;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.chapter-title-meaning {
+    color: #8D6E63;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 5px;
 }
 
 .verse-item {
@@ -286,7 +333,8 @@ footer p {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
+    padding: 0;
 }
 
 .language-pill {
@@ -294,14 +342,14 @@ footer p {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: 2px solid rgba(165, 37, 44, 0.3);
-    border-radius: 25px;
-    padding: 8px 20px;
+    border-radius: 15px;
+    padding: 4px 8px;
     color: #A5252C;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 14px;
-    min-width: 80px;
+    font-size: 11px;
+    min-width: 35px;
     text-align: center;
 }
 
@@ -318,7 +366,8 @@ footer p {
     transform: translateY(-2px);
 }
 
-#verse-content {
+/* Glass cards for verse content */
+.glass-card {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
@@ -326,7 +375,7 @@ footer p {
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
+    margin: 15px 0;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -334,7 +383,7 @@ footer p {
     overflow: hidden;
 }
 
-#verse-content::before {
+.glass-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -345,8 +394,39 @@ footer p {
     opacity: 0.7;
 }
 
-#verse-text, #verse-transliteration, #verse-translation, #verse-commentary {
-    margin-bottom: 20px;
+#verse-sanskrit-card {
+    border-color: rgba(230, 81, 0, 0.3);
+}
+
+#verse-translation-card {
+    border-color: rgba(255, 193, 7, 0.3);
+}
+
+#verse-sanskrit-card::before {
+    background: linear-gradient(90deg, transparent, rgba(230, 81, 0, 0.6), rgba(255, 87, 34, 0.6), transparent);
+}
+
+#verse-translation-card::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.6), rgba(255, 152, 0, 0.6), transparent);
+}
+
+/* Sloka number pill */
+.sloka-number-pill {
+    background: rgba(255, 193, 7, 0.2);
+    color: #E65100;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    margin: 0 auto 15px auto;
+    width: fit-content;
+    border: 1px solid rgba(255, 193, 7, 0.4);
+}
+
+#verse-text, #verse-transliteration, #verse-translation {
+    margin-bottom: 15px;
     line-height: 1.6;
 }
 
@@ -355,19 +435,29 @@ footer p {
     font-weight: bold;
     color: #E65100;
     text-align: center;
+    margin-bottom: 15px;
 }
 
 #verse-transliteration {
     font-style: italic;
-    color: #FF9800;
+    color: #5D4E75;
     text-align: center;
+    font-weight: 400;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 0;
 }
 
-#verse-translation, #verse-commentary {
+#verse-translation {
     text-align: justify;
-    padding: 10px;
-    background: rgba(255, 193, 7, 0.4);
-    border-radius: 10px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: 500;
+    color: #2C2C2C;
+    margin-bottom: 0;
+    padding: 15px;
+    background: rgba(255, 193, 7, 0.25);
+    border-radius: 12px;
 }
 
 /* Audio controls */
