@@ -36,10 +36,15 @@
             
             <div id="verse-translation-card" class="glass-card">
                 <div class="verse-card-header">
-                    <div id="language-switcher-pills">
-                        <button id="hindi-pill" class="language-pill active">हिंदी</button>
-                        <button id="english-pill" class="language-pill">English</button>
-                        <button id="gujarati-pill" class="language-pill">ગુજરાતી</button>
+                    <div class="language-controls">
+                        <div class="language-dropdown-container">
+                            <select id="language-dropdown" class="language-dropdown">
+                                <option value="english">English</option>
+                                <option value="hindi" selected>हिंदी</option>
+                                <option value="gujarati">ગુજરાતી</option>
+                            </select>
+                        </div>
+                        <button id="sarthi-ai-pill" class="sarthi-ai-pill" title="AI-powered translation and summary">✨SarthiAI</button>
                     </div>
                     <button id="bookmark-btn" class="bookmark-btn" title="Bookmark this verse">
                         <i class="fas fa-heart"></i>
@@ -121,12 +126,39 @@
                             <small><i class="fas fa-info-circle"></i> Get your free API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></small>
                         </div>
                         <div class="api-key-buttons">
-                            <button id="update-api-key-btn" class="api-key-btn icon-btn" title="Update API Key">
-                                <i class="fas fa-save"></i>
+                            <button id="update-api-key-btn" class="api-key-btn" title="Update API Key">
+                                <i class="fas fa-save"></i> Save
                             </button>
-                            <button id="remove-api-key-btn" class="api-key-btn remove-btn icon-btn" title="Remove API Key">
-                                <i class="fas fa-trash"></i>
+                            <button id="remove-api-key-btn" class="api-key-btn remove-btn" title="Remove API Key">
+                                <i class="fas fa-trash"></i> Delete
                             </button>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <h3>✨ Sarthi Translate</h3>
+                        <p>Set your preferred language for AI-powered verse translation and summary</p>
+                        <div class="language-preference-group">
+                            <select id="sarthi-translate-language" class="language-select">
+                                <option value="english">🇬🇧 English</option>
+                                <option value="hindi">🇮🇳 हिंदी (Hindi)</option>
+                                <option value="gujarati">🇮🇳 ગુજરાતી (Gujarati)</option>
+                                <option value="bengali">🇮🇳 বাংলা (Bengali)</option>
+                                <option value="tamil">🇮🇳 தமிழ் (Tamil)</option>
+                                <option value="telugu">🇮🇳 తెలుగు (Telugu)</option>
+                                <option value="marathi">🇮🇳 मराठी (Marathi)</option>
+                                <option value="kannada">🇮🇳 ಕನ್ನಡ (Kannada)</option>
+                                <option value="punjabi">🇮🇳 ਪੰਜਾਬੀ (Punjabi)</option>
+                                <option value="spanish">🇪🇸 Español (Spanish)</option>
+                                <option value="arabic">🇸🇦 العربية (Arabic)</option>
+                                <option value="chinese">🇨🇳 中文 (Chinese)</option>
+                            </select>
+                        </div>
+                        <button id="save-translate-language-btn" class="api-key-btn" title="Save Language Preference">
+                            <i class="fas fa-save"></i> Save
+                        </button>
+                        <div class="api-key-help">
+                            <small><i class="fas fa-info-circle"></i> This language will be used for AI-powered verse translations and summaries</small>
                         </div>
                     </div>
                 </div>

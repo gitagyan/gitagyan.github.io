@@ -4,11 +4,15 @@ let verses = [];
 let translations = [];
 let currentChapter = null;
 let currentVerse = null;
-let currentLang = 'hindi'; // 'english', 'hindi', or 'gujarati'
+let currentLang = 'english'; // 'english', 'hindi', or 'gujarati' - for verse translations
 let startX = 0;
 let endX = 0;
 let geminiApiKey = null;
 let previousScreen = null; // Track where user came from
+let sarthiLanguage = 'english'; // Default language for Sarthi translations
+
+// Gemini API Model Configuration
+const GEMINI_MODEL = 'gemini-2.5-flash';
 
 // DOM elements
 const chaptersScreen = document.getElementById('chapters-screen');
@@ -43,6 +47,12 @@ async function init() {
         verses = await fetch('./assets/verse.json').then(r => r.json());
         translations = await fetch('./assets/verse-translations.json').then(r => r.json());
 
+        // Load saved translation language preference
+        const savedTranslationLang = localStorage.getItem('translationLanguage');
+        if (savedTranslationLang) {
+            currentLang = savedTranslationLang;
+        }
+
         // Initialize AI
         initAI();
         
@@ -56,6 +66,7 @@ async function init() {
         setupNavigation();
         setupLangSwitcher();
         setupSwipeGestures();
+        setupSarthiTranslate();
     } catch (error) {
         console.error('Error loading data:', error);
         // Fallback: show error message
@@ -214,73 +225,38 @@ function handleVerseSliderChange(e) {
     }
 }
 
-// Setup language pills
+// Setup language dropdown
 function setupLanguagePills() {
-    const hindiPill = document.getElementById('hindi-pill');
-    const englishPill = document.getElementById('english-pill');
-    const gujaratiPill = document.getElementById('gujarati-pill');
+    const languageDropdown = document.getElementById('language-dropdown');
     
-    // Update active state based on current language
-    updatePillsActiveState();
-    
-    // Remove existing listeners
-    hindiPill.removeEventListener('click', switchToHindi);
-    englishPill.removeEventListener('click', switchToEnglish);
-    gujaratiPill.removeEventListener('click', switchToGujarati);
-    
-    // Add new listeners
-    hindiPill.addEventListener('click', switchToHindi);
-    englishPill.addEventListener('click', switchToEnglish);
-    gujaratiPill.addEventListener('click', switchToGujarati);
+    if (languageDropdown) {
+        // Set current language in dropdown
+        languageDropdown.value = currentLang;
+        
+        // Remove existing listener
+        languageDropdown.removeEventListener('change', handleLanguageChange);
+        
+        // Add new listener
+        languageDropdown.addEventListener('change', handleLanguageChange);
+    }
 }
 
-function switchToHindi() {
-    if (currentLang !== 'hindi') {
-        currentLang = 'hindi';
-        updatePillsActiveState();
+function handleLanguageChange(e) {
+    const newLang = e.target.value;
+    if (currentLang !== newLang) {
+        currentLang = newLang;
+        // Save translation language preference
+        localStorage.setItem('translationLanguage', newLang);
         if (currentVerse) {
             updateVerseContent();
         }
     }
 }
 
-function switchToEnglish() {
-    if (currentLang !== 'english') {
-        currentLang = 'english';
-        updatePillsActiveState();
-        if (currentVerse) {
-            updateVerseContent();
-        }
-    }
-}
-
-function switchToGujarati() {
-    if (currentLang !== 'gujarati') {
-        currentLang = 'gujarati';
-        updatePillsActiveState();
-        if (currentVerse) {
-            updateVerseContent();
-        }
-    }
-}
-
-function updatePillsActiveState() {
-    const hindiPill = document.getElementById('hindi-pill');
-    const englishPill = document.getElementById('english-pill');
-    const gujaratiPill = document.getElementById('gujarati-pill');
-    
-    // Remove active class from all pills
-    hindiPill.classList.remove('active');
-    englishPill.classList.remove('active');
-    gujaratiPill.classList.remove('active');
-    
-    // Add active class to current language pill
-    if (currentLang === 'hindi') {
-        hindiPill.classList.add('active');
-    } else if (currentLang === 'english') {
-        englishPill.classList.add('active');
-    } else if (currentLang === 'gujarati') {
-        gujaratiPill.classList.add('active');
+function updateLanguageDropdown() {
+    const languageDropdown = document.getElementById('language-dropdown');
+    if (languageDropdown) {
+        languageDropdown.value = currentLang;
     }
 }
 
@@ -1174,7 +1150,7 @@ Chapter X, Verse Y: [One sentence explaining why this verse is relevant]
 - Be compassionate and understanding
 - Do not include Sanskrit text or translations in your response`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${geminiApiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${geminiApiKey}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -1332,6 +1308,286 @@ function removeTypingIndicator() {
     if (typingIndicator) {
         typingIndicator.remove();
     }
+}
+
+// Sarthi Translate Functions
+function setupSarthiTranslate() {
+    // Load saved language preference
+    const savedLanguage = localStorage.getItem('sarthiLanguage');
+    if (savedLanguage) {
+        sarthiLanguage = savedLanguage;
+        const languageSelect = document.getElementById('sarthi-translate-language');
+        if (languageSelect) {
+            languageSelect.value = savedLanguage;
+        }
+    }
+    
+    // Setup save language button
+    const saveLanguageBtn = document.getElementById('save-translate-language-btn');
+    if (saveLanguageBtn) {
+        saveLanguageBtn.addEventListener('click', saveSarthiLanguage);
+    }
+    
+    // Setup SarthiAI pill click handler
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.sarthi-ai-pill')) {
+            handleSarthiAIPillClick();
+        }
+    });
+}
+
+function saveSarthiLanguage() {
+    const languageSelect = document.getElementById('sarthi-translate-language');
+    const saveBtn = document.getElementById('save-translate-language-btn');
+    
+    if (!languageSelect) return;
+    
+    const selectedLanguage = languageSelect.value;
+    
+    if (!selectedLanguage) {
+        alert('Please select a language');
+        return;
+    }
+    
+    // Show loading state
+    saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+    saveBtn.disabled = true;
+    
+    setTimeout(() => {
+        // Save to localStorage
+        localStorage.setItem('sarthiLanguage', selectedLanguage);
+        sarthiLanguage = selectedLanguage;
+        
+        // Success feedback
+        saveBtn.innerHTML = '<i class="fas fa-check"></i>';
+        
+        setTimeout(() => {
+            saveBtn.innerHTML = '<i class="fas fa-save"></i>';
+            saveBtn.disabled = false;
+        }, 2000);
+    }, 500);
+}
+
+async function handleSarthiAIPillClick() {
+    if (!geminiApiKey) {
+        alert('Please configure your API key in Settings first to use Sarthi AI.');
+        return;
+    }
+    
+    if (!currentVerse) {
+        alert('No verse selected for translation.');
+        return;
+    }
+    
+    // Get the SarthiAI pill and show loading state
+    const sarthiPill = document.querySelector('.sarthi-ai-pill');
+    const verseTranslation = document.getElementById('verse-translation');
+    
+    if (sarthiPill && verseTranslation) {
+        const originalContent = sarthiPill.innerHTML;
+        const originalTranslation = verseTranslation.innerHTML;
+        
+        sarthiPill.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+        sarthiPill.style.pointerEvents = 'none';
+        verseTranslation.innerHTML = '<div style="text-align: center; color: #666; padding: 20px;">✨ Generating AI summary...</div>';
+        
+        try {
+            const aiSummary = await getSarthiTranslation(currentVerse);
+            
+            // Show AI summary in the translation card
+            const languageNames = {
+                'english': 'English',
+                'hindi': 'Hindi', 
+                'gujarati': 'Gujarati',
+                'bengali': 'Bengali',
+                'tamil': 'Tamil',
+                'telugu': 'Telugu',
+                'marathi': 'Marathi',
+                'kannada': 'Kannada',
+                'punjabi': 'Punjabi',
+                'spanish': 'Spanish',
+                'arabic': 'Arabic',
+                'chinese': 'Chinese'
+            };
+            const displayLanguage = languageNames[sarthiLanguage] || sarthiLanguage.charAt(0).toUpperCase() + sarthiLanguage.slice(1);
+            
+            verseTranslation.innerHTML = `
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4px 8px; border-radius: 12px; font-size: 10px; font-weight: 600; margin-bottom: 10px; display: inline-block;">
+                    ✨ SarthiAI Enhanced (${displayLanguage})
+                </div>
+                <div>${aiSummary}</div>
+                <div style="font-size: 11px; color: #888; margin-top: 10px; text-align: center; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 8px;">
+                    ✨ Sarthi Language can be changed in Settings
+                </div>
+            `;
+            
+        } catch (error) {
+            console.error('Error getting Sarthi translation:', error);
+            // Restore original translation on error
+            verseTranslation.innerHTML = originalTranslation;
+            alert('Error getting AI summary. Please try again.');
+        } finally {
+            // Restore original pill state
+            sarthiPill.innerHTML = originalContent;
+            sarthiPill.style.pointerEvents = 'auto';
+        }
+    }
+}
+
+async function getSarthiTranslation(verse) {
+    // Create cache key for this chapter
+    const chapterCacheKey = `sarthi_chapter_${verse.chapter_number}`;
+    
+    // Get existing chapter cache or create new one
+    let chapterCache = {};
+    const existingCache = localStorage.getItem(chapterCacheKey);
+    if (existingCache) {
+        try {
+            chapterCache = JSON.parse(existingCache);
+        } catch (e) {
+            console.warn('Invalid cache data, creating new cache');
+            chapterCache = {};
+        }
+    }
+    
+    // Check if we have cached response for this verse and language
+    const verseKey = `${verse.verse_number}_${sarthiLanguage}`;
+    if (chapterCache[verseKey]) {
+        console.log('Loading Sarthi response from cache for verse', verse.chapter_number + '.' + verse.verse_number, 'in', sarthiLanguage);
+        return chapterCache[verseKey];
+    }
+    
+    // Language mapping for proper AI prompting
+    const languageNames = {
+        'english': 'English',
+        'hindi': 'Hindi',
+        'gujarati': 'Gujarati',
+        'bengali': 'Bengali',
+        'tamil': 'Tamil',
+        'telugu': 'Telugu',
+        'marathi': 'Marathi',
+        'kannada': 'Kannada',
+        'punjabi': 'Punjabi',
+        'spanish': 'Spanish',
+        'arabic': 'Arabic',
+        'chinese': 'Chinese'
+    };
+    
+    const languageName = languageNames[sarthiLanguage] || 'English';
+    
+    const prompt = `You are an AI spiritual guide. Provide a concise, enhanced translation/summary of this Bhagavad Gita verse in ${languageName}:
+
+Chapter ${verse.chapter_number}, Verse ${verse.verse_number}:
+Sanskrit: ${verse.text}
+
+Provide a clear, practical explanation of the verse's core teaching in 2-3 sentences. Focus on the essential spiritual wisdom and its practical application. Keep it similar in length to a regular translation but with deeper insight.
+
+IMPORTANT: You must respond ONLY in ${languageName} language. If the language is Hindi, use Devanagari script. If Gujarati, use Gujarati script. Do not mix languages or use English words unless absolutely necessary. Maximum 80 words.`;
+
+    console.log('Fetching new Sarthi response from API for verse', verse.chapter_number + '.' + verse.verse_number, 'in', sarthiLanguage);
+    
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${geminiApiKey}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            contents: [{
+                parts: [{
+                    text: prompt
+                }]
+            }]
+        })
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to get translation from Gemini API');
+    }
+
+    const data = await response.json();
+    const aiResponse = data.candidates[0].content.parts[0].text;
+    
+    // Cache the response in chapter-based structure
+    chapterCache[verseKey] = aiResponse;
+    localStorage.setItem(chapterCacheKey, JSON.stringify(chapterCache));
+    console.log('Cached Sarthi response for verse', verse.chapter_number + '.' + verse.verse_number, 'in', sarthiLanguage);
+    
+    return aiResponse;
+}
+
+function showSarthiTranslationModal(translation) {
+    // Create modal overlay
+    const modalOverlay = document.createElement('div');
+    modalOverlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+    `;
+    
+    // Create modal content
+    const modalContent = document.createElement('div');
+    modalContent.style.cssText = `
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(25px);
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 500px;
+        max-height: 80vh;
+        overflow-y: auto;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+    `;
+    
+    modalContent.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <h3 style="color: #A5252C; margin: 0; display: flex; align-items: center; gap: 8px;">
+                ✨ SarthiAI Summary
+            </h3>
+            <button id="close-sarthi-modal" style="background: none; border: none; font-size: 24px; color: #A5252C; cursor: pointer; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div style="color: #333; line-height: 1.6; font-size: 16px; white-space: pre-wrap;">${translation}</div>
+        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(165, 37, 44, 0.2); font-size: 12px; color: #666; text-align: center;">
+            Chapter ${currentVerse.chapter_number}, Verse ${currentVerse.verse_number} • Language: ${sarthiLanguage}
+        </div>
+    `;
+    
+    modalOverlay.appendChild(modalContent);
+    document.body.appendChild(modalOverlay);
+    
+    // Close modal handlers
+    function closeModal() {
+        document.body.removeChild(modalOverlay);
+    }
+    
+    modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+    
+    document.getElementById('close-sarthi-modal').addEventListener('click', closeModal);
+    
+    // Close on escape key
+    const escapeHandler = function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+            document.removeEventListener('keydown', escapeHandler);
+        }
+    };
+    document.addEventListener('keydown', escapeHandler);
 }
 
 // Start app

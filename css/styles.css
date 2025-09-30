@@ -1,3 +1,9 @@
+/* 
+ * Bhagavad Gita PWA - Main Stylesheet
+ * Features: Glass morphism, responsive design, PWA optimization
+ * Note: Uses modern CSS properties with webkit fallbacks for compatibility
+ */
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -344,6 +350,7 @@ footer p {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    line-clamp: 2; /* Standard property for future compatibility */
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -361,41 +368,50 @@ footer p {
 }
 
 /* Verse detail */
-#language-switcher-pills {
+.language-controls {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    gap: 12px;
 }
 
-.language-pill {
+.language-dropdown-container {
+    position: relative;
+}
+
+.language-dropdown {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: 2px solid rgba(165, 37, 44, 0.3);
     border-radius: 15px;
-    padding: 4px 8px;
+    padding: 6px 12px;
     color: #A5252C;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 11px;
-    min-width: 35px;
+    font-size: 12px;
+    min-width: 80px;
     text-align: center;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A5252C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 14px;
+    padding-right: 28px;
 }
 
-.language-pill.active {
-    background: #A5252C;
-    color: white;
-    border-color: #A5252C;
-    box-shadow: 0 4px 12px rgba(165, 37, 44, 0.3);
-}
-
-.language-pill:hover:not(.active) {
+.language-dropdown:hover {
     background: rgba(165, 37, 44, 0.1);
     border-color: #A5252C;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(165, 37, 44, 0.3);
+}
+
+.language-dropdown:focus {
+    border-color: #A5252C;
+    box-shadow: 0 0 0 3px rgba(165, 37, 44, 0.1);
 }
 
 /* Glass cards for verse content */
@@ -541,6 +557,7 @@ footer p {
     flex: 1;
     max-width: 300px;
     -webkit-appearance: none;
+    appearance: none;
     height: 6px;
     background: #D32F2F;
     border-radius: 5px;
@@ -879,7 +896,6 @@ footer p {
     background: rgba(165, 37, 44, 0.1);
     transform: scale(1.1);
 }
-}
 
 #ai-chat-header i {
     font-size: 20px;
@@ -893,7 +909,6 @@ footer p {
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
 }
 
 /* Chat message markdown styles */
@@ -1226,7 +1241,7 @@ footer p {
 
 .floating-menu {
     position: absolute;
-    bottom: 50px;
+    bottom: 55px;
     right: 0;
     opacity: 0;
     visibility: hidden;
@@ -1267,11 +1282,11 @@ footer p {
 
 /* Position each button with proper spacing */
 .floating-option-btn:nth-child(1) { /* Settings button */
-    bottom: 65px;
+    bottom: 5px;
 }
 
 .floating-option-btn:nth-child(2) { /* Bookmarks button */
-    bottom: 125px;
+    bottom: 65px;
 }
 
 /* Remove the close button styling since we'll use main button transformation */
@@ -1508,6 +1523,17 @@ footer p {
     box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
 }
 
+#save-translate-language-btn {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    width: 100%;
+    margin-top: 15px;
+}
+
+#save-translate-language-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
 .remove-btn {
     background: linear-gradient(135deg, #D32F2F, #B71C1C);
 }
@@ -1606,13 +1632,7 @@ footer p {
     margin-bottom: 15px;
 }
 
-#language-switcher-pills {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-}
+
 
 .bookmark-btn {
     background: rgba(255, 255, 255, 0.15);
@@ -1663,4 +1683,177 @@ footer p {
 #ai-chat-screen.active ~ .floating-settings-btn,
 #ai-setup-screen.active ~ .floating-settings-btn {
     display: none;
+}
+
+/* Sarthi Translate Settings */
+.sarthi-translate-settings {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.sarthi-translate-settings h3 {
+    color: #A5252C;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sarthi-translate-settings h3 i {
+    font-size: 20px;
+}
+
+.language-preference-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.language-select {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid rgba(165, 37, 44, 0.3);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    color: #333;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23A5252C' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 45px;
+}
+
+.language-select:focus {
+    border-color: #A5252C;
+    box-shadow: 0 0 0 3px rgba(165, 37, 44, 0.1);
+    transform: translateY(-1px);
+}
+
+.language-select:hover {
+    border-color: rgba(165, 37, 44, 0.5);
+    background: rgba(255, 255, 255, 1);
+}
+
+.language-select option {
+    padding: 10px;
+    font-size: 16px;
+    background: white;
+    color: #333;
+}
+
+.sarthi-language-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid rgba(165, 37, 44, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.sarthi-language-select:focus {
+    border-color: #A5252C;
+    box-shadow: 0 0 0 3px rgba(165, 37, 44, 0.1);
+}
+
+.save-language-btn {
+    background: linear-gradient(135deg, #A5252C, #E6A623);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.save-language-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(165, 37, 44, 0.3);
+}
+
+.save-language-btn:active {
+    transform: translateY(0);
+}
+
+/* SarthiAI Language Pill */
+.sarthi-ai-pill {
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 50%, #667eea 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 4px 15px rgba(0, 198, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.sarthi-ai-pill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.sarthi-ai-pill:hover::before {
+    left: 100%;
+}
+
+.sarthi-ai-pill:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 198, 255, 0.6);
+    background: linear-gradient(135deg, #0072ff 0%, #00c6ff 50%, #764ba2 100%);
+}
+
+.sarthi-ai-pill i {
+    font-size: 10px;
+    animation: pinPulse 2s infinite;
+}
+
+@keyframes pinPulse {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(-5deg) scale(1.1); }
+}
+
+.sarthi-ai-pill .sparkle {
+    font-size: 10px;
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
 }
