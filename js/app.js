@@ -12,7 +12,8 @@ let previousScreen = null; // Track where user came from
 let sarthiLanguage = 'english'; // Default language for Sarthi translations
 
 // Gemini API Model Configuration
-const GEMINI_MODEL = 'gemini-2.5-flash';
+const GEMINI_CHAT_MODEL = 'gemini-2.5-flash-lite';
+const GEMINI_TRANSLATION_MODEL = 'gemini-2.5-flash-lite';
 
 // DOM elements
 const chaptersScreen = document.getElementById('chapters-screen');
@@ -1126,31 +1127,21 @@ async function sendMessage() {
 }
 
 async function callGeminiAPI(userMessage) {
-    const systemPrompt = `You are "Sarthi AI", a spiritual guide who helps users find relevant verses from the Bhagavad Gita based on their life questions or situations. You have deep knowledge of the Bhagavad Gita and can relate modern life problems to ancient wisdom.
+    const combinedPrompt = `You are Sarthi AI. Help users by recommending 3 relevant Bhagavad Gita verses for their questions.
 
-**IMPORTANT INSTRUCTIONS:**
-1. You must ALWAYS respond only in English language, regardless of the user's input language
-2. Never respond in Hindi, Sanskrit, or any other language - only English
-3. For each user query, recommend exactly 3 relevant slokas (verses) from the Bhagavad Gita
-4. Keep your response concise and focused on practical spiritual guidance
+User Question: ${userMessage}
 
-**Response Format (MUST be followed exactly):**
-Briefly acknowledge the user's concern and provide spiritual guidance in 2-3 sentences.
+Respond in this format:
+Brief guidance (2-3 sentences)
 
-**Recommended Slokas:**
-Chapter X, Verse Y: [One sentence explaining why this verse is relevant]
-Chapter X, Verse Y: [One sentence explaining why this verse is relevant]  
-Chapter X, Verse Y: [One sentence explaining why this verse is relevant]
+Recommended Verses:
+Chapter X, Verse Y: Why this verse helps
+Chapter X, Verse Y: Why this verse helps  
+Chapter X, Verse Y: Why this verse helps
 
-**Important Guidelines:**
-- All responses must be in English only
-- Only recommend verses that exist in the Bhagavad Gita (Chapters 1-18)
-- Keep explanations brief and practical
-- Focus on actionable spiritual wisdom
-- Be compassionate and understanding
-- Do not include Sanskrit text or translations in your response`;
+Keep it concise and practical.`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${geminiApiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_CHAT_MODEL}:generateContent?key=${geminiApiKey}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -1158,23 +1149,70 @@ Chapter X, Verse Y: [One sentence explaining why this verse is relevant]
         body: JSON.stringify({
             contents: [{
                 parts: [
-                    { text: systemPrompt },
-                    { text: `User Input: ${userMessage}` }
+                    { text: combinedPrompt }
                 ]
             }],
             generationConfig: {
                 temperature: 0.7,
-                maxOutputTokens: 500,
+                maxOutputTokens: 800,
             }
         })
     });
 
     if (!response.ok) {
-        throw new Error('API call failed');
+        const errorText = await response.text();
+        console.error('API Error Response:', errorText);
+        throw new Error(`API call failed: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();
-    return data.candidates[0].content.parts[0].text.trim();
+    console.log('API Response:', data);
+    
+    // Check if candidates array exists and has content
+    if (!data.candidates || data.candidates.length === 0) {
+        console.error('No candidates in API response:', data);
+        throw new Error('No response from AI service');
+    }
+    
+    const candidate = data.candidates[0];
+    console.log('First candidate:', candidate);
+    
+    // Check if candidate has content
+    if (!candidate.content) {
+        console.error('No content in candidate:', candidate);
+        throw new Error('AI service returned empty response');
+    }
+    
+    console.log('Candidate content:', candidate.content);
+    
+    // Check if content has parts
+    if (!candidate.content.parts || candidate.content.parts.length === 0) {
+        console.error('No parts in content:', candidate.content);
+        console.error('Full candidate:', candidate);
+        
+        // Check if this is a safety/content filter issue
+        if (candidate.finishReason === 'SAFETY' || candidate.finishReason === 'BLOCKED_REASON_UNSPECIFIED') {
+            throw new Error('Response was blocked by content filters. Please try rephrasing your question.');
+        }
+        
+        // Check if response was cut off due to token limit
+        if (candidate.finishReason === 'MAX_TOKENS') {
+            throw new Error('Response was too long and got cut off. Please try a more specific question.');
+        }
+        
+        throw new Error('AI service returned no content. Please try again with a different question.');
+    }
+    
+    const part = candidate.content.parts[0];
+    console.log('First part:', part);
+    
+    // Check if part has text
+    if (!part.text) {
+        console.error('No text in part:', part);
+        throw new Error('AI service returned no text');
+    }
+    
+    return part.text.trim();
 }
 
 function displaySlokaResponse(response) {
@@ -1415,8 +1453,8 @@ async function handleSarthiAIPillClick() {
                 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4px 8px; border-radius: 12px; font-size: 10px; font-weight: 600; margin-bottom: 10px; display: inline-block;">
                     ✨ SarthiAI Enhanced (${displayLanguage})
                 </div>
-                <div>${aiSummary}</div>
-                <div style="font-size: 11px; color: #888; margin-top: 10px; text-align: center; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 8px;">
+                <div>${parseMarkdown(aiSummary)}</div>
+                <div style="font-size: 11px; color: #A5252C; margin-top: 10px; text-align: center; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 8px;">
                     ✨ Sarthi Language can be changed in Settings
                 </div>
             `;
@@ -1486,7 +1524,7 @@ IMPORTANT: You must respond ONLY in ${languageName} language. If the language is
 
     console.log('Fetching new Sarthi response from API for verse', verse.chapter_number + '.' + verse.verse_number, 'in', sarthiLanguage);
     
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${geminiApiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_TRANSLATION_MODEL}:generateContent?key=${geminiApiKey}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -1501,11 +1539,44 @@ IMPORTANT: You must respond ONLY in ${languageName} language. If the language is
     });
 
     if (!response.ok) {
-        throw new Error('Failed to get translation from Gemini API');
+        const errorText = await response.text();
+        console.error('Sarthi API Error Response:', errorText);
+        throw new Error(`Failed to get translation from Gemini API: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();
-    const aiResponse = data.candidates[0].content.parts[0].text;
+    console.log('Sarthi API Response:', data);
+    
+    // Check if candidates array exists and has content
+    if (!data.candidates || data.candidates.length === 0) {
+        console.error('No candidates in Sarthi API response:', data);
+        throw new Error('No response from Sarthi AI service');
+    }
+    
+    const candidate = data.candidates[0];
+    console.log('Sarthi first candidate:', candidate);
+    
+    // Check if candidate has content
+    if (!candidate.content) {
+        console.error('No content in Sarthi candidate:', candidate);
+        throw new Error('Sarthi AI service returned empty response');
+    }
+    
+    // Check if content has parts
+    if (!candidate.content.parts || candidate.content.parts.length === 0) {
+        console.error('No parts in Sarthi content:', candidate.content);
+        throw new Error('Sarthi AI service returned malformed response');
+    }
+    
+    const part = candidate.content.parts[0];
+    
+    // Check if part has text
+    if (!part.text) {
+        console.error('No text in Sarthi part:', part);
+        throw new Error('Sarthi AI service returned no text');
+    }
+    
+    const aiResponse = part.text;
     
     // Cache the response in chapter-based structure
     chapterCache[verseKey] = aiResponse;
@@ -1558,7 +1629,7 @@ function showSarthiTranslationModal(translation) {
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        <div style="color: #333; line-height: 1.6; font-size: 16px; white-space: pre-wrap;">${translation}</div>
+        <div style="color: #333; line-height: 1.6; font-size: 16px;">${parseMarkdown(translation)}</div>
         <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(165, 37, 44, 0.2); font-size: 12px; color: #666; text-align: center;">
             Chapter ${currentVerse.chapter_number}, Verse ${currentVerse.verse_number} • Language: ${sarthiLanguage}
         </div>
