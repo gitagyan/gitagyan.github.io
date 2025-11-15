@@ -62,7 +62,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: url('krishna-and-arjuna.jpg') no-repeat center center fixed;
+    background: url('../images/krishna-and-arjuna.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
     display: flex;
