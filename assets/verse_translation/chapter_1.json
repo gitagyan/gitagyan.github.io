@@ -1,0 +1,1083 @@
+[
+  {
+    "id": 1,
+    "sloka": "1.1",
+    "verse_id": 1,
+    "verseNumber": 1,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "धृतराष्ट्र ने कहा -- हे संजय ! धर्मभूमि कुरुक्षेत्र में एकत्र हुए युद्ध के इच्छुक (युयुत्सव:) मेरे और पाण्डु के पुत्रों ने क्या किया?  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Dhritarashtra said, \"What did my people and the sons of Pandu do when they had assembled together, eager for battle, on the holy plain of Kurukshetra, O Sanjaya?\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ધૃતરાષ્ટ્રે કહ્યું -- હે સંજય! ધર્મભૂમિ કુરુક્ષેત્રમાં યુદ્ધની ઈચ્છાથી એકત્ર થયેલા મારા અને પાંડુના પુત્રોએ શું કર્યું?"
+      }
+    }
+  },
+  {
+    "id": 2,
+    "sloka": "1.2",
+    "verse_id": 2,
+    "verseNumber": 2,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "संजय ने कहा -- पाण्डव-सैन्य की व्यूह रचना देखकर राजा दुर्योधन ने आचार्य द्रोण के पास जाकर ये वचन कहे।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Sanjaya said: Having seen the army of the Pandavas drawn up in battle array, King Duryodhana approached his teacher, Drona, and spoke these words."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સંજયે કહ્યું -- પાંડવોની સેનાની વ્યૂહરચના જોઈને, રાજા દુર્યોધન આચાર્ય દ્રોણ પાસે ગયા અને આ વચન કહ્યું."
+      }
+    }
+  },
+  {
+    "id": 3,
+    "sloka": "1.3",
+    "verse_id": 3,
+    "verseNumber": 3,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे आचार्य ! आपके बुद्धिमान शिष्य द्रुपदपुत्र (धृष्टद्द्युम्न) द्वारा व्यूहाकार खड़ी की गयी पाण्डु पुत्रों की इस महती सेना को देखिये।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Behold, O Teacher! This mighty army of the sons of Pandu, arrayed by the son of Drupada, thy wise disciple."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે આચાર્ય! તમારા બુદ્ધિમાન શિષ્ય, દ્રુપદપુત્ર (ધૃષ્ટદ્યુમ્ન) દ્વારા વ્યૂહાકારે ગોઠવાયેલી પાંડુપુત્રોની આ વિશાળ સેનાને જુઓ."
+      }
+    }
+  },
+  {
+    "id": 4,
+    "sloka": "1.4",
+    "verse_id": 4,
+    "verseNumber": 4,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इस सेना में महान् धनुर्धारी शूर योद्धा है ,  जो युद्ध में भीम और अर्जुन के समान हैं , जैसे --  युयुधान, विराट तथा महारथी राजा द्रुपद।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Here are heroes, mighty archers, equal in battle to Bhima and Arjuna, Yuyudhana (Satyaki), Virata, and Drupada—all mighty warriors."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આ સેનામાં મહાન ધનુર્ધારી અને શૂરવીર યોદ્ધાઓ છે, જે યુદ્ધમાં ભીમ અને અર્જુન સમાન છે — જેમ કે યુયુધાન, વિરાટ અને મહારથી રાજા દ્રુપદ."
+      }
+    }
+  },
+  {
+    "id": 5,
+    "sloka": "1.5",
+    "verse_id": 5,
+    "verseNumber": 5,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "धृष्टकेतु, चेकितान, बलवान काशिराज,  पुरुजित्, कुन्तिभोज और मनुष्यों में श्रेष्ठ शैब्य।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Dhrishtaketu, Chekitana, the valiant king of Kasi, Purujit, Kuntibhoja, and Saibya—the best of men."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ધૃષ્ટકેતુ, ચેકિતાન, બળવાન કાશીરાજ, પુરુજિત, કુંતિભોજ અને પુરુષોમાં શ્રેષ્ઠ શૈબ્ય."
+      }
+    }
+  },
+  {
+    "id": 6,
+    "sloka": "1.6",
+    "verse_id": 6,
+    "verseNumber": 6,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "पराक्रमी युधामन्यु,  बलवान् उत्तमौजा,  सुभद्रापुत्र (अभिमन्यु) और द्रोपदी के पुत्र -- ये सब महारथी हैं।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The strong Yudhamanyu and the brave Uttamaujas, the son of Subhadra (Abhimanyu, the son of Subhadra and Arjuna), and the sons of Draupadi, all of them great charioteers (great heroes).\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરાક્રમી યુધામન્યુ, બળવાન ઉત્તમૌજા, સુભદ્રાપુત્ર (અભિમન્યુ) અને દ્રૌપદીના પુત્રો — આ સૌ મહારથી છે."
+      }
+    }
+  },
+  {
+    "id": 7,
+    "sloka": "1.7",
+    "verse_id": 7,
+    "verseNumber": 7,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे द्विजोत्तम ! हमारे पक्ष में भी जो विशिष्ट योद्धागण हैं , उनको आप जान लीजिये; आपकी जानकारी के लिये अपनी सेना के नायकों के नाम मैं आपको बताता हूँ।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Know also, O best among the twice-born! the names of those who are the most distinguished amongst ourselves, the leaders of my army; these I name to you for your information."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે દ્વિજોત્તમ! હવે આપણા પક્ષમાં પણ જે વિશિષ્ટ યોદ્ધાઓ છે, તેમને આપ જાણી લો. તમારી જાણકારી માટે હું મારી સેનાના નાયકોના નામ આપને જણાવું છું."
+      }
+    }
+  },
+  {
+    "id": 8,
+    "sloka": "1.8",
+    "verse_id": 8,
+    "verseNumber": 8,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "एक तो स्वयं आप, भीष्म, कर्ण, और युद्ध विजयी कृपाचार्य तथा अश्वत्थामा, विकर्ण और सोमदत्त का पुत्र है।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "\"Thou thyself, Bhishma, Karna, Kripa, the victorious in war, Asvatthama, Vikarna, and Bhurisrava, the son of Somadatta—all these are ready for battle.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "એક તો સ્વયં આપ, ભીષ્મ, કર્ણ અને યુદ્ધવિજયી કૃપાચાર્ય તથા અશ્વત્થામા, વિકર્ણ અને સોમદત્તનો પુત્ર ભૂરિશ્રવા."
+      }
+    }
+  },
+  {
+    "id": 9,
+    "sloka": "1.9",
+    "verse_id": 9,
+    "verseNumber": 9,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मेरे लिए प्राण त्याग करने के लिए तैयार, अनेक प्रकार के शस्त्रास्त्रों से सुसज्जित तथा युद्ध में कुशल और भी अनेक शूर वीर हैं।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "And also many other heroes, ready to give up their lives for my sake, armed with various weapons and missiles, all well-skilled in battle."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અને બીજા પણ ઘણા શૂરવીરો છે જેઓ મારે માટે પોતાના પ્રાણ ત્યાગવા તૈયાર છે. તેઓ અનેક પ્રકારના શસ્ત્રાસ્ત્રોથી સુસજ્જ અને યુદ્ધકળામાં નિપુણ છે."
+      }
+    }
+  },
+  {
+    "id": 10,
+    "sloka": "1.10",
+    "verse_id": 10,
+    "verseNumber": 10,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "भीष्म के द्वारा हमारी रक्षित सेना अपर्याप्त है; किन्तु भीम द्वारा रक्षित उनकी सेना पर्याप्त है अथवा, भीष्म के द्वारा रक्षित हमारी सेना अपरिमित है किन्तु भीम के द्वारा रक्षित उनकी सेना परिमित ही है।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Our army, marshalled by Bhishma, is insufficient, whereas theirs, marshalled by Bhima, is sufficient."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ભીષ્મપિતામહ દ્વારા રક્ષાયેલી આપણી સેના સર્વ પ્રકારે અજેય છે, જ્યારે ભીમ દ્વારા રક્ષાયેલી એમની સેના મર્યાદિત છે."
+      }
+    }
+  },
+  {
+    "id": 11,
+    "sloka": "1.11",
+    "verse_id": 11,
+    "verseNumber": 11,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "विभिन्न मोर्चों पर अपने-अपने स्थान पर स्थित रहते हुए आप सब लोग भीष्म पितामह की ही सब ओर से रक्षा करें।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Therefore, do all of you, stationed in your respective positions in the several divisions of the army, protect Bhishma alone."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આથી, પોતપોતાના મોરચે રહીને, આપ સૌ બધી બાજુથી ફક્ત ભીષ્મપિતામહની જ રક્ષા કરો."
+      }
+    }
+  },
+  {
+    "id": 12,
+    "sloka": "1.12",
+    "verse_id": 12,
+    "verseNumber": 12,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "उस समय कौरवों में वृद्ध, प्रतापी पितामह भीष्म ने उस (दुर्योधन) के हृदय में हर्ष उत्पन्न करते हुये उच्च स्वर में गरज कर शंखध्वनि की।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "His glorious grandsire, the oldest of the Kauravas, roared like a lion to cheer Duryodhana and blew his conch."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ત્યારે, કૌરવોમાં સૌથી વૃદ્ધ, પ્રતાપી પિતામહ ભીષ્મે દુર્યોધનને હર્ષ પમાડતા, સિંહની જેમ ગર્જના કરીને ઉચ્ચ સ્વરે શંખનાદ કર્યો."
+      }
+    }
+  },
+  {
+    "id": 13,
+    "sloka": "1.13",
+    "verse_id": 13,
+    "verseNumber": 13,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "तत्पश्चात् शंख, नगारे, ढोल व शृंगी आदि वाद्य एक साथ ही बज उठे, जिनका बड़ा भयंकर शब्द हुआ।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Then, suddenly, conches, kettledrums, tabors, drums, and cow horns blared forth from the Kaurava side, and the sound was tremendous."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ત્યારપછી શંખ, નગારા, ઢોલ અને રણશિંગા જેવા વાજિંત્રો એકસાથે વાગી ઊઠ્યા, અને તેમનો અવાજ અત્યંત ભયંકર હતો."
+      }
+    }
+  },
+  {
+    "id": 14,
+    "sloka": "1.14",
+    "verse_id": 14,
+    "verseNumber": 14,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इसके उपरान्त श्वेत अश्वों से युक्त भव्य रथ में बैठे हुये माधव (श्रीकृष्ण) और पाण्डुपुत्र अर्जुन ने भी अपने दिव्य शंख बजाये।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Then, Madhava (Krishna) and the son of Pandu (Arjuna), seated in the magnificent chariot yoked with white horses, blew divine conches."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ત્યારપછી, સફેદ ઘોડાઓ જોડેલા ભવ્ય રથમાં બિરાજમાન શ્રીકૃષ્ણ (માધવ) અને અર્જુન (પાંડુપુત્ર) એ પણ પોતાના દિવ્ય શંખ વગાડ્યા."
+      }
+    }
+  },
+  {
+    "id": 15,
+    "sloka": "1.15",
+    "verse_id": 15,
+    "verseNumber": 15,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "भगवान् हृषीकेश ने पांचजन्य, धनंजय (अर्जुन) ने देवदत्त तथा भयंकर कर्म करने वाले भीम ने पौण्डू नामक महाशंख बजाया।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Hrishikesha blew the Panchajanya, Arjuna blew the Devadatta, and Bhima, the wolf-bellied doer of terrible deeds, blew the great conch Paundra."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ભગવાન હૃષીકેશે પાંચજન્ય નામનો, અર્જુને દેવદત્ત નામનો અને ભયંકર કર્મો કરનાર ભીમસેને પૌંડ્ર નામનો મહાશંખ વગાડ્યો."
+      }
+    }
+  },
+  {
+    "id": 16,
+    "sloka": "1.16",
+    "verse_id": 16,
+    "verseNumber": 16,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "कुन्तीपुत्र राजा युधिष्ठिर ने अनन्त विजय नामक शंख और नकुल व सहदेव ने क्रमश:  सुघोष और मणिपुष्पक नामक शंख बजाये।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "King Yudhishthira, the son of Kunti, blew the Anantavijaya; Nakula and Sahadeva blew the Sughosha and the Manipushpaka."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કુંતીપુત્ર રાજા યુધિષ્ઠિરે અનંતવિજય નામનો શંખ અને નકુલ તથા સહદેવે અનુક્રમે સુઘોષ અને મણિપુષ્પક નામના શંખ વગાડ્યા."
+      }
+    }
+  },
+  {
+    "id": 17,
+    "sloka": "1.17",
+    "verse_id": 17,
+    "verseNumber": 17,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्रेष्ठ धनुषवाले काशिराज, महारथी शिखण्डी, धृष्टद्युम्न,  राजा विराट और अजेय सात्यकि।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The king of Kasi, an excellent archer, Sikhandi, the mighty car-warrior, Dhrishtadyumna, Virata, and Satyaki, the unconquered."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "શ્રેષ્ઠ ધનુર્ધારી કાશીરાજ, મહારથી શિખંડી, ધૃષ્ટદ્યુમ્ન, વિરાટ અને અજેય સાત્યકિ."
+      }
+    }
+  },
+  {
+    "id": 18,
+    "sloka": "1.18",
+    "verse_id": 18,
+    "verseNumber": 18,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे राजन् ! राजा द्रुपद,  द्रौपदी के पुत्र और महाबाहु सौभद्र (अभिमन्यु) इन सब ने अलग-अलग शंख बजाये।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Drupada and the sons of Draupadi, O Lord of the Earth, and the son of Subhadra, the mighty-armed, blew their conches each separately."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે રાજન! દ્રુપદ, દ્રૌપદીના પુત્રો અને મહાબાહુ સુભદ્રાપુત્ર અભિમન્યુ, આ સૌએ પણ પોતપોતાના શંખ વગાડ્યા."
+      }
+    }
+  },
+  {
+    "id": 19,
+    "sloka": "1.19",
+    "verse_id": 19,
+    "verseNumber": 19,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "वह भयंकर घोष आकाश और पृथ्वी पर गूँजने लगा और उसने धृतराष्ट्र के पुत्रों के हृदय विदीर्ण कर दिये।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The tumultuous sound rent the hearts of Dhritarashtra's party, reverberating through both heaven and earth."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે ભયંકર શબ્દથી આકાશ અને પૃથ્વી ગુંજી ઊઠ્યા અને તેણે ધૃતરાષ્ટ્રના પુત્રો (કૌરવો) ના હૃદય ચીરી નાખ્યા."
+      }
+    }
+  },
+  {
+    "id": 20,
+    "sloka": "1.20",
+    "verse_id": 20,
+    "verseNumber": 20,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे महीपते ! इस प्रकार जब युद्ध प्रारम्भ होने वाला ही था कि कपिध्वज अर्जुन ने धृतराष्ट्र के पुत्रों को स्थित देखकर धनुष उठाकर भगवान् हृषीकेश से ये शब्द कहे।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Then, seeing the people of Dhritarashtra's party standing arrayed and the discharge of weapons about to begin, Arjuna, the son of Pandu whose ensign was a monkey, took up his bow and said the following to Krishna, O Lord of the Earth."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે રાજન! હવે જેમની ધજા પર હનુમાનજી બિરાજમાન છે તેવા અર્જુને, ધૃતરાષ્ટ્રના પુત્રોને યુદ્ધ માટે તૈયાર જોઈને, શસ્ત્રપ્રહારની તૈયારી સમયે, પોતાનું ધનુષ્ય ઉપાડીને ભગવાન હૃષીકેશને આ વચન કહ્યું."
+      }
+    }
+  },
+  {
+    "id": 21,
+    "sloka": "1.21",
+    "verse_id": 21,
+    "verseNumber": 21,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अर्जुन ने कहा -- हे! अच्युत मेरे रथ को दोनों सेनाओं के मध्य खड़ा कीजिये।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Arjuna said, \"O Krishna, place my chariot in the middle between the two armies, so that I may behold those who stand here, desirous to fight, and know with whom I must fight when the battle is about to commence.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અર્જુને કહ્યું -- હે અચ્યુત! મારા રથને બંને સેનાઓની વચ્ચે ઊભો રાખો."
+      }
+    }
+  },
+  {
+    "id": 22,
+    "sloka": "1.22",
+    "verse_id": 22,
+    "verseNumber": 22,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जिससे मैं युद्ध की इच्छा से खड़े इन लोगों का निरीक्षण कर सकूँ कि इस युद्ध में मुझे किनके साथ युद्ध करना है।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Arjuna said, \"O Krishna, place my chariot in the middle between the two armies, so that I may behold those who stand here, desirous to fight, and know with whom I must fight when the battle is about to commence.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેથી હું અહીં યુદ્ધની ઈચ્છાથી ઊભેલા લોકોને બરાબર જોઈ શકું અને જાણી શકું કે આ યુદ્ધમાં મારે કોની કોની સાથે લડવાનું છે."
+      }
+    }
+  },
+  {
+    "id": 23,
+    "sloka": "1.23",
+    "verse_id": 23,
+    "verseNumber": 23,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "दुर्बुद्धि धार्तराष्ट्र (दुर्योधन) का युद्ध में प्रिय चाहने वाले जो ये राजा लोग यहाँ एकत्र हुए हैं, उन युद्ध करने वालों को मैं देखूँगा।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "For I desire to observe those who are assembled here to fight, wishing to please in battle the evil-minded Duryodhana—the son of Dhritarashtra."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હું એ યોદ્ધાઓને જોવા માંગુ છું જેઓ અહીં દુર્બુદ્ધિ દુર્યોધન(ધૃતરાષ્ટ્રના પુત્ર)ને યુદ્ધમાં પ્રસન્ન કરવાની ઈચ્છાથી એકત્ર થયા છે."
+      }
+    }
+  },
+  {
+    "id": 24,
+    "sloka": "1.24",
+    "verse_id": 24,
+    "verseNumber": 24,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "संजय ने कहा -- हे भारत (धृतराष्ट्र) ! अर्जुन के इस प्रकार कहने पर भगवान् हृषीकेश ने दोनों सेनाओं के मध्य उत्तम रथ को खड़ा करके।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Sanjaya said, Thus addressed by Arjuna, Krishna stationed the best of chariots, O Dhritarashtra, in the midst of the two armies."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સંજયે કહ્યું -- હે ભરતવંશી (ધૃતરાષ્ટ્ર)! અર્જુને આમ કહેતા, ભગવાન હૃષીકેશે તે ઉત્તમ રથને બંને સેનાઓની વચ્ચે ઊભો રાખ્યો."
+      }
+    }
+  },
+  {
+    "id": 25,
+    "sloka": "1.25",
+    "verse_id": 25,
+    "verseNumber": 25,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "भीष्म, द्रोण तथा पृथ्वी के समस्त शासकों के समक्ष उन्होंने कहा, \"हे पार्थ यहाँ एकत्र हुये कौरवों को देखो\"।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "In front of Bhishma and Drona, and all the rulers of the earth, he said: \"O Arjuna, son of Pritha, behold these Kurus gathered together.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અને ભીષ્મ, દ્રોણ તથા પૃથ્વીના સર્વ શાસકોની સામે કહ્યું, \"હે પાર્થ! અહીં એકત્ર થયેલા આ કૌરવોને જો.\""
+      }
+    }
+  },
+  {
+    "id": 26,
+    "sloka": "1.26",
+    "verse_id": 26,
+    "verseNumber": 26,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "वहाँ अर्जुन ने उन दोनों सेनाओं में खड़े पिता के भाइयों,  पितामहों,  आचार्यों,  मामाओं, भाइयों, पुत्रों,  पौत्रों,  मित्रों,  श्वसुरों और सुहृदों को भी देखा।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Then, Arjuna (son of Pritha) saw there (in the armies) stationed fathers, grandfathers, teachers, maternal uncles, brothers, sons, grandsons, and friends."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ત્યાં અર્જુને બંને સેનાઓમાં ઉપસ્થિત પોતાના કાકા-દાદાઓ, પિતામહો, આચાર્યો, મામાઓ, ભાઈઓ, પુત્રો, પૌત્રો તથા મિત્રોને જોયા."
+      }
+    }
+  },
+  {
+    "id": 27,
+    "sloka": "1.27",
+    "verse_id": 27,
+    "verseNumber": 27,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इस प्रकार उन सब बन्धु-बान्धवों को खड़े देखकर कुन्ती पुत्र अर्जुन का मन करुणा से भर गया और विषादयुक्त होकर उसने यह कहा।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He saw fathers-in-law and friends in both the armies. The son of Kunti, Arjuna, seeing all those kinsmen thus standing arrayed, spoke sorrowfully, deeply filled with pity."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તથા સસરાઓ અને શુભચિંતકોને પણ જોયા. તે બધા જ સ્વજનોને ત્યાં ઉપસ્થિત જોઈને, કુંતીપુત્ર અર્જુન અત્યંત કરુણાથી ભરાઈ ગયો અને શોક સાથે આ વચન બોલ્યો."
+      }
+    }
+  },
+  {
+    "id": 28,
+    "sloka": "1.28",
+    "verse_id": 28,
+    "verseNumber": 28,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अर्जुन ने कहा -- हे कृष्ण ! युद्ध की इच्छा रखकर उपस्थित हुए इन स्वजनों को देखकर मेरे अंग शिथिल हुये जाते हैं, मुख भी सूख रहा है और मेरे शरीर में कम्प तथा रोमांच हो रहा है।।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Arjuna said, \"O Krishna, seeing my kinsmen arrayed here, eager to fight,"
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અર્જુને કહ્યું -- હે કૃષ્ણ! યુદ્ધની ઈચ્છાથી અહીં એકત્ર થયેલા આ મારા સ્વજનોને જોઈને મારા અંગો શિથિલ થઈ રહ્યા છે અને મોં સુકાઈ રહ્યું છે."
+      }
+    }
+  },
+  {
+    "id": 29,
+    "sloka": "1.29",
+    "verse_id": 29,
+    "verseNumber": 29,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अर्जुन ने कहा -- हे कृष्ण !  युद्ध की इच्छा रखकर उपस्थित हुए इन स्वजनों को देखकर मेरे अंग शिथिल हुये जाते हैं,  मुख भी सूख रहा है और मेरे शरीर में कम्प तथा रोमांच हो रहा है।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "My limbs fail, my mouth is parched, my body quivers, and my hair stands on end."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મારા શરીરમાં કંપારી છૂટી રહી છે અને રૂંવાડા ઊભા થઈ ગયા છે."
+      }
+    }
+  },
+  {
+    "id": 30,
+    "sloka": "1.30",
+    "verse_id": 30,
+    "verseNumber": 30,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मेरे हाथ से गाण्डीव (धनुष) गिर रहा है और त्वचा जल रही है। मेरा मन भ्रमित सा हो रहा है,  और मैं खड़े रहने में असमर्थ हूँ।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Gandiva slips from my hand, and my skin burns all over; I am unable to stand, and my mind is reeling, as it were."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મારા હાથમાંથી ગાંડીવ ધનુષ્ય સરી રહ્યું છે અને મારી ત્વચામાં બળતરા થઈ રહી છે. મારું મન ભ્રમિત થઈ રહ્યું છે અને હું ઊભા રહેવા માટે પણ અસમર્થ છું."
+      }
+    }
+  },
+  {
+    "id": 31,
+    "sloka": "1.31",
+    "verse_id": 31,
+    "verseNumber": 31,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे केशव ! मैं शकुनों को भी विपरीत ही देख रहा हूँ और युद्ध में (आहवे) अपने स्वजनों को मारकर कोई कल्याण भी नहीं देखता हूँ।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "And I see ill omens, O Kesava. I do not see any good in slaying my kinsmen in battle."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે કેશવ! મને વિપરીત શુકનો દેખાઈ રહ્યા છે. યુદ્ધમાં પોતાના જ સ્વજનોને મારીને મને કોઈ કલ્યાણ દેખાતું નથી."
+      }
+    }
+  },
+  {
+    "id": 32,
+    "sloka": "1.32",
+    "verse_id": 32,
+    "verseNumber": 32,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कृष्ण ! मैं न विजय चाहता हूँ, न राज्य और न सुखों को ही चाहता हूँ। हे गोविन्द ! हमें राज्य से अथवा भोगों से और जीने से भी क्या प्रयोजन है?।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "I desire not victory, O Krishna, nor kingdom, nor pleasures.What use is dominion to us, O Krishna, or pleasures or even life?"
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે કૃષ્ણ! હું વિજય, રાજ્ય કે સુખની ઈચ્છા રાખતો નથી. હે ગોવિંદ! અમને આવા રાજ્ય, ભોગ કે જીવનથી પણ શું લાભ?"
+      }
+    }
+  },
+  {
+    "id": 33,
+    "sloka": "1.33",
+    "verse_id": 33,
+    "verseNumber": 33,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हमें जिनके लिये राज्य,  भोग और सुखादि की इच्छा है,  वे ही लोग धन और जीवन की आशा को त्यागकर युद्ध में खड़े हैं।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Those for whose sake we desire kingdom, enjoyments, and pleasures stand here in battle, having renounced life and wealth."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેમના માટે આપણે રાજ્ય, ભોગ અને સુખ ઈચ્છીએ છીએ, તેઓ જ આજે પોતાના પ્રાણ અને ધનની આશા ત્યાગીને યુદ્ધમાં ઊભા છે."
+      }
+    }
+  },
+  {
+    "id": 34,
+    "sloka": "1.34",
+    "verse_id": 34,
+    "verseNumber": 34,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "वे लोग गुरुजन,  ताऊ,  चाचा,  पुत्र,  पितामह,   श्वसुर,  पोते,  श्यालक तथा अन्य सम्बन्धी हैं।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Teachers, fathers, sons, and grandfathers, maternal uncles, fathers-in-law, grandsons, brothers-in-law, and other relatives—"
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અહીં આચાર્યો, પિતાઓ, પુત્રો, પિતામહો, મામાઓ, સસરાઓ, પૌત્રો, સાળાઓ અને અન્ય સંબંધીઓ જ છે."
+      }
+    }
+  },
+  {
+    "id": 35,
+    "sloka": "1.35",
+    "verse_id": 35,
+    "verseNumber": 35,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे मधुसूदन !  इनके मुझे मारने पर अथवा त्रैलोक्य के राज्य के लिये भी मैं इनको मारना नहीं चाहता,  फिर पृथ्वी के लिए कहना ही क्या है।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "These I do not wish to kill, O Krishna, even though they kill me, for the sake of dominion over the three worlds; leave alone killing them for the sake of the earth.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે મધુસૂદન! ભલે તેઓ મને મારી નાખે, તો પણ હું તેમને મારવા નથી ઈચ્છતો, ત્રણેય લોકના રાજ્ય માટે પણ નહીં, તો પછી આ પૃથ્વી માટે તો શું કહેવું?"
+      }
+    }
+  },
+  {
+    "id": 36,
+    "sloka": "1.36",
+    "verse_id": 36,
+    "verseNumber": 36,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे जनार्दन ! धृतराष्ट्र के पुत्रों की हत्या करके हमें क्या प्रसन्नता होगी?  इन आततायियों को मारकर तो हमें केवल पाप ही लगेगा।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "By killing these sons of Dhritarashtra, what pleasure could be ours, O Janardana? Only sin would accrue to us from killing these felons."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે જનાર્દન! ધૃતરાષ્ટ્રના પુત્રોને મારીને અમને શો આનંદ મળશે? આ આતતાયીઓને મારીને તો અમને માત્ર પાપ જ લાગશે."
+      }
+    }
+  },
+  {
+    "id": 37,
+    "sloka": "1.37",
+    "verse_id": 37,
+    "verseNumber": 37,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे माधव  !  इसलिये अपने बान्धव धृतराष्ट्र के पुत्रों को मारना हमारे लिए योग्य नहीं है,  क्योंकि स्वजनों को मारकर हम कैसे सुखी होंगे।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Therefore, we should not kill the sons of Dhritarashtra, our relatives; for how can we be happy by killing our own kin, O Madhava (Krishna)?"
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આથી, હે માધવ! આપણા જ બાંધવ, ધૃતરાષ્ટ્રના પુત્રોનો વધ કરવો અમારે માટે યોગ્ય નથી. પોતાના જ સ્વજનોને મારીને આપણે કેવી રીતે સુખી થઈ શકીએ?"
+      }
+    }
+  },
+  {
+    "id": 38,
+    "sloka": "1.38",
+    "verse_id": 38,
+    "verseNumber": 38,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यद्यपि लोभ से भ्रष्टचित्त हुये ये लोग कुलनाशकृत दोष और मित्र द्रोह में पाप नहीं देखते हैं।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Though they, with intelligence overpowered by greed, see no evil in the destruction of families and no sin in hostility to friends,"
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ભલે લોભને કારણે જેમની બુદ્ધિ ભ્રષ્ટ થઈ છે તેવા આ લોકો કુળનો નાશ કરવામાં રહેલો દોષ અને મિત્રદ્રોહમાં રહેલું પાપ નથી જોઈ શકતા,"
+      }
+    }
+  },
+  {
+    "id": 39,
+    "sloka": "1.39",
+    "verse_id": 39,
+    "verseNumber": 39,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "परन्तु,  हेे जनार्दन !  कुलक्षय से होने वाले दोष को जानने वाले हम लोगों को इस पाप से विरत होने के लिए क्यों नहीं सोचना चाहिये।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Why should we not, who clearly see the evil in the destruction of families, learn to turn away from this sin, O Janardana (Krishna)?"
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ હે જનાર્દન! કુળના નાશથી થનારા દોષને જાણનારા આપણે આ પાપમાંથી દૂર હટવાનો વિચાર શા માટે ન કરવો જોઈએ?"
+      }
+    }
+  },
+  {
+    "id": 40,
+    "sloka": "1.40",
+    "verse_id": 40,
+    "verseNumber": 40,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "कुल के नष्ट होने से सनातन धर्म नष्ट हो जाते हैं। धर्म नष्ट होने पर सम्पूर्ण कुल को अधर्म (पाप) दबा लेता है।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "In the destruction of a family, the immemorial religious rites of that family perish; on the destruction of spirituality, impiety indeed, overwhelms the whole family."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કુળનો નાશ થવાથી સનાતન કુળ-ધર્મ નષ્ટ પામે છે. ધર્મનો નાશ થવાથી સંપૂર્ણ કુળમાં પાપ અને અધર્મ ફેલાઈ જાય છે."
+      }
+    }
+  },
+  {
+    "id": 41,
+    "sloka": "1.41",
+    "verse_id": 41,
+    "verseNumber": 41,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कृष्ण ! पाप के अधिक बढ़ जाने से कुल की स्त्रियां दूषित हो जाती हैं,  और हे वार्ष्णेय ! स्त्रियों के दूषित होने पर वर्णसंकर उत्पन्न होता है।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "O Krishna, by the prevalence of impiety, the women of the family become corrupt; and, when women are corrupted, O Varshenya (descendant of Vrishni), intermingling of castes arises."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે કૃષ્ણ! પાપ વધી જવાથી કુળની સ્ત્રીઓ દૂષિત થાય છે, અને હે વાર્ષ્ણેય! સ્ત્રીઓ દૂષિત થવાથી વર્ણસંકર ઉત્પન્ન થાય છે."
+      }
+    }
+  },
+  {
+    "id": 42,
+    "sloka": "1.42",
+    "verse_id": 42,
+    "verseNumber": 42,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "वह वर्णसंकर कुलघातियों को और कुल को नरक में ले जाने का कारण बनता है। पिण्ड और जलदान की क्रिया से वंचित इनके पितर भी नरक में गिर जाते हैं।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Confusion of castes leads to hell for the slayers of the family, for their forebears fall, deprived of the offerings of rice-balls and libations of water."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "વર્ણસંકરતા કુળનો નાશ કરનારાઓને અને કુળને નરકમાં લઈ જાય છે. પિંડદાન અને તર્પણની ક્રિયાઓ ન મળવાથી તેમના પિતૃઓનું પણ પતન થાય છે."
+      }
+    }
+  },
+  {
+    "id": 43,
+    "sloka": "1.43",
+    "verse_id": 43,
+    "verseNumber": 43,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इन वर्णसंकर कारक दोषों से कुलघाती दोषों से सनातन कुलधर्म और जातिधर्म नष्ट हो जाते हैं।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "By these evil deeds of the destroyers of the family, which cause confusion of castes, the eternal religious rites of the caste and the family are destroyed."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આ વર્ણસંકરતા ફેલાવનારા દોષોને કારણે કુળનો નાશ કરનારાઓના સનાતન કુળધર્મ અને જાતિધર્મ નષ્ટ થઈ જાય છે."
+      }
+    }
+  },
+  {
+    "id": 44,
+    "sloka": "1.44",
+    "verse_id": 44,
+    "verseNumber": 44,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे जनार्दन !  हमने सुना है कि जिनके यहां कुल धर्म नष्ट हो जाता है,  उन मनुष्यों का अनियत काल तक नरक में वास होता है।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "We have heard, O Janardana, that those men in whose families the religious practices have been destroyed are inevitably destined to dwell in hell for an unknown period."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે જનાર્દન! અમે સાંભળ્યું છે કે જેમના કુળધર્મ નષ્ટ થઈ જાય છે, તેવા મનુષ્યોને અનિશ્ચિત કાળ સુધી નરકમાં વાસ કરવો પડે છે."
+      }
+    }
+  },
+  {
+    "id": 45,
+    "sloka": "1.45",
+    "verse_id": 45,
+    "verseNumber": 45,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अहो  !  शोक है कि हम लोग बड़ा भारी पाप करने का निश्चय कर बैठे हैं,  जो कि इस राज्यसुख के लोभ से अपने कुटुम्ब का नाश करने के लिये तैयार हो गये हैं।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Alas! We are involved in a great sin, for we are prepared to kill our kinsmen, out of greed for the pleasures of a kingdom."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અરે, આ કેટલા દુઃખની વાત છે કે આપણે રાજ્ય અને સુખના લોભમાં પોતાના જ સ્વજનોનો નાશ કરવા તૈયાર થઈને મોટું પાપ કરવા જઈ રહ્યા છીએ."
+      }
+    }
+  },
+  {
+    "id": 46,
+    "sloka": "1.46",
+    "verse_id": 46,
+    "verseNumber": 46,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यदि मुझ शस्त्ररहित और प्रतिकार न करने वाले को ये शस्त्रधारी कौरव रण में मारें,  तो भी वह मेरे लिये कल्याणकारक होगा।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "If the sons of Dhritarashtra, with weapons in hand, should slay me in battle, unresisting and unarmed, that would be better for me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જો શસ્ત્રોથી સજ્જ ધૃતરાષ્ટ્રના પુત્રો શસ્ત્રરહિત અને સામનો ન કરનાર એવા મને રણભૂમિમાં મારી નાખે, તો તે મારા માટે વધુ કલ્યાણકારી હશે."
+      }
+    }
+  },
+  {
+    "id": 47,
+    "sloka": "1.47",
+    "verse_id": 47,
+    "verseNumber": 47,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "संजय ने कहा  --  रणभूमि (संख्ये) में शोक से उद्विग्न मनवाला अर्जुन इस प्रकार कहकर बाणसहित धनुष को त्याग कर रथ के पिछले भाग में बैठ गया।  "
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Sanjaya said, Having thus spoken in the midst of the battlefield, Arjuna cast away his bow and arrow and, his mind overwhelmed with sorrow, sat down on the seat of the chariot."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સંજયે કહ્યું -- રણભૂમિમાં આમ કહીને, શોકથી વ્યાકુળ મનવાળા અર્જુને બાણ સહિત ધનુષ્યનો ત્યાગ કર્યો અને રથના પાછલા ભાગમાં બેસી ગયો."
+      }
+    }
+  }
+]

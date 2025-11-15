@@ -1,0 +1,1796 @@
+[
+  {
+    "id": 624,
+    "sloka": "18.1",
+    "verse_id": 624,
+    "verseNumber": 624,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अर्जुन ने कहा -- हे महाबाहो ! हे हृषीकेश ! हे केशनिषूदन ! मैं संन्यास और त्याग के तत्त्व को पृथक्-पृथक् जानना चाहता हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Arjuna said, \"O mighty-armed Hrishikesa, I desire to know the essence or truth of renunciation and abandonment severally, O slayer of Kesi.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અર્જુનાએ કહ્યું, \"ઓ શકિતશાળી સશસ્ત્ર હૃષીસેસા, હું કેસીના સ્લેયર, ત્યાગ અને ત્યાગના સાર અથવા સત્યને જાણવાની ઇચ્છા કરું છું.\""
+      }
+    }
+  },
+  {
+    "id": 625,
+    "sloka": "18.2",
+    "verse_id": 625,
+    "verseNumber": 625,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्रीभगवान् ने कहा -- (कुछ) कवि (पण्डित) जन काम्य कर्मों के त्याग को \"संन्यास\" समझते हैं और विचारशील जन समस्त कर्मों के फलों के त्याग को \"त्याग\" कहते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Blessed Lord said, \"The sages understand sannyasa to be the renunciation of action with desire; the wise declare the abandonment of the fruits of all actions to be tyaga.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બ્લેસિડ લોર્ડે કહ્યું, \"ages ષિઓ સંન્યાસને ઇચ્છા સાથેની કાર્યવાહીનો ત્યાગ કરે છે; જ્ wise ાનીએ તમામ ક્રિયાઓના ફળને ત્યાગ તરીકે છોડી દેવાની ઘોષણા કરી છે.\""
+      }
+    }
+  },
+  {
+    "id": 626,
+    "sloka": "18.3",
+    "verse_id": 626,
+    "verseNumber": 626,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "कुछ मनीषी जन कहते हैं कि समस्त कर्म दोषयुक्त होने के कारण त्याज्य हैं; और अन्य जन कहते हैं कि यज्ञ, दान और तपरूप कर्म त्याज्य नहीं हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Some philosophers declare that actions should be abandoned as evil; while others declare that acts of sacrifice, gift, and austerity should not be relinquished."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કેટલાક ફિલસૂફો જાહેર કરે છે કે ક્રિયાઓને દુષ્ટ તરીકે છોડી દેવા જોઈએ;જ્યારે અન્ય લોકો જાહેર કરે છે કે બલિદાન, ભેટ અને કઠોરતાના કૃત્યોનો ત્યાગ કરવો જોઈએ નહીં."
+      }
+    }
+  },
+  {
+    "id": 627,
+    "sloka": "18.4",
+    "verse_id": 627,
+    "verseNumber": 627,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे भरतसत्तम ! उस त्याग के विषय में तुम मेरे निर्णय को सुनो। हे पुरुष श्रेष्ठ ! वह त्याग तीन प्रकार का कहा गया है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Hear from Me the conclusion or the final truth about this abandonment, O best of the Bharatas; abandonment, indeed, O best of men, has been declared to be of three kinds."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મારી પાસેથી આ ત્યાગ વિશેના નિષ્કર્ષ અથવા અંતિમ સત્યને સાંભળો, ઓ ભરતનો શ્રેષ્ઠ;ત્યાગ, ખરેખર, શ્રેષ્ઠ પુરુષો, ત્રણ પ્રકારના હોવાનું જાહેર કરાયું છે."
+      }
+    }
+  },
+  {
+    "id": 628,
+    "sloka": "18.5",
+    "verse_id": 628,
+    "verseNumber": 628,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यज्ञ, दान और तपरूप कर्म त्याज्य नहीं है, किन्तु वह नि:सन्देह कर्तव्य है; यज्ञ, दान और तप ये मनीषियों (साधकों) को पवित्र करने वाले हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Acts of sacrifice, gift, and austerity should not be abandoned, but should be performed; for sacrifice, gift, and austerity are the purifiers of the wise."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બલિદાન, ભેટ અને કઠોરતાના કાર્યો છોડી દેવા જોઈએ નહીં, પરંતુ થવું જોઈએ;બલિદાન માટે, ભેટ અને કઠોરતા એ મુજબની શુદ્ધિકરણ છે."
+      }
+    }
+  },
+  {
+    "id": 629,
+    "sloka": "18.6",
+    "verse_id": 629,
+    "verseNumber": 629,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पार्थ ! इन कर्मों को भी, फल और आसक्ति को त्यागकर करना चाहिए, यह मेरा निश्चय किया हुआ उत्तम मत है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But even these actions should be performed, leaving aside attachment and the desire for rewards, O Arjuna; this is my certain and most assured conviction."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ આ ક્રિયાઓ પણ કરવી જોઈએ, જોડાણ અને પુરસ્કારોની ઇચ્છાને બાજુમાં રાખીને, ઓ અર્જુન;આ મારી ચોક્કસ અને સૌથી વધુ ખાતરીપૂર્વકની પ્રતીતિ છે."
+      }
+    }
+  },
+  {
+    "id": 630,
+    "sloka": "18.7",
+    "verse_id": 630,
+    "verseNumber": 630,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "नियत कर्म का त्याग उचित नहीं है; मोहवश उसका त्याग करना \"तामस त्याग\" कहा गया है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Verily, the renunciation of obligatory action is not proper; the abandonment of the same out of delusion is declared to be Tamasic."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ખરેખર, ફરજિયાત ક્રિયાનો ત્યાગ યોગ્ય નથી;ભ્રાંતિમાંથી તે જ ત્યાગને તામાસિક જાહેર કરવામાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 631,
+    "sloka": "18.8",
+    "verse_id": 631,
+    "verseNumber": 631,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो मनुष्य, कर्म को दु:ख समझकर शारीरिक कष्ट के भय से त्याग देता है, वह पुरुष उस राजसिक त्याग को करके कदापि त्याग के फल को प्राप्त नहीं होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who abandons action out of fear of bodily trouble (because it is painful), does not obtain the merit of renunciation by performing such Rajasic renunciation."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેણે શારીરિક મુશ્કેલીના ડરથી ક્રિયા છોડી દીધી છે (કારણ કે તે દુ painful ખદાયક છે), આવા રાજાસી ત્યાગ કરીને ત્યાગની યોગ્યતા પ્રાપ્ત કરતી નથી."
+      }
+    }
+  },
+  {
+    "id": 632,
+    "sloka": "18.9",
+    "verse_id": 632,
+    "verseNumber": 632,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे अर्जुन ! \"कर्म करना कर्तव्य है\" ऐसा समझकर जो नियत कर्म आसक्ति और फल को त्यागकर किया जाता है, वही सात्त्विक त्याग माना गया है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Whatever obligatory action is done, O Arjuna, merely because it ought to be done, abandoning attachment and also the desire for reward, that renunciation is regarded as sattvic (pure)."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ઓ અર્જુન, જે પણ ફરજિયાત કાર્યવાહી કરવામાં આવે છે, ફક્ત એટલા માટે કે તે કરવું જોઈએ, જોડાણ છોડી દેવું અને પુરસ્કારની ઇચ્છા પણ, ત્યાગને સત્ત્વિક (શુદ્ધ) તરીકે ગણવામાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 633,
+    "sloka": "18.10",
+    "verse_id": 633,
+    "verseNumber": 633,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष अकुशल (अशुभ) कर्म से द्वेष नहीं करता और कुशल (शुभ) कर्म में आसक्त नहीं होता, वह सत्त्वगुण से सम्पन्न पुरुष संशयरहित, मेधावी (ज्ञानी) और त्यागी है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The man of renunciation, pervaded by purity, intelligent, and with his doubts cut asunder, does not hate an unpleasant task nor is he attached to a pleasant one."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ત્યાગનો માણસ, શુદ્ધતા, બુદ્ધિશાળી અને તેની શંકાઓથી કાપવામાં આવે છે, તે કોઈ અપ્રિય કાર્યને ધિક્કારતો નથી અથવા તે સુખદ સાથે જોડાયેલ નથી."
+      }
+    }
+  },
+  {
+    "id": 634,
+    "sloka": "18.11",
+    "verse_id": 634,
+    "verseNumber": 634,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "क्योंकि देहधारी पुरुष के द्वारा अशेष कर्मों का त्याग संभव नहीं है, इसलिए जो कर्मफल त्यागी है, वही पुरुष त्यागी कहा जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Indeed, it is not possible for an embodied being to completely abandon actions; however, he who relinquishes the rewards of actions is truly called a man of renunciation."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ખરેખર, મૂર્ત સ્વરૂપ માટે સંપૂર્ણ ક્રિયાઓ છોડી દેવાનું શક્ય નથી;જો કે, જેણે ક્રિયાઓના પુરસ્કારોનો ત્યાગ કર્યો છે તેને ખરેખર ત્યાગનો માણસ કહેવામાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 635,
+    "sloka": "18.12",
+    "verse_id": 635,
+    "verseNumber": 635,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "कर्मों के शुभ, अशुभ और मिश्र ये त्रिविध फल केवल अत्यागी जनों को मरण के पश्चात् भी प्राप्त होते हैं; परन्तु संन्यासी पुरुषों को कदापि नहीं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The threefold fruit of action (evil, good, and mixed) accrues after death to those who do not abandon it, but never to those who do."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ક્રિયાના ત્રણ ગણાના ફળ (દુષ્ટ, સારા અને મિશ્રિત) મૃત્યુ પછી જેઓ તેને છોડી દેતા નથી, પરંતુ જેઓ કરે છે તેમને ક્યારેય નહીં."
+      }
+    }
+  },
+  {
+    "id": 636,
+    "sloka": "18.13",
+    "verse_id": 636,
+    "verseNumber": 636,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे महाबाहो ! समस्त कर्मों की सिद्धि के लिए ये पांच कारण सांख्य सिद्धांत में कहे गये हैं, जिनको तुम मुझसे भलीभांति जानो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Learn from Me, O mighty-armed Arjuna, these five causes, as declared in the Sankhya system, for the accomplishment of all actions."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મારી પાસેથી શીખો, ઓ શકિતશાળી સશસ્ત્ર અર્જુન, આ પાંચ કારણો, જેમ કે સાંખ્યા સિસ્ટમમાં જાહેર કરાયા છે, બધી ક્રિયાઓની સિદ્ધિ માટે."
+      }
+    }
+  },
+  {
+    "id": 637,
+    "sloka": "18.14",
+    "verse_id": 637,
+    "verseNumber": 637,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अधिष्ठान (शरीर), कर्ता ,विविध करण (इन्द्रियादि) ,विविध और पृथक्-पृथक् चेष्टाएं तथा पाँचवा हेतु दैव है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The body, the doer, the various senses, the different functions of various kinds, and the presiding deity—the fifth."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "શરીર, કરનારા, વિવિધ સંવેદના, વિવિધ પ્રકારના વિવિધ કાર્યો અને અધ્યક્ષ દેવતા - પાંચમા."
+      }
+    }
+  },
+  {
+    "id": 638,
+    "sloka": "18.15",
+    "verse_id": 638,
+    "verseNumber": 638,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मनुष्य अपने शरीर, वाणी और मन से जो कोई न्याय्य (उचित) या विपरीत (अनुचित) कर्म करता है, उसके ये पाँच कारण ही हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Whatever action a person performs with their body, speech, and mind, whether right or wrong, these five are its causes."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "વ્યક્તિ તેમના શરીર, ભાષણ અને મન સાથે જે પણ ક્રિયા કરે છે, તે યોગ્ય છે કે ખોટું છે, આ પાંચ તેના કારણો છે."
+      }
+    }
+  },
+  {
+    "id": 639,
+    "sloka": "18.16",
+    "verse_id": 639,
+    "verseNumber": 639,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अब इस स्थिति में जो पुरुष असंस्कृत बुद्धि होने के कारण, केवल शुद्ध आत्मा को कर्ता समझता हैं, वह दुर्मति पुरुष (यथार्थ) नहीं देखता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Now, such being the case, verily he who, owing to an untrained understanding, looks upon his Self, which is isolated, as the agent, he of perverted intelligence does not see."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હવે, આવા કિસ્સામાં, ખરેખર તે, જેણે એક પ્રશિક્ષિત સમજણને કારણે, તેના સ્વ તરફ ધ્યાન આપ્યું છે, જે અલગ છે, એજન્ટ તરીકે, તે વિકૃત બુદ્ધિ જોતી નથી."
+      }
+    }
+  },
+  {
+    "id": 640,
+    "sloka": "18.17",
+    "verse_id": 640,
+    "verseNumber": 640,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जिस पुरुष में अहंकार का भाव नहीं है और बुद्धि किसी (गुण दोष) से लिप्त नहीं होती, वह पुरुष इन सब लोकों को मारकर भी वास्तव में न मरता है और न (पाप से) बँधता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who is free from the egoistic notion, whose intelligence is not tainted by good or evil, though he slays these people, he does not slay, nor is he bound by the action."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે અહંકારપૂર્ણ કલ્પનાથી મુક્ત છે, જેની બુદ્ધિ સારી કે અનિષ્ટથી કલંકિત નથી, તેમ છતાં તે આ લોકોની હત્યા કરે છે, તે હત્યા કરતો નથી, કે તે ક્રિયા દ્વારા બંધાયેલ નથી."
+      }
+    }
+  },
+  {
+    "id": 641,
+    "sloka": "18.18",
+    "verse_id": 641,
+    "verseNumber": 641,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "ज्ञान, ज्ञेय और परिज्ञाता ये त्रिविध कर्म प्रेरक हैं, और, करण, कर्म. कर्ता ये त्रिविध कर्म संग्रह हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Knowledge, the knowable, and the knower form the threefold impulse for action; the organ, the action, and the agent form the threefold basis of action."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જ્ knowledge ાન, જાણીતું અને જ્ er ાની ક્રિયા માટે ત્રણ ગણા આવેગ બનાવે છે;અંગ, ક્રિયા અને એજન્ટ ક્રિયાના ત્રણ ગણા આધાર બનાવે છે."
+      }
+    }
+  },
+  {
+    "id": 642,
+    "sloka": "18.19",
+    "verse_id": 642,
+    "verseNumber": 642,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "ज्ञान, कर्म और कर्ता भी गुणों के भेद से सांख्यशास्त्र (गुणसंख्याने) में त्रिविध ही कहे गये हैं; उनको भी तुम मुझ से यथावत् श्रवण करो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Knowledge, action, and actor are declared in the science of the Gunas (Sankhya philosophy) to be of three kinds only, according to the distinction of the Gunas. Of these, hear duly."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જ્ knowledge ાન, ક્રિયા અને અભિનેતાને ગુણો (સાંખ્યા ફિલસૂફી) ના વિજ્ in ાનમાં ફક્ત ત્રણ પ્રકારના હોવાનું જાહેર કરવામાં આવ્યું છે, એમ ગુણોના તફાવત અનુસાર.આમાંથી, યોગ્ય રીતે સાંભળો."
+      }
+    }
+  },
+  {
+    "id": 643,
+    "sloka": "18.20",
+    "verse_id": 643,
+    "verseNumber": 643,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जिस ज्ञान से मनुष्य, विभक्त रूप में स्थित समस्त भूतों में एक अविभक्त और अविनाशी (अव्यय) स्वरूप को देखता है, उस ज्ञान को तुम सात्त्विक जानो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "That by which one sees the indestructible Reality in all beings, not separate in any of them—know that knowledge to be Sattvic."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે જેના દ્વારા કોઈ બધા માણસોમાં અવિનાશી વાસ્તવિકતા જુએ છે, તેમાંથી કોઈને અલગ નથી - તે જ્ knowledge ાનને સત્ત્વિક હોવાનું જાણો."
+      }
+    }
+  },
+  {
+    "id": 644,
+    "sloka": "18.21",
+    "verse_id": 644,
+    "verseNumber": 644,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जिस ज्ञान के द्वारा मनुष्य समस्त भूतों में नाना भावों को पृथक्-पृथक् जानता है, उस ज्ञान को तुम राजस जानो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But that knowledge which sees in all beings various entities of distinct kinds as being distinct from one another, know thou that knowledge to be Rajasic."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ તે જ્ knowledge ાન જે બધા માણસોમાં વિવિધ પ્રકારના વિવિધ એન્ટિટીઝને એક બીજાથી અલગ હોવાને જુએ છે, તે જ્ knowledge ાનને રાજાસિક હોવાનું જાણો."
+      }
+    }
+  },
+  {
+    "id": 645,
+    "sloka": "18.22",
+    "verse_id": 645,
+    "verseNumber": 645,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "और जिस ज्ञान के द्वारा मनुष्य एक कार्य (शरीर) में ही आसक्त हो जाता है, मानो वह (कार्य ही) पूर्ण वस्तु हो तथा जो (ज्ञान) हेतुरहित (अयुक्तिक), तत्त्वार्थ से रहित तथा संकुचित (अल्प) है, वह (ज्ञान) तामस है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But that which clings to one single effect as if it were the whole, without reason, without any foundation in Truth, and is trivial—that is declared to be Tamasic."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ જે એક જ અસરને વળગી રહે છે જાણે કે તે સંપૂર્ણ હોવાને કારણે, સત્યમાં કોઈ પાયો વિના, અને તુચ્છ છે - જેને તામસિક જાહેર કરવામાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 646,
+    "sloka": "18.23",
+    "verse_id": 646,
+    "verseNumber": 646,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो कर्म (शास्त्रविधि से) नियत और संगरहित है, तथा फल को न चाहने वाले पुरुष के द्वारा बिना किसी राग द्वेष के किया गया है, वह (कर्म) सात्त्विक कहा जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "An action that is ordained, free from attachment, done without love or hatred, and without desire for reward is declared to be Sattvic."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "એક ક્રિયા જે નિયુક્ત કરવામાં આવે છે, જોડાણથી મુક્ત છે, પ્રેમ અથવા દ્વેષ વિના કરવામાં આવે છે, અને ઈનામની ઇચ્છા વિના સત્ત્વિક જાહેર કરવામાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 647,
+    "sloka": "18.24",
+    "verse_id": 647,
+    "verseNumber": 647,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "और जो कर्म बहुत परिश्रम से युक्त है तथा फल की कामना वाले, अहंकारयुक्त पुरुष के द्वारा किया जाता है, वह कर्म राजस कहा गया है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But that action which is done by one longing for the fulfillment of desires or gain with egotism or with much effort is declared to be Rajasic (passionate)."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ તે ક્રિયા જે ઇચ્છાઓની પરિપૂર્ણતા અથવા અહંકાર સાથે અથવા ખૂબ પ્રયત્નોથી પ્રાપ્ત કરવા માટે એક ઝંખના દ્વારા કરવામાં આવે છે તે રાજાસિક (જુસ્સાદાર) તરીકે જાહેર કરવામાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 648,
+    "sloka": "18.25",
+    "verse_id": 648,
+    "verseNumber": 648,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो कर्म परिणाम, हानि, हिंसा और सार्मथ्य (पौरुषम्) का विचार न करके केवल मोहवश आरम्भ किया जाता है, वह कर्म तामस कहलाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "That action which is undertaken from delusion, without regard for the consequences, loss, injury, and one's own ability, is declared to be Tamasic (dark)."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે ક્રિયા જે ભ્રાંતિથી હાથ ધરવામાં આવે છે, પરિણામ, નુકસાન, ઇજા અને પોતાની ક્ષમતાને ધ્યાનમાં લીધા વિના, તેને ટેમાસિક (શ્યામ) તરીકે જાહેર કરવામાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 649,
+    "sloka": "18.26",
+    "verse_id": 649,
+    "verseNumber": 649,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो कर्ता संगरहित, अहंमन्यता से रहित, धैर्य और उत्साह से युक्त एवं कार्य की सिद्धि (सफलता) और असिद्धि (विफलता) में निर्विकार रहता है, वह कर्ता सात्त्विक कहा जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "An agent who is free from attachment, non-egoistic, endowed with firmness and enthusiasm, and unaffected by success or failure, is considered to be of a Sattvic (pure) nature."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "એક એજન્ટ કે જે જોડાણથી મુક્ત છે, બિન-દુશ્મનાવટથી મુક્ત છે, દ્ર firm અને ઉત્સાહથી સંપન્ન છે, અને સફળતા અથવા નિષ્ફળતાથી અસરગ્રસ્ત છે, તે સત્ત્વિક (શુદ્ધ) પ્રકૃતિનું માનવામાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 650,
+    "sloka": "18.27",
+    "verse_id": 650,
+    "verseNumber": 650,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "रागी, कर्मफल का इच्छुक, लोभी, हिंसक स्वभाव वाला, अशुद्ध और हर्षशोक से युक्त कर्ता राजस कहलाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Passionate, desiring to obtain the reward of their actions, greedy, cruel, impure, moved by joy and sorrow, such an agent is said to be Rajasic."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ઉત્સાહી, તેમની ક્રિયાઓનું ઈનામ મેળવવાની ઇચ્છા, લોભી, ક્રૂર, અશુદ્ધ, આનંદ અને દુ sorrow ખથી પ્રેરિત, આવા એજન્ટ રાજાસિક હોવાનું કહેવાય છે."
+      }
+    }
+  },
+  {
+    "id": 651,
+    "sloka": "18.28",
+    "verse_id": 651,
+    "verseNumber": 651,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अयुक्त, प्राकृत, स्तब्ध, शठ, नैष्कृतिक, आलसी, विषादी और दीर्घसूत्री कर्ता तामस कहा जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Unsteady, vulgar, inflexible, deceitful, malicious, lazy, despondent, and procrastinating—such an agent is called Tamasic."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અસ્થિર, અભદ્ર, અગમ્ય, કપટપૂર્ણ, દૂષિત, આળસુ, નિરાશાજનક અને વિલંબિત - આવા એજન્ટને તામાસિક કહેવામાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 652,
+    "sloka": "18.29",
+    "verse_id": 652,
+    "verseNumber": 652,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे धनंजय ! मेरे द्वारा अशेषत: और पृथकत: कहे जाने वाले, गुणों के कारण उत्पन्न हुए बुद्धि और धृति के त्रिविध भेद को सुनो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Hear thou the threefold division of intellect and firmness, according to the Gunas, as I declare them fully and distinctly, O Arjuna."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ગુન્ના અનુસાર, તમે તેમને સંપૂર્ણ અને સ્પષ્ટ રીતે જાહેર કર્યા મુજબ, બુદ્ધિ અને દ્ર firm તાના ત્રણ ગણા વિભાગને સાંભળો, ઓ અર્જુન."
+      }
+    }
+  },
+  {
+    "id": 653,
+    "sloka": "18.30",
+    "verse_id": 653,
+    "verseNumber": 653,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पार्थ ! जो बुद्धि प्रवृत्ति और निवृत्ति, कार्य और अकार्य, भय और अभय तथा बन्ध और मोक्ष को तत्त्वत जानती है, वह बुद्धि सात्विकी है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The intellect which knows the path of work and renunciation, what should be done and what should not be done, fear and fearlessness, bondage and liberation—that intellect is Sattvic (pure), O Arjuna."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બુદ્ધિ જે કાર્ય અને ત્યાગના માર્ગને જાણે છે, શું કરવું જોઈએ અને શું ન કરવું જોઈએ, ડર અને નિર્ભીકતા, બંધન અને મુક્તિ - તે બુદ્ધિ સત્ત્વિક (શુદ્ધ) છે, ઓ અર્જુન."
+      }
+    }
+  },
+  {
+    "id": 654,
+    "sloka": "18.31",
+    "verse_id": 654,
+    "verseNumber": 654,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पार्थ ! जिस बुद्धि के द्वारा मनुष्य धर्म और अधर्म को तथा कर्तव्य और अकर्तव्य को यथावत् नहीं जानता है, वह बुद्धि राजसी है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "That by which one wrongly understands dharma and adharma, and also what ought to be done and what ought not to be done—that intellect, O Arjuna, is rajasic (passionate)."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે જેના દ્વારા કોઈ ધર્મા અને આધર્માને ખોટી રીતે સમજે છે, અને શું કરવું જોઈએ અને શું કરવું જોઈએ નહીં - તે બુદ્ધિ, ઓ અર્જુન, રાજાસિક (જુસ્સાદાર) છે."
+      }
+    }
+  },
+  {
+    "id": 655,
+    "sloka": "18.32",
+    "verse_id": 655,
+    "verseNumber": 655,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पार्थ ! तमस् (अज्ञान अन्ध:कार) से आवृत जो बुद्धि अधर्म को ही धर्म मानती है और सभी पदार्थों को विपरीत रूप से जानती है, वह बुद्धि तामसी है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "That intellect, O Arjuna, which is enveloped in darkness and sees Adharma as Dharma and all things perverted, is Tamasic (dark)."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે બુદ્ધિ, ઓ અર્જુન, જે અંધકારમાં velop ંકાયેલ છે અને અધર્માને ધર્મ તરીકે જુએ છે અને બધી વસ્તુઓ વિકૃત છે, તે તામસિક (શ્યામ) છે."
+      }
+    }
+  },
+  {
+    "id": 656,
+    "sloka": "18.33",
+    "verse_id": 656,
+    "verseNumber": 656,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सात्त्विकी है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The unwavering firmness, through which Yoga restrains the functions of the mind, life-force, and senses—that firmness, O Arjuna, is Sattvic (pure)."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અવિરત દ્ર firm તા, જેના દ્વારા યોગ મન, જીવન-બળ અને સંવેદનાના કાર્યોને નિયંત્રિત કરે છે-તે દ્ર firm, ઓ અર્જુન, સત્ત્વિક (શુદ્ધ) છે."
+      }
+    }
+  },
+  {
+    "id": 657,
+    "sloka": "18.34",
+    "verse_id": 657,
+    "verseNumber": 657,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पृथापुत्र अर्जुन ! कर्मफल का इच्छुक पुरुष अति आसक्ति (प्रसंग) से जिस धृति के द्वारा धर्म, अर्थ और काम (इन तीन पुरुषार्थों) को धारण करता है, वह धृति राजसी है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But that, O Arjuna, by which one holds fast to Dharma (duty), enjoyment of pleasures, and earning of wealth, on account of attachment and desire for reward—that firmness, O Arjuna, is Rajasic (passionate)."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ, ઓ અર્જુન, જેના દ્વારા કોઈ ધર્મ (ફરજ), આનંદનો આનંદ અને સંપત્તિની કમાણીને ઝડપી રાખે છે, જોડાણ અને પુરસ્કારની ઇચ્છાને કારણે - તે નિશ્ચિતતા, ઓ અર્જુન, રાજાસિક (ઉત્સાહી) છે."
+      }
+    }
+  },
+  {
+    "id": 658,
+    "sloka": "18.35",
+    "verse_id": 658,
+    "verseNumber": 658,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हो पार्थ ! दुर्बुद्धि पुरुष जिस धारणा के द्वारा, स्वप्न, भय, शोक, विषाद और मद को नहीं त्यागता है, वह धृति तामसी है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "That firmness, O Arjuna, by which a stupid man does not abandon sleep, fear, grief, despair, and conceit, is Tamasic."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે દ્ર firm તા, ઓ અર્જુન, જેના દ્વારા મૂર્ખ માણસ sleep ંઘ, ભય, દુ grief ખ, નિરાશા અને સંવેદનશીલતાનો ત્યાગ કરતો નથી, તે ટેમાસિક છે."
+      }
+    }
+  },
+  {
+    "id": 659,
+    "sloka": "18.36",
+    "verse_id": 659,
+    "verseNumber": 659,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे भरतश्रेष्ठ ! अब तुम त्रिविध सुख को मुझसे सुनो, जिसमें (साधक पुरुष) अभ्यास से रमता है और दु:खों के अन्त को प्राप्त होता है (जहाँ उसके दु:खों का अन्त हो जाता है।)।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "And now, O Arjuna, hear from Me of the threefold pleasure, in which one rejoices through practice and surely comes to the end of pain."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અને હવે, હે અર્જુન, મારી પાસેથી ત્રણ ગણા આનંદથી સાંભળો, જેમાં કોઈ એક પ્રેક્ટિસ દ્વારા આનંદ કરે છે અને ચોક્કસ પીડાના અંત પર આવે છે."
+      }
+    }
+  },
+  {
+    "id": 660,
+    "sloka": "18.37",
+    "verse_id": 660,
+    "verseNumber": 660,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो सुख प्रथम (प्रारम्भ में) विष के समान (भासता) है, परन्तु परिणाम में अमृत के समान है, वह आत्मबुद्धि के प्रसाद से उत्पन्न सुख सात्त्विक कहा गया है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "That which is like poison at first but in the end like nectar—that happiness is declared to be sattvic, born of the purity of one's own mind due to self-realization."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે પહેલા ઝેર જેવું છે પરંતુ અંતે અમૃત જેવું છે-આત્મ-અનુભૂતિને કારણે કોઈના પોતાના મનની શુદ્ધતાથી જન્મેલા સુખને સત્ત્વિક જાહેર કરવામાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 661,
+    "sloka": "18.38",
+    "verse_id": 661,
+    "verseNumber": 661,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो सुख विषयों और इन्द्रियों के संयोग से उत्पन्न होता है, वह प्रथम तो अमृत के समान, परन्तु परिणाम में विष तुल्य होता है, वह सुख राजस कहा गया है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "That happiness which arises from the contact of the senses with the objects, which is initially like nectar but eventually like poison, is said to be Rajasic."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે ખુશી જે objects બ્જેક્ટ્સ સાથેના સંવેદનાના સંપર્કથી ઉદ્ભવે છે, જે શરૂઆતમાં અમૃત જેવું છે પરંતુ આખરે ઝેર જેવું છે, તે રાજાસિક હોવાનું કહેવાય છે."
+      }
+    }
+  },
+  {
+    "id": 662,
+    "sloka": "18.39",
+    "verse_id": 662,
+    "verseNumber": 662,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो सुख प्रारम्भ में और परिणाम (अनुबन्ध) में भी आत्मा (मनुष्य) को मोहित करने वाला होता है, वह निद्रा, आलस्य और प्रमाद से उत्पन्न सुख तामस कहा जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "That happiness which at first, as well as in the end, deludes the self, and which arises from sleep, indolence, and heedlessness—that is declared to be Tamasic."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે સુખ જે પહેલા, તેમજ અંતે, સ્વને ભ્રમિત કરે છે, અને જે sleep ંઘ, ઘેર અને બેભાનતાથી ઉદ્ભવે છે - જેને તામસિક જાહેર કરવામાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 663,
+    "sloka": "18.40",
+    "verse_id": 663,
+    "verseNumber": 663,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "पृथ्वी पर अथवा स्वर्ग के देवताओं में ऐसा कोई प्राणी (सत्त्वं अर्थात् विद्यमान वस्तु) नहीं है जो प्रकृति से उत्पन्न इन तीन गुणों से मुक्त (रहित) हो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "There is no being on earth or in heaven among the gods that is liberated from the three qualities born of Nature."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પ્રકૃતિમાંથી જન્મેલા ત્રણ ગુણોથી મુક્ત થયેલ દેવતાઓમાં પૃથ્વી પર અથવા સ્વર્ગમાં કોઈ અસ્તિત્વ નથી."
+      }
+    }
+  },
+  {
+    "id": 664,
+    "sloka": "18.41",
+    "verse_id": 664,
+    "verseNumber": 664,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे परन्तप!  ब्राह्मणों, क्षत्रियों, वैश्यों और शूद्रों के कर्म, स्वभाव से उत्पन्न गुणों के अनुसार विभक्त किये गये हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Of Brahmanas, Kshatriyas, Vaisyas, and Sudras, O Arjuna, the duties are distributed according to the qualities born of their own nature."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બ્રહ્મ, ક્ષત્રિય, વૈશ્ય અને સુદ્રા, ઓ અર્જુન, ફરજો તેમના પોતાના સ્વભાવથી જન્મેલા ગુણો અનુસાર વહેંચવામાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 665,
+    "sloka": "18.42",
+    "verse_id": 665,
+    "verseNumber": 665,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "शम, दम, तप, शौच, क्षान्ति, आर्जव, ज्ञान, विज्ञान और आस्तिक्य - ये ब्राह्मण के स्वाभाविक कर्म हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Serenity, self-restraint, austerity, purity, forgiveness, and uprightness, as well as knowledge, realization, and belief in God, are the duties of Brahmanas, born of their own nature."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "શાંતિ, આત્મસંયમ, કઠોરતા, શુદ્ધતા, ક્ષમા અને સીધા, તેમજ જ્ knowledge ાન, અનુભૂતિ અને ભગવાનમાંની માન્યતા, બ્રહ્મની ફરજો છે, જે તેમના પોતાના સ્વભાવથી જન્મે છે."
+      }
+    }
+  },
+  {
+    "id": 666,
+    "sloka": "18.43",
+    "verse_id": 666,
+    "verseNumber": 666,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "शौर्य, तेज, धृति, दाक्ष्य (दक्षता), युद्ध से पलायन न करना, दान और ईश्वर भाव (स्वामी भाव) - ये सब क्षत्रिय के स्वाभाविक कर्म हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Prowess, splendor, firmness, dexterity, and not fleeing from battle, generosity, and lordliness are the duties of the Kshatriyas, born of their own nature."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરાક્રમ, વૈભવ, દ્ર firm તા, કુશળતા, અને યુદ્ધ, ઉદારતા અને પ્રભુત્વથી ભાગી જવું એ તેમના પોતાના સ્વભાવથી જન્મેલા ક્ષત્રિયની ફરજો છે."
+      }
+    }
+  },
+  {
+    "id": 667,
+    "sloka": "18.44",
+    "verse_id": 667,
+    "verseNumber": 667,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "कृषि, गौपालन तथा वाणिज्य - ये वैश्य के स्वाभाविक कर्म हैं, और शूद्र का स्वाभाविक कर्म है परिचर्या अर्थात् सेवा करना।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Agriculture, cattle-rearing, and trade are the duties of the Vaisya (merchant), born of their own nature; and service is the duty of the Sudra (servant-class), born of their own nature."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કૃષિ, પશુ ઉછેર અને વેપાર એ વૈશ્ય (વેપારી) ની ફરજો છે, જે તેમના પોતાના સ્વભાવથી જન્મે છે;અને સેવા એ સુદ્રા (નોકર-વર્ગ) ની ફરજ છે, જે તેમના પોતાના સ્વભાવથી જન્મે છે."
+      }
+    }
+  },
+  {
+    "id": 668,
+    "sloka": "18.45",
+    "verse_id": 668,
+    "verseNumber": 668,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अपने-अपने स्वाभाविक कर्म में अभिरत मनुष्य संसिद्धि को प्राप्त कर लेता है। स्वकर्म में रत मनुष्य किस प्रकार सिद्धि प्राप्त करता है, उसे तुम सुनो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Each person devoted to their own duty attains perfection. How they attain perfection while being engaged in their own duty, hear now."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "દરેક વ્યક્તિ તેમની પોતાની ફરજ માટે સમર્પિત પૂર્ણતા પ્રાપ્ત કરે છે.તેમની પોતાની ફરજમાં રોકાયેલા હોય ત્યારે તેઓ કેવી રીતે પૂર્ણતા પ્રાપ્ત કરે છે, હવે સાંભળો."
+      }
+    }
+  },
+  {
+    "id": 669,
+    "sloka": "18.46",
+    "verse_id": 669,
+    "verseNumber": 669,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जिस (परमात्मा) से भूतमात्र की प्रवृत्ति अर्थात् उत्पत्ति हुई है और जिससे यह सम्पूर्ण जगत् व्याप्त है, उस (परमात्मा) की स्वकर्म द्वारा पूजा करके मनुष्य सिद्धि को प्राप्त होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He from whom all the beings have evolved and by whom all this is pervaded, worshipping Him with his own duty, one attains perfection."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે જેમની પાસેથી બધા માણસો વિકસિત થયા છે અને જેમના દ્વારા આ બધું વ્યાપી છે, તેની પોતાની ફરજથી તેની પૂજા કરે છે, એક સંપૂર્ણતા પ્રાપ્ત કરે છે."
+      }
+    }
+  },
+  {
+    "id": 670,
+    "sloka": "18.47",
+    "verse_id": 670,
+    "verseNumber": 670,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सम्यक् अनुष्ठित परधर्म की अपेक्षा गुणरहित स्वधर्म श्रेष्ठ है। (क्योंकि) स्वभाव से नियत किये गये कर्म को करते हुए मनुष्य पाप को नहीं प्राप्त करता।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Better is one's own duty, even if it is destitute of merits, than the duty of another well performed. He who does the duty ordained by his own nature incurs no sin."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બીજાની સારી ફરજ છે, ભલે તે સારી રીતે કરવામાં આવતી ફરજ કરતાં, યોગ્યતાનો નિરાધાર હોય.જેણે પોતાની પ્રકૃતિ દ્વારા નિયુક્ત કરનારી ફરજ પર કોઈ પાપ નથી."
+      }
+    }
+  },
+  {
+    "id": 671,
+    "sloka": "18.48",
+    "verse_id": 671,
+    "verseNumber": 671,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय ! दोषयुक्त होने पर भी सहज कर्म को नहीं त्यागना चाहिए; क्योंकि सभी कर्म दोष से आवृत होते है, जैसे धुयें से अग्नि।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "One should not, O Arjuna, abandon the duty to which one is born, though it may be faulty; for, all undertakings are enveloped by evil, just as fire is by smoke."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કોઈએ, હે અર્જુન, જે ફરજનો જન્મ થયો છે તે છોડી દેવો જોઈએ નહીં, જોકે તે ખામીયુક્ત હોઈ શકે છે;કારણ કે, બધા ઉપક્રમો દુષ્ટ દ્વારા velop ંકાયેલા છે, જેમ અગ્નિ ધૂમ્રપાન દ્વારા છે."
+      }
+    }
+  },
+  {
+    "id": 672,
+    "sloka": "18.49",
+    "verse_id": 672,
+    "verseNumber": 672,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सर्वत्र आसक्ति रहित बुद्धि वाला वह पुरुष जो स्पृहारहित तथा जितात्मा है, संन्यास के द्वारा परम नैर्ष्कम्य सिद्धि को प्राप्त होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He whose intellect is unattached everywhere, who has subdued his self, from whom desire has fled, he attains the supreme state of freedom from action through renunciation."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેની બુદ્ધિ બધે જ જોડાયેલી નથી, જેમણે પોતાનો આત્મવિલોપ કર્યો છે, જેની પાસેથી ઇચ્છા ભાગી ગઈ છે, તે ત્યાગ દ્વારા ક્રિયામાંથી સ્વતંત્રતાની સર્વોચ્ચ સ્થિતિ પ્રાપ્ત કરે છે."
+      }
+    }
+  },
+  {
+    "id": 673,
+    "sloka": "18.50",
+    "verse_id": 673,
+    "verseNumber": 673,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सिद्धि को प्राप्त पुरुष किस प्रकार ब्रह्म को प्राप्त होता है, तथा ज्ञान की परा निष्ठा को भी तुम मुझसे संक्षेप में जानो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Learn from Me, O Arjuna, in brief how one who has attained perfection reaches Brahman—the Eternal, that supreme state of knowledge."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ઓ અર્જુન, મારી પાસેથી શીખો, ટૂંકમાં, જેણે સંપૂર્ણતા પ્રાપ્ત કરી છે તે બ્રહ્મ સુધી પહોંચે છે - શાશ્વત, તે જ્ knowledge ાનની સર્વોચ્ચ સ્થિતિ."
+      }
+    }
+  },
+  {
+    "id": 674,
+    "sloka": "18.51",
+    "verse_id": 674,
+    "verseNumber": 674,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "विशुद्ध बुद्धि से युक्त, धृति से आत्मसंयम कर, शब्दादि विषयों को त्याग कर और राग-द्वेष का परित्याग कर....৷৷৷৷।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Endowed with a pure intellect, controlling the self through firmness, relinquishing sound and other objects and abandoning attraction and hatred."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "શુદ્ધ બુદ્ધિથી સંપન્ન, આત્મવિશ્વાસ દ્વારા સ્વને નિયંત્રિત કરો, અવાજ અને અન્ય પદાર્થોને છોડીને અને આકર્ષણ અને દ્વેષને છોડી દેવા."
+      }
+    }
+  },
+  {
+    "id": 675,
+    "sloka": "18.52",
+    "verse_id": 675,
+    "verseNumber": 675,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "विविक्त सेवी, लघ्वाशी (मिताहारी) जिसने अपने शरीर, वाणी और मन को संयत किया है, ध्यानयोग के अभ्यास में सदैव तत्पर तथा वैराग्य पर समाश्रित।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Dwelling in solitude, eating sparingly, with speech, body, and mind subdued, always engaged in meditation and concentration, and resorting to dispassion."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "એકાંતમાં રહેવું, ભાગ્યે જ ખાવું, વાણી, શરીર અને મનને વશ, હંમેશાં ધ્યાન અને એકાગ્રતામાં રોકાયેલા અને ભેદભાવનો આશરો લેવો."
+      }
+    }
+  },
+  {
+    "id": 676,
+    "sloka": "18.53",
+    "verse_id": 676,
+    "verseNumber": 676,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अहंकार, बल, दर्प, काम, क्रोध और परिग्रह को त्याग कर ममत्वभाव से रहित और शान्त पुरुष ब्रह्म प्राप्ति के योग्य बन जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Having abandoned egoism, strength, arrogance, desire, anger, and covetousness, and being free from the notion of 'mine' and peaceful, he is fit for becoming Brahman."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અહંકાર, શક્તિ, ઘમંડ, ઇચ્છા, ક્રોધ અને લાલચનો ત્યાગ કર્યા પછી, અને 'ખાણ' અને શાંતિપૂર્ણની કલ્પનાથી મુક્ત થયા પછી, તે બ્રહ્મ બનવા માટે યોગ્ય છે."
+      }
+    }
+  },
+  {
+    "id": 677,
+    "sloka": "18.54",
+    "verse_id": 677,
+    "verseNumber": 677,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "ब्रह्मभूत (जो साधक ब्रह्म बन गया है), प्रसन्न मन वाला पुरुष न इच्छा करता है और न शोक, समस्त भूतों के प्रति सम होकर वह मेरी परा भक्ति को प्राप्त करता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Becoming Brahman, serene in the Self, he neither grieves nor desires; he is the same to all beings, and obtains supreme devotion to Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બ્રહ્મ બનીને, સ્વમાં શાંત, તે ન તો દુ ves ખ કે ઇચ્છાઓ;તે બધા માણસો માટે સમાન છે, અને મારા માટે સર્વોચ્ચ ભક્તિ મેળવે છે."
+      }
+    }
+  },
+  {
+    "id": 678,
+    "sloka": "18.55",
+    "verse_id": 678,
+    "verseNumber": 678,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "(उस परा) भक्ति के द्वारा मुझे वह तत्त्वत: जानता है कि मैं कितना (व्यापक) हूँ तथा मैं क्या हूँ। (इस प्रकार) तत्त्वत: जानने के पश्चात् तत्काल ही वह मुझमें प्रवेश कर जाता है, अर्थात् मत्स्वरूप बन जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "By devotion, he knows Me in truth, who and what I am; then, having known Me in truth, he immediately enters into the Supreme."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ભક્તિ દ્વારા, તે મને સત્યમાં ઓળખે છે, કોણ અને હું શું છું;પછી, મને સત્યમાં ઓળખતા, તે તરત જ સર્વોચ્ચમાં પ્રવેશ કરે છે."
+      }
+    }
+  },
+  {
+    "id": 679,
+    "sloka": "18.56",
+    "verse_id": 679,
+    "verseNumber": 679,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष मदाश्रित होकर सदैव समस्त कर्मों को करता है, वह मेरे प्रसाद (अनुग्रह) से शाश्वत, अव्यय पद को प्राप्त कर लेता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Having taken refuge in Me and doing all actions, by My grace he obtains the eternal, indestructible state of being."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મારામાં આશરો લીધો અને બધી ક્રિયાઓ કરીને, મારી કૃપાથી તે શાશ્વત, અવિનાશી સ્થિતિ મેળવે છે."
+      }
+    }
+  },
+  {
+    "id": 680,
+    "sloka": "18.57",
+    "verse_id": 680,
+    "verseNumber": 680,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मन से समस्त कर्मों का संन्यास मुझमें करके मत्परायण होकर बुद्धियोग का आश्रय लेकर तुम सतत मच्चित्त बनो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Mentally renouncing all actions in Me, having Me as the highest goal, and resorting to the yoga of discrimination, do thou ever fix thy mind on Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "માનસિક રીતે મારામાંની બધી ક્રિયાઓનો ત્યાગ કરવો, મને ઉચ્ચતમ લક્ષ્ય તરીકે રાખીને, અને ભેદભાવના યોગનો આશરો લેવો, શું તમે ક્યારેય મારા મનને મારા પર ઠીક કરો છો."
+      }
+    }
+  },
+  {
+    "id": 681,
+    "sloka": "18.58",
+    "verse_id": 681,
+    "verseNumber": 681,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मच्चित्त होकर तुम मेरी कृपा से समस्त कठिनाइयों (सर्वदुर्गाणि) को पार कर जाओगे; और यदि अहंकारवश (इस उपदेश को) नहीं सुनोगे, तो तुम नष्ट हो जाओगे।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Fixing your mind on Me, you shall, by My grace, overcome all obstacles; but if you will not hear Me due to egoism, you shall perish."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તમારા મનને મારા પર ઠીક કરવું, તમે, મારી કૃપાથી, બધી અવરોધો દૂર કરશો;પરંતુ જો તમે અહંકારને કારણે મને સાંભળશો નહીં, તો તમે નાશ પામશો."
+      }
+    }
+  },
+  {
+    "id": 682,
+    "sloka": "18.59",
+    "verse_id": 682,
+    "verseNumber": 682,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "और अहंकारवश तुम जो यह सोच रहे हो, \"मैं युद्ध नहीं करूंगा\", यह तुम्हारा निश्चय मिथ्या है, (क्योंकि) प्रकृति (तुम्हारा स्वभाव) ही तुम्हें (बलात् कर्म में) प्रवृत्त करेगी।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "If, filled with egoism, thou thinkest, \"I will not fight,\" then thy resolve is vain; nature will compel thee."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જો, અહંકારથી ભરેલા હોય, તો તમે વિચારો છો, \"હું લડશે નહીં,\" તો તમારો સંકલ્પ નિરર્થક છે;પ્રકૃતિ તમને ફરજ પાડશે."
+      }
+    }
+  },
+  {
+    "id": 683,
+    "sloka": "18.60",
+    "verse_id": 683,
+    "verseNumber": 683,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय ! तुम अपने स्वाभाविक कर्मों से बंधे हो, (अत:) मोहवशात् जिस कर्म को तुम करना नहीं चाहते हो, वही तुम विवश होकर करोगे।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "O Arjuna, bound by your own Karma (action) born of your own nature, that which from delusion you wish not to do, even that you shall do helplessly."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે અર્જુન, તમારા પોતાના કર્મ (ક્રિયા) દ્વારા બંધાયેલ તમારા પોતાના સ્વભાવથી જન્મેલા, જે ભ્રાંતિથી તમે ન કરવા માંગતા હો, તે પણ તમે લાચાર કરો છો."
+      }
+    }
+  },
+  {
+    "id": 684,
+    "sloka": "18.61",
+    "verse_id": 684,
+    "verseNumber": 684,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे अर्जुन (मानों किसी) यन्त्र पर आरूढ़ समस्त भूतों को ईश्वर अपनी माया से घुमाता हुआ (भ्रामयन्) भूतमात्र के हृदय में स्थित रहता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Lord dwells in the hearts of all beings, O Arjuna, causing all beings, by His illusory power, to revolve as if mounted on a machine."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ભગવાન બધા માણસોના હૃદયમાં વસે છે, હે અર્જુન, તેના ભ્રાંતિ શક્તિ દ્વારા, બધા માણસોને મશીન પર માઉન્ટ થયેલ જાણે ફરવા લાગ્યા."
+      }
+    }
+  },
+  {
+    "id": 685,
+    "sloka": "18.62",
+    "verse_id": 685,
+    "verseNumber": 685,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे भारत ! तुम सम्पूर्ण भाव से उसी (ईश्वर) की शरण में जाओ। उसके प्रसाद से तुम परम शान्ति और शाश्वत स्थान को प्राप्त करोगे।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Fly to Him for refuge with all your being, O Arjuna; by His grace you will obtain supreme peace and the eternal abode."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ઓ અર્જુન, તમારા બધા અસ્તિત્વની આશ્રય માટે તેને ઉડાન કરો;તેમની કૃપાથી તમે સર્વોચ્ચ શાંતિ અને શાશ્વત નિવાસ મેળવશો."
+      }
+    }
+  },
+  {
+    "id": 686,
+    "sloka": "18.63",
+    "verse_id": 686,
+    "verseNumber": 686,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इस प्रकार समस्त गोपनीयों से अधिक गुह्य ज्ञान मैंने तुमसे कहा; इस पर पूर्ण विचार (विमृश्य) करने के पश्चात् तुम्हारी जैसी इच्छा हो, वैसा तुम करो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Thus, wisdom more secret than secrecy itself has been declared to you by me. Reflect on it fully, then act as you wish."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આમ, ગુપ્તતા કરતાં ડહાપણ વધુ ગુપ્ત રીતે તમને મારા દ્વારા જાહેર કરવામાં આવ્યું છે.તેના પર સંપૂર્ણ રીતે પ્રતિબિંબિત કરો, પછી તમારી ઇચ્છા પ્રમાણે કાર્ય કરો."
+      }
+    }
+  },
+  {
+    "id": 687,
+    "sloka": "18.64",
+    "verse_id": 687,
+    "verseNumber": 687,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "पुन: एक बार तुम मुझसे समस्त गुह्यों में गुह्यतम परम वचन (उपदेश) को सुनो। तुम मुझे अतिशय प्रिय हो, इसलिए मैं तुम्हें तुम्हारे हित की बात कहूंगा।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Hear again My supreme word, most secret of all; for you are dearly beloved of Me, I will tell you what is good."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મારો સર્વોચ્ચ શબ્દ ફરીથી સાંભળો, બધામાં સૌથી રહસ્ય;કેમ કે તમે મારા પ્રિય છો, હું તમને કહીશ કે શું સારું છે."
+      }
+    }
+  },
+  {
+    "id": 688,
+    "sloka": "18.65",
+    "verse_id": 688,
+    "verseNumber": 688,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "तुम मच्चित, मद्भक्त और मेरे पूजक (मद्याजी) बनो और मुझे नमस्कार करो; (इस प्रकार) तुम मुझे ही प्राप्त होगे; यह मैं तुम्हे सत्य वचन देता हूँ,(क्योंकि) तुम मेरे प्रिय हो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Fix your mind on Me, be devoted to Me, sacrifice to Me, bow down to Me. You will come to Me; I truly promise you this, for you are dear to Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તમારા મનને મારા પર ઠીક કરો, મારા માટે સમર્પિત રહો, મારા માટે બલિદાન આપો, મને નમવું.તમે મારી પાસે આવશો;હું તમને ખરેખર આ વચન આપું છું, કેમ કે તમે મને પ્રિય છો."
+      }
+    }
+  },
+  {
+    "id": 689,
+    "sloka": "18.66",
+    "verse_id": 689,
+    "verseNumber": 689,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सब धर्मों का परित्याग करके तुम एक मेरी ही शरण में आओ, मैं तुम्हें समस्त पापों से मुक्त कर दूँगा, तुम शोक मत करो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Abandon all duties and take refuge in Me alone; I will liberate you from all sins; do not grieve."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બધી ફરજો છોડી દો અને એકલા મારામાં આશરો લો;હું તમને બધા પાપોથી મુક્ત કરીશ;દુ: ખ ન કરો."
+      }
+    }
+  },
+  {
+    "id": 690,
+    "sloka": "18.67",
+    "verse_id": 690,
+    "verseNumber": 690,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यह ज्ञान ऐसे पुरुष से नहीं कहना चाहिए, जो अतपस्क (तपरहित) है, और न उसे जो अभक्त है; उसे भी नहीं जो अशुश्रुषु (सेवा में अतत्पर) है और उस पुरुष से भी नहीं कहना चाहिए, जो मुझ (ईश्वर) से असूया करता है, अर्थात् मुझ में दोष देखता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Never speak this to one who is devoid of austerities or devotion, who does not render service, who does not desire to listen, or who cavils at Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આ ક્યારેય ન બોલો જે કઠોરતા અથવા ભક્તિથી વંચિત છે, જે સેવા આપતો નથી, જે સાંભળવાની ઇચ્છા નથી, અથવા જે મારા પર અશક્ત છે."
+      }
+    }
+  },
+  {
+    "id": 691,
+    "sloka": "18.68",
+    "verse_id": 691,
+    "verseNumber": 691,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष मुझसे परम प्रेम (परा भक्ति) करके इस परम गुह्य ज्ञान का उपदेश मेरे भक्तों को देता है, वह नि:सन्देह मुझे ही प्राप्त होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who, with supreme devotion to Me, teaches this supreme secret to My devotees, shall undoubtedly come to Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેણે, મારા પ્રત્યેની સર્વોચ્ચ ભક્તિ સાથે, મારા ભક્તોને આ સર્વોચ્ચ રહસ્ય શીખવે છે, નિ ou શંકપણે મારી પાસે આવશે."
+      }
+    }
+  },
+  {
+    "id": 692,
+    "sloka": "18.69",
+    "verse_id": 692,
+    "verseNumber": 692,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "न तो उससे बढ़कर मेरा अतिशय प्रिय कार्य करने वाला मनुष्यों में कोई है और न उससे बढ़कर मेरा प्रिय इस पृथ्वी पर दूसरा कोई होगा।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "There is no one among men who does service dearer to Me, nor shall there be anyone on earth dearer to Me than him."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પુરુષો વચ્ચે કોઈ નથી જે મને પ્રિય સેવા આપે છે, અથવા પૃથ્વી પર મને તેના કરતાં પ્રિય નથી."
+      }
+    }
+  },
+  {
+    "id": 693,
+    "sloka": "18.70",
+    "verse_id": 693,
+    "verseNumber": 693,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष, हम दोनों के इस धर्ममय संवाद का पठन करेगा, उसके द्वारा मैं ज्ञानयज्ञ से पूजित होऊँगा - ऐसा मेरा मत है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "And he who studies this sacred dialogue of ours, by him I shall have been worshipped through the sacrifice of wisdom; such is my conviction."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અને જે આપણા આ પવિત્ર સંવાદનો અભ્યાસ કરે છે, તેના દ્વારા હું શાણપણના બલિદાન દ્વારા પૂજા કરવામાં આવશે;આવી મારી પ્રતીતિ છે."
+      }
+    }
+  },
+  {
+    "id": 694,
+    "sloka": "18.71",
+    "verse_id": 694,
+    "verseNumber": 694,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "तथा जो श्रद्धावान् और अनसुयु (दोषदृष्टि रहित) पुरुष इसका श्रवणमात्र भी करेगा, वह भी (पापों से) मुक्त होकर पुण्यकर्मियों के शुभ (श्रेष्ठ) लोकों को प्राप्त कर लेगा।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Also, the man who hears this, full of faith and free from malice, shall attain to the happy worlds of those of righteous deeds, and be liberated."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "વળી, જે આ સાંભળે છે, તે વિશ્વાસથી ભરેલો છે અને દુષ્ટતાથી મુક્ત છે, તે ન્યાયી કાર્યોની સુખી દુનિયાને પ્રાપ્ત કરશે, અને મુક્તિ આપશે."
+      }
+    }
+  },
+  {
+    "id": 695,
+    "sloka": "18.72",
+    "verse_id": 695,
+    "verseNumber": 695,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पार्थ ! क्या इसे (मेरे उपदेश को) तुमने एकाग्रचित्त होकर श्रवण किया ? और हे धनञ्जय ! क्या तुम्हारा अज्ञान जनित संमोह पूर्णतया नष्ट हुआ ?"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Has this been heard, O Arjuna, with one-pointed focus? Has the delusion of your ignorance been destroyed, O Dhananjaya?"
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "શું આ સાંભળવામાં આવ્યું છે, હે અર્જુન, એક-પોઇન્ટેડ ધ્યાન સાથે?શું તમારી અજ્ orance ાનનો ભ્રાંતિ નાશ પામ્યો છે, ઓ ધનંજય?"
+      }
+    }
+  },
+  {
+    "id": 696,
+    "sloka": "18.73",
+    "verse_id": 696,
+    "verseNumber": 696,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अर्जुन ने कहा -- हे अच्युत ! आपके कृपाप्रसाद से मेरा मोह नष्ट हो गया है, और मुझे स्मृति (ज्ञान) प्राप्त हो गयी है? अब मैं संशयरहित हो गया हूँ और मैं आपके वचन (आज्ञा) का पालन करूँगा।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Arjuna said, \"My delusion has been destroyed, for I have gained my knowledge (memory) through Your grace, O Krishna. I am now free from doubts. I will act according to Your word.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અર્જુનાએ કહ્યું, \"મારો ભ્રાંતિ નાશ પામ્યો છે, કારણ કે મેં તમારી કૃપાથી મારું જ્ knowledge ાન (મેમરી) મેળવ્યું છે, ઓ કૃષ્ણ. હું હવે શંકાઓથી મુક્ત છું. હું તમારા શબ્દ અનુસાર કાર્ય કરીશ.\""
+      }
+    }
+  },
+  {
+    "id": 697,
+    "sloka": "18.74",
+    "verse_id": 697,
+    "verseNumber": 697,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "संजय ने कहा -- इस प्रकार मैंने भगवान् वासुदेव और महात्मा अर्जुन के इस अद्भुत और रोमान्चक संवाद का वर्णन किया।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Sanjaya said, Thus, I have heard this wonderful dialogue between Krishna and the high-souled Arjuna, which causes one's hair to stand on end."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સંજયાએ કહ્યું, આમ, મેં કૃષ્ણ અને ઉચ્ચ-સુગંધિત અર્જુન વચ્ચેનો આ અદ્ભુત સંવાદ સાંભળ્યો છે, જેના કારણે કોઈના વાળનો અંત આવે છે."
+      }
+    }
+  },
+  {
+    "id": 698,
+    "sloka": "18.75",
+    "verse_id": 698,
+    "verseNumber": 698,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "व्यास जी की कृपा से मैंने इस परम् गुह्य योग को साक्षात् कहते हुए स्वयं योगोश्वर श्रीकृष्ण भगवान् से सुना।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Through the grace of Vyasa, I have heard this supreme and most secret Yoga, directly from Krishna, the Lord of Yoga, Himself declaring it."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "વ્યાસની કૃપાથી, મેં આ સર્વોચ્ચ અને સૌથી ગુપ્ત યોગ સાંભળ્યો છે, સીધા કૃષ્ણ, યોગના સ્વામી, પોતે જ તેને ઘોષણા કરે છે."
+      }
+    }
+  },
+  {
+    "id": 699,
+    "sloka": "18.76",
+    "verse_id": 699,
+    "verseNumber": 699,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे राजन् ! भगवान् केशव और अर्जुन के इस अद्भुत और पुण्य (पवित्र) संवाद को स्मरण करके मैं बारम्बार हर्षित होता हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "O King, remembering this wonderful and holy dialogue between Krishna and Arjuna, I continually rejoice."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે રાજા, કૃષ્ણ અને અર્જુન વચ્ચેના આ અદ્ભુત અને પવિત્ર સંવાદને યાદ કરીને, હું સતત આનંદ કરું છું."
+      }
+    }
+  },
+  {
+    "id": 700,
+    "sloka": "18.77",
+    "verse_id": 700,
+    "verseNumber": 700,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे राजन ! श्री हरि के अति अद्भुत रूप को भी पुन: पुन: स्मरण करके मुझे महान् विस्मय होता है और मैं बारम्बार हर्षित हो रहा हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "And, remembering again and again that most wonderful form of Hari, I am filled with great wonder, O King; and I rejoice again and again."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અને, ફરીથી અને ફરીથી યાદ રાખવું કે હરિનું સૌથી અદ્ભુત સ્વરૂપ, હું ખૂબ જ આશ્ચર્યથી ભરેલો છું, હે રાજા;અને હું ફરીથી અને ફરીથી આનંદ કરું છું."
+      }
+    }
+  },
+  {
+    "id": 701,
+    "sloka": "18.78",
+    "verse_id": 701,
+    "verseNumber": 701,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जहाँ योगेश्वर श्रीकृष्ण हैं और जहाँ धनुर्धारी अर्जुन है वहीं पर श्री, विजय, विभूति और ध्रुव नीति है, ऐसा मेरा मत है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Wherever Krishna, the Lord of Yoga, is; and wherever Arjuna, the wielder of the bow, is; there is prosperity, victory, happiness, and a firm policy; this is my conviction."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કૃષ્ણ, યોગનો ભગવાન, જ્યાં પણ છે;અને જ્યાં પણ અર્જુન, ધનુષનો વાઈલ્ડર છે;સમૃદ્ધિ, વિજય, સુખ અને મક્કમ નીતિ છે;આ મારી પ્રતીતિ છે."
+      }
+    }
+  }
+]

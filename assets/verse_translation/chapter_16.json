@@ -1,0 +1,554 @@
+[
+  {
+    "id": 572,
+    "sloka": "16.1",
+    "verse_id": 572,
+    "verseNumber": 572,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्री भगवान् ने कहा -- अभय, अन्त:करण की शुद्धि, ज्ञानयोग में दृढ़ स्थिति, दान, दम, यज्ञ, स्वाध्याय, तप और आर्जव।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Blessed Lord said: Fearlessness, purity of heart, steadfastness in knowledge and yoga, almsgiving, control of the senses, sacrifice, study of scriptures, austerity, and straightforwardness."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ધન્ય ભગવાનએ કહ્યું: નિર્ભીકતા, હૃદયની શુદ્ધતા, જ્ knowledge ાનમાં અડગતા અને યોગ, દાન આપવાનું, સંવેદનાનું નિયંત્રણ, બલિદાન, શાસ્ત્રનો અભ્યાસ, કઠોરતા અને સીધીતા."
+      }
+    }
+  },
+  {
+    "id": 573,
+    "sloka": "16.2",
+    "verse_id": 573,
+    "verseNumber": 573,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अहिंसा, सत्य, क्रोध का अभाव, त्याग, शान्ति, अपैशुनम् (किसी की निन्दा न करना), भूतमात्र के प्रति दया, अलोलुपता , मार्दव (कोमलता), लज्जा, अचंचलता।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Harmlessness, truth, absence of anger, renunciation, peacefulness, absence of crookedness, compassion for beings, non-covetousness, gentleness, modesty, and absence of fickleness."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હાનિકારકતા, સત્ય, ક્રોધની ગેરહાજરી, ત્યાગ, શાંતિ, કુટિલતાની ગેરહાજરી, માણસો માટે કરુણા, બિન-કાર્યક્ષમતા, નમ્રતા, નમ્રતા અને ફિક્લેસની ગેરહાજરી."
+      }
+    }
+  },
+  {
+    "id": 574,
+    "sloka": "16.3",
+    "verse_id": 574,
+    "verseNumber": 574,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे भारत ! तेज, क्षमा, धैर्य, शौच (शुद्धि), अद्रोह और अतिमान (गर्व) का अभाव ये सब दैवी संपदा को प्राप्त पुरुष के लक्षण हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Vigor, forgiveness, fortitude, purity, absence of hatred, absence of pride—these belong to one born for a divine state, O Arjuna."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ઉત્સાહ, ક્ષમા, મનોબળ, શુદ્ધતા, દ્વેષની ગેરહાજરી, ગૌરવની ગેરહાજરી - આ એક દૈવી રાજ્ય માટે જન્મેલા એકની છે, ઓ અર્જુન."
+      }
+    }
+  },
+  {
+    "id": 575,
+    "sloka": "16.4",
+    "verse_id": 575,
+    "verseNumber": 575,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पार्थ ! दम्भ, दर्प, अभिमान, क्रोध, कठोर वाणी (पारुष्य) और अज्ञान यह सब आसुरी सम्पदा है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Hypocrisy, arrogance, and self-conceit, anger, harshness, and ignorance—these belong to one who is born for a demoniacal state, O Partha."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "દંભ, ઘમંડ અને સ્વ-તસવીર, ક્રોધ, કઠોરતા અને અજ્ orance ાન-આ તે એક છે જે એક રાક્ષસી રાજ્ય માટે જન્મે છે, ઓ પાર્થ."
+      }
+    }
+  },
+  {
+    "id": 576,
+    "sloka": "16.5",
+    "verse_id": 576,
+    "verseNumber": 576,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पाण्डव ! दैवी सम्पदा मोक्ष के लिए और आसुरी सम्पदा बन्धन के लिए मानी गयी है, तुम शोक मत करो, क्योंकि तुम दैवी सम्पदा को प्राप्त हुए हो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The divine nature is deemed conducive to liberation, and the demonic to bondage. Grieve not, O Arjuna, for you are born with divine endowments."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "દૈવી પ્રકૃતિ મુક્તિ માટે અનુકૂળ માનવામાં આવે છે, અને બંધન માટે રાક્ષસી.દુ: ખ ન કરો, ઓ અર્જુન, કારણ કે તમે દૈવી એન્ડોવમેન્ટ્સ સાથે જન્મેલા છો."
+      }
+    }
+  },
+  {
+    "id": 577,
+    "sloka": "16.6",
+    "verse_id": 577,
+    "verseNumber": 577,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पार्थ ! इस लोक में दो प्रकार की भूतिसृष्टि है, दैवी और आसुरी। उनमें देवों का स्वभाव (दैवी सम्पदा) विस्तारपूर्वक कहा गया है; अब असुरों के स्वभाव को विस्तरश: मुझसे सुनो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "There are two types of beings in this world: the divine and the demoniacal. The divine has been described at length; hear from Me, O Arjuna, about the demoniacal."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આ વિશ્વમાં બે પ્રકારના માણસો છે: દિવ્ય અને રાક્ષસી.દૈવી લંબાઈ પર વર્ણવવામાં આવ્યું છે;હેર્જુન, રાક્ષસી વિશે મારી પાસેથી સાંભળો."
+      }
+    }
+  },
+  {
+    "id": 578,
+    "sloka": "16.7",
+    "verse_id": 578,
+    "verseNumber": 578,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "आसुरी स्वभाव के लोग न प्रवृत्ति को; जानते हैं और न निवृत्ति को उनमें न शुद्धि होती है, न सदाचार और न सत्य ही होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The demoniacal do not know what to do and what to refrain from; they have neither purity, nor right conduct, nor truth."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "રાક્ષસીને ખબર નથી કે શું કરવું અને શું દૂર કરવું;તેમની પાસે ન તો શુદ્ધતા છે, કે સાચા વર્તન છે, કે સત્ય નથી."
+      }
+    }
+  },
+  {
+    "id": 579,
+    "sloka": "16.8",
+    "verse_id": 579,
+    "verseNumber": 579,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "वे कहते हैं कि यह जगत् आश्रयरहित, असत्य और ईश्वर रहित है, यह (स्त्रीपुरुष के) परस्पर कामुक संबंध से ही उत्पन्न हुआ है, और (इसका कारण) क्या हो सकता है?"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "They say, \"This universe is without truth, without a moral basis, without a God, brought about by mutual union, with lust as its cause; what else?\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તેઓ કહે છે, \"આ બ્રહ્માંડ સત્ય વિના છે, નૈતિક આધાર વિના, ભગવાન વિના, મ્યુચ્યુઅલ યુનિયન દ્વારા લાવવામાં આવ્યું છે, તેના હેતુ તરીકે વાસના સાથે; બીજું શું?\""
+      }
+    }
+  },
+  {
+    "id": 580,
+    "sloka": "16.9",
+    "verse_id": 580,
+    "verseNumber": 580,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इस दृष्टि का अवलम्बन करके नष्टस्वभाव के अल्प बुद्धि वाले, घोर कर्म करने वाले लोग जगत् के शत्रु (अहित चाहने वाले) के रूप में उसका नाश करने के लिए उत्पन्न होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Holding this view, these ruined souls of small intellect and fierce deeds come forth as enemies of the world, intent on its destruction."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આ દૃષ્ટિકોણને પકડી રાખીને, નાના બુદ્ધિ અને ઉગ્ર કાર્યોના આ બરબાદ થયેલા આત્માઓ વિશ્વના દુશ્મનો તરીકે આગળ આવે છે, તેના વિનાશના ઇરાદા."
+      }
+    }
+  },
+  {
+    "id": 581,
+    "sloka": "16.10",
+    "verse_id": 581,
+    "verseNumber": 581,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "दम्भ, मान और मद से युक्त कभी न पूर्ण होने वाली कामनाओं का आश्रय लिये, मोहवश मिथ्या धारणाओं को ग्रहण करके ये अशुद्ध संकल्पों के लोग जगत् में कार्य करते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Filled with insatiable desires, full of hypocrisy, pride, and arrogance, holding evil ideas due to delusion, they work with impure intentions."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "દંભ, ગૌરવ અને ઘમંડથી ભરેલા, ભ્રાંતિને કારણે દુષ્ટ વિચારો રાખીને, તેઓ અશુદ્ધ ઇરાદાઓ સાથે કામ કરે છે."
+      }
+    }
+  },
+  {
+    "id": 582,
+    "sloka": "16.11",
+    "verse_id": 582,
+    "verseNumber": 582,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मरणपर्यन्त रहने वाली अपरिमित चिन्ताओं से ग्रस्त और विषयोपभोग को ही परम लक्ष्य मानने वाले ये आसुरी लोग इस निश्चित मत के होते हैं कि \"इतना ही (सत्य, आनन्द) है\"।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Giving themselves over to immeasurable cares that end only with death, regarding the gratification of lust as their highest aim, and feeling sure that that is all."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પોતાને અપાર સંભાળને ધ્યાનમાં રાખીને, જે ફક્ત મૃત્યુ સાથે સમાપ્ત થાય છે, વાસનાને તેમના ઉચ્ચતમ હેતુ તરીકે પ્રસન્ન કરવા, અને ખાતરી કરો કે તે બધુ જ છે."
+      }
+    }
+  },
+  {
+    "id": 583,
+    "sloka": "16.12",
+    "verse_id": 583,
+    "verseNumber": 583,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सैकड़ों आशापाशों से बन्धे हुये, काम और क्रोध के वश में ये लोग विषयभोगों की पूर्ति के लिये अन्यायपूर्वक धन का संग्रह करने के लिये चेष्टा करते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Bound by a hundred ties of hope, given over to lust and anger, they strive to obtain hoards of wealth by unlawful means for sensual enjoyment."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "વાસના અને ક્રોધને ધ્યાનમાં રાખીને, સો આશાના સો સંબંધોથી બંધાયેલા, તેઓ વિષયાસક્ત આનંદ માટે ગેરકાયદેસર માધ્યમથી સંપત્તિના હોર્ડ મેળવવાનો પ્રયત્ન કરે છે."
+      }
+    }
+  },
+  {
+    "id": 584,
+    "sloka": "16.13",
+    "verse_id": 584,
+    "verseNumber": 584,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैंने आज यह पाया है और इस मनोरथ को भी प्राप्त करूंगा, मेरे पास यह इतना धन है और इससे भी अधिक धन भविष्य में होगा।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "\"I have gained this today; I will fulfill this desire of mine; this is mine, and this wealth will be mine in the future.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "\"મેં આજે આ મેળવ્યું છે; હું મારી આ ઇચ્છાને પૂર્ણ કરીશ; આ મારું છે, અને આ સંપત્તિ ભવિષ્યમાં મારી રહેશે.\""
+      }
+    }
+  },
+  {
+    "id": 585,
+    "sloka": "16.14",
+    "verse_id": 585,
+    "verseNumber": 585,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "\"यह शत्रु मेरे द्वारा मारा गया है और दूसरे शत्रुओं को भी मैं मारूंगा\", \"मैं ईश्वर हूँ और भोगी हूँ\", \"मैं सिद्ध पुरुष हूँ\", \"मैं बलवान और सुखी हूँ\",।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "\"I have slain that enemy, and I shall slay others too. I am the Lord; I enjoy, I am perfect, powerful, and happy.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "\"મેં તે દુશ્મનને મારી નાખ્યો છે, અને હું બીજાને પણ મારી નાખું છું. હું ભગવાન છું; હું આનંદ કરું છું, હું સંપૂર્ણ, શક્તિશાળી અને ખુશ છું.\""
+      }
+    }
+  },
+  {
+    "id": 586,
+    "sloka": "16.15",
+    "verse_id": 586,
+    "verseNumber": 586,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "\"मैं धनवान् और श्रेष्ठकुल में जन्मा हूँ। मेरे समान दूसरा कौन है?\",'मैं यज्ञ करूंगा', 'मैं दान दूँगा', 'मैं मौज करूँगा' - इस प्रकार के अज्ञान से वे मोहित होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "\"I am wealthy and born into a noble family. Who is my equal? I shall perform sacrifices, give charity, and rejoice,\" thus deluded by ignorance."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "\"હું શ્રીમંત છું અને એક ઉમદા કુટુંબમાં જન્મેલો છું. મારો સમાન કોણ છે? હું બલિદાન આપીશ, દાન આપીશ અને આનંદ કરીશ,\" આમ અજ્ orance ાન દ્વારા ભ્રમિત થઈ."
+      }
+    }
+  },
+  {
+    "id": 587,
+    "sloka": "16.16",
+    "verse_id": 587,
+    "verseNumber": 587,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अनेक प्रकार से भ्रमित चित्त वाले, मोह जाल में फँसे तथा विषयभोगों में आसक्त ये लोग घोर, अपवित्र नरक में गिरते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Bewildered by many fancies, entangled in the snare of delusion, addicted to the gratification of lust, they fall into a foul hell."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ઘણી કલ્પનાઓથી આશ્ચર્યચકિત, ભ્રાંતિની તસવીરમાં ફસાઇ, વાસનાની પ્રસન્નતાનો વ્યસની, તેઓ એક ખોટી નરકમાં આવે છે."
+      }
+    }
+  },
+  {
+    "id": 588,
+    "sloka": "16.17",
+    "verse_id": 588,
+    "verseNumber": 588,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अपने आप को ही श्रेष्ठ मानने वाले, स्तब्ध (गर्वयुक्त), धन और मान के मद से युक्त लोग शास्त्रविधि से रहित केवल नाममात्र के यज्ञों द्वारा दम्भपूर्वक यजन करते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Self-conceited, stubborn, filled with pride and intoxication of wealth, they perform sacrifices in name only for ostentation, contrary to scriptural ordinances."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સ્વ-તકરાર, હઠીલા, ગૌરવ અને સંપત્તિના નશોથી ભરેલા, તેઓ શાસ્ત્રોક્ત વટહુકમોથી વિરુદ્ધ, ફક્ત ઉદ્દેશ્ય માટે નામ પર બલિદાન આપે છે."
+      }
+    }
+  },
+  {
+    "id": 589,
+    "sloka": "16.18",
+    "verse_id": 589,
+    "verseNumber": 589,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अहंकार, बल, दर्प, काम और क्रोध के वशीभूत हुए परनिन्दा करने वाले ये लोग अपने और दूसरों के शरीर में स्थित मुझ (परमात्मा) से द्वेष करने वाले होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Given over to egoism, power, haughtiness, lust, and anger, these malicious people hate Me in their own bodies and in the bodies of others."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અહંકાર, શક્તિ, અસ્પષ્ટતા, વાસના અને ક્રોધને ધ્યાનમાં રાખીને, આ દૂષિત લોકો તેમના પોતાના શરીરમાં અને અન્યના શરીરમાં મને ધિક્કારતા હોય છે."
+      }
+    }
+  },
+  {
+    "id": 590,
+    "sloka": "16.19",
+    "verse_id": 590,
+    "verseNumber": 590,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "ऐसे उन द्वेष करने वाले,  क्रूरकर्मी और नराधमों को मैं संसार में बारम्बार (अजस्रम्) आसुरी योनियों में ही गिराता हूँ अर्थात् उत्पन्न करता हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Those cruel haters, the worst among men in the world, I hurl those evil-doers into the wombs of demons only."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે ક્રૂર દ્વેષીઓ, વિશ્વના પુરુષોમાં સૌથી ખરાબ, હું તે દુષ્ટ-ડોર્સને ફક્ત રાક્ષસોના ગર્ભાશયમાં ફેંકીશ."
+      }
+    }
+  },
+  {
+    "id": 591,
+    "sloka": "16.20",
+    "verse_id": 591,
+    "verseNumber": 591,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय ! वे मूढ़ पुरुष जन्मजन्मान्तर में आसुरी योनि को प्राप्त होते हैं और ( इस प्रकार) मुझे प्राप्त न होकर अधम गति को प्राप्त होते है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Entering into demoniacal wombs and deluded, birth after birth, they do not attain Me, thus falling, O Arjuna, into a condition still lower than that."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જન્મ પછીના જન્મ પછી, રાક્ષસી ગર્ભાશય અને ભ્રાંતિમાં પ્રવેશતા, તેઓ મને પ્રાપ્ત કરતા નથી, આ રીતે ઘટીને, હે અર્જુન, તેના કરતા ઓછી સ્થિતિમાં."
+      }
+    }
+  },
+  {
+    "id": 592,
+    "sloka": "16.21",
+    "verse_id": 592,
+    "verseNumber": 592,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "काम, क्रोध और लोभ ये आत्मनाश के त्रिविध द्वार हैं, इसलिए इन तीनों को त्याग देना चाहिए।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "There are three gates to this hell, destructive of the self: lust, anger, and greed; therefore, one should abandon these three."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આ નરકના ત્રણ દરવાજા છે, સ્વનો વિનાશક: વાસના, ક્રોધ અને લોભ;તેથી, કોઈએ આ ત્રણેયનો ત્યાગ કરવો જોઈએ."
+      }
+    }
+  },
+  {
+    "id": 593,
+    "sloka": "16.22",
+    "verse_id": 593,
+    "verseNumber": 593,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय ! नरक के इन तीनों द्वारों से विमुक्त पुरुष अपने कल्याण के साधन का आचरण करता है और इस प्रकार परा गति को प्राप्त होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "A person who is liberated from these three gates of darkness, O Arjuna, practices what is beneficial for them and thus goes to the Supreme Goal."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અંધકારના આ ત્રણ દરવાજાથી મુક્ત કરનારી વ્યક્તિ, હે અર્જુન, તેમના માટે શું ફાયદાકારક છે અને આ રીતે સર્વોચ્ચ ધ્યેય તરફ જાય છે તેનો અભ્યાસ કરે છે."
+      }
+    }
+  },
+  {
+    "id": 594,
+    "sloka": "16.23",
+    "verse_id": 594,
+    "verseNumber": 594,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष शास्त्रविधि को त्यागकर अपनी कामना से प्रेरित होकर ही कार्य करता है, वह न पूर्णत्व की सिद्धि प्राप्त करता है, न सुख और न परा गति।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who, having cast aside the ordinances of the scriptures, acts under the impulse of desire, does not attain perfection, nor happiness, nor the Supreme Goal."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેણે, શાસ્ત્રોના વટહુકમોને બાજુએ રાખીને, ઇચ્છાના આવેગ હેઠળ કાર્ય કરે છે, તે પૂર્ણતા, કે સુખ, કે સર્વોચ્ચ લક્ષ્ય પ્રાપ્ત કરતું નથી."
+      }
+    }
+  },
+  {
+    "id": 595,
+    "sloka": "16.24",
+    "verse_id": 595,
+    "verseNumber": 595,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इसलिए तुम्हारे लिए कर्तव्य और अकर्तव्य की व्यवस्था (निर्णय) में शास्त्र ही प्रमाण है शास्त्रोक्त विधान को जानकर तुम्हें अपने कर्म करने चाहिए।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Therefore, let the scripture be thy authority in determining what ought to be done and what ought not to be done. Having known what is said in the ordinance of the scriptures, thou shouldst act in this world."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તેથી, શાસ્ત્રને શું કરવું જોઈએ અને શું ન કરવું જોઈએ તે નિર્ધારિત કરવા માટે તમારો અધિકાર બનવા દો.શાસ્ત્રોના વટહુકમમાં શું કહેવામાં આવે છે તે જાણીને, તમારે આ વિશ્વમાં કાર્ય કરવું જોઈએ."
+      }
+    }
+  }
+]

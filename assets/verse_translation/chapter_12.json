@@ -1,0 +1,462 @@
+[
+  {
+    "id": 470,
+    "sloka": "12.1",
+    "verse_id": 470,
+    "verseNumber": 470,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अर्जुन ने कहा -- जो भक्त, सतत युक्त होकर इस (पूर्वोक्त) प्रकार से आपकी उपासना करते हैं और जो भक्त अक्षर, और अव्यक्त की उपासना करते हैं, उन दोनों में कौन उत्तम योगवित् है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Arjuna said, \"Which of them are better versed in Yoga—those who steadfastly worship You, or those who worship the imperishable and the unmanifested?\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અર્જુનાએ કહ્યું, \"તેમાંથી કયા યોગમાં વધુ સારી રીતે વાકેફ છે - જેઓ તમારી પૂજા કરે છે, અથવા જેઓ અવિનાશી અને અસ્પષ્ટ લોકોની ઉપાસના કરે છે?\""
+      }
+    }
+  },
+  {
+    "id": 471,
+    "sloka": "12.2",
+    "verse_id": 471,
+    "verseNumber": 471,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्रीभगवान् ने कहा -- मुझमें मन को एकाग्र करके नित्ययुक्त हुए जो भक्तजन परम श्रद्धा से युक्त होकर मेरी उपासना करते हैं, वे, मेरे मत से, युक्ततम हैं अर्थात् श्रेष्ठ हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Blessed Lord said, \"In My opinion, those who fix their minds on Me, worship Me ever steadfastly, and are endowed with supreme faith, are the best in Yoga.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આશીર્વાદિત ભગવાનએ કહ્યું, \"મારા મતે, જે લોકો મારા પર તેમના મનને ઠીક કરે છે, તેઓ હંમેશાં નિશ્ચિતપણે પૂજા કરે છે, અને સર્વોચ્ચ વિશ્વાસથી સંપન્ન છે, તે યોગમાં શ્રેષ્ઠ છે.\""
+      }
+    }
+  },
+  {
+    "id": 472,
+    "sloka": "12.3",
+    "verse_id": 472,
+    "verseNumber": 472,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "परन्तु जो भक्त अक्षर ,अनिर्देश्य, अव्यक्त, सर्वगत, अचिन्त्य, कूटस्थ, अचल और ध्रुव की उपासना करते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Those who worship the imperishable, the indefinable, the unmanifest, the omnipresent, the unthinkable, the immovable, and the eternal."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેઓ અવિશ્વસનીય, અનિશ્ચિત, અસ્પષ્ટ, સર્વવ્યાપક, કલ્પનાશીલ, સ્થાવર અને શાશ્વતની પૂજા કરે છે."
+      }
+    }
+  },
+  {
+    "id": 473,
+    "sloka": "12.4",
+    "verse_id": 473,
+    "verseNumber": 473,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इन्द्रिय समुदाय को सम्यक् प्रकार से नियमित करके, सर्वत्र समभाव वाले, भूतमात्र के हित में रत वे भक्त मुझे ही प्राप्त होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Having restrained all the senses, being even-minded everywhere, and intent on the welfare of all beings, they verily come unto Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બધી ઇન્દ્રિયોને નિયંત્રિત કર્યા પછી, દરેક જગ્યાએ સમાન વિચારધારા ધરાવતા, અને બધા માણસોના કલ્યાણના ઇરાદાથી, તેઓ ખરેખર મારી પાસે આવે છે."
+      }
+    }
+  },
+  {
+    "id": 474,
+    "sloka": "12.5",
+    "verse_id": 474,
+    "verseNumber": 474,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "परन्तु उन अव्यक्त में आसक्त हुए चित्त वाले पुरुषों को क्लेश अधिक होता है, क्योंकि देहधारियों से अव्यक्त की गति कठिनाईपूर्वक प्राप्त की जाती है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Greater is their trouble whose minds are set on the unmanifested, for the goal of the unmanifested is very hard for the embodied to reach."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તેમની મુશ્કેલી એ છે કે જેમના દિમાગને બિનસલાહભર્યા પર સેટ કરવામાં આવે છે, કારણ કે અનમેનિફેસ્ટના લક્ષ્ય સુધી પહોંચવું ખૂબ મુશ્કેલ છે."
+      }
+    }
+  },
+  {
+    "id": 475,
+    "sloka": "12.6",
+    "verse_id": 475,
+    "verseNumber": 475,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "परन्तु जो भक्तजन मुझे ही परम लक्ष्य समझते हुए सब कर्मों को मुझे अर्पण करके अनन्ययोग के द्वारा मेरा (सगुण का) ही ध्यान करते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But to those who worship Me, renouncing all actions in Me, regarding Me as the supreme goal, meditating on Me with single-minded yoga."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ જેઓ મારી ઉપાસના કરે છે, મારામાંની બધી ક્રિયાઓનો ત્યાગ કરે છે, મારા પર સર્વોચ્ચ લક્ષ્ય તરીકે, મારા પર એકલતાવાળા યોગ સાથે ધ્યાન કરે છે."
+      }
+    }
+  },
+  {
+    "id": 476,
+    "sloka": "12.7",
+    "verse_id": 476,
+    "verseNumber": 476,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पार्थ ! जिनका चित्त मुझमें ही स्थिर हुआ है ऐसे भक्तों का मैं शीघ्र ही मृत्युरूप संसार सागर से उद्धार करने वाला होता हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "To those whose minds are set on Me, O Arjuna, verily I soon become the savior out of the ocean of Samsara."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેમના મનમાં મારા પર સુયોજિત છે, ઓ અર્જુન, ખરેખર હું ટૂંક સમયમાં સંસારના સમુદ્રમાંથી તારણહાર બનીશ."
+      }
+    }
+  },
+  {
+    "id": 477,
+    "sloka": "12.8",
+    "verse_id": 477,
+    "verseNumber": 477,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "तुम अपने मन और बुद्धि को मुझमें ही स्थिर करो, तदुपरान्त तुम मुझमें ही निवास करोगे, इसमें कोई संशय नहीं है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Fix your mind on Me, and your intellect in Me. Then you will certainly live in Me alone hereafter."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તમારા મનને મારા પર અને મારામાં તમારી બુદ્ધિને ઠીક કરો.તો પછી તમે ચોક્કસપણે મારામાં એકલા રહેશો."
+      }
+    }
+  },
+  {
+    "id": 478,
+    "sloka": "12.9",
+    "verse_id": 478,
+    "verseNumber": 478,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे धनंजय ! यदि तुम अपने मन को मुझमें स्थिर करने में समर्थ नहीं हो, तो अभ्यासयोग के द्वारा तुम मुझे प्राप्त करने की इच्छा (अर्थात् प्रयत्न) करो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "If you are unable to fix your mind steadily on Me, then seek to reach Me through the yoga of constant practice, O Arjuna."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જો તમે મારા પર તમારા મનને સતત ઠીક કરવામાં અસમર્થ છો, તો પછી સતત પ્રેક્ટિસના યોગ દ્વારા મને પહોંચવાનો પ્રયત્ન કરો, ઓ અર્જુન."
+      }
+    }
+  },
+  {
+    "id": 479,
+    "sloka": "12.10",
+    "verse_id": 479,
+    "verseNumber": 479,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यदि तुम अभ्यास में भी असमर्थ हो तो मत्कर्म परायण बनो; इस प्रकार मेरे लिए कर्मों को करते हुए भी तुम सिद्धि को प्राप्त करोगे।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "If you are unable to practice even this Abhyasa Yoga, be intent on doing actions for My sake; even by doing actions for My sake, you will attain perfection."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જો તમે પણ આ અભિયાસ યોગની પ્રેક્ટિસ કરવામાં અસમર્થ છો, તો મારા ખાતર ક્રિયાઓ કરવાના ઇરાદાથી બનો;મારા ખાતર ક્રિયાઓ કરીને પણ, તમે પૂર્ણતા પ્રાપ્ત કરશો."
+      }
+    }
+  },
+  {
+    "id": 480,
+    "sloka": "12.11",
+    "verse_id": 480,
+    "verseNumber": 480,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "और यदि इसको भी करने के लिए तुम असमर्थ हो, तो आत्मसंयम से युक्त होकर मेरी प्राप्ति रूप योग का आश्रय लेकर, तुम समस्त कर्मों के फल का त्याग करो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "If you are unable to do even this, then, resort to union with Me and renounce the fruits of all actions with self-control."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જો તમે આ કરવા માટે પણ અસમર્થ છો, તો, મારી સાથે જોડાણનો આશરો લો અને આત્મ-નિયંત્રણ સાથેની બધી ક્રિયાઓના ફળનો ત્યાગ કરો."
+      }
+    }
+  },
+  {
+    "id": 481,
+    "sloka": "12.12",
+    "verse_id": 481,
+    "verseNumber": 481,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अभ्यास से ज्ञान श्रेष्ठ है; ज्ञान से श्रेष्ठ ध्यान है और ध्यान से भी श्रेष्ठ कर्मफल त्याग है त्याग; से तत्काल ही शान्ति मिलती है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Better indeed is knowledge than practice; better than knowledge is meditation; better than meditation is the renunciation of the fruits of actions: peace immediately follows renunciation."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પ્રેક્ટિસ કરતાં ખરેખર જ્ knowledge ાન વધુ સારું છે;જ્ knowledge ાન કરતાં વધુ સારું ધ્યાન છે;ધ્યાન કરતાં વધુ સારું એ ક્રિયાઓના ફળનો ત્યાગ છે: શાંતિ તરત જ ત્યાગને અનુસરે છે."
+      }
+    }
+  },
+  {
+    "id": 482,
+    "sloka": "12.13",
+    "verse_id": 482,
+    "verseNumber": 482,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "भूतमात्र के प्रति जो द्वेषरहित है तथा सबका मित्र तथा करुणावान् है; जो ममता और अहंकार से रहित, सुख और दु:ख में सम और क्षमावान् है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who hates no creature, is friendly and compassionate to all, is free from attachment and egoism, is balanced in pleasure and pain, and is forgiving."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે કોઈ પ્રાણીને નફરત કરે છે, તે બધા માટે મૈત્રીપૂર્ણ અને કરુણ છે, તે જોડાણ અને અહંકારથી મુક્ત છે, આનંદ અને પીડામાં સંતુલિત છે, અને ક્ષમાશીલ છે."
+      }
+    }
+  },
+  {
+    "id": 483,
+    "sloka": "12.14",
+    "verse_id": 483,
+    "verseNumber": 483,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो संयतात्मा, दृढ़निश्चयी योगी सदा सन्तुष्ट है, जो अपने मन और बुद्धि को मुझमें अर्पण किये हुए है, जो ऐसा मेरा भक्त है, वह मुझे प्रिय है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Ever content, steady in meditation, self-controlled, possessing firm conviction, with the mind and intellect dedicated to Me, he, My devotee, is dear to Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હંમેશાં સામગ્રી, ધ્યાનમાં સ્થિર, સ્વ-નિયંત્રિત, મક્કમ પ્રતીતિ, મન અને બુદ્ધિથી મને સમર્પિત, તે, મારા ભક્ત, મને પ્રિય છે."
+      }
+    }
+  },
+  {
+    "id": 484,
+    "sloka": "12.15",
+    "verse_id": 484,
+    "verseNumber": 484,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जिससे कोई लोक (अर्थात् जीव, व्यक्ति) उद्वेग को प्राप्त नहीं होता और जो स्वयं भी किसी व्यक्ति से उद्वेग अनुभव नहीं करता तथा जो हर्ष, अमर्ष (असहिष्णुता) भय और उद्वेगों से मुक्त है,वह भक्त मुझे प्रिय है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He whom the world does not agitate, and who cannot be agitated by the world, and who is freed from joy, anger, fear, and anxiety—he is dear to Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેને વિશ્વમાં આંદોલન કરતું નથી, અને જેમને વિશ્વ દ્વારા ઉશ્કેરવામાં નહીં આવે, અને જે આનંદ, ક્રોધ, ડર અને અસ્વસ્થતાથી મુક્ત થાય છે - તે મને પ્રિય છે."
+      }
+    }
+  },
+  {
+    "id": 485,
+    "sloka": "12.16",
+    "verse_id": 485,
+    "verseNumber": 485,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो अपेक्षारहित, शुद्ध, दक्ष, उदासीन, व्यथारहित और सर्वकर्मों का संन्यास करने वाला मेरा भक्त है, वह मुझे प्रिय है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who is free from wants, pure, expert, unconcerned, and free from pain, renouncing all undertakings and commencements, he who is devoted to Me is dear to Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે ઇચ્છે છે, શુદ્ધ, નિષ્ણાત, અસ્પષ્ટ અને પીડાથી મુક્ત છે, બધા ઉપક્રમો અને શરૂઆતનો ત્યાગ કરે છે, જે મને સમર્પિત છે તે મને પ્રિય છે."
+      }
+    }
+  },
+  {
+    "id": 486,
+    "sloka": "12.17",
+    "verse_id": 486,
+    "verseNumber": 486,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो न हर्षित होता है और न द्वेष करता है; न शोक करता है और न आकांक्षा; तथा जो शुभ और अशुभ को त्याग देता है, वह भक्तिमान् पुरुष मुझे प्रिय है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who neither rejoices nor hates, nor grieves nor desires, renouncing both good and evil, and who is full of devotion, is dear to Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે ન તો આનંદ કરે છે કે નફરત કરે છે, ન શોક કરે છે કે ઇચ્છાઓને, સારા અને અનિષ્ટ બંનેનો ત્યાગ કરે છે, અને જે ભક્તિથી ભરેલો છે, તે મને પ્રિય છે."
+      }
+    }
+  },
+  {
+    "id": 487,
+    "sloka": "12.18",
+    "verse_id": 487,
+    "verseNumber": 487,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष शत्रु और मित्र में तथा मान और अपमान में सम है; जो शीत-उष्ण व सुखदु:खादिक द्वन्द्वों में सम है और आसक्ति रहित है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who is the same to foe and friend, and also in honor and dishonor, who is the same in cold and heat, in pleasure and pain, and who is free from attachment."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે શત્રુ અને મિત્ર માટે સમાન છે, અને સન્માન અને અપમાનમાં પણ છે, જે ઠંડી અને ગરમીમાં, આનંદ અને પીડામાં સમાન છે, અને જે જોડાણથી મુક્ત છે."
+      }
+    }
+  },
+  {
+    "id": 488,
+    "sloka": "12.19",
+    "verse_id": 488,
+    "verseNumber": 488,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जिसको निन्दा और स्तुति दोनों ही तुल्य है, जो मौनी है, जो किसी अल्प वस्तु से भी सन्तुष्ट है, जो अनिकेत है, वह स्थिर बुद्धि का भक्तिमान् पुरुष मुझे प्रिय है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He to whom censure and praise are equal, who is silent, content with anything, homeless, of a steady mind, and full of devotion; that man is dear to me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે જેની પાસે સેન્સર અને વખાણ સમાન છે, જે મૌન છે, કંઈપણ સાથે સંતુષ્ટ છે, બેઘર, સ્થિર મનનું અને ભક્તિથી ભરેલું છે;તે માણસ મને પ્રિય છે."
+      }
+    }
+  },
+  {
+    "id": 489,
+    "sloka": "12.20",
+    "verse_id": 489,
+    "verseNumber": 489,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो भक्त श्रद्धावान् तथा मुझे ही परम लक्ष्य समझने वाले हैं और इस यथोक्त धर्ममय अमृत का अर्थात् धर्ममय जीवन का पालन करते हैं, वे मुझे अतिशय प्रिय हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "They who follow this immortal Dharma, endowed with faith and regarding Me as their supreme goal, are exceedingly dear to Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેઓ આ અમર ધર્મનું પાલન કરે છે, વિશ્વાસથી અને મને તેમના સર્વોચ્ચ ધ્યેય તરીકે સંબંધિત છે, તે મને ખૂબ પ્રિય છે."
+      }
+    }
+  }
+]

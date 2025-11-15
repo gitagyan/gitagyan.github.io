@@ -1,0 +1,669 @@
+[
+  {
+    "id": 205,
+    "sloka": "5.1",
+    "verse_id": 205,
+    "verseNumber": 205,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अर्जुन ने कहा हे --  कृष्ण ! आप कर्मों के संन्यास की और फिर योग (कर्म के आचरण) की प्रशंसा करते हैं। इन दोनों में एक जो निश्चय पूर्वक श्रेयस्कर है, उसको मेरे लिए कहिये।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Arjuna said, \"O Krishna, you praise renunciation of actions and also yoga. Please tell me conclusively which is better of the two.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અર્જુને કહ્યું: હે કૃષ્ણ! આપ કર્મોના સંન્યાસની અને ફરીથી કર્મયોગની પ્રશંસા કરો છો. આ બંનેમાંથી જે એક નિશ્ચિતપણે શ્રેષ્ઠ હોય, તે મને કહો."
+      }
+    }
+  },
+  {
+    "id": 206,
+    "sloka": "5.2",
+    "verse_id": 206,
+    "verseNumber": 206,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्रीभगवान् ने कहा --  कर्मसंन्यास और कर्मयोग ये दोनों ही परम कल्याणकारक हैं;  परन्तु उन दोनों में कर्मसंन्यास से कर्मयोग श्रेष्ठ है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Blessed Lord said, \"Renunciation and the Yoga of action both lead to the highest bliss; but of the two, the Yoga of action is superior to the renunciation of action.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "શ્રી ભગવાને કહ્યું: કર્મસંન્યાસ અને કર્મયોગ બંને પરમ કલ્યાણકારી છે; પરંતુ તે બંનેમાં કર્મસંન્યાસ કરતાં કર્મયોગ શ્રેષ્ઠ છે."
+      }
+    }
+  },
+  {
+    "id": 207,
+    "sloka": "5.3",
+    "verse_id": 207,
+    "verseNumber": 207,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष न किसी से द्वेष करता है और न किसी की आकांक्षा,  वह सदा संन्यासी ही समझने योग्य है;  क्योंकि,  हे महाबाहो ! द्वन्द्वों से रहित पुरुष सहज ही बन्धन मुक्त हो जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He should be known as a perpetual Sannyasi who neither hates nor desires; for, free from the pairs of opposites, O mighty-armed Arjuna, he is easily freed from bondage."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે પુરુષ ન કોઈનો દ્વેષ કરે છે કે ન કોઈની આકાંક્ષા રાખે છે, તેને સદા સંન્યાસી જ જાણવો; કારણ કે, હે મહાબાહો! દ્વંદ્વોથી રહિત પુરુષ સહેલાઈથી બંધનમુક્ત થઈ જાય છે."
+      }
+    }
+  },
+  {
+    "id": 208,
+    "sloka": "5.4",
+    "verse_id": 208,
+    "verseNumber": 208,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "बालक अर्थात् बालबुद्धि के लोग सांख्य (संन्यास) और योग को परस्पर भिन्न समझते हैं;  किसी एक में भी सम्यक् प्रकार से स्थित हुआ पुरुष दोनों के फल को प्राप्त कर लेता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Children, not the wise, speak of knowledge and the Yoga of action, or the performance of action, as though they are distinct and different; he who is truly established in one, obtains the fruits of both."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અજ્ઞાની લોકો સાંખ્ય (જ્ઞાનયોગ) અને કર્મયોગને જુદા સમજે છે, જ્ઞાનીઓ નહીં; જે કોઈ એકમાં પણ સારી રીતે સ્થિત થાય છે, તે બંનેના ફળને પામે છે."
+      }
+    }
+  },
+  {
+    "id": 209,
+    "sloka": "5.5",
+    "verse_id": 209,
+    "verseNumber": 209,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो स्थान ज्ञानियों द्वारा प्राप्त किया जाता है,  उसी स्थान पर कर्मयोगी भी पहुँचते हैं। इसलिए जो पुरुष सांख्य और योग को (फलरूप से) एक ही देखता है,  वही (वास्तव में) देखता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "That place which is reached by the Sankhyas or the Jnanis is also reached by the Yogis (Karma Yogis). He who sees knowledge and the performance of action (Karma Yoga) as one, sees truly."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે સ્થાન જ્ઞાનયોગીઓ દ્વારા પ્રાપ્ત થાય છે, તે જ સ્થાન કર્મયોગીઓ પણ પામે છે. તેથી જે જ્ઞાનયોગ અને કર્મયોગને ફળની દ્રષ્ટિએ એક જ જુએ છે, તે જ સાચું જુએ છે."
+      }
+    }
+  },
+  {
+    "id": 210,
+    "sloka": "5.6",
+    "verse_id": 210,
+    "verseNumber": 210,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "परन्तु,  हे महाबाहो ! योग के बिना संन्यास प्राप्त होना कठिन है;  योगयुक्त मननशील पुरुष परमात्मा को शीघ्र ही प्राप्त होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But, O mighty-armed Arjuna, renunciation is hard to attain without Yoga; the sage who is in harmony with Yoga quickly goes to Brahman."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ, હે મહાબાહો! કર્મયોગ વિના સંન્યાસ પ્રાપ્ત કરવો કઠિન છે; કર્મયોગી મુનિ જલદીથી બ્રહ્મને પામે છે."
+      }
+    }
+  },
+  {
+    "id": 211,
+    "sloka": "5.7",
+    "verse_id": 211,
+    "verseNumber": 211,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष योगयुक्त, विशुद्ध अन्तकरण वाला, शरीर को वश में किये हुए, जितेन्द्रिय तथा भूतमात्र में स्थित आत्मा के साथ एकत्व अनुभव किये हुए है वह कर्म करते हुए भी उनसे लिप्त नहीं होता।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who is devoted to the path of action, whose mind is pure, who has conquered the self, who has subdued his senses, and who realizes his Self as the Self in all beings, though acting, is not tainted."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે કર્મયોગી છે, જેનું મન શુદ્ધ છે, જેણે શરીર અને ઇન્દ્રિયોને જીતી લીધા છે અને જે સર્વ જીવોમાં પોતાના આત્માને જ જુએ છે, તે કર્મ કરતો હોવા છતાં લિપ્ત થતો નથી."
+      }
+    }
+  },
+  {
+    "id": 212,
+    "sloka": "5.8",
+    "verse_id": 212,
+    "verseNumber": 212,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "तत्त्ववित् युक्त पुरुष यह सोचेगा (अर्थात् जानता है) कि  \"मैं किंचित् मात्र कर्म नहीं करता हूँ\"  देखता हुआ, सुनता हुआ, स्पर्श करता हुआ, सूंघता हुआ, खाता हुआ, चलता हुआ, सोता हुआ, श्वास लेता हुआ,।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "I do nothing at all,\" thus would the harmonized knower of Truth think, seeing, hearing, touching, smelling, eating, going, sleeping, and breathing."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તત્વને જાણનાર યોગી જોતો, સાંભળતો, સ્પર્શ કરતો, સૂંઘતો, ખાતો, ચાલતો, સૂતો અને શ્વાસ લેતો હોવા છતાં એમ જ માને છે કે, \"હું કશું જ કરતો નથી.\""
+      }
+    }
+  },
+  {
+    "id": 213,
+    "sloka": "5.9",
+    "verse_id": 213,
+    "verseNumber": 213,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "बोलता हुआ,  त्यागता हुआ,  ग्रहण करता हुआ  तथा आँखों को खोलता और बन्द करता हुआ (वह) निश्चयात्मक रूप से जानता है कि सब इन्द्रियाँ अपने-अपने विषयों में विचरण कर रही हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Speaking, letting go, seizing, opening, and closing the eyes, one should be convinced that the senses move among the sense-objects."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બોલતા, ત્યાગતા, ગ્રહણ કરતા તથા આંખો ખોલતા અને બંધ કરતા પણ તે નિશ્ચિતપણે જાણે છે કે બધી ઇન્દ્રિયો પોતપોતાના વિષયોમાં વિચરી રહી છે."
+      }
+    }
+  },
+  {
+    "id": 214,
+    "sloka": "5.10",
+    "verse_id": 214,
+    "verseNumber": 214,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष सब कर्म ब्रह्म में अर्पण करके और आसक्ति को त्यागकर करता है,  वह पुरुष कमल के पत्ते के सदृश पाप से लिप्त नहीं होता।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who does actions, offering them to Brahman and abandoning attachment, is not tainted by sin, just as a lotus leaf is not tainted by water."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે પુરુષ સર્વ કર્મો બ્રહ્મને અર્પણ કરીને અને આસક્તિનો ત્યાગ કરીને કર્મ કરે છે, તે કમળપત્રની જેમ પાપથી લેપાતો નથી."
+      }
+    }
+  },
+  {
+    "id": 215,
+    "sloka": "5.11",
+    "verse_id": 215,
+    "verseNumber": 215,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "योगीजन, शरीर, मन, बुद्धि और इन्द्रियों द्वारा आसक्ति को त्याग कर आत्मशुद्धि (चित्तशुद्धि) के लिए कर्म करते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Yogis, having abandoned attachment, perform actions only through the body, mind, intellect, and even the senses, for the purification of the self."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "યોગીઓ આસક્તિનો ત્યાગ કરીને આત્મશુદ્ધિ માટે કેવળ શરીર, મન, બુદ્ધિ અને ઇન્દ્રિયો દ્વારા કર્મ કરે છે."
+      }
+    }
+  },
+  {
+    "id": 216,
+    "sloka": "5.12",
+    "verse_id": 216,
+    "verseNumber": 216,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "युक्त पुरुष कर्मफल का त्याग करके परम शान्ति को प्राप्त होता है;  और अयुक्त पुरुष फल में आसक्त हुआ कामना के द्वारा बँधता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The one who is united (the well-poised or harmonized) having abandoned the fruit of action attains eternal peace; whereas the one who is not united (the unsteady or unbalanced), impelled by desire and attached to the fruit, is bound."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "યોગી પુરુષ કર્મફળનો ત્યાગ કરીને પરમ શાંતિને પામે છે; જ્યારે અયોગી પુરુષ ફળમાં આસક્ત હોવાથી કામના દ્વારા બંધાય છે."
+      }
+    }
+  },
+  {
+    "id": 217,
+    "sloka": "5.13",
+    "verse_id": 217,
+    "verseNumber": 217,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सब कर्मों का मन से संन्यास करके संयमी पुरुष नवद्वार वाली शरीर रूप नगरी में सुख से रहता हुआ न कर्म करता है और न करवाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Mentally renouncing all actions and being self-controlled, the embodied one happily rests in the nine-gated city, neither acting nor causing others (body and senses) to act."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સંયમી પુરુષ મનથી સર્વ કર્મોનો ત્યાગ કરીને નવ દરવાજાવાળા શરીરરૂપી નગરમાં સુખપૂર્વક રહે છે, તે ન તો કર્મ કરે છે કે ન કરાવે છે."
+      }
+    }
+  },
+  {
+    "id": 218,
+    "sloka": "5.14",
+    "verse_id": 218,
+    "verseNumber": 218,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "लोकमात्र के लिए प्रभु (ईश्वर) न कर्तृत्व, न कर्म और न कर्मफल के संयोग को रचता है। परन्तु प्रकृति (सब कुछ) करती है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Neither does the Lord create agency nor actions for the world, nor union with the fruits of actions; rather, it is Nature that acts."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરમાત્મા લોકો માટે ન તો કર્તાપણું, ન કર્મો, કે ન તો કર્મફળનો સંયોગ રચે છે. પરંતુ પ્રકૃતિ જ બધું કરે છે."
+      }
+    }
+  },
+  {
+    "id": 219,
+    "sloka": "5.15",
+    "verse_id": 219,
+    "verseNumber": 219,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "विभु परमात्मा न किसी के पापकर्म को और न पुण्यकर्म को ही ग्रहण करता है;  (किन्तु) अज्ञान से ज्ञान ढका हुआ है,  इससे सब जीव मोहित होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Lord takes neither the demerit nor the merit of any; knowledge is enveloped by ignorance, and beings are deluded."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સર્વવ્યાપી પરમાત્મા ન કોઈના પાપને કે ન કોઈના પુણ્યને ગ્રહણ કરે છે; પરંતુ જ્ઞાન અજ્ઞાનથી ઢંકાયેલું છે, તેથી સર્વ જીવો મોહ પામે છે."
+      }
+    }
+  },
+  {
+    "id": 220,
+    "sloka": "5.16",
+    "verse_id": 220,
+    "verseNumber": 220,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "परन्तु जिनका वह अज्ञान आत्मज्ञान से नष्ट हो जाता है,  उनके लिए वह ज्ञान,  सूर्य के सदृश,  परमात्मा को प्रकाशित करता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But to those whose ignorance is destroyed by knowledge of the Self, like the sun, knowledge reveals the Supreme Brahman."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ જેમનું તે અજ્ઞાન આત્મજ્ઞાનથી નષ્ટ થઈ જાય છે, તેમના માટે તે જ્ઞાન સૂર્યની જેમ પરમ તત્વને પ્રકાશિત કરે છે."
+      }
+    }
+  },
+  {
+    "id": 221,
+    "sloka": "5.17",
+    "verse_id": 221,
+    "verseNumber": 221,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जिनकी बुद्धि उस (परमात्मा) में स्थित है,  जिनका मन तद्रूप हुआ है,  उसमें ही जिनकी निष्ठा है,  वह (ब्रह्म) ही जिनका परम लक्ष्य है,  ज्ञान के द्वारा पापरहित पुरुष अपुनरावृत्ति को प्राप्त होते हैं,  अर्थात् उनका पुनर्जन्म नहीं होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Their intellect absorbed in That, their self being That, established in That, with That as their supreme goal, they go whence there is no return, their sins dispelled by knowledge."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેમની બુદ્ધિ પરમાત્મામાં સ્થિર છે, જેમનું મન તદ્રુપ થયું છે, જેમનામાં જ જેમની નિષ્ઠા છે, અને પરમાત્મા જ જેમનું પરમ લક્ષ્ય છે, તે જ્ઞાન દ્વારા પાપરહિત થઈને મોક્ષને પામે છે, અર્થાત્ તેમનો પુનર્જન્મ થતો નથી."
+      }
+    }
+  },
+  {
+    "id": 222,
+    "sloka": "5.18",
+    "verse_id": 222,
+    "verseNumber": 222,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "(ऐसे वे) ज्ञानीजन विद्या और विनय से सम्पन्न ब्राह्मण,  तथा गाय,  हाथी,  श्वान और चाण्डाल में भी सम तत्त्व को देखते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Sages look with an equal eye on a Brahmana endowed with learning and humility, on a cow, an elephant, a dog, and even an outcaste."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જ્ઞાનીઓ વિદ્યા અને વિનયથી સંપન્ન બ્રાહ્મણ, ગાય, હાથી, કૂતરા અને ચંડાળમાં પણ સમાન દ્રષ્ટિ રાખે છે."
+      }
+    }
+  },
+  {
+    "id": 223,
+    "sloka": "5.19",
+    "verse_id": 223,
+    "verseNumber": 223,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जिनका मन समत्वभाव में स्थित है,  उनके द्वारा यहीं पर यह सर्ग जीत लिया जाता है; क्योंकि ब्रह्म निर्दोष और सम है इसलिये वे ब्रह्म में ही स्थित हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Even here in this world, those whose minds rest in reality overcome birth; Brahman is indeed spotless and real; therefore they are established in Brahman."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેમનું મન સમભાવમાં સ્થિત છે, તેમણે અહીં જ સંસારને જીતી લીધો છે; કારણ કે બ્રહ્મ નિર્દોષ અને સમ છે, તેથી તેઓ બ્રહ્મમાં જ સ્થિત છે."
+      }
+    }
+  },
+  {
+    "id": 224,
+    "sloka": "5.20",
+    "verse_id": 224,
+    "verseNumber": 224,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो स्थिरबुद्धि,  संमोहरहित ब्रह्मवित् पुरुष ब्रह्म में स्थित है,  वह प्रिय वस्तु को प्राप्त होकर हर्षित नहीं होता और अप्रिय को पाकर उद्विग्न नहीं होता।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Resting in Brahman, with a steady intellect and undeluded, the knower of Brahman neither rejoices upon obtaining what is pleasant nor grieves upon obtaining what is unpleasant."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેની બુદ્ધિ સ્થિર છે, જે મોહરહિત છે અને બ્રહ્મમાં સ્થિત છે, તે બ્રહ્મજ્ઞાની પ્રિય વસ્તુ પામીને હર્ષ પામતો નથી અને અપ્રિય વસ્તુ પામીને ઉદ્વેગ પામતો નથી."
+      }
+    }
+  },
+  {
+    "id": 225,
+    "sloka": "5.21",
+    "verse_id": 225,
+    "verseNumber": 225,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "बाह्य विषयों में आसक्तिरहित अन्त:करण वाला पुरुष आत्मा में ही सुख प्राप्त करता है;  ब्रह्म के ध्यान में समाहित चित्त वाला पुरुष अक्षय सुख प्राप्त करता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "With the self unattached to external contacts, he finds happiness in the Self; with the self engaged in the meditation of Brahman, he attains endless happiness."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બાહ્ય વિષયોમાં આસક્તિ રહિત મનુષ્ય આત્મામાં જ સુખ પામે છે; બ્રહ્મના ધ્યાનમાં જોડાયેલો તે પુરુષ અક્ષય સુખનો અનુભવ કરે છે."
+      }
+    }
+  },
+  {
+    "id": 226,
+    "sloka": "5.22",
+    "verse_id": 226,
+    "verseNumber": 226,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय (इन्द्रिय तथा विषयों के) संयोग से उत्पन्न होने वाले जो भोग हैं वे दु:ख के ही हेतु हैं, क्योंकि वे आदि-अन्त वाले हैं। बुद्धिमान् पुरुष उनमें नहीं रमता।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The enjoyments that arise from contact are only sources of pain, for they have a beginning and an end, O Arjuna; the wise do not rejoice in them."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે કૌંતેય! ઇન્દ્રિયો અને વિષયોના સંયોગથી ઉત્પન્ન થતા ભોગો દુઃખના જ કારણ છે, કારણ કે તે આદિ-અંતવાળા છે. બુદ્ધિમાન પુરુષ તેમાં રમતો નથી."
+      }
+    }
+  },
+  {
+    "id": 227,
+    "sloka": "5.23",
+    "verse_id": 227,
+    "verseNumber": 227,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो मनुष्य इसी लोक में शरीर त्यागने के पूर्व ही काम और क्रोध से उत्पन्न हुए वेग को सहन करने में समर्थ है,  वह योगी (युक्त) और सुखी मनुष्य है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who is able, while still here in this world, to withstand the impulse born out of desire and anger before the liberation from the body, he is a Yogi, and he is a happy man."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે મનુષ્ય આ લોકમાં શરીર છોડતા પહેલાં જ કામ અને ક્રોધથી ઉત્પન્ન થતા વેગને સહન કરવા સમર્થ છે, તે જ યોગી છે અને તે જ સુખી છે."
+      }
+    }
+  },
+  {
+    "id": 228,
+    "sloka": "5.24",
+    "verse_id": 228,
+    "verseNumber": 228,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष अन्तरात्मा में ही सुख वाला,  आत्मा में ही आराम वाला तथा आत्मा में ही ज्ञान वाला है,  वह योगी ब्रह्मरूप बनकर ब्रह्मनिर्वाण अर्थात् परम मोक्ष को प्राप्त होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who is happy within, who rejoices within, and who is illuminated within, that Yogi attains absolute freedom, or Moksha, becoming Brahman himself."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે પુરુષ અંતરાત્મામાં જ સુખી છે, આત્મામાં જ રમે છે અને આત્મામાં જ જ્ઞાન પામે છે, તે યોગી બ્રહ્મરૂપ બનીને બ્રહ્મનિર્વાણ (પરમ મોક્ષ) પામે છે."
+      }
+    }
+  },
+  {
+    "id": 229,
+    "sloka": "5.25",
+    "verse_id": 229,
+    "verseNumber": 229,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "वे ऋषिगण मोक्ष को प्राप्त होते हैं - जिनके पाप नष्ट हो गये हैं, जो छिन्नसंशय, संयमी और भूतमात्र के हित में रमने वाले हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The sages obtain absolute freedom or Moksha when their sins have been destroyed, their dualities have been torn asunder, they are self-controlled, and they are intent on the welfare of all beings."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે ઋષિઓના પાપ નષ્ટ થયા છે, જેમના સંશયો દૂર થયા છે, જે સંયમી છે અને સર્વ જીવોના કલ્યાણમાં રત છે, તેઓ મોક્ષને પામે છે."
+      }
+    }
+  },
+  {
+    "id": 230,
+    "sloka": "5.26",
+    "verse_id": 230,
+    "verseNumber": 230,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "काम और क्रोध से रहित,  संयतचित्त वाले तथा आत्मा को जानने वाले यतियों के लिए सब ओर मोक्ष (या ब्रह्मानन्द) विद्यमान रहता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Absolute freedom exists on all sides for those self-controlled ascetics who are free from desire and anger, who have controlled their thoughts, and who have realized the Self."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કામ અને ક્રોધથી રહિત, સંયમિત ચિત્તવાળા અને આત્મજ્ઞાની યતિઓ માટે સર્વત્ર મોક્ષ (બ્રહ્માનંદ) જ છે."
+      }
+    }
+  },
+  {
+    "id": 231,
+    "sloka": "5.27",
+    "verse_id": 231,
+    "verseNumber": 231,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "बाह्य विषयों को बाहर ही रखकर नेत्रों की दृष्टि को भृकुटि के बीच में स्थित करके तथा नासिका में विचरने वाले प्राण और अपानवायु को सम करके,।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Shutting out all external contacts and fixing the gaze between the eyebrows, realizing the outgoing and incoming breaths moving within the nostrils."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સર્વ બાહ્ય વિષયોનો ત્યાગ કરીને, દ્રષ્ટિને ભ્રમરની વચ્ચે સ્થિર કરીને, અને નાસિકામાં વહેતા પ્રાણ અને અપાન વાયુને સમ કરીને (મનુષ્ય ધ્યાન કરે છે)."
+      }
+    }
+  },
+  {
+    "id": 232,
+    "sloka": "5.28",
+    "verse_id": 232,
+    "verseNumber": 232,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जिस पुरुष की इन्द्रियाँ,  मन और बुद्धि संयत हैं, ऐसा मोक्ष परायण मुनि इच्छा, भय और क्रोध से रहित है, वह सदा मुक्त ही है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "With the senses, mind, and intellect ever controlled, having liberation as their supreme goal, free from desire, fear, and anger, the sage is truly liberated forever."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેમની ઇન્દ્રિયો, મન અને બુદ્ધિ સદૈવ નિયંત્રિત રહે છે, જે મુનિ મોક્ષને જ પોતાનું પરમ લક્ષ્ય માને છે, અને જે ઈચ્છા, ભય અને ક્રોધથી મુક્ત છે, તે ખરેખર સદાને માટે મુક્ત જ છે."
+      }
+    }
+  },
+  {
+    "id": 233,
+    "sloka": "5.29",
+    "verse_id": 233,
+    "verseNumber": 233,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "(साधक भक्त) मुझे यज्ञ और तपों का भोक्ता और सम्पूर्ण लोकों का महान् ईश्वर तथा भूतमात्र का सुहृद् (मित्र) जानकर शान्ति को प्राप्त होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who knows Me as the enjoyer of sacrifices and austerities, the great Lord of all the worlds, and the friend of all beings, attains peace."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે મને સર્વ યજ્ઞો અને તપસ્યાનો ભોક્તા, સર્વ લોકોના મહાન ઈશ્વર અને સર્વ જીવોના મિત્ર તરીકે જાણે છે, તે શાંતિને પામે છે."
+      }
+    }
+  }
+]

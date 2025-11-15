@@ -1,0 +1,968 @@
+[
+  {
+    "id": 373,
+    "sloka": "10.1",
+    "verse_id": 373,
+    "verseNumber": 373,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्रीभगवान् ने कहा -- हे महाबाहो ! पुन: तुम मेरे परम वचनों का श्रवण करो, जो मैं तुझ अतिशय प्रेम रखने वाले के लिये हित की इच्छा से कहूँगा।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Blessed Lord said, Again, O mighty-armed Arjuna, listen to my supreme word which I will declare to you, who are beloved, for your welfare."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આશીર્વાદિત ભગવાનએ કહ્યું, ફરીથી, ઓ શકિતશાળી સશસ્ત્ર અર્જુન, મારો સર્વોચ્ચ શબ્દ સાંભળો જે હું તમને જાહેર કરીશ, જે પ્રિય છે, તમારા કલ્યાણ માટે."
+      }
+    }
+  },
+  {
+    "id": 374,
+    "sloka": "10.2",
+    "verse_id": 374,
+    "verseNumber": 374,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मेरी उत्पत्ति (प्रभव) को न देवतागण जानते हैं और न महर्षिजन; क्योंकि मैं सब प्रकार से देवताओं और महर्षियों का भी आदिकारण हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Neither the hosts of the gods nor the great sages know My origin; for I am the source of all the gods and the great sages in every way."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ન તો દેવતાઓના યજમાનો કે મહાન ages ષિઓ મારા મૂળને જાણતા નથી;કેમ કે હું દરેક રીતે બધા દેવતાઓ અને મહાન ages ષિઓનો સ્રોત છું."
+      }
+    }
+  },
+  {
+    "id": 375,
+    "sloka": "10.3",
+    "verse_id": 375,
+    "verseNumber": 375,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो मुझे अजन्मा, अनादि और लोकों के महान् ईश्वर के रूप में जानता है, र्मत्य मनुष्यों में ऐसा संमोहरहित (ज्ञानी) पुरुष सब पापों से मुक्त हो जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who knows Me as unborn and beginningless, as the great Lord of the worlds, he among mortals is undeluded and is liberated from all sins."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે મને અજાત અને પ્રારંભિક તરીકે ઓળખે છે, વિશ્વના મહાન સ્વામી તરીકે, તે પ્રાણઘાતક લોકોમાં બિનસલાહભર્યા છે અને તે બધા પાપોથી મુક્ત થાય છે."
+      }
+    }
+  },
+  {
+    "id": 376,
+    "sloka": "10.4",
+    "verse_id": 376,
+    "verseNumber": 376,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "बुद्धि, ज्ञान, मोह का अभाव, क्षमा, सत्य, दम (इन्द्रिय संयम), शम (मन: संयम), सुख, दु:ख, जन्म और मृत्यु, भय और अभय।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Intellect, wisdom, non-delusion, forgiveness, truth, self-restraint, calmness, happiness, pain, existence or birth, non-existence or death, fear, and also fearlessness."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બુદ્ધિ, ડહાપણ, બિન-ભ્રાંતિ, ક્ષમા, સત્ય, આત્મસંયમ, શાંતિ, શાંતિ, સુખ, પીડા, અસ્તિત્વ અથવા જન્મ, અસ્તિત્વ અથવા મૃત્યુ, ભય અને નિર્ભયતા."
+      }
+    }
+  },
+  {
+    "id": 377,
+    "sloka": "10.5",
+    "verse_id": 377,
+    "verseNumber": 377,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अहिंसा, समता, सन्तोष, तप, दान. यश और अपयश ऐसे ये प्राणियों के नानाविध भाव मुझ से ही प्रकट होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Non-injury, equanimity, contentment, austerity, beneficence, fame, and ill-fame—these different qualities of beings arise from Me alone."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બિન-ઇજા, સમાનતા, સંતોષ, કઠોરતા, લાભ, ખ્યાતિ અને દુષ્કર્મ-આ માણસોના વિવિધ ગુણો ફક્ત મારાથી ઉદ્ભવે છે."
+      }
+    }
+  },
+  {
+    "id": 378,
+    "sloka": "10.6",
+    "verse_id": 378,
+    "verseNumber": 378,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सात महर्षिजन, पूर्वकाल के चार (सनकादि) तथा (चौदह) मनु ये मेरे प्रभाव वाले मेरे संकल्प से उत्पन्न हुए हैं, जिनकी संसार (लोक) में यह प्रजा है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The seven great sages, the ancient four, and the Manus, possessing powers like Mine (due to their minds being fixed on Me), were born from My mind; from them, these creatures have been born in this world."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સાત મહાન ages ષિઓ, પ્રાચીન ચાર અને માનસ, મારા જેવી શક્તિ ધરાવતા (તેમના મનને કારણે મારા પર નિશ્ચિત હોવાને કારણે), મારા મગજમાંથી જન્મેલા હતા;તેમની પાસેથી, આ જીવો આ દુનિયામાં જન્મ્યા છે."
+      }
+    }
+  },
+  {
+    "id": 379,
+    "sloka": "10.7",
+    "verse_id": 379,
+    "verseNumber": 379,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष इस मेरी विभूति और योग को तत्त्व से जानता है, वह पुरुष अविकम्प योग (अर्थात् निश्चल ध्यान योग) से युक्त हो जाता है, इसमें कुछ भी संशय नहीं है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who truly knows these manifold manifestations of My Being and this Yoga-power of Mine, becomes established in unshakable Yoga; there is no doubt about it."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેણે મારા અસ્તિત્વ અને મારા આ યોગ-શક્તિના આ મેનીફોલ્ડ અભિવ્યક્તિઓને ખરેખર જાણે છે, તે અનિશ્ચિત યોગમાં સ્થાપિત થઈ જાય છે;તેના વિશે કોઈ શંકા નથી."
+      }
+    }
+  },
+  {
+    "id": 380,
+    "sloka": "10.8",
+    "verse_id": 380,
+    "verseNumber": 380,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं ही सबका प्रभव स्थान हूँ; मुझसे ही सब (जगत्) विकास को प्राप्त होता है, इस प्रकार जानकर बुधजन भक्ति भाव से युक्त होकर मुझे ही भजते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "I am the source of all; from me everything evolves; Understanding this, the wise, endowed with meditation, worship me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હું બધાનો સ્રોત છું;મારી પાસેથી બધું વિકસિત થાય છે;આને સમજવું, જ્ wise ાની, ધ્યાનથી સંપન્ન, મારી પૂજા કરો."
+      }
+    }
+  },
+  {
+    "id": 381,
+    "sloka": "10.9",
+    "verse_id": 381,
+    "verseNumber": 381,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मुझमें ही चित्त को स्थिर करने वाले और मुझमें ही प्राणों (इन्द्रियों) को अर्पित करने वाले भक्तजन, सदैव परस्पर मेरा बोध कराते हुए, मेरे ही विषय में कथन करते हुए सन्तुष्ट होते हैं और रमते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "With their minds and lives wholly absorbed in Me, they enlighten each other and ever speak of Me, being satisfied and delighted."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "With their minds and lives wholly absorbed in Me, they enlighten each other and ever speak of Me, being satisfied and delighted."
+      }
+    }
+  },
+  {
+    "id": 382,
+    "sloka": "10.10",
+    "verse_id": 382,
+    "verseNumber": 382,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "उन (मुझ से) नित्य युक्त हुए और प्रेमपूर्वक मेरा भजन करने वाले भक्तों को, मैं वह 'बुद्धियोग' देता हूँ जिससे वे मुझे प्राप्त होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "To those who are ever steadfast, worshipping me with love, I give the yoga of discrimination, by which they come to me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેઓ હંમેશાં અડગ હોય છે, પ્રેમથી મારી પૂજા કરે છે, હું ભેદભાવનો યોગ આપું છું, જેના દ્વારા તેઓ મારી પાસે આવે છે."
+      }
+    }
+  },
+  {
+    "id": 383,
+    "sloka": "10.11",
+    "verse_id": 383,
+    "verseNumber": 383,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "उनके ऊपर अनुग्रह करने के लिए मैं उनके अन्त:करण में स्थित होकर, अज्ञानजनित अन्धकार को प्रकाशमय ज्ञान के दीपक द्वारा नष्ट करता हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Out of mere compassion for them, I, dwelling within their selves, destroy the darkness born of ignorance with the luminous lamp of knowledge."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ફક્ત તેમના માટે કરુણામાંથી, હું, તેમના સ્વયંની અંદર જ રહીશ, જ્ knowledge ાનના તેજસ્વી દીવોથી અજ્ orance ાનથી જન્મેલા અંધકારને નષ્ટ કરું છું."
+      }
+    }
+  },
+  {
+    "id": 384,
+    "sloka": "10.12",
+    "verse_id": 384,
+    "verseNumber": 384,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अर्जुन ने कहा आप -परम ब्रह्म, परम धाम और परम पवित्र हंै; सनातन दिव्य पुरुष, देवों के भी आदि देव, जन्म रहित और सर्वव्यापी हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Arjuna said, \"You are the Supreme Brahman, the supreme abode, the supreme purifier, eternal, divine Person, the primeval God, unborn, and omnipresent.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અર્જુને કહ્યું, \"તમે સર્વોચ્ચ બ્રાહ્મણ, સર્વોચ્ચ નિવાસસ્થાન, સર્વોચ્ચ શુદ્ધિકરણ, શાશ્વત, દૈવી વ્યક્તિ, પ્રાધાન્ય ભગવાન, અજાત અને સર્વવ્યાપક છો.\""
+      }
+    }
+  },
+  {
+    "id": 385,
+    "sloka": "10.13",
+    "verse_id": 385,
+    "verseNumber": 385,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "ऐसा आपको समस्त ऋषिजन कहते हैं;  वैसे ही देवर्षि नारद, असित, देवल ऋषि तथा व्यास और स्वयं आप भी मेरे प्रति कहते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "All the sages have thus declared Thee, as also the divine sage Narada; so also Asita, Devala, and Vyasa; and now Thou Thyself dost say so to me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બધા ages ષિઓએ આ રીતે તને ઘોષિત કર્યા છે, તેમજ દૈવી age ષિ નારદા;તેથી અસિતા, દેવલા અને વ્યાસ પણ;અને હવે તું જાતે જ મને કહે છે."
+      }
+    }
+  },
+  {
+    "id": 386,
+    "sloka": "10.14",
+    "verse_id": 386,
+    "verseNumber": 386,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे केशव ! जो कुछ भी आप मेरे प्रति कहते हैं, इस सबको मैं सत्य मानता हूँ। हे भगवन्, आपके (वास्तविक) स्वरूप को न देवता जानते हैं और न दानव।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "I believe all that You have said to me to be true, O Krishna; indeed, O blessed Lord! Neither the gods nor the demons know Your manifestation (origin)."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હું માનું છું કે તમે મને જે કહ્યું છે તે સાચું છે, ઓ કૃષ્ણ;ખરેખર, ઓ ધન્ય ભગવાન!દેવતાઓ કે રાક્ષસો તમારા અભિવ્યક્તિ (મૂળ) ને જાણતા નથી."
+      }
+    }
+  },
+  {
+    "id": 387,
+    "sloka": "10.15",
+    "verse_id": 387,
+    "verseNumber": 387,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पुरुषोत्तम ! हे भूतभावन ! हे भूतेश ! हे देवों के देव ! हे जगत् के स्वामी ! आप स्वयं ही अपने आप को जानते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Verily, Thou Thyself knowest Thyself by Thyself, O Supreme Person, O source and Lord of all beings, O God of gods, O ruler of the world!"
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ખરેખર, તું પોતાને તારા દ્વારા જાણે છે, ઓ સર્વોચ્ચ વ્યક્તિ, ઓ સ્રોત અને બધા માણસોનો સ્વામી, હે દેવનો દેવ, હે વિશ્વના શાસક!"
+      }
+    }
+  },
+  {
+    "id": 388,
+    "sloka": "10.16",
+    "verse_id": 388,
+    "verseNumber": 388,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "आप ही उन अपनी दिव्य विभूतियों को अशेषत: कहने के लिए योग्य हैं, जिन विभूतियों के द्वारा इन समस्त लोकों को आप व्याप्त करके स्थित हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "You should indeed tell, without reserve, of your divine glories by which you exist, pervading all these worlds. (No one else can do so.)"
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તમારે ખરેખર આ બધી દુનિયાને વ્યાપક બનાવતા, તમારી દૈવી ગ્લોરીઝ વિશે, અનામત વિના, તમારે કહેવું જોઈએ.(બીજું કોઈ આવું કરી શકશે નહીં.)"
+      }
+    }
+  },
+  {
+    "id": 389,
+    "sloka": "10.17",
+    "verse_id": 389,
+    "verseNumber": 389,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे योगेश्वर ! मैं किस प्रकार निरन्तर चिन्तन करता हुआ आपको जानूँ, और हे भगवन् ! आप किनकिन भावों में मेरे द्वारा चिन्तन करने योग्य हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "How shall I, ever meditating, know you, O Yogin? In what aspects or things, O blessed Lord, should I think of you?"
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હું, ક્યારેય ધ્યાન કરું છું, તમને કેવી રીતે ઓળખું છું?હે ભગવાન, કયા પાસાઓ અથવા વસ્તુઓમાં, મારે તમારા વિશે વિચારવું જોઈએ?"
+      }
+    }
+  },
+  {
+    "id": 390,
+    "sloka": "10.18",
+    "verse_id": 390,
+    "verseNumber": 390,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे जनार्दन ! अपनी योग शक्ति और विभूति को पुन: विस्तारपूर्वक कहिए, क्योंकि आपके अमृतमय वचनों को सुनते हुए मुझे तृप्ति नहीं होती।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Tell me again in detail, O Krishna, of your yogic power and glory; for I am not satiated with what I have heard of your life-giving and nectar-like speech."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ઓ કૃષ્ણ, તમારી યોગિક શક્તિ અને ગૌરવની વિગતવાર ફરીથી કહો;કારણ કે મેં તમારા જીવન આપવાનું અને અમૃત જેવા ભાષણ વિશે જે સાંભળ્યું છે તેનાથી હું સંતોષ નથી કરતો."
+      }
+    }
+  },
+  {
+    "id": 391,
+    "sloka": "10.19",
+    "verse_id": 391,
+    "verseNumber": 391,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्रीभगवान् ने कहा -हन्त अब मैं तुम्हें अपनी दिव्य विभूतियों को प्रधानता से कहूँगा। हे कुरुश्रेष्ठ मेरे विस्तार का अन्त नहीं है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Blessed Lord said, \"Very well! Now I will declare to you My divine glories in their prominence, O Arjuna; there is no end to their detailed description.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આશીર્વાદિત ભગવાનએ કહ્યું, \"ખૂબ સરસ! હવે હું તમને તેમની પ્રતિષ્ઠામાં મારી દૈવી ગ્લોરીઝ જાહેર કરીશ, ઓ અર્જુન; તેમના વિગતવાર વર્ણનોનો કોઈ અંત નથી.\""
+      }
+    }
+  },
+  {
+    "id": 392,
+    "sloka": "10.20",
+    "verse_id": 392,
+    "verseNumber": 392,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे गुडाकेश (निद्राजित्) ! मैं समस्त भूतों के हृदय में स्थित सबकी आत्मा हूँ तथा सम्पूर्ण भूतों का आदि, मध्य और अन्त भी मैं ही हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "I am the Self, O Gudakesa, seated in the hearts of all beings; I am the beginning, the middle, and the end of all beings."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હું સ્વયં છું, ઓ ગુડક્સા, બધા માણસોના હૃદયમાં બેઠો;હું શરૂઆત, મધ્યમ અને બધા માણસોનો અંત છું."
+      }
+    }
+  },
+  {
+    "id": 393,
+    "sloka": "10.21",
+    "verse_id": 393,
+    "verseNumber": 393,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं (बारह) आदित्यों में विष्णु और ज्योतियों में अंशुमान् सूर्य हूँ; मैं (उनचास) मरुतों (वायु देवताओं) में मरीचि हूँ और नक्षत्रों में शशी (चन्द्रमा) हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Among the twelve Adityas, I am Vishnu; among luminaries, the radiant sun; among the seven or forty-nine Maruts, I am Marichi; among stars, I am the moon."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બાર આદિત્યમાં, હું વિષ્ણુ છું;લ્યુમિનારીઝમાં, ખુશખુશાલ સૂર્ય;સાત કે ચાલીસ-નવ મારુટ્સમાં, હું મરિચી છું;તારાઓમાં, હું ચંદ્ર છું."
+      }
+    }
+  },
+  {
+    "id": 394,
+    "sloka": "10.22",
+    "verse_id": 394,
+    "verseNumber": 394,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं वेदों में सामवेद हूँ, देवों में वासव (इन्द्र) हूँ; मैं इन्द्रियों में मन और भूतप्राणियों में चेतना (ज्ञानशक्ति) हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Among the Vedas, I am the Sama-Veda; among the gods, I am Vasava; among the senses, I am the mind; and among living beings, I am intelligence."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "વેદોમાં, હું સમા-વેદ છું;દેવતાઓમાં, હું વસાવા છું;ઇન્દ્રિયોમાં, હું મન છું;અને જીવંત માણસોમાં, હું બુદ્ધિ છું."
+      }
+    }
+  },
+  {
+    "id": 395,
+    "sloka": "10.23",
+    "verse_id": 395,
+    "verseNumber": 395,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं (ग्यारह) रुद्रों में शंकर हूँ और यक्ष तथा राक्षसों में धनपति कुबेर (वित्तेश) हूँ; (आठ) वसुओं में अग्नि हूँ तथा शिखर वाले पर्वतों में मेरु हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "And among the Rudras, I am Sankara; among the Yakshas and Rakshasas, the Lord of Wealth (Kubera); among the Vasus, I am Pavaka (Fire); and among the seven mountains, I am Meru."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અને રુદ્રમાં, હું સંકરા છું;યક્ષ અને રક્ષાસમાં, સંપત્તિનો સ્વામી (કુબેરા);વાસસમાં, હું પાવકા (અગ્નિ) છું;અને સાત પર્વતોમાં, હું મેરુ છું."
+      }
+    }
+  },
+  {
+    "id": 396,
+    "sloka": "10.24",
+    "verse_id": 396,
+    "verseNumber": 396,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पार्थ ! पुरोहितों में मुझे बृहस्पति जानो; मैं सेनापतियों में स्कन्द और जलाशयों में समुद्र हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "And, among the household priests of kings, O Arjuna, know Me to be the chief, Brihaspati; among the army generals, I am Skanda; among lakes, I am the ocean."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અને, રાજાઓના ઘરના પાદરીઓ વચ્ચે, હે અર્જુન, મને ચીફ, બ્રિહસપતી તરીકે ઓળખે છે;આર્મી સેનાપતિઓમાં, હું સ્કાંડા છું;તળાવોમાં, હું સમુદ્ર છું."
+      }
+    }
+  },
+  {
+    "id": 397,
+    "sloka": "10.25",
+    "verse_id": 397,
+    "verseNumber": 397,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं महर्षियों में भृगु और वाणी (शब्दों) में एकाक्षर ओंकार हूँ। मैं यज्ञों में जपयज्ञ और स्थावरों (अचलों) में हिमालय हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Among the great sages, I am Bhrigu; among words, I am the one syllable (Om); among sacrifices, I am the sacrifice of silent repetition; among the immovable things, I am the Himalayas."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મહાન ages ષિઓ વચ્ચે, હું ભૃગુ છું;શબ્દોમાં, હું એક અક્ષર (ઓએમ) છું;બલિદાનમાં, હું મૌન પુનરાવર્તનનો બલિદાન છું;સ્થાવર વસ્તુઓમાં, હું હિમાલય છું."
+      }
+    }
+  },
+  {
+    "id": 398,
+    "sloka": "10.26",
+    "verse_id": 398,
+    "verseNumber": 398,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं समस्त वृक्षों में अश्वत्थ (पीपल) हूँ और देवर्षियों में नारद हूँ; मैं गन्धर्वों में चित्ररथ और सिद्ध पुरुषों में कपिल मुनि हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Among all the trees, I am the Peepul; among the divine sages, I am Narada; among the Gandharvas, I am Chitraratha; among the perfected, I am the sage Kapila."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બધા વૃક્ષો વચ્ચે, હું પીપુલ છું;દૈવી ages ષિઓ વચ્ચે, હું નારદા છું;ગાંડાર્વમાં, હું ચિત્રરથ છું;સંપૂર્ણમાં, હું age ષિ કપિલા છું."
+      }
+    }
+  },
+  {
+    "id": 399,
+    "sloka": "10.27",
+    "verse_id": 399,
+    "verseNumber": 399,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अश्वों में अमृत से उत्पन्न हुए उच्चैश्रवा नामक अश्व, हाथियों में ऐरावत और मनुष्यों में राजा मुझे ही जानो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Know Me as Ucchaisravas, born of nectar, among horses; Airavata among lordly elephants; and the king among men."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મને ઘોડાઓ વચ્ચે, અમૃતથી જન્મેલા યુચિસ્રવો તરીકે જાણો;લોર્ડલી હાથીઓ વચ્ચે એરવાતા;અને પુરુષો વચ્ચે રાજા."
+      }
+    }
+  },
+  {
+    "id": 400,
+    "sloka": "10.28",
+    "verse_id": 400,
+    "verseNumber": 400,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं शस्त्रों में वज्र और धेनुओं (गायों) में कामधेनु हूँ, प्रजा उत्पत्ति का हेतु कन्दर्प (कामदेव) मैं हूँ और सर्पों में वासुकि हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Among weapons, I am the thunderbolt; among cows, I am the wish-fulfilling cow called Kamadhenu; I am the progenitor, the god of love; among serpents, I am Vasuki."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "Among weapons, I am the thunderbolt;ગાયની વચ્ચે, હું કામહેનુ નામની ઇચ્છા-પરિપૂર્ણ ગાય છું;હું પૂર્વજ છું, પ્રેમનો દેવ;સર્પમાં, હું વસુકી છું."
+      }
+    }
+  },
+  {
+    "id": 401,
+    "sloka": "10.29",
+    "verse_id": 401,
+    "verseNumber": 401,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं नागों में अनन्त (शेषनाग) हूँ और जल देवताओं में वरुण हूँ; मैं पितरों में अर्यमा हँ और नियमन करने वालों में यम हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "I am Ananta among the Nagas; I am Varuna among water-deities; Aryaman among the Manes; I am Yama among the governors."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "I am Ananta among the Nagas;હું પાણીના દાવમાં વરુના છું;મેન વચ્ચે આર્યામન;હું રાજ્યપાલોમાં યમ છું."
+      }
+    }
+  },
+  {
+    "id": 402,
+    "sloka": "10.30",
+    "verse_id": 402,
+    "verseNumber": 402,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं दैत्यों में प्रह्लाद और गणना करने वालों में काल हूँ, मैं 'पशुओं' में सिंह (मृगेन्द्र) और पक्षियों में गरुड़ हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "And I am Prahlada among the demons, I am Time among reckoners, I am the lion among beasts, and Vainateya (Garuda) among birds."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અને હું રાક્ષસોમાં પ્રહલાડા છું, હું ગણતરીઓ વચ્ચેનો સમય છું, હું જાનવરો વચ્ચેનો સિંહ છું, અને પક્ષીઓ વચ્ચે વાઈનતેય (ગરુડા)."
+      }
+    }
+  },
+  {
+    "id": 403,
+    "sloka": "10.31",
+    "verse_id": 403,
+    "verseNumber": 403,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं पवित्र करने वालों में वायु हूँ और शस्त्रधारियों में राम हूँ; तथा मत्स्यों (जलचरों) में मैं मगरमच्छ और नदियों में मैं गंगा हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Among the purifiers, I am the wind; among the warriors, I am Rama; among the fishes, I am the shark; among the streams, I am the Ganga."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "શુદ્ધિકરણમાં, હું પવન છું;વોરિયર્સમાં, હું રામ છું;માછલીઓ વચ્ચે, હું શાર્ક છું;પ્રવાહોમાં, હું ગંગા છું."
+      }
+    }
+  },
+  {
+    "id": 404,
+    "sloka": "10.32",
+    "verse_id": 404,
+    "verseNumber": 404,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे अर्जुन ! सृष्टियों का आदि, अन्त और मध्य भी मैं ही हूँ, मैं विद्याओं में अध्यात्मविद्या और विवाद करने वालों में (अर्थात् विवाद के प्रकारों में) मैं वाद हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Among creations I am the beginning, the middle, and the end, O Arjuna; among the sciences, I am the science of the Self; and I am the logic among controversialists."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સર્જનોમાં હું શરૂઆત, મધ્યમ અને અંત છું, ઓ અર્જુન;વિજ્; ાનમાં, હું સ્વયંનું વિજ્; ાન છું;અને હું વિવાદવાદીઓમાં તર્ક છું."
+      }
+    }
+  },
+  {
+    "id": 405,
+    "sloka": "10.33",
+    "verse_id": 405,
+    "verseNumber": 405,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं अक्षरों (वर्णमाला) में अकार और समासों में द्वन्द्व (नामक समास) हूँ; मैं अक्षय काल और विश्वतोमुख (विराट् स्वरूप) धाता हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Among the letters of the alphabet, I am the letter 'A' and the dual among compounds. I am verily the inexhaustible and everlasting time; I am the dispenser of the fruits of actions, having faces in all directions."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મૂળાક્ષરોના અક્ષરોની વચ્ચે, હું 'એ' અક્ષર અને સંયોજનોમાં ડ્યુઅલ છું.હું ખરેખર અખૂટ અને શાશ્વત સમય છું;હું ક્રિયાઓના ફળનો વિતરક છું, બધી દિશામાં ચહેરાઓ ધરાવે છે."
+      }
+    }
+  },
+  {
+    "id": 406,
+    "sloka": "10.34",
+    "verse_id": 406,
+    "verseNumber": 406,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं सर्वभक्षक मृत्यु और भविष्य में होने वालों की उत्पत्ति का कारण हूँ; स्त्रियों में कीर्ति, श्री, वाक (वाणी), स्मृति, मेधा, धृति और क्षमा हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "And I am the all-devouring Death, and the source of prosperity for those who are to be prosperous; among the feminine qualities, I am fame, prosperity, speech, memory, intelligence, firmness, and forgiveness."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અને હું મૃત્યુ પામનાર મૃત્યુ છું, અને જેઓ સમૃદ્ધ બનવાના છે તેમના માટે સમૃદ્ધિનો સ્રોત;સ્ત્રીની ગુણોમાં, હું ખ્યાતિ, સમૃદ્ધિ, ભાષણ, મેમરી, બુદ્ધિ, દ્ર firm તા અને ક્ષમા છું."
+      }
+    }
+  },
+  {
+    "id": 407,
+    "sloka": "10.35",
+    "verse_id": 407,
+    "verseNumber": 407,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सामों (गेय मन्त्रों) में मैं बृहत्साम और छन्दों में गायत्री छन्द हूँ; मैं मासों में मार्गशीर्ष (दिसम्बरजनवरी के भाग) और ऋतुओं में वसन्त हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Among the hymns, I am the Brihatsaman; among meters, I am Gayatri; among months, I am Margasirsha; among seasons, I am the flowery season."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સ્તોત્રો વચ્ચે, હું બ્રિહત્સમાન છું;મીટરની વચ્ચે, હું ગાયત્રી છું;મહિનાઓમાં, હું માર્ગાસીર્શા છું;સીઝનમાં, હું ફૂલોની મોસમ છું."
+      }
+    }
+  },
+  {
+    "id": 408,
+    "sloka": "10.36",
+    "verse_id": 408,
+    "verseNumber": 408,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं छल करने वालों में द्यूत हूँ और तेजस्वियों में तेज हूँ, मैं विजय हूँ; मैं व्यवसाय (उद्यमशीलता) हूँ और सात्विक पुरुषों का सात्विक भाव हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "I am the gambling of the deceitful; I am the splendor of the splendid; I am victory; I am the resolve of the resolute; I am the goodness of the good."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હું કપટનો જુગાર છું;હું ભવ્ય વૈભવ છું;હું વિજય છું;હું નિશ્ચયનો સંકલ્પ છું;હું સારાની દેવતા છું."
+      }
+    }
+  },
+  {
+    "id": 409,
+    "sloka": "10.37",
+    "verse_id": 409,
+    "verseNumber": 409,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं वृष्णियों में वासुदेव हूँ और पाण्डवों में धनंजय, मैं मुनियों में व्यास और कवियों में उशना कवि हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Among the Vrishnis, I am Vaasudeva; among the Pandavas, I am Arjuna; among the sages, I am Vyasa; among the poets, I am Usanas, the poet."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "વૃષ્નીઓમાં, હું વાસુદેવ છું;પાંડવોમાં, હું અર્જુન છું;ages ષિઓ વચ્ચે, હું વ્યાસ છું;કવિઓ વચ્ચે, હું ઉસાના, કવિ છું."
+      }
+    }
+  },
+  {
+    "id": 410,
+    "sloka": "10.38",
+    "verse_id": 410,
+    "verseNumber": 410,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं दमन करने वालों का दण्ड हूँ और विजयेच्छुओं की नीति हूँ; मैं गुह्यों में मौन हूँ और ज्ञानवानों का ज्ञान हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Of those who punish, I am the scepter; among those who seek victory, I am statesmanship; and among secrets, I am silence; I am knowledge among knowers."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેઓ સજા કરે છે, હું રાજદંડ છું;વિજય મેળવનારા લોકોમાં, હું રાજનીતિ છું;અને રહસ્યો વચ્ચે, હું મૌન છું;હું જાણકારોમાં જ્ knowledge ાન છું."
+      }
+    }
+  },
+  {
+    "id": 411,
+    "sloka": "10.39",
+    "verse_id": 411,
+    "verseNumber": 411,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे अर्जुन ! जो समस्त भूतों की उत्पत्ति का बीज (कारण) है, वह भी में ही हूँ, क्योंकि ऐसा कोई चर और अचर भूत नहीं है, जो मुझसे रहित है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "And whatever is the seed of all beings, that too am I, O Arjuna; there is no being, be it moving or unmoving, that can exist without Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અને બધા માણસોનું બીજ જે પણ છે, તે પણ હું છું, હે અર્જુન;ત્યાં કોઈ અસ્તિત્વ નથી, તે ખસેડવાનું અથવા અનિયંત્રિત છે, તે મારા વિના અસ્તિત્વમાં છે."
+      }
+    }
+  },
+  {
+    "id": 412,
+    "sloka": "10.40",
+    "verse_id": 412,
+    "verseNumber": 412,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे परन्तप ! मेरी दिव्य विभूतियों का अन्त नहीं है; अपनी विभूतियों का यह विस्तार मैंने एक देश से अर्थात् संक्षेप में कहा है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "There is no end to My divine glories, O Arjuna, but this is a brief statement by Me of the particulars of My divine glory."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે અર્જુન, મારી દૈવી ગ્લોરીઝનો કોઈ અંત નથી, પરંતુ મારા દૈવી મહિમાના વિગતો વિશે આ મારા દ્વારા ટૂંકું નિવેદન છે."
+      }
+    }
+  },
+  {
+    "id": 413,
+    "sloka": "10.41",
+    "verse_id": 413,
+    "verseNumber": 413,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो कोई भी विभूतियुक्त, कान्तियुक्त अथवा शक्तियुक्त वस्तु (या प्राणी) है, उसको तुम मेरे तेज के अंश से ही उत्पन्न हुई जानो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Whatever being there is glorious, prosperous, or powerful, know that to be a manifestation of a part of My splendor."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ત્યાં ભવ્ય, સમૃદ્ધ અથવા શક્તિશાળી છે, તે જાણે છે કે મારા વૈભવના ભાગનું અભિવ્યક્તિ છે."
+      }
+    }
+  },
+  {
+    "id": 414,
+    "sloka": "10.42",
+    "verse_id": 414,
+    "verseNumber": 414,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अथवा हे अर्जुन ! बहुत जानने से तुम्हारा क्या प्रयोजन है? मैं इस सम्पूर्ण जगत् को अपने एक अंश मात्र से धारण करके स्थित हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But, of what avail is the knowledge of all these details to you, O Arjuna? I exist, supporting this whole world with one part of Myself."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ, હે અર્જુન, તમને આ બધી વિગતોનું જ્ knowledge ાન શું ફાયદો છે?હું અસ્તિત્વમાં છું, આ આખા વિશ્વને મારા એક ભાગથી ટેકો આપું છું."
+      }
+    }
+  }
+]

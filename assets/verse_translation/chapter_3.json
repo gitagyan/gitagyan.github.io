@@ -1,0 +1,991 @@
+[
+  {
+    "id": 120,
+    "sloka": "3.1",
+    "verse_id": 120,
+    "verseNumber": 120,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे जनार्दन यदि आपको यह मान्य है कि कर्म से ज्ञान श्रेष्ठ है तो फिर हे केशव आप मुझे इस भयंकर कर्म में क्यों प्रवृत्त करते हैं"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Arjuna said: If Thou thinkest that knowledge is superior to action, O Krishna, why then, O Kesava, doest Thou ask me to engage in this terrible action?"
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અર્જુને કહ્યું: હે જનાર્દન, જો આપ કર્મના કરતાં જ્ઞાનને શ્રેષ્ઠ માનો છો, તો પછી હે કેશવ, શા માટે મને આ ભયંકર કર્મમાં પ્રવૃત્ત કરો છો?"
+      }
+    }
+  },
+  {
+    "id": 121,
+    "sloka": "3.2",
+    "verse_id": 121,
+    "verseNumber": 121,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "आप इस मिश्रित वाक्य से मेरी बुद्धि को मोहितसा करते हैं अत आप उस एक (मार्ग) को निश्चित रूप से कहिये जिससे मैं परम श्रेय को प्राप्त कर सकूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "With this seemingly perplexing speech, you seem to be confusing my understanding; therefore, tell me one certain way by which I may attain bliss."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આપની આ મિશ્રિત વાણીથી મારી બુદ્ધિ જાણે કે મોહિત થાય છે; તેથી, મને નિશ્ચિતપણે એક માર્ગ બતાવો જેનાથી હું પરમ શ્રેયને પામી શકું."
+      }
+    }
+  },
+  {
+    "id": 122,
+    "sloka": "3.3",
+    "verse_id": 122,
+    "verseNumber": 122,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्री भगवान् ने कहा हे निष्पाप (अनघ) अर्जुन इस श्लोक में दो प्रकार की निष्ठा मेरे द्वारा पहले कही गयी है ज्ञानियों की (सांख्यानां) ज्ञानयोग से और योगियों की कर्मयोग से।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Blessed Lord said, \"In this world, there is a twofold path, as I said before, O sinless one: the path of knowledge of the Sankhyas and the path of action of the Yogins.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "શ્રી ભગવાને કહ્યું, \"હે નિષ્પાપ અર્જુન, આ લોકમાં બે પ્રકારની નિષ્ઠા મેં પહેલાં કહી છે: સાંખ્યો માટે જ્ઞાનયોગ અને યોગીઓ માટે કર્મયોગ.\""
+      }
+    }
+  },
+  {
+    "id": 123,
+    "sloka": "3.4",
+    "verse_id": 123,
+    "verseNumber": 123,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "कर्मों के न करने से मनुष्य नैर्ष्कम्य को प्राप्त नहीं होता और न कर्मों के संन्यास से ही वह सिद्धि (पूर्णत्व) प्राप्त करता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Man does not reach actionlessness by not performing actions; nor does he attain perfection by mere renunciation."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કર્મોનો આરંભ ન કરવાથી મનુષ્ય નૈષ્કર્મ્યને પામતો નથી; અને કેવળ કર્મોના ત્યાગથી તે સિદ્ધિ (પૂર્ણતા) પામતો નથી."
+      }
+    }
+  },
+  {
+    "id": 124,
+    "sloka": "3.5",
+    "verse_id": 124,
+    "verseNumber": 124,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "कोई भी पुरुष कभी क्षणमात्र भी बिना कर्म किए नहीं रह सकता क्योंकि प्रकृति से उत्पन्न गुणों के द्वारा अवश हुए सब (पुरुषों) से कर्म करवा लिया जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Verily, no one can remain for even a moment without performing action; for everyone is made to act helplessly, indeed, by the qualities born of Nature."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ખરેખર, કોઈ પણ મનુષ્ય એક ક્ષણ માટે પણ કર્મ કર્યા વિના રહી શકતો નથી; કારણ કે પ્રકૃતિમાંથી જન્મેલા ગુણો દ્વારા દરેકને વિવશ થઈને કર્મ કરવા પડે છે."
+      }
+    }
+  },
+  {
+    "id": 125,
+    "sloka": "3.6",
+    "verse_id": 125,
+    "verseNumber": 125,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो मूढ बुद्धि पुरुष कर्मेन्द्रियों का निग्रह कर इन्द्रियों के भोगों का मन से स्मरण (चिन्तन) करता रहता है वह मिथ्याचारी (दम्भी) कहा जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who, restraining the organs of action, sits thinking of the sense-objects in his mind, he of deluded understanding is called a hypocrite."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે મૂઢ બુદ્ધિવાળો પુરુષ કર્મેન્દ્રિયોને રોકીને, મનથી ઇન્દ્રિયોના વિષયોનું ચિંતન કરતો રહે છે, તે મિથ્યાચારી (દંભી) કહેવાય છે."
+      }
+    }
+  },
+  {
+    "id": 126,
+    "sloka": "3.7",
+    "verse_id": 126,
+    "verseNumber": 126,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "परन्तु हे अर्जुन जो पुरुष मन से इन्द्रियों को वश में करके अनासक्त हुआ कर्मेंन्द्रियों से कर्मयोग का आचरण करता है वह श्रेष्ठ है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But whoever, controlling the senses by the mind, O Arjuna, engages himself in Karma Yoga with the organs of action, without attachment, he excels."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ હે અર્જુન, જે પુરુષ મનથી ઇન્દ્રિયોને વશમાં કરીને, આસક્તિ વિના, કર્મેન્દ્રિયોથી કર્મયોગનું આચરણ કરે છે, તે શ્રેષ્ઠ છે."
+      }
+    }
+  },
+  {
+    "id": 127,
+    "sloka": "3.8",
+    "verse_id": 127,
+    "verseNumber": 127,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "तुम (अपने) नियत (कर्तव्य) कर्म करो क्योंकि अकर्म से श्रेष्ठ कर्म है। तुम्हारे अकर्म होने से (तुम्हारा) शरीर निर्वाह भी नहीं सिद्ध होगा।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Perform your bounden duty, for action is superior to inaction, and even the maintenance of the body would not be possible for you through inaction."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તું તારું નિયત કર્મ કર, કારણ કે કર્મ ન કરવા કરતાં કર્મ કરવું શ્રેષ્ઠ છે, અને અકર્મ દ્વારા તારા શરીરનો નિર્વાહ પણ શક્ય નથી."
+      }
+    }
+  },
+  {
+    "id": 128,
+    "sloka": "3.9",
+    "verse_id": 128,
+    "verseNumber": 128,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यज्ञ के लिये किये हुए कर्म के अतिरिक्त अन्य कर्म में प्रवृत्त हुआ यह पुरुष कर्मों द्वारा बंधता है इसलिए हे कौन्तेय आसक्ति को त्यागकर यज्ञ के निमित्त ही कर्म का सम्यक् आचरण करो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The world is bound by actions other than those performed for the sake of sacrifice; do thou, therefore, O son of Kunti (Arjuna), perform actions for that sake alone, free from attachment."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "યજ્ઞ માટે કરેલા કર્મ સિવાયના કર્મોથી આ જગત બંધાયેલું છે; તેથી, હે કૌન્તેય, તું આસક્તિથી મુક્ત થઈને, તે યજ્ઞ માટે જ કર્મ કર."
+      }
+    }
+  },
+  {
+    "id": 129,
+    "sloka": "3.10",
+    "verse_id": 129,
+    "verseNumber": 129,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "प्रजापति (सृष्टिकर्त्ता) ने (सृष्टि के) आदि में यज्ञ सहित प्रजा का निर्माण कर कहा इस यज्ञ द्वारा तुम वृद्धि को प्राप्त हो और यह यज्ञ तुम्हारे लिये इच्छित कामनाओं को पूर्ण करने वाला (इष्टकामधुक्) होवे।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Creator, having in the beginning created mankind together with sacrifice, said, \"By this shall you propagate; let this be the milch cow of your desires—the cow that yields all the desired objects.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પ્રજાપતિએ સૃષ્ટિના આરંભમાં યજ્ઞ સહિત પ્રજાનું સર્જન કરીને કહ્યું, \"આનાથી તમે વૃદ્ધિ પામો; આ તમારી ઇચ્છાઓની કામધેનુ બનો – જે સર્વ મનોકામનાઓ પૂર્ણ કરે છે.\""
+      }
+    }
+  },
+  {
+    "id": 130,
+    "sloka": "3.11",
+    "verse_id": 130,
+    "verseNumber": 130,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "तुम लोग इस यज्ञ द्वारा देवताओं की उन्नति करो और वे देवतागण तुम्हारी उन्नति करें। इस प्रकार परस्पर उन्नति करते हुये परम श्रेय को तुम प्राप्त होगे।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "With this, nourish the gods, and may the gods nourish you; thus, nourishing each other, you shall attain the highest good."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આનાથી દેવતાઓને પોષો, અને દેવતાઓ તમને પોષે; આમ, એકબીજાને પોષીને, તમે પરમ શ્રેયને પામશો."
+      }
+    }
+  },
+  {
+    "id": 131,
+    "sloka": "3.12",
+    "verse_id": 131,
+    "verseNumber": 131,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यज्ञ द्वारा पोषित देवतागण तुम्हें इष्ट भोग प्रदान करेंगे। उनके द्वारा दिये हुये भोगों को जो पुरुष उनको दिये बिना ही भोगता है वह निश्चय ही चोर है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The gods, nourished by the sacrifice, will give you the desired objects. So, he who enjoys the objects given by the gods without offering anything in return is indeed a thief."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "યજ્ઞથી પોષાયેલા દેવતાઓ તમને ઇચ્છિત પદાર્થો આપશે. આમ, જે દેવતાઓએ આપેલા પદાર્થોને બદલામાં કંઈપણ અર્પણ કર્યા વિના ભોગવે છે, તે ખરેખર ચોર છે."
+      }
+    }
+  },
+  {
+    "id": 132,
+    "sloka": "3.13",
+    "verse_id": 132,
+    "verseNumber": 132,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यज्ञ के अवशिष्ट अन्न को खाने वाले श्रेष्ठ पुरुष सब पापों से मुक्त हो जाते हैं किन्तु जो लोग केवल स्वयं के लिये ही पकाते हैं वे तो पापों को ही खाते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The righteous who eat the remnants of the sacrifice are freed from all sins; but those sinful ones who cook food solely for their own sake indeed consume sin."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "યજ્ઞના અવશેષો ખાનારા સદાચારીઓ સર્વ પાપોથી મુક્ત થાય છે; પરંતુ જે પાપીઓ કેવળ પોતાના માટે જ ભોજન રાંધે છે, તેઓ તો પાપ જ ખાય છે."
+      }
+    }
+  },
+  {
+    "id": 133,
+    "sloka": "3.14",
+    "verse_id": 133,
+    "verseNumber": 133,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "समस्त प्राणी अन्न से उत्पन्न होते हैं अन्न की उत्पत्ति पर्जन्य से। पर्जन्य की उत्पत्ति यज्ञ से और यज्ञ कर्मों से उत्पन्न होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "From food come forth beings; from rain, food is produced; from sacrifice arises rain, and sacrifice is born of action."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અન્નમાંથી પ્રાણીઓ ઉત્પન્ન થાય છે; વરસાદથી અન્ન ઉત્પન્ન થાય છે; યજ્ઞથી વરસાદ થાય છે, અને યજ્ઞ કર્મમાંથી જન્મે છે."
+      }
+    }
+  },
+  {
+    "id": 134,
+    "sloka": "3.15",
+    "verse_id": 134,
+    "verseNumber": 134,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "कर्म की उत्पत्ति ब्रह्माजी से होती है और ब्रह्माजी अक्षर तत्त्व से व्यक्त होते हैं। इसलिये सर्व व्यापी ब्रह्म सदा ही यज्ञ में प्रतिष्ठित है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Know that action comes from Brahma, and Brahma comes from the Imperishable. Therefore, the all-pervasive Brahma ever rests in sacrifice."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જાણ કે કર્મ બ્રહ્મામાંથી આવે છે, અને બ્રહ્મા અક્ષર બ્રહ્મમાંથી પ્રગટ થાય છે. તેથી, સર્વવ્યાપી બ્રહ્મ સદાય યજ્ઞમાં સ્થિત છે."
+      }
+    }
+  },
+  {
+    "id": 135,
+    "sloka": "3.16",
+    "verse_id": 135,
+    "verseNumber": 135,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष यहाँ इस प्रकार प्रवर्तित हुए चक्र का अनुवर्तन नहीं करता हे पार्थ इंन्द्रियों में रमने वाला वह पाप आयु पुरुष व्यर्थ ही जीता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who does not follow the wheel thus set in motion, who is of sinful life, rejoicing in the senses, lives in vain, O Arjuna."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે પાર્થ, જે આ રીતે ગતિમાં મુકાયેલા ચક્રને અનુસરતો નથી, જે પાપી જીવન જીવે છે અને ઇન્દ્રિયોમાં આનંદ માણે છે, તે વ્યર્થ જીવે છે."
+      }
+    }
+  },
+  {
+    "id": 136,
+    "sloka": "3.17",
+    "verse_id": 136,
+    "verseNumber": 136,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "परन्तु जो मनुष्य आत्मा में ही रमने वाला आत्मा में ही तृप्त तथा आत्मा में ही सन्तुष्ट हो उसके लिये कोई कर्तव्य नहीं रहता।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But for that man who rejoices only in the Self, who is satisfied with the Self and is content in the Self alone, indeed there is nothing to do."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ જે મનુષ્ય કેવળ આત્મામાં જ આનંદ માણે છે, જે આત્માથી જ તૃપ્ત છે અને એકલા આત્મામાં જ સંતુષ્ટ છે, ખરેખર તેને માટે કોઈ કર્તવ્ય રહેતું નથી."
+      }
+    }
+  },
+  {
+    "id": 137,
+    "sloka": "3.18",
+    "verse_id": 137,
+    "verseNumber": 137,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इस जगत् में उस पुरुष का कृत और अकृत से कोई प्रयोजन नहीं है और न वह किसी वस्तु के लिये भूतमात्र पर आश्रित होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "For him, there is no interest whatsoever in what is done or not done; nor does he depend on any being for any purpose."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તેના માટે, કરેલા કે ન કરેલા કાર્યોમાં કોઈ જ સ્વાર્થ નથી; ન તો તે કોઈ હેતુ માટે કોઈ પણ પ્રાણી પર આશ્રિત રહેતો નથી."
+      }
+    }
+  },
+  {
+    "id": 138,
+    "sloka": "3.19",
+    "verse_id": 138,
+    "verseNumber": 138,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इसलिए, तुम अनासक्त होकर सदैव कर्तव्य कर्म का सम्यक् आचरण करो; क्योकि, अनासक्त पुरुष कर्म करता हुआ परमात्मा को प्राप्त होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Therefore, without attachment, always perform the actions that should be done; for by performing actions without attachment, one reaches the Supreme."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તેથી, આસક્તિ વિના, હંમેશાં કરવા યોગ્ય કર્તવ્ય કર્મ કર; કારણ કે આસક્તિ વિના કર્મ કરવાથી મનુષ્ય પરમાત્માને પામે છે."
+      }
+    }
+  },
+  {
+    "id": 139,
+    "sloka": "3.20",
+    "verse_id": 139,
+    "verseNumber": 139,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जनकादि (ज्ञानी जन) भी कर्म द्वारा ही संसिद्धि को प्राप्त हुये लोक संग्रह (लोक रक्षण) को भी देखते हुये; तुम कर्म करने योग्य हो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Janaka and others attained perfection indeed through action alone; even with the intention of protecting the masses, you should perform action."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જનક વગેરે જ્ઞાનીઓ પણ કેવળ કર્મ દ્વારા જ સિદ્ધિને પામ્યા હતા; લોકસંગ્રહના (લોક કલ્યાણના) હેતુથી પણ, તારે કર્મ કરવું જોઈએ."
+      }
+    }
+  },
+  {
+    "id": 140,
+    "sloka": "3.21",
+    "verse_id": 140,
+    "verseNumber": 140,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्रेष्ठ पुरुष जैसा आचरण करता है, अन्य लोग भी वैसा ही अनुकरण करते हैं; वह पुरुष जो कुछ प्रमाण कर देता है, लोग भी उसका अनुसरण करते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Whatever a great man does, others also do; whatever he establishes as the standard, the world follows."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "શ્રેષ્ઠ પુરુષ જેવું આચરણ કરે છે, અન્ય લોકો પણ તેવું જ કરે છે; તે જે કંઈપણ પ્રમાણ તરીકે સ્થાપિત કરે છે, જગત તેને અનુસરે છે."
+      }
+    }
+  },
+  {
+    "id": 141,
+    "sloka": "3.22",
+    "verse_id": 141,
+    "verseNumber": 141,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यद्यपि मुझे त्रैलोक्य में कुछ भी कर्तव्य नहीं हैं तथा किंचित भी प्राप्त होने योग्य (अवाप्तव्यम्) वस्तु अप्राप्त नहीं है, तो भी मैं कर्म में ही बर्तता हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "There is nothing in the three worlds, O Arjuna, that needs to be done by Me, nor is there anything unattained that needs to be attained; yet I engage Myself in action."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે પાર્થ, ત્રણેય લોકમાં મારે કંઈ પણ કરવાનું નથી, ન તો મારે કંઈ મેળવવાનું બાકી છે; છતાં હું કર્મમાં પ્રવૃત્ત રહું છું."
+      }
+    }
+  },
+  {
+    "id": 142,
+    "sloka": "3.23",
+    "verse_id": 142,
+    "verseNumber": 142,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यदि मैं सावधान हुआ (अतन्द्रित:) कदाचित कर्म में न लगा रहूँ तो, हे पार्थ ! सब प्रकार से मनुष्य मेरे मार्ग (र्वत्म) का अनुसरण करेंगे।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "For, should I not ever engage myself in action, unwearied, people would in every way follow my path, O Arjuna."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કારણ કે, હે પાર્થ, જો હું ક્યારેય સાવધાન રહીને કર્મમાં પ્રવૃત્ત ન રહું, તો લોકો દરેક રીતે મારા માર્ગને અનુસરશે."
+      }
+    }
+  },
+  {
+    "id": 143,
+    "sloka": "3.24",
+    "verse_id": 143,
+    "verseNumber": 143,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यदि मैं कर्म न करूँ, तो ये समस्त लोक नष्ट हो जायेंगे; और मैं वर्णसंकर का कर्ता तथा इस प्रजा का हनन करने वाला होऊँगा।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "These worlds would perish if I did not perform action; I would be the author of confusion of castes and destruction of these beings."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જો હું કર્મ ન કરું તો આ બધા લોકો નાશ પામશે; અને હું વર્ણસંકરનો કર્તા અને આ પ્રજાનો નાશ કરનારો બનીશ."
+      }
+    }
+  },
+  {
+    "id": 144,
+    "sloka": "3.25",
+    "verse_id": 144,
+    "verseNumber": 144,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे भारत ! कर्म में आसक्त हुए अज्ञानीजन जैसे कर्म करते हैं वैसे ही विद्वान् पुरुष अनासक्त होकर, लोकसंग्रह (लोक कल्याण) की इच्छा से कर्म करे।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "As the ignorant act out of attachment to action, O Bharata, so should the wise act without attachment, wishing for the welfare of the world."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે ભરતવંશી, જે રીતે અજ્ઞાનીઓ કર્મોમાં આસક્ત થઈને કર્મ કરે છે, તે જ રીતે જ્ઞાનીએ જગતના કલ્યાણની ઇચ્છાથી, આસક્તિ વિના કર્મ કરવું જોઈએ."
+      }
+    }
+  },
+  {
+    "id": 145,
+    "sloka": "3.26",
+    "verse_id": 145,
+    "verseNumber": 145,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "ज्ञानी पुरुष, कर्मों में आसक्त अज्ञानियों की बुद्धि में भ्रम उत्पन्न न करे, स्वयं (भक्ति से) युक्त होकर कर्मों का सम्यक् आचरण कर, उनसे भी वैसा ही कराये।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Let no wise man unsettle the minds of ignorant people who are attached to action; he should engage them in all actions, himself fulfilling them with devotion."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જ્ઞાની પુરુષે કર્મોમાં આસક્ત અજ્ઞાનીઓની બુદ્ધિમાં ભ્રમ ઉત્પન્ન ન કરવો જોઈએ; તેણે પોતે ભક્તિપૂર્વક કર્મો કરીને, તેમને પણ સર્વ કર્મોમાં પ્રવૃત્ત કરવા જોઈએ."
+      }
+    }
+  },
+  {
+    "id": 146,
+    "sloka": "3.27",
+    "verse_id": 146,
+    "verseNumber": 146,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सम्पूर्ण कर्म प्रकृति के गुणों द्वारा किये जाते हैं, अहंकार से मोहित हुआ पुरुष, \"मैं कर्ता हूँ\" ऐसा मान लेता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "All actions are wrought in all cases by the qualities of Nature alone. He whose mind is deluded by egoism thinks, \"I am the doer.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બધા કર્મો સર્વ પ્રકારે પ્રકૃતિના ગુણો દ્વારા જ કરવામાં આવે છે. જેનું મન અહંકારથી મોહિત છે તે માને છે, \"હું કર્તા છું.\""
+      }
+    }
+  },
+  {
+    "id": 147,
+    "sloka": "3.28",
+    "verse_id": 147,
+    "verseNumber": 147,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "परन्तु हे महाबाहो ! गुण और कर्म के विभाग के सत्य (तत्त्व)को जानने वाला ज्ञानी पुरुष यह जानकर कि \"गुण गुणों में बर्तते हैं\" (कर्म में) आसक्त नहीं होता।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But he who knows the Truth, O mighty-armed Arjuna, about the divisions of the qualities and their functions, knowing that the Gunas, as senses, move amidst the Gunas, as the sense-objects, is not attached."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ હે મહાબાહો અર્જુન, જે ગુણોના વિભાગો અને તેમના કાર્યો વિશે સત્ય જાણે છે, તે એ જાણીને કે ગુણો (ઇન્દ્રિયો) જ ગુણો (વિષયો) માં વર્તે છે, આસક્ત થતો નથી."
+      }
+    }
+  },
+  {
+    "id": 148,
+    "sloka": "3.29",
+    "verse_id": 148,
+    "verseNumber": 148,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "प्रकृति के गुणों से मोहित हुए पुरुष गुण और कर्म में आसक्त होते हैं, उन अपूर्ण ज्ञान वाले (अकृत्स्नविद:) मंदबुद्धि पुरुषों को पूर्ण ज्ञान प्राप्त पुरुष विचलित न करे।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Those deluded by the qualities of Nature are attached to the functions of the qualities. The man of perfect knowledge should not unsettle the foolish one who is of imperfect knowledge."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પ્રકૃતિના ગુણોથી ભ્રમિત થયેલા લોકો ગુણોના કાર્યોમાં આસક્ત હોય છે. સંપૂર્ણ જ્ઞાનવાળા પુરુષે અપૂર્ણ જ્ઞાનવાળા મૂર્ખને વિचलित ન કરવો જોઈએ."
+      }
+    }
+  },
+  {
+    "id": 149,
+    "sloka": "3.30",
+    "verse_id": 149,
+    "verseNumber": 149,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सम्पूर्ण कर्मों का मुझ में संन्यास करके, आशा और ममता से रहित होकर, संतापरहित हुए तुम युद्ध करो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Renouncing all actions in Me, with the mind centered on the Self, free from hope and egoism, and from mental fever, fight thou."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સર્વ કર્મો મને અર્પણ કરીને, મનને આત્મા પર કેન્દ્રિત કરીને, આશા અને અહંકારથી મુક્ત થઈને અને માનસિક સંતાપમાંથી મુક્ત થઈને તું યુદ્ધ કર."
+      }
+    }
+  },
+  {
+    "id": 150,
+    "sloka": "3.31",
+    "verse_id": 150,
+    "verseNumber": 150,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो मनुष्य दोष बुद्धि से रहित (अनसूयन्त:) और श्रद्धा से युक्त हुए सदा मेरे इस मत (उपदेश) का अनुष्ठानपूर्वक पालन करते हैं, वे कर्मों से (बन्धन से) मुक्त हो जाते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Those who constantly practice this teaching of Mine with faith and without caviling, they too are freed from actions."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેઓ શ્રદ્ધા સાથે અને દોષદ્રષ્ટિ વિના મારા આ ઉપદેશનું સતત પાલન કરે છે, તેઓ પણ કર્મોના બંધનમાંથી મુક્ત થાય છે."
+      }
+    }
+  },
+  {
+    "id": 151,
+    "sloka": "3.32",
+    "verse_id": 151,
+    "verseNumber": 151,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "परन्तु जो दोष दृष्टि वाले मूढ़ लोग इस मेरे मत का पालन नहीं करते, उन सब ज्ञानों में मोहित चित्तवालों को नष्ट हुये ही तुम समझो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But those who criticize My teaching and do not practice it, deprived of all knowledge and lacking discernment, know them to be doomed to destruction."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ જેઓ મારા ઉપદેશની નિંદા કરે છે અને તેનું પાલન કરતા નથી, જેઓ સર્વ જ્ઞાનથી વંચિત અને વિવેકહીન છે, તેમને તું નષ્ટ થયેલા જ સમજ."
+      }
+    }
+  },
+  {
+    "id": 152,
+    "sloka": "3.33",
+    "verse_id": 152,
+    "verseNumber": 152,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "ज्ञानवान् पुरुष भी अपनी प्रकृति के अनुसार चेष्टा करता है। सभी प्राणी अपनी प्रकृति पर ही जाते हैं, फिर इनमें (किसी का) निग्रह क्या करेगा।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Even a wise man acts in accordance with his own nature; beings will follow their nature; what can restraint do?"
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જ્ઞાની પુરુષ પણ પોતાના સ્વભાવ પ્રમાણે વર્તે છે; પ્રાણીઓ પોતાના સ્વભાવને અનુસરે છે; તેમાં સંયમ શું કરી શકે?"
+      }
+    }
+  },
+  {
+    "id": 153,
+    "sloka": "3.34",
+    "verse_id": 153,
+    "verseNumber": 153,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इन्द्रियइन्द्रिय (अर्थात् प्रत्येक इन्द्रिय) के विषय के प्रति (मन में) रागद्वेष रहते हैं; मनुष्य को चाहिये कि वह उन दोनों के वश में न हो; क्योंकि वे इसके (मनुष्य के) शत्रु हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Attachment and aversion for the objects of the senses abide in the senses; let no one come under their sway; for, they are his enemies."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ઇન્દ્રિયોના વિષયો પ્રત્યે રાગ અને દ્વેષ રહેલા છે; કોઈએ તેમના વશમાં ન આવવું જોઈએ; કારણ કે, તે તેના શત્રુઓ છે."
+      }
+    }
+  },
+  {
+    "id": 154,
+    "sloka": "3.35",
+    "verse_id": 154,
+    "verseNumber": 154,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सम्यक् प्रकार से अनुष्ठित परधर्म की अपेक्षा गुणरहित स्वधर्म का पालन श्रेयष्कर है; स्वधर्म में मरण कल्याणकारक है (किन्तु) परधर्म भय को देने वाला है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Better is one's own duty, though devoid of merit, than the duty of another well discharged. Better is death in one's own duty; the duty of another is fraught with fear."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સારી રીતે આચરેલા બીજાના ધર્મ કરતાં, ગુણ રહિત હોવા છતાં, પોતાનો ધર્મ શ્રેષ્ઠ છે. પોતાના ધર્મમાં મૃત્યુ પણ કલ્યાણકારી છે; બીજાનો ધર્મ ભયથી ભરેલો છે."
+      }
+    }
+  },
+  {
+    "id": 155,
+    "sloka": "3.36",
+    "verse_id": 155,
+    "verseNumber": 155,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अर्जुन ने कहा -- हे वार्ष्णेय ! फिर यह पुरुष बलपूर्वक बाध्य किये हुये के समान अनिच्छा होते हुये भी किसके द्वारा प्रेरित होकर पाप का आचरण करता है?"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Arjuna said, \"But what compels man to commit sin, even against his wishes, O Varshneya (Krishna), as if constrained by force?\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અર્જુને કહ્યું, \"પણ હે વાર્ષ્ણેય (કૃષ્ણ), માણસને તેની ઇચ્છા વિરુદ્ધ પણ, જાણે કે બળજબરીથી, પાપ કરવા માટે કોણ પ્રેરે છે?\""
+      }
+    }
+  },
+  {
+    "id": 156,
+    "sloka": "3.37",
+    "verse_id": 156,
+    "verseNumber": 156,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्रीभगवान् ने कहा -- रजोगुण में उत्पन्न हुई यह 'कामना' है, यही क्रोध है; यह महाशना (जिसकी भूख बड़ी हो) और महापापी है, इसे ही तुम यहाँ (इस जगत् में) शत्रु जानो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Blessed Lord said, \"It is desire and it is anger, both of the quality of Rajas, all-devouring and all-sinful; know this as the foe here in this world.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "શ્રી ભગવાને કહ્યું, \"તે કામના છે અને તે ક્રોધ છે, બંને રજોગુણમાંથી ઉત્પન્ન થાય છે, તે સર્વભક્ષી અને મહાપાપી છે; આ જગતમાં આને જ શત્રુ જાણ.\""
+      }
+    }
+  },
+  {
+    "id": 157,
+    "sloka": "3.38",
+    "verse_id": 157,
+    "verseNumber": 157,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जैसे धुयें से अग्नि और धूलि से दर्पण ढक जाता है तथा जैसे भ्रूण गर्भाशय से ढका रहता है, वैसे उस (काम) के द्वारा यह (ज्ञान) आवृत होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "As fire is enveloped by smoke, as a mirror is covered by dust, and as an embryo is surrounded by the amniotic sac, so is this enveloped by that."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેમ ધુમાડાથી અગ્નિ, ધૂળથી દર્પણ, અને ગર્ભાશયથી ગર્ભ ઢંકાયેલો રહે છે, તેમ કામના દ્વારા જ્ઞાન ઢંકાયેલું રહે છે."
+      }
+    }
+  },
+  {
+    "id": 158,
+    "sloka": "3.39",
+    "verse_id": 158,
+    "verseNumber": 158,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय ! अग्नि के समान जिसको तृप्त करना कठिन है ऐसे कामरूप, ज्ञानी के इस नित्य शत्रु द्वारा ज्ञान आवृत है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "O Arjuna, wisdom is enveloped by this constant enemy of the wise, in the form of desire, which is insatiable like fire."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હે અર્જુન, જ્ઞાનીનો આ કાયમી શત્રુ, જે કામનાના રૂપમાં છે અને અગ્નિની જેમ અતૃપ્ત છે, તેના દ્વારા જ્ઞાન ઢંકાયેલું છે."
+      }
+    }
+  },
+  {
+    "id": 159,
+    "sloka": "3.40",
+    "verse_id": 159,
+    "verseNumber": 159,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इन्द्रियाँ, मन और बुद्धि इसके निवास स्थान कहे जाते हैं; यह काम इनके द्वारा ही ज्ञान को आच्छादित करके देही पुरुष को मोहित करता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The senses, the mind, and the intellect are said to be its seat; through these, it deludes the embodied one, veiling their wisdom."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ઇન્દ્રિયો, મન અને બુદ્ધિ તેના નિવાસસ્થાન કહેવાય છે; આના દ્વારા તે જ્ઞાનને ઢાંકીને દેહધારીને મોહિત કરે છે."
+      }
+    }
+  },
+  {
+    "id": 160,
+    "sloka": "3.41",
+    "verse_id": 160,
+    "verseNumber": 160,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इसलिये, हे अर्जुन ! तुम पहले इन्द्रियों को वश में करके, ज्ञान और विज्ञान के नाशक इस कामरूप पापी को नष्ट करो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Therefore, O best of the Bharatas, control your senses first and then kill this sinful thing, which destroys knowledge and realization."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તેથી, હે ભરતશ્રેષ્ઠ, તું પહેલા તારી ઇન્દ્રિયોને નિયંત્રિત કર અને પછી જ્ઞાન અને વિજ્ઞાનનો નાશ કરનાર આ પાપી કામનાનો વધ કર."
+      }
+    }
+  },
+  {
+    "id": 161,
+    "sloka": "3.42",
+    "verse_id": 161,
+    "verseNumber": 161,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "(शरीर से) परे (श्रेष्ठ) इन्द्रियाँ कही जाती हैं;  इन्द्रियों से परे मन है और मन से परे बुद्धि है, और जो बुद्धि से भी परे है, वह है आत्मा।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "They say that the senses are superior to the body; the mind is superior to the senses; the intellect is superior to the mind; and He (the Self) is superior even to the intellect."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કહેવાય છે કે શરીર કરતાં ઇન્દ્રિયો શ્રેષ્ઠ છે; ઇન્દ્રિયો કરતાં મન શ્રેષ્ઠ છે; મન કરતાં બુદ્ધિ શ્રેષ્ઠ છે; અને જે બુદ્ધિથી પણ પરે છે, તે આત્મા છે."
+      }
+    }
+  },
+  {
+    "id": 162,
+    "sloka": "3.43",
+    "verse_id": 162,
+    "verseNumber": 162,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इस प्रकार बुद्धि से परे (शुद्ध) आत्मा को जानकर आत्मा (बुद्धि) के द्वारा आत्मा (मन) को वश में करके, हे महाबाहो ! तुम इस दुर्जेय (दुरासदम्) कामरूप शत्रु को मारो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Thus, knowing Him who is superior to the intellect and restraining the self by the Self, slay thou, O mighty-armed Arjuna, the enemy in the form of desire, hard to conquer."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આમ, બુદ્ધિથી પરે એવા આત્માને જાણીને અને પોતાના મનને બુદ્ધિથી સ્થિર કરીને, હે મહાબાહો અર્જુન! તું જીતવા માટે અત્યંત કઠિન એવા કામરૂપી શત્રુનો નાશ કર."
+      }
+    }
+  }
+]
