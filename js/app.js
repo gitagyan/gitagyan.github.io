@@ -1,7 +1,7 @@
 // Global variables
 let chapters = [];
 let verses = [];
-let translations = [];
+let translations = {}; // Changed from array to object: {chapterNumber: [translations]}
 let currentChapter = null;
 let currentVerse = null;
 let currentLang = 'english'; // 'english', 'hindi', or 'gujarati' - for verse translations
@@ -46,7 +46,24 @@ async function init() {
         // Load data from assets folder
         chapters = await fetch('./assets/chapters.json').then(r => r.json());
         verses = await fetch('./assets/verse.json').then(r => r.json());
-        translations = await fetch('./assets/verse-translations.json').then(r => r.json());
+        
+        // Load all chapter translation files
+        translations = {};
+        const translationPromises = [];
+        for (let chapterNum = 1; chapterNum <= 18; chapterNum++) {
+            translationPromises.push(
+                fetch(`./assets/verse_translation/chapter_${chapterNum}.json`)
+                    .then(r => r.json())
+                    .then(data => {
+                        translations[chapterNum] = data;
+                    })
+                    .catch(error => {
+                        console.warn(`Failed to load translations for chapter ${chapterNum}:`, error);
+                        translations[chapterNum] = []; // Empty array as fallback
+                    })
+            );
+        }
+        await Promise.all(translationPromises);
 
         // Load saved translation language preference
         const savedTranslationLang = localStorage.getItem('translationLanguage');
@@ -126,8 +143,9 @@ function showChapter(chapter) {
 function updateVerseContent() {
     if (!currentVerse) return;
 
-    // Find translation for current verse
-    const translation = translations.find(t => t.verse_id === currentVerse.id);
+    // Find translation for current verse from the appropriate chapter
+    const chapterTranslations = translations[currentVerse.chapter_number] || [];
+    const translation = chapterTranslations.find(t => t.verse_id === currentVerse.id);
     
     if (translation && translation.languages && translation.languages[currentLang]) {
         verseTranslation.innerHTML = translation.languages[currentLang].description;
@@ -761,7 +779,8 @@ function isBookmarked(verseId) {
 
 function addBookmark(verse) {
     const bookmarks = getBookmarks();
-    const translation = translations.find(t => t.verse_id === verse.id);
+    const chapterTranslations = translations[verse.chapter_number] || [];
+    const translation = chapterTranslations.find(t => t.verse_id === verse.id);
     
     const bookmark = {
         verseId: verse.id,

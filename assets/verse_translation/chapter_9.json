@@ -1,0 +1,784 @@
+[
+  {
+    "id": 339,
+    "sloka": "9.1",
+    "verse_id": 339,
+    "verseNumber": 339,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्रीभगवान् ने कहा -- तुम अनसूयु (दोष दृष्टि रहित) के लिए मैं इस गुह्यतम ज्ञान को विज्ञान के सहित कहूँगा, जिसको जानकर तुम अशुभ (संसार बंधन) से मुक्त हो जाओगे।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Blessed Lord said, \"I shall now declare to thee, who does not cavil, the greatest secret—the knowledge combined with experience (Self-realisation). Having known this, thou shalt be free from evil.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આશીર્વાદિત ભગવાનએ કહ્યું, \"હવે હું તને ઘોષણા કરીશ, જે અનુભવ (આત્મ-અનુભૂતિ) સાથે જોડાયેલ જ્ knowledge ાન-સૌથી મોટો રહસ્ય નથી. આ જાણ્યા પછી, તમે દુષ્ટતાથી મુક્ત થશો.\""
+      }
+    }
+  },
+  {
+    "id": 340,
+    "sloka": "9.2",
+    "verse_id": 340,
+    "verseNumber": 340,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यह ज्ञान राजविद्या (विद्याओं का राजा) और राजगुह्य (सब गुह्यों अर्थात् रहस्यों का राजा) एवं पवित्र, उत्तम, प्रत्यक्ष ज्ञानवाला और धर्मयुक्त है, तथा करने में सरल और अव्यय है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "This is the royal science, the royal secret, the supreme purifier, realizable by direct intuitive knowledge, according to righteousness, very easy to perform and imperishable."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આ શાહી વિજ્ .ાન, શાહી રહસ્ય, સર્વોચ્ચ શુદ્ધિકરણ છે, જે સદાચારો અનુસાર, સીધા સાહજિક જ્ knowledge ાન દ્વારા અનુભવાય છે, કરવા માટે ખૂબ જ સરળ અને અવિનાશી છે."
+      }
+    }
+  },
+  {
+    "id": 341,
+    "sloka": "9.3",
+    "verse_id": 341,
+    "verseNumber": 341,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे परन्तप ! इस धर्म में श्रद्धारहित पुरुष मुझे प्राप्त न होकर मृत्युरूपी संसार में रहते हैं (भ्रमण करते हैं)।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Those who have no faith in this Dharma, O Parantapa, return to the path of this world without attaining Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેમને આ ધર્મમાં કોઈ વિશ્વાસ નથી, ઓ પરાંતપા, મને પ્રાપ્ત કર્યા વિના આ વિશ્વના માર્ગ પર પાછા ફરે છે."
+      }
+    }
+  },
+  {
+    "id": 342,
+    "sloka": "9.4",
+    "verse_id": 342,
+    "verseNumber": 342,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यह सम्पूर्ण जगत् मुझ (परमात्मा) के अव्यक्त स्वरूप से व्याप्त है; भूतमात्र मुझमें स्थित है, परन्तु मैं उनमें स्थित नहीं हूं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "All of this world is pervaded by Me in My unmanifest aspect; all beings exist within Me, but I do not dwell within them."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આ બધા વિશ્વ મારા અસ્પષ્ટ પાસામાં મારા દ્વારા વ્યાખ્યાયિત છે;બધા માણસો મારી અંદર અસ્તિત્વમાં છે, પરંતુ હું તેમની અંદર રહેતો નથી."
+      }
+    }
+  },
+  {
+    "id": 343,
+    "sloka": "9.5",
+    "verse_id": 343,
+    "verseNumber": 343,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "और (वस्तुत:) भूतमात्र मुझ में स्थित नहीं है; मेरे ईश्वरीय योग को देखो कि भूतों को धारण करने वाली और भूतों को उत्पन्न करने वाली मेरी आत्मा उन भूतों में स्थित नहीं है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Nor do beings exist in Me (in reality); behold, My divine Yoga, which supports all beings, but does not dwell in them, is My Self, the efficient cause of beings."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મારામાં (વાસ્તવિકતામાં) માણસો અસ્તિત્વમાં નથી;જુઓ, મારો દૈવી યોગ, જે બધા માણસોને ટેકો આપે છે, પરંતુ તેમાં રહેતો નથી, તે મારો સ્વ, પ્રાણીઓનું કાર્યક્ષમ કારણ છે."
+      }
+    }
+  },
+  {
+    "id": 344,
+    "sloka": "9.6",
+    "verse_id": 344,
+    "verseNumber": 344,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जैसे सर्वत्र विचरण करने वाली महान् वायु सदा आकाश में स्थित रहती हैं, वैसे ही सम्पूर्ण भूत मुझमें स्थित हैं, ऐसा तुम जानो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "As the mighty wind, moving everywhere, always rests in the ether, so too, know that all beings rest in Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "શકિતશાળી પવન, દરેક જગ્યાએ ખસેડવું, હંમેશાં ઇથરમાં રહે છે, તેથી પણ, જાણે છે કે બધા માણસો મારામાં આરામ કરે છે."
+      }
+    }
+  },
+  {
+    "id": 345,
+    "sloka": "9.7",
+    "verse_id": 345,
+    "verseNumber": 345,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय ! (एक) कल्प के अन्त में समस्त भूत मेरी प्रकृति को प्राप्त होते हैं; और (दूसरे) कल्प के प्रारम्भ में उनको मैं फिर रचता हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "All beings, O Arjuna, go into My Nature at the end of a Kalpa; I send them forth again at the beginning of the next Kalpa."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "બધા માણસો, ઓ અર્જુન, કલ્પના અંતે મારા સ્વભાવમાં જાઓ;હું તેમને આગામી કલ્પની શરૂઆતમાં ફરીથી મોકલું છું."
+      }
+    }
+  },
+  {
+    "id": 346,
+    "sloka": "9.8",
+    "verse_id": 346,
+    "verseNumber": 346,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "प्रकृति को अपने वश में करके (अर्थात् उसे चेतनता प्रदान कर) स्वभाव के वश से परतन्त्र (अवश) हुए इस सम्पूर्ण भूत समुदाय को मैं पुन:-पुन: रचता हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Animating My Nature, I again and again send forth all this multitude of beings, helpless under the force of Nature."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મારા સ્વભાવને એનિમેટીંગ, હું ફરીથી અને ફરીથી આ બધા માણસોને પ્રકૃતિના બળ હેઠળ લાચાર, મોકલીશ."
+      }
+    }
+  },
+  {
+    "id": 347,
+    "sloka": "9.9",
+    "verse_id": 347,
+    "verseNumber": 347,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे धनंजय ! उन कर्मों में आसक्ति रहित और उदासीन के समान स्थित मुझ (परमात्मा) को वे कर्म नहीं बांधते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "These acts do not bind Me, O Arjuna, sitting as one indifferent, unattached to those acts."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આ કૃત્યો મને બાંધી શકતા નથી, હે અર્જુન, એક ઉદાસીન તરીકે બેઠો, તે કૃત્યોથી જોડાયેલ નથી."
+      }
+    }
+  },
+  {
+    "id": 348,
+    "sloka": "9.10",
+    "verse_id": 348,
+    "verseNumber": 348,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय ! मुझ अध्यक्ष के कारण ( अर्थात् मेरी अध्यक्षता में) प्रकृति चराचर जगत् को उत्पन्न करती है; इस कारण यह जगत् घूमता रहता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Under Me, as supervisor, Nature produces the moving and the unmoving; therefore, O Arjuna, the world revolves."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મારા હેઠળ, સુપરવાઇઝર તરીકે, પ્રકૃતિ મૂવિંગ અને અનમોવિંગનું ઉત્પાદન કરે છે;તેથી, હે અર્જુન, વિશ્વ ફરે છે."
+      }
+    }
+  },
+  {
+    "id": 349,
+    "sloka": "9.11",
+    "verse_id": 349,
+    "verseNumber": 349,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "समस्त भूतों के महान् ईश्वर रूप मेरे परम भाव को नहीं जानते हुए मूढ़ लोग मनुष्य शरीरधारी मुझ परमात्मा का अनादर करते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Fools disregard Me, clad in human form, not knowing My higher Being as the great Lord of all beings."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મૂર્ખ મને અવગણે છે, માનવ સ્વરૂપમાં પહેરે છે, મારા ઉચ્ચ પ્રાણીઓને બધા માણસોના મહાન સ્વામી તરીકે ન જાણતા હોય છે."
+      }
+    }
+  },
+  {
+    "id": 350,
+    "sloka": "9.12",
+    "verse_id": 350,
+    "verseNumber": 350,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "वृथा आशा, वृथा कर्म और वृथा ज्ञान वाले अविचारीजन राक्षसों के और असुरों के मोहित करने वाले स्वभाव को धारण किये रहते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "They are possessed of the deceitful nature of demons and undivine beings, filled with vain hopes, vain actions, and vain knowledge that is senseless."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તેઓ રાક્ષસો અને અવિભાજ્ય માણસોની કપટપૂર્ણ પ્રકૃતિ ધરાવે છે, નિરર્થક આશાઓ, નિરર્થક ક્રિયાઓ અને નિરર્થક જ્ knowledge ાનથી ભરેલા છે."
+      }
+    }
+  },
+  {
+    "id": 351,
+    "sloka": "9.13",
+    "verse_id": 351,
+    "verseNumber": 351,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पार्थ ! परन्तु दैवी प्रकृति के आश्रित महात्मा पुरुष मुझे समस्त भूतों का आदिकारण और अव्ययस्वरूप जानकर अनन्यमन से युक्त होकर मुझे भजते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But the great souls, O Arjuna, partaking of My divine nature, worship Me with a single-minded devotion, knowing Me as the imperishable source of all beings."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ મહાન આત્માઓ, હે અર્જુન, મારા દૈવી પ્રકૃતિનો ભાગ લેતા, મને એક જ માનસિક ભક્તિથી પૂજા કરો, મને બધા માણસોના અવિનાશી સ્ત્રોત તરીકે જાણીને."
+      }
+    }
+  },
+  {
+    "id": 352,
+    "sloka": "9.14",
+    "verse_id": 352,
+    "verseNumber": 352,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सतत मेरा कीर्तन करते हुए, प्रयत्नशील, दढ़व्रती पुरुष मुझे नमस्कार करते हुए, नित्ययुक्त होकर भक्तिपूर्वक मेरी उपासना करते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Always glorifying Me, striving, firm in their vows, prostrating themselves before Me, they worship Me with steadfast devotion."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હંમેશાં મને મહિમા આપતા, પ્રયત્નો, તેમના વ્રતોમાં મક્કમ છે, મારી સમક્ષ પોતાને પ્રણામ કરે છે, તેઓ અડગ ભક્તિથી મારી પૂજા કરે છે."
+      }
+    }
+  },
+  {
+    "id": 353,
+    "sloka": "9.15",
+    "verse_id": 353,
+    "verseNumber": 353,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "कोई मुझे ज्ञानयज्ञ के द्वारा पूजन करते हुए एकत्वभाव से उपासते हैं, कोई पृथक भाव से, कोई बहुत प्रकार से मुझ विराट स्वरूप (विश्वतो मुखम्) को उपासते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Others also, sacrificing with the wisdom-sacrifice, worship Me, the All-Faced, as one, distinct, and manifold."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અન્ય લોકો પણ, ડહાપણ-બલિદાનથી બલિદાન આપે છે, મારી પૂજા કરે છે, એક, અલગ, અલગ અને મેનીફોલ્ડ તરીકે."
+      }
+    }
+  },
+  {
+    "id": 354,
+    "sloka": "9.16",
+    "verse_id": 354,
+    "verseNumber": 354,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं ऋक्रतु हूँ; मैं यज्ञ हूँ; स्वधा और औषध मैं हूँ, मैं मन्त्र हूँ, घी हूँ, मैं अग्नि हूँ और हुतं अर्थात् हवन कर्म मैं हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "I am Kratu; I am Yajna; I am the offering to the manes; I am the medicinal herbs and all plants; I am the Mantra; I am also the ghee or melted butter; I am the fire; I am the oblation."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હું ક્રેતુ છું;હું યાજ્ના છું;હું મેન્સને offering ફર કરું છું;હું medic ષધીય વનસ્પતિઓ અને બધા છોડ છું;હું મંત્ર છું;હું ઘી અથવા ઓગળેલા માખણ પણ છું;હું અગ્નિ છું;હું અવલોકન છું."
+      }
+    }
+  },
+  {
+    "id": 355,
+    "sloka": "9.17",
+    "verse_id": 355,
+    "verseNumber": 355,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं ही इस जगत् का पिता, माता, धाता (धारण करने वाला) और पितामह हूँमैं वेद्य (जानने योग्य) वस्तु हूँ, पवित्र, ओंकार, ऋग्वेद, सामवेद और यजुर्वेद भी मैं ही हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "I am the father of this world, the mother, the dispenser of the fruits of actions, and the grandfather; the one thing to be known, the purifier, the sacred monosyllable (Om), and also the Rik, Sama, and Yajur Vedas."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હું આ વિશ્વનો પિતા, માતા, ક્રિયાઓના ફળનો વિતરક અને દાદા છું;એક વસ્તુ જાણીતી, શુદ્ધિકરણ, પવિત્ર મોનોસિલેબલ (ઓએમ), અને રિક, સમા અને યજુર વેદ."
+      }
+    }
+  },
+  {
+    "id": 356,
+    "sloka": "9.18",
+    "verse_id": 356,
+    "verseNumber": 356,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "गति (लक्ष्य), भरण-पोषण करने वाला, प्रभु (स्वामी), साक्षी, निवास, शरणस्थान तथा मित्र और उत्पत्ति, प्रलयरूप तथा स्थान (आधार), निधान और अव्यय कारण भी मैं हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "I am the goal, the supporter, the Lord, the witness, the abode, the shelter, the friend, the origin, the dissolution, the foundation, the treasure-house, and the imperishable seed."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હું ધ્યેય, સમર્થક, ભગવાન, સાક્ષી, નિવાસસ્થાન, આશ્રય, મિત્ર, મૂળ, વિસર્જન, ફાઉન્ડેશન, ટ્રેઝર-હાઉસ અને અવિનાશી બીજ છું."
+      }
+    }
+  },
+  {
+    "id": 357,
+    "sloka": "9.19",
+    "verse_id": 357,
+    "verseNumber": 357,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे अर्जुन ! मैं ही (सूर्य रूप में) तपता हूँ; मैं वर्षा का निग्रह और उत्सर्जन करता हूँ। मैं ही अमृत और मृत्यु एवं सत् और असत् हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "As the sun, I give heat; I withhold and send forth the rain; I am immortality and also death, existence and non-existence, O Arjuna."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સૂર્ય તરીકે, હું ગરમી આપું છું;હું રોકીને વરસાદ મોકલીશ;હું અમરત્વ છું અને મૃત્યુ, અસ્તિત્વ અને અસ્તિત્વ પણ નથી, ઓ અર્જુન."
+      }
+    }
+  },
+  {
+    "id": 358,
+    "sloka": "9.20",
+    "verse_id": 358,
+    "verseNumber": 358,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "तीनों वेदों के ज्ञाता (वेदोक्त सकाम कर्म करने वाले), सोमपान करने वाले एवं पापों से पवित्र हुए पुरुष मुझे यज्ञों के द्वारा पूजकर स्वर्ग प्राप्ति चाहते हैं; वे पुरुष अपने पुण्यों के फलरूप इन्द्रलोक को प्राप्त कर स्वर्ग में दिव्य देवताओं के भोग भोगते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The knowers of the three Vedas, the drinkers of Soma, purified of all sins, worshipping Me through sacrifices, pray for the way to heaven; they reach the holy world of the Lord of the gods and enjoy the divine pleasures of the gods in heaven."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ત્રણ વેદના જાણકારો, સોમાના પીનારા, બધા પાપોથી શુદ્ધ, બલિદાન દ્વારા મારી પૂજા, સ્વર્ગની રીત માટે પ્રાર્થના કરે છે;તેઓ દેવતાઓના ભગવાનની પવિત્ર દુનિયા સુધી પહોંચે છે અને સ્વર્ગમાં દેવતાઓના દૈવી આનંદનો આનંદ માણે છે."
+      }
+    }
+  },
+  {
+    "id": 359,
+    "sloka": "9.21",
+    "verse_id": 359,
+    "verseNumber": 359,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "वे उस विशाल स्वर्गलोक को भोगकर, पुण्यक्षीण होने पर, मृत्युलोक को प्राप्त होते हैं। इस प्रकार तीनों वेदों में कहे गये कर्म के शरण हुए और भोगों की कामना वाले पुरुष आवागमन (गतागत) को प्राप्त होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "They, having enjoyed the vast heaven, enter the world of mortals when their merit is exhausted; thus abiding by the injunctions of the three (Vedas) and desiring objects of desires, they attain to the state of coming and going."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તેઓ, વિશાળ સ્વર્ગનો આનંદ માણ્યા પછી, જ્યારે તેમની યોગ્યતા થાકી જાય છે ત્યારે પ્રાણઘાતકની દુનિયામાં પ્રવેશ કરે છે;આમ ત્રણ (વેદો) ના આદેશો અને ઇચ્છાઓની ઇચ્છા રાખીને, તેઓ આવવાની અને જવાની સ્થિતિમાં પ્રાપ્ત કરે છે."
+      }
+    }
+  },
+  {
+    "id": 360,
+    "sloka": "9.22",
+    "verse_id": 360,
+    "verseNumber": 360,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अनन्य भाव से मेरा चिन्तन करते हुए जो भक्तजन मेरी ही उपासना करते हैं, उन नित्ययुक्त पुरुषों का योगक्षेम मैं वहन करता हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "For those men who worship Me alone, thinking of no one else, for those ever-united, I secure what they have not already possessed and preserve what they already possess."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે માણસો માટે કે જેઓ એકલા મારી ઉપાસના કરે છે, બીજા કોઈની વિચારસરણી કરે છે, તે હંમેશાં એક થઈ ગયેલા લોકો માટે, હું જે કમાણી કરી નથી તે સુરક્ષિત કરું છું અને તેમની પાસે પહેલેથી જ છે તે સાચવીએ છીએ."
+      }
+    }
+  },
+  {
+    "id": 361,
+    "sloka": "9.23",
+    "verse_id": 361,
+    "verseNumber": 361,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय ! श्रद्धा से युक्त जो भक्त अन्य देवताओं को पूजते हैं, वे भी मुझे ही अविधिपूर्वक पूजते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Even those devotees who, endowed with faith, worship other gods, worship Me alone, O Arjuna, but by the wrong method."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે ભક્તો, જેમણે વિશ્વાસથી સંપન્ન કર્યું, અન્ય દેવતાઓની ઉપાસના કરી, એકલા મારી પૂજા કરો, હે અર્જુન, પરંતુ ખોટી પદ્ધતિ દ્વારા."
+      }
+    }
+  },
+  {
+    "id": 362,
+    "sloka": "9.24",
+    "verse_id": 362,
+    "verseNumber": 362,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "क्योंकि सब यज्ञों का भोक्ता और स्वामी मैं ही हूँ, परन्तु वे मुझे तत्त्वत: नहीं जानते हैं, इसलिए वे गिरते हैं, अर्थात् संसार को प्राप्त होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "For I alone am the enjoyer and Lord of all sacrifices; but they do not know Me in reality, and thus they return to this mortal world."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હું એકલા બધા બલિદાનનો આનંદ માણનાર અને ભગવાન છું;પરંતુ તેઓ મને વાસ્તવિકતામાં ઓળખતા નથી, અને તેથી તેઓ આ નશ્વર વિશ્વમાં પાછા ફરે છે."
+      }
+    }
+  },
+  {
+    "id": 363,
+    "sloka": "9.25",
+    "verse_id": 363,
+    "verseNumber": 363,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "देवताओं के पूजक देवताओं को प्राप्त होते हैं, पितरपूजक पितरों को जाते हैं, भूतों का यजन करने वाले भूतों को प्राप्त होते हैं और मुझे पूजने वाले भक्त मुझे ही प्राप्त होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The worshippers of the gods go to them; the ancestor-worshippers go to the manes; the worshippers of the deities who preside over the elements go to them; but My devotees come to Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "દેવતાઓના ઉપાસકો તેમની પાસે જાય છે;પૂર્વજ-પૂજા કરનારાઓ મેન્સ પર જાય છે;તત્વોની અધ્યક્ષતા ધરાવતા દેવતાઓના ઉપાસકો તેમની પાસે જાય છે;પરંતુ મારા ભક્તો મારી પાસે આવે છે."
+      }
+    }
+  },
+  {
+    "id": 364,
+    "sloka": "9.26",
+    "verse_id": 364,
+    "verseNumber": 364,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो कोई भी भक्त मेरे लिए पत्र, पुष्प, फल, जल आदि भक्ति से अर्पण करता है, उस शुद्ध मन के भक्त का वह भक्तिपूर्वक अर्पण किया हुआ (पत्र पुष्पादि) मैं भोगता हूँ अर्थात् स्वीकार करता हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Whoever offers Me with devotion a leaf, a flower, a fruit, or a little water, that, so offered devotedly by the pure-minded, I accept."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જે પણ મને નિષ્ઠા, ફૂલ, ફળ અથવા થોડું પાણી આપે છે, તે, તેથી શુદ્ધ મનની દ્વારા સમર્પિત રીતે ઓફર કરવામાં આવે છે, હું સ્વીકારું છું."
+      }
+    }
+  },
+  {
+    "id": 365,
+    "sloka": "9.27",
+    "verse_id": 365,
+    "verseNumber": 365,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय ! तुम जो कुछ कर्म करते हो, जो कुछ खाते हो, जो कुछ हवन करते हो, जो कुछ दान देते हो और जो कुछ तप करते हो, वह सब तुम मुझे अर्पण करो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Whatever you do, whatever you eat, whatever you offer in sacrifice, whatever you give, whatever austerity you practice, O Arjuna, do it as an offering to Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તમે જે પણ કરો, તમે જે પણ ખાશો, તમે જે પણ બલિદાનમાં ઓફર કરો છો, તમે જે પણ આપો છો, તમે જે પણ કઠોરતાનો અભ્યાસ કરો છો, હે અર્જુન, તે મને offering ફર તરીકે કરો."
+      }
+    }
+  },
+  {
+    "id": 366,
+    "sloka": "9.28",
+    "verse_id": 366,
+    "verseNumber": 366,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इस प्रकार तुम शुभाशुभ फलस्वरूप कर्मबन्धनों से मुक्त हो जाओगे; और संन्यासयोग से युक्तचित्त हुए तुम विमुक्त होकर मुझे ही प्राप्त हो जाओगे।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Thus, you shall be freed from the bonds of actions yielding good and evil fruits; with the mind steadfast in the Yoga of renunciation, and liberated, you shall come to Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આમ, તમે સારા અને દુષ્ટ ફળ આપતી ક્રિયાઓના બંધનમાંથી મુક્ત થશો;ત્યાગના યોગમાં મનની અડગ અને મુક્તિ અપાયું, તમે મારી પાસે આવશો."
+      }
+    }
+  },
+  {
+    "id": 367,
+    "sloka": "9.29",
+    "verse_id": 367,
+    "verseNumber": 367,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "मैं समस्त भूतों में सम हूँ; न कोई मुझे अप्रिय है और न प्रिय; परन्तु जो मुझे भक्तिपूर्वक भजते हैं, वे मुझमें और मैं भी उनमें हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "I am the same to all beings; there is none hateful or dear to Me; but those who worship Me with devotion are in Me, and I am also in them."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હું બધા માણસો માટે સમાન છું;મને કોઈ દ્વેષપૂર્ણ અથવા પ્રિય નથી;પરંતુ જેઓ મારી ભક્તિથી પૂજા કરે છે તે મારામાં છે, અને હું પણ તેમાં છું."
+      }
+    }
+  },
+  {
+    "id": 368,
+    "sloka": "9.30",
+    "verse_id": 368,
+    "verseNumber": 368,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यदि कोई अतिशय दुराचारी भी अनन्यभाव से मेरा भक्त होकर मुझे भजता है, वह साधु ही मानने योग्य है, क्योंकि वह यथार्थ निश्चय वाला है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Even if the most sinful worships Me, with devotion to no one else, he should indeed be regarded as righteous, for he has rightly resolved."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ભલે સૌથી પાપી મારી ઉપાસના કરે, બીજા કોઈની ભક્તિ સાથે, તેને ખરેખર ન્યાયી માનવું જોઈએ, કારણ કે તેણે યોગ્ય રીતે ઉકેલાય છે."
+      }
+    }
+  },
+  {
+    "id": 369,
+    "sloka": "9.31",
+    "verse_id": 369,
+    "verseNumber": 369,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय, वह शीघ्र ही धर्मात्मा बन जाता है और शाश्वत शान्ति को प्राप्त होता है। तुम निश्चयपूर्वक सत्य जानो कि मेरा भक्त कभी नष्ट नहीं होता।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Soon he becomes righteous and attains eternal peace; O Arjuna, proclaim thou for certain that My devotee never perishes."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "ટૂંક સમયમાં તે ન્યાયી બને છે અને શાશ્વત શાંતિ પ્રાપ્ત કરે છે;હે અર્જુન, તું ચોક્કસ જાહેર કરે છે કે મારો ભક્ત ક્યારેય નાશ પામતો નથી."
+      }
+    }
+  },
+  {
+    "id": 370,
+    "sloka": "9.32",
+    "verse_id": 370,
+    "verseNumber": 370,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे पार्थ ! स्त्री, वैश्य और शूद्र ये जो कोई पापयोनि वाले हों, वे भी मुझ पर आश्रित (मेरे शरण) होकर परम गति को प्राप्त होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "For, taking refuge in Me, they who, O Arjuna, may be of a sinful birth—women, Vaisyas, and Sudras—attain the Supreme Goal."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કારણ કે, મારામાં આશ્રય લેતા, તેઓ, ઓ અર્જુન, પાપી જન્મ - મહિલા, વૈશ્ય અને સુદ્રાના હોઈ શકે છે, જે સર્વોચ્ચ લક્ષ્યને ધ્યાનમાં રાખે છે."
+      }
+    }
+  },
+  {
+    "id": 371,
+    "sloka": "9.33",
+    "verse_id": 371,
+    "verseNumber": 371,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "फिर क्या कहना है कि पुण्यशील ब्राह्मण और राजर्षि भक्तजन (परम गति को प्राप्त होते हैं); (इसलिए) इस अनित्य और सुखरहित लोक को प्राप्त होकर (अब) तुम भक्तिपूर्वक मेरी ही पूजा करो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "How much more easily, then, do Brahmins and devoted royal saints attain the goal? Having come to this impermanent and unhappy world, do thou worship Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પછી, પછી, બ્રાહ્મણો અને સમર્પિત રોયલ સંતો ધ્યેય પ્રાપ્ત કરે છે?આ અસ્થાયી અને નાખુશ દુનિયામાં આવ્યા પછી, તું મારી પૂજા કરો."
+      }
+    }
+  },
+  {
+    "id": 372,
+    "sloka": "9.34",
+    "verse_id": 372,
+    "verseNumber": 372,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "(तुम) मुझमें स्थिर मन वाले बनो; मेरे भक्त और मेरे पूजन करने वाले बनो; मुझे नमस्कार करो; इस प्रकार मत्परायण (अर्थात् मैं ही जिसका परम लक्ष्य हूँ ऐसे) होकर आत्मा को मुझसे युक्त करके तुम मुझे ही प्राप्त होओगे।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Fix your mind on Me; be devoted to Me; sacrifice to Me; bow down to Me; having thus united your whole self to Me, taking Me as the supreme goal, you will come to Me."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તમારા મનને મારા પર ઠીક કરો;મને સમર્પિત બનો;મને બલિદાન;મને નમવું;આ રીતે તમારા આખા સ્વને મારી પાસે એકીકૃત કર્યા, મને સર્વોચ્ચ ધ્યેય તરીકે લેતા, તમે મારી પાસે આવશો."
+      }
+    }
+  }
+]

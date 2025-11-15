@@ -1,0 +1,623 @@
+[
+  {
+    "id": 525,
+    "sloka": "14.1",
+    "verse_id": 525,
+    "verseNumber": 525,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्री भगवान् ने कहा -- समस्त ज्ञानों में उत्तम परम ज्ञान को मैं पुन: कहूंगा, जिसको जानकर सभी मुनिजन इस (लोक) से जाकर (इस जीवनोपरान्त) परम सिद्धि को प्राप्त हुए हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Blessed Lord said, \"I will again declare to thee that supreme knowledge, the best of all knowledge, having known which all the sages have gone to supreme perfection after this life.\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આશીર્વાદિત ભગવાનએ કહ્યું, \"હું ફરીથી તમને ઘોષણા કરીશ કે સર્વોચ્ચ જ્ knowledge ાન, બધા જ્ knowledge ાનનો શ્રેષ્ઠ, આ જીવન પછી કયા બધા ages ષિઓ સર્વોચ્ચ પૂર્ણતામાં ગયા છે તે જાણીને.\""
+      }
+    }
+  },
+  {
+    "id": 526,
+    "sloka": "14.2",
+    "verse_id": 526,
+    "verseNumber": 526,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "इस ज्ञान का आश्रय लेकर मेरे स्वरूप (सार्धम्यम्) को प्राप्त पुरुष सृष्टि के आदि में जन्म नहीं लेते और प्रलयकाल में व्याकुल भी नहीं होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Those who, having taken refuge in this knowledge, have attained unity with Me, are neither born at the time of creation nor disturbed at the time of dissolution."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેમણે આ જ્ knowledge ાનમાં આશરો લીધો છે, તેઓ મારી સાથે એકતા પ્રાપ્ત કરી ચૂક્યા છે, તેઓ ન તો સર્જન સમયે જન્મે છે અથવા વિસર્જન સમયે ખલેલ પહોંચાડે છે."
+      }
+    }
+  },
+  {
+    "id": 527,
+    "sloka": "14.3",
+    "verse_id": 527,
+    "verseNumber": 527,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे भारत ! मेरी महद् ब्रह्मरूप प्रकृति, (भूतों की) योनि है, जिसमें मैं गर्भाधान करता हूँ; इससे समस्त भूतों की उत्पत्ति होती है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "My womb is the great Brahma; in it I place the germ; thence, O Arjuna, is the birth of all beings."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મારા ગર્ભાશય મહાન બ્રહ્મા છે;તેમાં હું સૂક્ષ્મજંતુ મૂકે છે;ત્યાંથી, હે અર્જુન, બધા માણસોનો જન્મ છે."
+      }
+    }
+  },
+  {
+    "id": 528,
+    "sloka": "14.4",
+    "verse_id": 528,
+    "verseNumber": 528,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय ! समस्त योनियों में जितनी मूर्तियाँ (शरीर) उत्पन्न होती हैं, उन सबकी योनि अर्थात् गर्भ है महद्ब्रह्म और मैं बीज की स्थापना करने वाला पिता हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Whatever forms are produced, O Arjuna, in any womb whatsoever, the great Brahma is their womb, and I am the seed-giving father."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કોઈપણ સ્વરૂપો ઉત્પન્ન થાય છે, હે અર્જુન, કોઈપણ ગર્ભાશયમાં, મહાન બ્રહ્મા તેમનો ગર્ભાશય છે, અને હું બીજ આપતો પિતા છું."
+      }
+    }
+  },
+  {
+    "id": 529,
+    "sloka": "14.5",
+    "verse_id": 529,
+    "verseNumber": 529,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे महाबाहो ! सत्त्व, रज और तम ये प्रकृति से उत्पन्न तीनों गुण देही आत्मा को देह के साथ बांध देते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "These qualities, O Arjuna, born of Nature, bind fast in the body of the embodied, the indestructible: purity, passion, and inertia."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આ ગુણો, ઓ અર્જુન, પ્રકૃતિથી જન્મેલા, મૂર્ત સ્વરૂપ, અવિનાશી: શુદ્ધતા, ઉત્કટ અને જડતાના શરીરમાં ઝડપથી જોડાય છે."
+      }
+    }
+  },
+  {
+    "id": 530,
+    "sloka": "14.6",
+    "verse_id": 530,
+    "verseNumber": 530,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे निष्पाप अर्जुन ! इन (तीनों) में, सत्त्वगुण निर्मल होने से प्रकाशक और अनामय (निरुपद्रव, निर्विकार या निरोग) है; (वह जीव को) सुख की आसक्ति से और ज्ञान की आसक्ति से बांध देता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Of these, sattva, which is luminous and healthy due to its stainlessness, binds one by attachment to happiness and knowledge, O sinless one."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આમાંથી, સત્ત્વ, જે તેની સ્ટેઈનલેસને કારણે તેજસ્વી અને સ્વસ્થ છે, તે સુખ અને જ્ knowledge ાન સાથે જોડાણ દ્વારા એકને જોડે છે, ઓ પાપી."
+      }
+    }
+  },
+  {
+    "id": 531,
+    "sloka": "14.7",
+    "verse_id": 531,
+    "verseNumber": 531,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कौन्तेय ! रजोगुण को रागस्वरूप जानो, जिससे तृष्णा और आसक्ति उत्पन्न होती है। वह देही आत्मा को कर्मों की आसक्ति से बांधता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Know, O Arjuna, that Rajas is of the nature of passion, the source of thirst and attachment; it binds fast the embodied one by attachment to action."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જાણો, હે અર્જુન, કે રાજનો ઉત્કટનો સ્વભાવ છે, તરસ અને જોડાણનો સ્રોત છે;તે ક્રિયા સાથે જોડાણ દ્વારા મૂર્ત સ્વરૂપને ઝડપી જોડે છે."
+      }
+    }
+  },
+  {
+    "id": 532,
+    "sloka": "14.8",
+    "verse_id": 532,
+    "verseNumber": 532,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "और हे भारत ! तमोगुण को अज्ञान से उत्पन्न जानो; जो समस्त देहधारियों (जीवों) को मोहित करने वाला है। वह प्रमाद, आलस्य और निद्रा के द्वारा जीव को बांधता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "But know thou Tamas to be born of ignorance, deluding all embodied beings; it binds fast, O Arjuna, through heedlessness, indolence, and sleep."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "પરંતુ તું અજ્ orance ાનતાથી જન્મેલા તમાને જાણો, બધા મૂર્ત સ્વરૂપના માણસોને ભ્રમિત કરો;તે ઝડપી, ઓ અર્જુન, બેદરકારી, ઇન્ડોલેન્સ અને sleep ંઘ દ્વારા જોડે છે."
+      }
+    }
+  },
+  {
+    "id": 533,
+    "sloka": "14.9",
+    "verse_id": 533,
+    "verseNumber": 533,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे भारत ! सत्त्वगुण सुख में आसक्त कर देता है और रजोगुण कर्म में, किन्तु तमोगुण ज्ञान को आवृत्त करके जीव को प्रमाद से युक्त कर देता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Sattva attaches to happiness, Rajas to action, O Arjuna, while Tamas, verily shrouding knowledge, attaches to heedlessness."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સત્ત્વ ખુશીને જોડે છે, રાજાને ક્રિયાથી જોડવામાં આવે છે, ઓ અર્જુન, જ્યારે તમાસ, ખરેખર કફન જ્ knowledge ાન, બેભાનતાને જોડે છે."
+      }
+    }
+  },
+  {
+    "id": 534,
+    "sloka": "14.10",
+    "verse_id": 534,
+    "verseNumber": 534,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे भारत ! कभी रज और तम को अभिभूत (दबा) करके सत्त्वगुण की वृद्धि होती है, कभी रज और सत्त्व को दबाकर तमोगुण की वृद्धि होती है, तो कभी तम और सत्त्व को अभिभूत कर रजोगुण की वृद्धि होती है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Now, O Arjuna, Sattva prevails, having overpowered Rajas and Tamas; then Rajas, having overpowered Sattva and Tamas; and then Tamas, having overpowered Sattva and Rajas."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "હવે, ઓ અર્જુન, સત્ત્વ પ્રવર્તે છે, જેમાં રાજા અને તામને વધારે શક્તિ આપવામાં આવી છે;પછી રાજાસ, સત્ત્વ અને તમાસને વધારે શક્તિ આપી;અને પછી તમાસ, સત્ત્વ અને રાજાઓને વધારે શક્તિ આપી."
+      }
+    }
+  },
+  {
+    "id": 535,
+    "sloka": "14.11",
+    "verse_id": 535,
+    "verseNumber": 535,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जब इस देह के द्वारों अर्थात् समस्त इन्द्रियों में ज्ञानरूप प्रकाश उत्पन्न होता है, तब सत्त्वगुण को प्रवृद्ध हुआ जानो।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "When the wisdom-light shines through every gate of this body, then it may be known that Sattva is predominant."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જ્યારે આ શરીરના દરેક દરવાજા દ્વારા શાણપણ-પ્રકાશ ચમકે છે, ત્યારે તે જાણીતું છે કે સત્ત્વ મુખ્ય છે."
+      }
+    }
+  },
+  {
+    "id": 536,
+    "sloka": "14.12",
+    "verse_id": 536,
+    "verseNumber": 536,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे भरत-श्रेष्ठ ! रजोगुण के प्रवृद्ध होने पर लोभ, प्रवृत्ति (सामान्य चेष्टा) कर्मों का आरम्भ, शम का अभाव तथा स्पृहा, ये सब उत्पन्न होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Greed, activity, the undertaking of actions, restlessness, and longing—these arise when Rajas is predominant, O Arjuna."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "લોભ, પ્રવૃત્તિ, ક્રિયાઓનું ઉપક્રમ, બેચેની અને ઝંખના - આ ઉદ્ભવે છે જ્યારે રાજનો મુખ્ય હોય છે, ઓ અર્જુન."
+      }
+    }
+  },
+  {
+    "id": 537,
+    "sloka": "14.13",
+    "verse_id": 537,
+    "verseNumber": 537,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "हे कुरुनन्दन ! तमोगुण के प्रवृद्ध होने पर अप्रकाश, अप्रवृत्ति, प्रमाद और मोह ये सब उत्पन्न होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Darkness, inertia, carelessness, and delusion—these arise when Tamas is predominant, O Arjuna."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અંધકાર, જડતા, બેદરકારી અને ભ્રાંતિ - જ્યારે તમાસ મુખ્ય છે, ઓ અર્જુન."
+      }
+    }
+  },
+  {
+    "id": 538,
+    "sloka": "14.14",
+    "verse_id": 538,
+    "verseNumber": 538,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जब यह जीव (देहभृत्) सत्त्वगुण की प्रवृद्धि में मृत्यु को प्राप्त होता है, तब उत्तम कर्म करने वालों के निर्मल अर्थात् स्वर्गादि लोकों को प्राप्त होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "If the embodied one meets death when Sattva is predominant, then they attain the spotless worlds of the knowers of the Highest."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જો સત્ત્વ મુખ્ય હોય ત્યારે મૂર્તિમંત વ્યક્તિ મૃત્યુને પૂર્ણ કરે છે, તો પછી તેઓ ઉચ્ચતમના જાણકારોની નિષ્કલંક દુનિયાને પ્રાપ્ત કરે છે."
+      }
+    }
+  },
+  {
+    "id": 539,
+    "sloka": "14.15",
+    "verse_id": 539,
+    "verseNumber": 539,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "रजोगुण के प्रवृद्ध काल में मृत्यु को प्राप्त होकर कर्मासक्ति वाले (मनुष्य) लोक में वह जन्म लेता है तथा तमोगुण के प्रवृद्धकाल में (मरण होने पर) मूढ़योनि में जन्म लेता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Meeting death in Rajas, he is born among those who are attached to action; and dying in Tamas, he is born in the womb of the thoughtless."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "રાજામાં મૃત્યુને મળતા, તે તે લોકોમાં જન્મે છે જેઓ ક્રિયા સાથે જોડાયેલા છે;અને તમાસમાં મરી જતાં, તે વિચારવિહીનના ગર્ભાશયમાં જન્મે છે."
+      }
+    }
+  },
+  {
+    "id": 540,
+    "sloka": "14.16",
+    "verse_id": 540,
+    "verseNumber": 540,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "शुभ कर्म का फल सात्विक और निर्मल कहा गया है; रजोगुण का फल दु;ख और तमोगुण का फल अज्ञान है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "They say that the fruit of good action is Sattvic and pure; indeed, the fruit of Rajas is pain, and the fruit of Tamas is ignorance."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તેઓ કહે છે કે સારી ક્રિયાનું ફળ સત્ત્વિક અને શુદ્ધ છે;ખરેખર, રાજાનું ફળ દુખાવો છે, અને તમસનું ફળ અજ્ orance ાન છે."
+      }
+    }
+  },
+  {
+    "id": 541,
+    "sloka": "14.17",
+    "verse_id": 541,
+    "verseNumber": 541,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सत्त्वगुण से ज्ञान उत्पन्न होता है। रजोगुण से लोभ तथा तमोगुण से प्रमाद, मोह और अज्ञान उत्पन्न होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "From Sattva arises knowledge, and greed from Rajas; heedlessness and delusion arise from Tamas, and also ignorance."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સત્ત્વથી જ્ knowledge ાન ises ભો થાય છે, અને રાજાઓમાંથી લોભ;તામ અને ભ્રાંતિ tamas અને અજ્ orance ાનથી પણ ઉદ્ભવે છે."
+      }
+    }
+  },
+  {
+    "id": 542,
+    "sloka": "14.18",
+    "verse_id": 542,
+    "verseNumber": 542,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "सत्त्वगुण में स्थित पुरुष उच्च (लोकों को) जाते हैं; राजस पुरुष मध्य (मनुष्य लोक) में रहते हैं और तमोगुण की अत्यन्त हीन प्रवृत्तियों में स्थित तामस लोग अधोगति को प्राप्त होते हैं।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Those seated in Sattva ascend; those of Rajasic nature dwell in the middle; and those of Tamasic nature, abiding in the function of the lowest Guna, descend."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "તે સત્ત્વો ચ ce ેલા છે;રાજાસિક પ્રકૃતિના તે મધ્યમાં રહે છે;અને તામાસિક પ્રકૃતિની, સૌથી ઓછી ગુનાના કાર્યમાં પાલન કરતા, નીચે ઉતરતા."
+      }
+    }
+  },
+  {
+    "id": 543,
+    "sloka": "14.19",
+    "verse_id": 543,
+    "verseNumber": 543,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जब द्रष्टा (साधक) पुरुष तीनों गुणों के अतिरिक्त किसी अन्य को कर्ता नहीं देखता, अर्थात् नहीं समझता है और तीनों गुणों से परे मेरे तत्व को जानता है, तब वह मेरे स्वरूप को प्राप्त होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "When the seer beholds no agent other than the Gunas and knows that which is higher than them, he attains to My Being."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જ્યારે દ્રષ્ટા ગુણો સિવાય કોઈ એજન્ટ જુએ છે અને જાણે છે કે તે તેમના કરતા વધારે છે, ત્યારે તે મારા અસ્તિત્વમાં પ્રાપ્ત કરે છે."
+      }
+    }
+  },
+  {
+    "id": 544,
+    "sloka": "14.20",
+    "verse_id": 544,
+    "verseNumber": 544,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "यह देही पुरुष शरीर की उत्पत्ति के कारणरूप तीनों गुणों से अतीत होकर जन्म, मृत्यु, जरा और दु:खों से विमुक्त हुआ अमृतत्व को प्राप्त होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The embodied one, having crossed beyond these three Gunas from which the body is evolved, is freed from birth, death, decay, and pain, and attains immortality."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "મૂર્ત સ્વરૂપ, આ ત્રણ ગુણોથી આગળ નીકળી ગયું છે, જ્યાંથી શરીર વિકસિત થાય છે, તે જન્મ, મૃત્યુ, સડો અને પીડાથી મુક્ત થાય છે અને અમરત્વ પ્રાપ્ત કરે છે."
+      }
+    }
+  },
+  {
+    "id": 545,
+    "sloka": "14.21",
+    "verse_id": 545,
+    "verseNumber": 545,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "अर्जुन ने कहा -- हे प्रभो ! इन तीनो गुणों से अतीत हुआ पुरुष किन लक्षणों से युक्त होता है ? वह किस प्रकार के आचरण वाला होता है ? और, वह किस उपाय से इन तीनों गुणों से अतीत होता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Arjuna said, \"What are the marks of one who has transcended the three qualities, O Lord? What is their conduct, and how do they go beyond these three qualities?\""
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અર્જુને કહ્યું, \"હે ભગવાન, તેમનો આચાર શું છે, અને તેઓ આ ત્રણ ગુણોથી આગળ કેવી રીતે જાય છે, તે ત્રણ ગુણોને વટાવી ચૂક્યા છે તેના નિશાન શું છે?\""
+      }
+    }
+  },
+  {
+    "id": 546,
+    "sloka": "14.22",
+    "verse_id": 546,
+    "verseNumber": 546,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "श्रीभगवान् ने कहा -- हे पाण्डव ! (ज्ञानी पुरुष) प्रकाश, प्रवृत्ति और मोह के प्रवृत्त होने पर भी उनका द्वेष नहीं करता तथा निवृत्त होने पर उनकी आकांक्षा नहीं करता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "The Blessed Lord said, \"When light, activity, and delusion are present, he does not hate them, nor does he long for them when they are absent."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આશીર્વાદિત ભગવાનએ કહ્યું, \"જ્યારે પ્રકાશ, પ્રવૃત્તિ અને ભ્રાંતિ હાજર હોય છે, ત્યારે તે તેમનો ધિક્કારતો નથી, અથવા ગેરહાજર હોય ત્યારે તેઓ તેમના માટે ઇચ્છતા નથી."
+      }
+    }
+  },
+  {
+    "id": 547,
+    "sloka": "14.23",
+    "verse_id": 547,
+    "verseNumber": 547,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो उदासीन के समान आसीन होकर गुणों के द्वारा विचलित नहीं किया जा सकता और \"गुण ही व्यवहार करते हैं\" ऐसा जानकर स्थित रहता है और उस स्थिति से विचलित नहीं होता।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "He who, seated like one unconcerned, is not moved by the dualities, and who, knowing that the dualities are active, is self-centered and does not move."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "જેણે, એક બેભાનની જેમ બેઠેલા છે, તે દ્વૈત લોકો દ્વારા ખસેડવામાં આવતું નથી, અને જે ડ્યુઅલિટીઝ સક્રિય છે તે જાણીને સ્વકેન્દ્રિત છે અને તે ખસેડતું નથી."
+      }
+    }
+  },
+  {
+    "id": 548,
+    "sloka": "14.24",
+    "verse_id": 548,
+    "verseNumber": 548,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो स्वस्थ (स्वरूप में स्थित), सुख-दु:ख में समान रहता है तथा मिट्टी, पत्थर और स्वर्ण में समदृष्टि रखता है; ऐसा वीर पुरुष प्रिय और अप्रिय को तथा निन्दा और आत्मस्तुति को तुल्य समझता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Who is the same in pleasure and pain, who dwells in the Self, to whom a clod of earth, a stone, and gold are all alike, who is the same to the dear and the unfriendly, who is firm, and to whom censure and praise are one and the same."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "આનંદ અને દુ pain ખમાં કોણ સમાન છે, જે સ્વમાં રહે છે, જેની પાસે પૃથ્વી, પથ્થર અને સોનું એકસરખું છે, જે પ્રિય અને મૈત્રીપૂર્ણ, જે દ્ર firm છે, અને જેનું સેન્સર અને પ્રશંસા એક સમાન છે તે સમાન છે."
+      }
+    }
+  },
+  {
+    "id": 549,
+    "sloka": "14.25",
+    "verse_id": 549,
+    "verseNumber": 549,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो मान और अपमान में सम है; शत्रु और मित्र के पक्ष में भी सम है, ऐसा सर्वारम्भ परित्यागी पुरुष गुणातीत कहा जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "Who is the same in honor and dishonor, the same to friend and foe, abandoning all undertakings, he is said to have transcended the dualities."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "સન્માન અને અપમાનમાં કોણ સમાન છે, મિત્ર અને શત્રુ માટે સમાન છે, બધા ઉપક્રમોનો ત્યાગ કરીને, તેમણે દ્વૈતતાને વટાવી દીધી હોવાનું કહેવાય છે."
+      }
+    }
+  },
+  {
+    "id": 550,
+    "sloka": "14.26",
+    "verse_id": 550,
+    "verseNumber": 550,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "जो पुरुष अव्यभिचारी भक्तियोग के द्वारा मेरी सेवा अर्थात् उपासना करता है, वह इन तीनों गुणों के अतीत होकर ब्रह्म बनने के लिये योग्य हो जाता है।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "And he who serves Me with unwavering devotion, he, crossing beyond the dualities, is fit for becoming Brahman."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "અને જેણે મને અવિરત ભક્તિથી સેવા આપી, તે, દ્વૈત લોકોથી આગળ વધીને, બ્રહ્મ બનવા માટે યોગ્ય છે."
+      }
+    }
+  },
+  {
+    "id": 551,
+    "sloka": "14.27",
+    "verse_id": 551,
+    "verseNumber": 551,
+    "languages": {
+      "hindi": {
+        "language_id": 2,
+        "lang": "hindi",
+        "description": "क्योंकि मैं अमृत, अव्यय, ब्रह्म, शाश्वत धर्म और ऐकान्तिक अर्थात् पारमार्थिक सुख की प्रतिष्ठा हूँ।।"
+      },
+      "english": {
+        "language_id": 1,
+        "lang": "english",
+        "description": "For I am the abode of Brahman, the immortal, immutable, and everlasting Dharma, and absolute bliss."
+      },
+      "gujarati": {
+        "language_id": 3,
+        "lang": "gujarati",
+        "description": "કેમ કે હું બ્રહ્મનો ઘર છું, અમર, અપરિપક્વ અને શાશ્વત ધર્મ અને સંપૂર્ણ આનંદ."
+      }
+    }
+  }
+]
