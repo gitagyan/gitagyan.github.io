@@ -138,12 +138,11 @@ function showChapter(chapter) {
         const chapterVideo = youtubeVideos[chapter.chapter_number - 1];
         
         if (chapterVideo && chapterVideo.video_id) {
-            // Add enablejsapi parameter to enable YouTube API
-            videoIframe.src = `https://www.youtube.com/embed/${chapterVideo.video_id}?enablejsapi=1`;
+            videoIframe.src = `https://www.youtube.com/embed/${chapterVideo.video_id}`;
             videoContainer.style.display = 'block';
             
-            // Request wake lock when video container is shown
-            requestWakeLock();
+            // Request wake lock when video container is shown (non-blocking)
+            setTimeout(() => requestWakeLock(), 100);
         } else {
             videoContainer.style.display = 'none';
             releaseWakeLock();
@@ -916,6 +915,31 @@ function initSettings() {
             }, 500);
         }
     });
+    
+    // Display cache version
+    displayCacheVersion();
+}
+
+// Display cache version from service worker
+async function displayCacheVersion() {
+    try {
+        // Fetch the service worker file to extract CACHE_NAME
+        const response = await fetch('/sw.js');
+        const swContent = await response.text();
+        
+        // Extract CACHE_NAME value using regex
+        const match = swContent.match(/CACHE_NAME\s*=\s*['"]([^'"]+)['"]/);
+        
+        if (match && match[1]) {
+            const cacheVersion = match[1];
+            document.getElementById('cache-version').textContent = `App Version: ${cacheVersion}`;
+        } else {
+            document.getElementById('cache-version').textContent = 'App Version: unknown';
+        }
+    } catch (error) {
+        console.error('Failed to fetch cache version:', error);
+        document.getElementById('cache-version').textContent = 'App Version: error';
+    }
 }
 
 // Wake Lock functions to prevent screen from dimming during video playback

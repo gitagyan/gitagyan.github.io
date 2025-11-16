@@ -138,7 +138,7 @@
                         <p>Enter your Google Gemini API key to enable AI-powered spiritual guidance and verse recommendations</p>
                         <div class="api-key-input-group">
                             <input type="password" id="settings-api-key-input" placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
-                            <button id="toggle-settings-api-key-visibility" title="Show/Hide API Key">
+                            <button id="toggle-settings-api-key-visibility">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </div>
@@ -146,10 +146,10 @@
                             <small><i class="fas fa-info-circle"></i> Get your free API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></small>
                         </div>
                         <div class="api-key-buttons">
-                            <button id="update-api-key-btn" class="api-key-btn" title="Update API Key">
+                            <button id="update-api-key-btn" class="api-key-btn">
                                 <i class="fas fa-save"></i> Save
                             </button>
-                            <button id="remove-api-key-btn" class="api-key-btn remove-btn" title="Remove API Key">
+                            <button id="remove-api-key-btn" class="api-key-btn remove-btn">
                                 <i class="fas fa-trash"></i> Delete
                             </button>
                         </div>
@@ -174,13 +174,17 @@
                                 <option value="chinese">🇨🇳 中文 (Chinese)</option>
                             </select>
                         </div>
-                        <button id="save-translate-language-btn" class="api-key-btn" title="Save Language Preference">
+                        <button id="save-translate-language-btn" class="api-key-btn">
                             <i class="fas fa-save"></i> Save
                         </button>
                         <div class="api-key-help">
                             <small><i class="fas fa-info-circle"></i> This language will be used for AI-powered verse translations and summaries</small>
                         </div>
                     </div>
+                </div>
+                <div class="settings-footer">
+                    <span id="cache-version">App Version: loading...</span>
+                    <div><a href="https://simkeyur.github.io" target="_blank">Submit Feedback</a></div>
                 </div>
             </div>
         </div>
