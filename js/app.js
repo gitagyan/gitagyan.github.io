@@ -2,6 +2,7 @@
 let chapters = [];
 let verses = [];
 let translations = {}; // Changed from array to object: {chapterNumber: [translations]}
+let youtubeVideos = []; // YouTube videos for chapters
 let currentChapter = null;
 let currentVerse = null;
 let currentLang = 'english'; // 'english', 'hindi', or 'gujarati' - for verse translations
@@ -58,6 +59,14 @@ async function init() {
             );
         }
         await Promise.all(translationPromises);
+
+        // Load YouTube videos data
+        try {
+            youtubeVideos = await fetch('./assets/youtube_videos.json').then(r => r.json());
+        } catch (error) {
+            console.warn('Failed to load YouTube videos:', error);
+            youtubeVideos = [];
+        }
 
         // Load saved translation language preference
         const savedTranslationLang = localStorage.getItem('translationLanguage');
@@ -118,6 +127,25 @@ function showChapter(chapter) {
         <div class="chapter-title-name">${chapter.name}</div>
         <div class="chapter-title-meaning">(${chapter.name_meaning})</div>
     `;
+    
+    // Load YouTube video for this chapter
+    const videoContainer = document.getElementById('chapter-video-container');
+    const videoIframe = document.getElementById('chapter-video-iframe');
+    
+    if (youtubeVideos && youtubeVideos.length > 0) {
+        // Find video for current chapter (chapter_number - 1 because array is 0-indexed)
+        const chapterVideo = youtubeVideos[chapter.chapter_number - 1];
+        
+        if (chapterVideo && chapterVideo.video_id) {
+            videoIframe.src = `https://www.youtube.com/embed/${chapterVideo.video_id}`;
+            videoContainer.style.display = 'block';
+        } else {
+            videoContainer.style.display = 'none';
+        }
+    } else {
+        videoContainer.style.display = 'none';
+    }
+    
     const chapterVerses = verses.filter(v => v.chapter_number === chapter.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
     versesList.innerHTML = '';
     chapterVerses.forEach(verse => {

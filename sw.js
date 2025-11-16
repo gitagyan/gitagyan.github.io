@@ -1,4 +1,4 @@
-const CACHE_NAME = '1.1.7';
+const CACHE_NAME = '1.1.8';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -14,6 +14,7 @@ const urlsToCache = [
     '/images/krishna-and-arjuna.jpg',
     '/assets/chapters.json',
     '/assets/verse.json',
+    '/assets/youtube_videos.json',
     '/assets/verse_translation/chapter_1.json',
     '/assets/verse_translation/chapter_2.json',
     '/assets/verse_translation/chapter_3.json',
