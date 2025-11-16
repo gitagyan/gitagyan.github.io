@@ -190,6 +190,15 @@ main {
     transform: translateY(0);
 }
 
+body.verse-detail-active,
+body.verses-active,
+body.settings-active,
+body.ai-chat-active,
+body.bookmarks-active {
+    background: url('../images/yellow_bg.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
 footer {
     position: fixed;
     bottom: 0;
@@ -772,7 +781,6 @@ footer p {
     background: #A5252C;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(165, 37, 44, 0.4);
 }
 
 #verse-slider::-moz-range-thumb {
@@ -1632,7 +1640,7 @@ footer p {
 }
 
 .bookmark-item {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(230, 166, 35, 0.2);
     backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
@@ -1687,7 +1695,7 @@ footer p {
 }
 
 .bookmark-translation {
-    color: #666;
+    color: #000;
     font-size: 14px;
     font-style: italic;
 }

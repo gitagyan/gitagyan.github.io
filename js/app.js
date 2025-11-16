@@ -11,8 +11,6 @@ let previousScreen = null; // Track where user came from
 
 // Make key variables accessible to app-saarthi.js via window object
 window.currentVerse = null;
-window.chapters = chapters;
-window.verses = verses;
 
 // DOM elements
 const chaptersScreen = document.getElementById('chapters-screen');
@@ -39,6 +37,10 @@ async function init() {
         chapters = await fetch('./assets/chapters.json').then(r => r.json());
         verses = await fetch('./assets/verse.json').then(r => r.json());
         
+        // Make chapters and verses data available globally for Sarthi AI
+        window.chaptersData = chapters;
+        window.versesData = verses;
+
         // Load all chapter translation files
         translations = {};
         const translationPromises = [];
@@ -549,6 +551,22 @@ function switchScreen(screen) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     screen.classList.add('active');
     
+    // Add a class to the body for screen-specific styling
+    document.body.classList.remove('verse-detail-active', 'chapters-active', 'verses-active', 'settings-active', 'ai-chat-active', 'bookmarks-active');
+    if (screen === verseDetailScreen) {
+        document.body.classList.add('verse-detail-active');
+    } else if (screen === chaptersScreen) {
+        document.body.classList.add('chapters-active');
+    } else if (screen === versesScreen) {
+        document.body.classList.add('verses-active');
+    } else if (screen === settingsScreen) {
+        document.body.classList.add('settings-active');
+    } else if (screen === aiChatScreen) {
+        document.body.classList.add('ai-chat-active');
+    } else if (screen === bookmarksScreen) {
+        document.body.classList.add('bookmarks-active');
+    }
+
     // Show/hide back button based on screen
     if (screen === chaptersScreen) {
         backBtn.style.display = 'none';

@@ -380,8 +380,8 @@ function navigateToSloka(slokaRef) {
     const [chapterNum, verseNum] = slokaRef.split('.').map(n => parseInt(n));
     
     // Get chapters and verses from global scope
-    const chapters = window.chapters || [];
-    const verses = window.verses || [];
+    const chapters = window.chaptersData || [];
+    const verses = window.versesData || [];
     
     // Find the chapter and verse
     const chapter = chapters.find(c => c.chapter_number === chapterNum);
