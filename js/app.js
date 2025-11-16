@@ -132,6 +132,14 @@ function showChapter(chapter) {
     });
     switchScreen(versesScreen);
     backBtn.style.display = 'block';
+    
+    // Scroll to top of verses list
+    setTimeout(() => {
+        const main = document.querySelector('main');
+        if (main) {
+            main.scrollTop = 0;
+        }
+    }, 0);
 }
 
 // Update verse content based on current language

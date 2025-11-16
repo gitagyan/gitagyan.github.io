@@ -1,4 +1,4 @@
-const CACHE_NAME = '1.1.4';
+const CACHE_NAME = '1.1.5';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -45,37 +45,32 @@ self.addEventListener('install', event => {
 
 // Fetch with dynamic caching for audio files
 self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request)
-            .then(response => {
-                // Return cached version if available
-                if (response) {
+    const url = new URL(event.request.url);
+
+    // For audio files, use a network-first strategy
+    if (url.pathname.startsWith('/assets/verse_recitation/') && url.pathname.endsWith('.mp3')) {
+        event.respondWith(
+            caches.open(CACHE_NAME).then(cache => {
+                return fetch(event.request).then(response => {
+                    // If fetch is successful, cache the response and return it
+                    if (response.status === 200) {
+                        cache.put(event.request, response.clone());
+                    }
                     return response;
-                }
-                
-                // For audio files, cache them after fetching
-                if (event.request.url.includes('/assets/verse_recitation/') && event.request.url.endsWith('.mp3')) {
-                    return fetch(event.request).then(response => {
-                        // Don't cache if not a valid response
-                        if (!response || response.status !== 200 || response.type !== 'basic') {
-                            return response;
-                        }
-                        
-                        // Clone the response since it's a stream
-                        const responseToCache = response.clone();
-                        
-                        caches.open(CACHE_NAME).then(cache => {
-                            cache.put(event.request, responseToCache);
-                        });
-                        
-                        return response;
-                    });
-                }
-                
-                // For all other requests
-                return fetch(event.request);
+                }).catch(() => {
+                    // If fetch fails (e.g., offline), try to get it from the cache
+                    return cache.match(event.request);
+                });
             })
-    );
+        );
+    } else {
+        // For all other requests, use a cache-first strategy
+        event.respondWith(
+            caches.match(event.request).then(response => {
+                return response || fetch(event.request);
+            })
+        );
+    }
 });
 
 // Activate
