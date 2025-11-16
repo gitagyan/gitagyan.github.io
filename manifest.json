@@ -1,6 +1,6 @@
 {
-    "name": "Bhagvad Gita - भगवद्‌ गीता",
-    "short_name": "भगवद्‌ गीता",
+    "name": "Geeta - Bhagavad Gita - भगवद्‌ गीता",
+    "short_name": "Bhagvad Geeta",
     "description": "Web App for reading the Bhagavad Gita with AI-powered spiritual guidance, translations, and audio recitation. Search: Geeta, Gita, Bhagavad Gita, भगवद्‌ गीता",
     "start_url": "/",
     "display": "standalone",
