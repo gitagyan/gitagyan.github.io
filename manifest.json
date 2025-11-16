@@ -1,12 +1,15 @@
 {
-    "name": "Bhagavad Gita - Spiritual Guidance",
-    "short_name": "GitaGyan",
-    "description": "A Progressive Web App for reading the Bhagavad Gita with AI-powered spiritual guidance, translations, and audio recitation.",
+    "name": "Bhagvad Gita - भगवद्‌ गीता",
+    "short_name": "भगवद्‌ गीता",
+    "description": "Web App for reading the Bhagavad Gita with AI-powered spiritual guidance, translations, and audio recitation. Search: Geeta, Gita, Bhagavad Gita, भगवद्‌ गीता",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#FFF8E1",
     "theme_color": "#E6A623",
     "version": "2.0.0",
+    "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+    "categories": ["lifestyle", "books"],
+    "keywords": ["geeta", "gita", "bhagavad", "bhagvad", "krishna", "arjuna", "spiritual", "hindu", "scripture", "भगवद्‌ गीता"],
     "icons": [
         {
             "src": "images/app-icon.png",
