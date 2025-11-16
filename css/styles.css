@@ -1508,9 +1508,71 @@ footer p {
 }
 
 .setting-item p {
-    color: #666;
+    color: #333;
     margin-bottom: 15px;
     font-size: 14px;
+}
+
+/* Toggle Switch Styles */
+.setting-toggle {
+    margin: 15px 0;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    gap: 12px;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 13px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.toggle-switch::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: white;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-checkbox:checked + .toggle-switch {
+    background: linear-gradient(135deg, #E6A623, #D4A017);
+}
+
+.toggle-checkbox:checked + .toggle-switch::before {
+    transform: translateX(24px);
+}
+
+.toggle-text {
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.setting-description {
+    display: block;
+    color: #555;
+    font-size: 13px;
+    margin-top: 8px;
+    margin-left: 62px;
 }
 
 .api-key-btn {

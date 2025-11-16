@@ -181,6 +181,19 @@
                             <small><i class="fas fa-info-circle"></i> This language will be used for AI-powered verse translations and summaries</small>
                         </div>
                     </div>
+
+                    <div class="setting-item">
+                        <h3>🎵 Audio Preferences</h3>
+                        <p>Customize your audio experience</p>
+                        <div class="setting-toggle">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="show-audio-player-toggle" class="toggle-checkbox">
+                                <span class="toggle-switch"></span>
+                                <span class="toggle-text">Show Sanskrit Sloka Audio Player</span>
+                            </label>
+                            <small class="setting-description">Enable audio playback for Sanskrit verses on the translation screen</small>
+                        </div>
+                    </div>
                 </div>
                 <div class="settings-footer">
                     <span id="cache-version">App Version: loading...</span>
@@ -250,7 +263,7 @@
         <input type="range" id="seek-slider" min="0" max="100" value="0">
         <span id="current-time">0:00</span> / <span id="duration">0:00</span>
     </div>
-    <audio id="audio-player"></audio>
+    <audio id="audio-player" preload="metadata"></audio>
     <footer id="footer">
         <p>🙏 सर्वधर्मान् परित्यज्य मामेकं शरणं व्रज 🙏</p>
     </footer>

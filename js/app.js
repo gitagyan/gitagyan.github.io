@@ -485,8 +485,17 @@ function setupFloatingAudioControls() {
 function toggleFloatingPlayPause() {
     const floatingBtn = document.getElementById('floating-play-pause');
     if (audioPlayer.paused) {
-        audioPlayer.play();
-        floatingBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        // Use play() with proper error handling for iOS
+        audioPlayer.play().catch(error => {
+            console.warn('Audio play failed:', error);
+            // Reset button state if play fails
+            floatingBtn.innerHTML = '<i class="fas fa-play"></i>';
+        }).then(() => {
+            // Only update UI if play was successful
+            if (!audioPlayer.paused) {
+                floatingBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+        });
     } else {
         audioPlayer.pause();
         floatingBtn.innerHTML = '<i class="fas fa-play"></i>';
@@ -525,25 +534,16 @@ function resetFloatingButton() {
     floatingTime.textContent = formatTime(audioPlayer.duration);
     progressCircle.style.strokeDashoffset = 182.21;
     
-    // Auto-play next verse feature
+    // Auto-advance to next verse (but don't auto-play)
     if (currentVerse) {
         const chapterVerses = verses.filter(v => v.chapter_number === currentVerse.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
         const currentIndex = chapterVerses.findIndex(v => v.id === currentVerse.id);
         
-        // If there's a next verse, move to it and start playing
+        // If there's a next verse, move to it (user must press play manually)
         if (currentIndex >= 0 && currentIndex < chapterVerses.length - 1) {
             setTimeout(() => {
                 showVerse(chapterVerses[currentIndex + 1]);
-                // Start playing after a short delay to ensure audio is loaded
-                setTimeout(() => {
-                    audioPlayer.play().then(() => {
-                        const newFloatingBtn = document.getElementById('floating-play-pause');
-                        newFloatingBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                    }).catch(error => {
-                        console.log('Auto-play failed:', error);
-                    });
-                }, 500);
-            }, 100);
+            }, 500);
         }
     }
 }
@@ -613,7 +613,7 @@ function switchScreen(screen) {
     // Handle footer visibility and AI button
     if (screen === verseDetailScreen) {
         document.getElementById('footer').style.display = 'none';
-        document.getElementById('floating-audio-btn').style.display = 'block';
+        updateAudioPlayerVisibility(); // Use new function to check setting
         document.getElementById('verse-navigation').style.display = 'flex';
         aiBtn.style.display = 'block';
         document.getElementById('floating-settings-btn').style.display = 'none';
@@ -905,8 +905,38 @@ function initSettings() {
         }
     });
     
+    // Audio player toggle setting
+    const audioPlayerToggle = document.getElementById('show-audio-player-toggle');
+    const showAudioPlayer = localStorage.getItem('showAudioPlayer') === 'true';
+    
+    // Set initial state
+    audioPlayerToggle.checked = showAudioPlayer;
+    
+    // Update audio player visibility when toggled
+    audioPlayerToggle.addEventListener('change', (e) => {
+        const isEnabled = e.target.checked;
+        localStorage.setItem('showAudioPlayer', isEnabled);
+        
+        // Update visibility immediately if on verse detail screen
+        updateAudioPlayerVisibility();
+    });
+    
     // Display cache version
     displayCacheVersion();
+}
+
+// Update audio player visibility based on setting
+function updateAudioPlayerVisibility() {
+    const showAudioPlayer = localStorage.getItem('showAudioPlayer') === 'true';
+    const floatingAudioBtn = document.getElementById('floating-audio-btn');
+    
+    if (floatingAudioBtn) {
+        if (showAudioPlayer && verseDetailScreen.classList.contains('active')) {
+            floatingAudioBtn.style.display = 'block';
+        } else {
+            floatingAudioBtn.style.display = 'none';
+        }
+    }
 }
 
 // Display cache version from service worker
