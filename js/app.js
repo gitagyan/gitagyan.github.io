@@ -9,7 +9,6 @@ let currentLang = 'english'; // 'english', 'hindi', or 'gujarati' - for verse tr
 let startX = 0;
 let endX = 0;
 let previousScreen = null; // Track where user came from
-let wakeLock = null; // Screen Wake Lock
 
 // Make key variables accessible to app-saarthi.js via window object
 window.currentVerse = null;
@@ -140,16 +139,11 @@ function showChapter(chapter) {
         if (chapterVideo && chapterVideo.video_id) {
             videoIframe.src = `https://www.youtube.com/embed/${chapterVideo.video_id}`;
             videoContainer.style.display = 'block';
-            
-            // Request wake lock when video container is shown (non-blocking)
-            setTimeout(() => requestWakeLock(), 100);
         } else {
             videoContainer.style.display = 'none';
-            releaseWakeLock();
         }
     } else {
         videoContainer.style.display = 'none';
-        releaseWakeLock();
     }
     
     const chapterVerses = verses.filter(v => v.chapter_number === chapter.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
@@ -590,11 +584,6 @@ function switchScreen(screen) {
         previousScreen = currentActiveScreen;
     }
     
-    // Release wake lock when leaving verses screen
-    if (currentActiveScreen === versesScreen && screen !== versesScreen) {
-        releaseWakeLock();
-    }
-    
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     screen.classList.add('active');
     
@@ -941,40 +930,6 @@ async function displayCacheVersion() {
         document.getElementById('cache-version').textContent = 'App Version: error';
     }
 }
-
-// Wake Lock functions to prevent screen from dimming during video playback
-async function requestWakeLock() {
-    try {
-        if ('wakeLock' in navigator) {
-            wakeLock = await navigator.wakeLock.request('screen');
-            console.log('Wake Lock activated');
-            
-            // Re-acquire wake lock when page becomes visible again
-            wakeLock.addEventListener('release', () => {
-                console.log('Wake Lock released');
-            });
-        }
-    } catch (err) {
-        console.warn('Wake Lock request failed:', err);
-    }
-}
-
-function releaseWakeLock() {
-    if (wakeLock !== null) {
-        wakeLock.release()
-            .then(() => {
-                wakeLock = null;
-                console.log('Wake Lock released manually');
-            });
-    }
-}
-
-// Handle visibility change to re-acquire wake lock
-document.addEventListener('visibilitychange', async () => {
-    if (wakeLock !== null && document.visibilityState === 'visible') {
-        await requestWakeLock();
-    }
-});
 
 // Register service worker
 if ('serviceWorker' in navigator) {
