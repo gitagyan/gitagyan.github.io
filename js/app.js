@@ -137,7 +137,8 @@ function showChapter(chapter) {
         const chapterVideo = youtubeVideos[chapter.chapter_number - 1];
         
         if (chapterVideo && chapterVideo.video_id) {
-            videoIframe.src = `https://www.youtube.com/embed/${chapterVideo.video_id}`;
+            // iOS-compatible YouTube embed URL with playsinline parameter
+            videoIframe.src = `https://www.youtube.com/embed/${chapterVideo.video_id}?playsinline=1`;
             videoContainer.style.display = 'block';
         } else {
             videoContainer.style.display = 'none';
