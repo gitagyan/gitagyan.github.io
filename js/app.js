@@ -137,13 +137,22 @@ function showChapter(chapter) {
         const chapterVideo = youtubeVideos[chapter.chapter_number - 1];
         
         if (chapterVideo && chapterVideo.video_id) {
-            // iOS-compatible YouTube embed URL with playsinline parameter
-            videoIframe.src = `https://www.youtube.com/embed/${chapterVideo.video_id}?playsinline=1`;
+            // Clear iframe src first to force a clean reload (fixes iOS stuck video issue)
+            videoIframe.src = '';
+            
+            // Set new video with a small delay to ensure clean load
+            setTimeout(() => {
+                // iOS-compatible YouTube embed URL with playsinline and autoplay parameters
+                videoIframe.src = `https://www.youtube.com/embed/${chapterVideo.video_id}?playsinline=1&rel=0`;
+            }, 100);
+            
             videoContainer.style.display = 'block';
         } else {
+            videoIframe.src = '';
             videoContainer.style.display = 'none';
         }
     } else {
+        videoIframe.src = '';
         videoContainer.style.display = 'none';
     }
     
