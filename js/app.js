@@ -34,7 +34,16 @@ const bookmarkBtn = document.getElementById('bookmark-btn');
 // PWA Install component setup
 const pwaInstallBtn = document.getElementById('pwa-install-btn');
 if (pwaInstallBtn) {
-    // Wait for component to be ready
+    // Make the button clickable to show install dialog
+    pwaInstallBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log('PWA install button clicked - showing dialog');
+        if (pwaInstallBtn.showDialog && typeof pwaInstallBtn.showDialog === 'function') {
+            pwaInstallBtn.showDialog();
+        }
+    });
+
+    // Listen for install availability
     pwaInstallBtn.addEventListener('pwa-install-available-event', (event) => {
         console.log('PWA install available');
         pwaInstallBtn.style.visibility = 'visible';
@@ -87,8 +96,21 @@ if (pwaInstallBtn) {
     // Check if already installed after a short delay to ensure component is loaded
     setTimeout(() => {
         if (pwaInstallBtn.isUnderStandaloneMode || pwaInstallBtn.isRelatedAppsInstalled) {
-            pwaInstallBtn.style.display = 'none';
+            pwaInstallBtn.style.visibility = 'hidden';
+            pwaInstallBtn.style.width = '0';
+            pwaInstallBtn.style.height = '0';
         } else if (pwaInstallBtn.isInstallAvailable) {
+            pwaInstallBtn.style.visibility = 'visible';
+            pwaInstallBtn.style.width = 'auto';
+            pwaInstallBtn.style.height = 'auto';
+            pwaInstallBtn.style.padding = '8px 12px';
+            pwaInstallBtn.style.display = 'flex';
+        } else {
+            // Show button even if install check isn't available (for manual mode)
+            pwaInstallBtn.style.visibility = 'visible';
+            pwaInstallBtn.style.width = 'auto';
+            pwaInstallBtn.style.height = 'auto';
+            pwaInstallBtn.style.padding = '8px 12px';
             pwaInstallBtn.style.display = 'flex';
         }
     }, 1000);
