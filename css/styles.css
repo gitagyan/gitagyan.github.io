@@ -109,6 +109,71 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
+.header-buttons {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#pwa-install-btn {
+    background: transparent;
+    color: #A5252C;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: none;
+    font-size: 1rem;
+    display: none; /* Hidden by default, shown when install is available */
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-weight: 500;
+}
+
+#pwa-install-btn:hover {
+    background: rgba(165, 37, 44, 0.1);
+    color: #8B1A1A;
+}
+
+#pwa-install-btn::part(install-button) {
+    background: transparent;
+    color: #A5252C;
+    border: none;
+    font-size: 1rem;
+    padding: 0;
+    font-weight: 500;
+}
+
+/* PWA Install Modal/Dialog Styles - Ensure it appears above all fixed elements */
+pwa-install {
+    z-index: 10000 !important;
+    position: relative !important;
+}
+
+/* When PWA install modal is active, hide interfering elements */
+body.pwa-modal-open footer,
+body.pwa-modal-open #audio-controls,
+body.pwa-modal-open .floating-settings-btn,
+body.pwa-modal-open #floating-audio-btn,
+body.pwa-modal-open #verse-navigation {
+    display: none !important;
+}
+
+/* Force modal to be positioned relative to viewport */
+pwa-install::part(dialog),
+pwa-install::part(modal) {
+    z-index: 10001 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
 #back-btn {
     position: absolute;
     left: 20px;
@@ -908,6 +973,13 @@ footer p {
     }
     main {
         padding: 70px 5px 50px 5px;
+    }
+    #pwa-install-btn {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+    .header-buttons {
+        gap: 5px;
     }
 }
 

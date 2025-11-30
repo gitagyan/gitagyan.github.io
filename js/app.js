@@ -31,6 +31,61 @@ const mainFloatingBtn = document.getElementById('main-floating-btn');
 const floatingMenu = document.getElementById('floating-menu');
 const bookmarkBtn = document.getElementById('bookmark-btn');
 
+// PWA Install component setup
+const pwaInstallBtn = document.getElementById('pwa-install-btn');
+if (pwaInstallBtn) {
+    // Wait for component to be ready
+    pwaInstallBtn.addEventListener('pwa-install-available-event', (event) => {
+        console.log('PWA install available');
+        pwaInstallBtn.style.display = 'flex';
+    });
+
+    // Listen for successful installation
+    pwaInstallBtn.addEventListener('pwa-install-success-event', (event) => {
+        console.log('PWA installed successfully:', event.detail.message);
+        document.body.classList.remove('pwa-modal-open');
+        // Hide install button after successful install
+        setTimeout(() => {
+            pwaInstallBtn.style.display = 'none';
+        }, 2000);
+    });
+
+    // Listen for installation failure
+    pwaInstallBtn.addEventListener('pwa-install-fail-event', (event) => {
+        console.log('PWA install failed:', event.detail.message);
+        document.body.classList.remove('pwa-modal-open');
+    });
+
+    // Listen for how-to event (when modal opens)
+    pwaInstallBtn.addEventListener('pwa-install-how-to-event', (event) => {
+        console.log('PWA install how-to modal opened');
+        document.body.classList.add('pwa-modal-open');
+        // Remove the class after 30 seconds in case user closes modal without action
+        setTimeout(() => {
+            document.body.classList.remove('pwa-modal-open');
+        }, 30000);
+    });
+
+    // Listen for gallery event (when modal opens)
+    pwaInstallBtn.addEventListener('pwa-install-gallery-event', (event) => {
+        console.log('PWA install gallery modal opened');
+        document.body.classList.add('pwa-modal-open');
+        // Remove the class after 30 seconds in case user closes modal without action
+        setTimeout(() => {
+            document.body.classList.remove('pwa-modal-open');
+        }, 30000);
+    });
+
+    // Check if already installed after a short delay to ensure component is loaded
+    setTimeout(() => {
+        if (pwaInstallBtn.isUnderStandaloneMode || pwaInstallBtn.isRelatedAppsInstalled) {
+            pwaInstallBtn.style.display = 'none';
+        } else if (pwaInstallBtn.isInstallAvailable) {
+            pwaInstallBtn.style.display = 'flex';
+        }
+    }, 1000);
+}
+
 // Initialize app
 async function init() {
     try {

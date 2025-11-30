@@ -12,14 +12,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://esm.sh/@khmyznikov/pwa-install"></script>
 </head>
 <body>
     <header id="header">
         <button id="back-btn" style="display:none;"><i class="fas fa-arrow-left"></i></button>
         <h1>भगवद् गीता</h1>
-        <button id="ai-btn">
-            <img src="images/SarthiAI.png" alt="Sarthi AI" class="ai-icon-img">
-        </button>
+        <div class="header-buttons">
+            <!-- PWA Install Button - Shows install dialog for different browsers/platforms -->
+            <pwa-install 
+                id="pwa-install-btn"
+                name="Bhagavad Gita"
+                description="Web App for reading the Bhagavad Gita with AI-powered spiritual guidance"
+                manifest-url="/manifest.json"
+                install-description="Install Bhagavad Gita for offline reading and better experience"
+                use-local-storage="true"
+                disable-close="true"
+                icon="/images/icon-192.png">
+                📱 Install
+            </pwa-install>
+            <button id="ai-btn">
+                <img src="images/SarthiAI.png" alt="Sarthi AI" class="ai-icon-img">
+            </button>
+        </div>
     </header>
     <main id="main-content">
         <div id="chapters-screen" class="screen active">
