@@ -117,6 +117,13 @@ header h1 {
     gap: 10px;
 }
 
+/* On iOS, hide the install button from header since it's repositioned to bottom */
+@supports (-webkit-touch-callout: none) {
+    .header-buttons #pwa-install-btn {
+        display: none !important;
+    }
+}
+
 #pwa-install-btn {
     background: transparent;
     color: #A5252C;
@@ -154,19 +161,41 @@ pwa-install {
     position: relative !important;
 }
 
-/* When PWA install modal is active, hide interfering elements */
-body.pwa-modal-open header,
-body.pwa-modal-open footer,
-body.pwa-modal-open #audio-controls,
-body.pwa-modal-open .floating-settings-btn,
-body.pwa-modal-open #floating-audio-btn,
-body.pwa-modal-open #verse-navigation {
-    display: none !important;
-}
-
-/* Adjust main content when PWA modal is open */
-body.pwa-modal-open main {
-    padding-top: 10px !important; /* Reduce top padding since header is hidden */
+/* iOS-specific PWA install button positioning */
+@supports (-webkit-touch-callout: none) {
+    /* iOS detection */
+    #pwa-install-btn {
+        position: fixed !important;
+        bottom: 90px !important; /* Above audio controls */
+        right: 20px !important;
+        left: auto !important;
+        top: auto !important;
+        z-index: 1003 !important;
+        border-radius: 50% !important;
+        width: 50px !important;
+        height: 50px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #E6A623 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    #pwa-install-btn:hover {
+        background: #D4A017 !important;
+        transform: none !important;
+    }
+    
+    /* Hide the emoji text on iOS, just show the 📱 emoji */
+    #pwa-install-btn::before {
+        content: "📱";
+        font-size: 1.5rem;
+    }
+    
+    #pwa-install-btn::after {
+        display: none;
+    }
 }
 
 /* Force modal to be positioned relative to viewport */
@@ -182,6 +211,22 @@ pwa-install::part(modal) {
     height: 100vh !important;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/* When PWA install modal is active, hide interfering elements */
+body.pwa-modal-open header,
+body.pwa-modal-open footer,
+body.pwa-modal-open #audio-controls,
+body.pwa-modal-open .floating-settings-btn,
+body.pwa-modal-open #floating-audio-btn,
+body.pwa-modal-open #verse-navigation,
+body.pwa-modal-open #pwa-install-btn {
+    display: none !important;
+}
+
+/* Adjust main content when PWA modal is open */
+body.pwa-modal-open main {
+    padding-top: 10px !important; /* Reduce top padding since header is hidden */
 }
 
 #back-btn {
