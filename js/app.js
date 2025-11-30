@@ -32,70 +32,7 @@ const floatingMenu = document.getElementById('floating-menu');
 const bookmarkBtn = document.getElementById('bookmark-btn');
 
 // PWA Install component setup
-const pwaInstallBtn = document.getElementById('pwa-install-btn');
-if (pwaInstallBtn) {
-    console.log('PWA Install button found - initializing');
-    
-    // Make the button clickable to show install dialog
-    pwaInstallBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        console.log('PWA install button clicked - showing dialog');
-        if (pwaInstallBtn.showDialog && typeof pwaInstallBtn.showDialog === 'function') {
-            pwaInstallBtn.showDialog();
-            document.body.classList.add('pwa-modal-open');
-        }
-    });
 
-    // Listen for install availability
-    pwaInstallBtn.addEventListener('pwa-install-available-event', (event) => {
-        console.log('PWA install available');
-    });
-
-    // Listen for successful installation
-    pwaInstallBtn.addEventListener('pwa-install-success-event', (event) => {
-        console.log('PWA installed successfully:', event.detail?.message);
-        document.body.classList.remove('pwa-modal-open');
-        // Hide install button after successful install
-        setTimeout(() => {
-            pwaInstallBtn.style.display = 'none';
-        }, 2000);
-    });
-
-    // Listen for installation failure
-    pwaInstallBtn.addEventListener('pwa-install-fail-event', (event) => {
-        console.log('PWA install failed:', event.detail?.message);
-        document.body.classList.remove('pwa-modal-open');
-    });
-
-    // Listen for how-to event (when modal opens)
-    pwaInstallBtn.addEventListener('pwa-install-how-to-event', (event) => {
-        console.log('PWA install how-to modal opened');
-        document.body.classList.add('pwa-modal-open');
-        setTimeout(() => {
-            document.body.classList.remove('pwa-modal-open');
-        }, 30000);
-    });
-
-    // Listen for gallery event (when modal opens)
-    pwaInstallBtn.addEventListener('pwa-install-gallery-event', (event) => {
-        console.log('PWA install gallery modal opened');
-        document.body.classList.add('pwa-modal-open');
-        setTimeout(() => {
-            document.body.classList.remove('pwa-modal-open');
-        }, 30000);
-    });
-
-    // Hide button if already installed
-    setTimeout(() => {
-        if (pwaInstallBtn.isUnderStandaloneMode || pwaInstallBtn.isRelatedAppsInstalled) {
-            console.log('App already installed, hiding button');
-            pwaInstallBtn.style.display = 'none';
-        } else {
-            console.log('App not installed, button visible for install');
-        }
-    }, 500);
-}
 
 // Initialize app
 async function init() {
