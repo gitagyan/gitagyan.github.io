@@ -72,6 +72,9 @@ function initSarthi() {
 
 // Handle AI button click
 function handleAIButtonClick() {
+    // Reload geminiApiKey from localStorage in case Settings was updated
+    geminiApiKey = localStorage.getItem('geminiApiKey');
+    
     if (geminiApiKey) {
         // Show chat screen - access switchScreen from global scope
         if (typeof window.switchScreen === 'function') {
@@ -208,6 +211,13 @@ async function sendMessage() {
 
 // Call Gemini API
 async function callGeminiAPI(userMessage) {
+    // Get API key directly from localStorage (always fresh)
+    const apiKey = localStorage.getItem('geminiApiKey');
+    
+    if (!apiKey) {
+        throw new Error('API key not configured');
+    }
+    
     const combinedPrompt = `You are Sarthi AI. Help users by recommending 3 relevant Bhagavad Gita verses for their questions.
 
 User Question: ${userMessage}
@@ -222,7 +232,7 @@ Chapter X, Verse Y: Why this verse helps
 
 Keep it concise and practical.`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_CHAT_MODEL}:generateContent?key=${geminiApiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_CHAT_MODEL}:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -551,7 +561,10 @@ function saveSarthiLanguage() {
 }
 
 async function handleSarthiAIPillClick() {
-    if (!geminiApiKey) {
+    // Get API key directly from localStorage (always fresh)
+    const apiKey = localStorage.getItem('geminiApiKey');
+    
+    if (!apiKey) {
         alert('Please configure your API key in Settings first to use Sarthi AI.');
         return;
     }
@@ -641,6 +654,13 @@ async function handleSarthiAIPillClick() {
 }
 
 async function getSarthiTranslation(verse) {
+    // Get API key directly from localStorage (always fresh)
+    const apiKey = localStorage.getItem('geminiApiKey');
+    
+    if (!apiKey) {
+        throw new Error('API key not configured');
+    }
+    
     // Create cache key for this chapter
     const chapterCacheKey = `sarthi_chapter_${verse.chapter_number}`;
     
@@ -700,7 +720,7 @@ CRITICAL REQUIREMENTS:
 - If Hindi, use Devanagari script; if Gujarati, use Gujarati script
 - Do not mix languages or use English words unless absolutely necessary`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_TRANSLATION_MODEL}:generateContent?key=${geminiApiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_TRANSLATION_MODEL}:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -755,10 +775,17 @@ CRITICAL REQUIREMENTS:
     return aiResponse;
 }
 
+// Reload API key from localStorage (called when Settings are updated)
+function reloadApiKey() {
+    geminiApiKey = localStorage.getItem('geminiApiKey');
+    console.log('Sarthi AI: API key reloaded from Settings');
+}
+
 // Export functions to window
 window.AppSarthi = {
     initSarthi,
     handleSarthiAIPillClick,
     getSarthiTranslation,
-    navigateToSloka
+    navigateToSloka,
+    reloadApiKey
 };

@@ -846,6 +846,12 @@ function initSettings() {
         settingsApiKeyInput.style.background = 'rgba(40, 167, 69, 0.1)';
     }
     
+    // Also sync the Sarthi setup input field if it exists
+    const sarthiSetupInput = document.getElementById('api-key-input');
+    if (sarthiSetupInput && geminiApiKey) {
+        sarthiSetupInput.value = geminiApiKey;
+    }
+    
     // Toggle API key visibility in settings
     document.getElementById('toggle-settings-api-key-visibility').addEventListener('click', () => {
         const input = document.getElementById('settings-api-key-input');
@@ -892,6 +898,11 @@ function initSettings() {
         setTimeout(() => {
             localStorage.setItem('geminiApiKey', apiKey);
             
+            // Reload geminiApiKey in app-saarthi.js
+            if (typeof window.AppSarthi !== 'undefined' && window.AppSarthi.reloadApiKey) {
+                window.AppSarthi.reloadApiKey();
+            }
+            
             // Success feedback
             updateBtn.innerHTML = '<i class="fas fa-check"></i>';
             settingsApiKeyInput.style.borderColor = '#28a745';
@@ -916,6 +927,17 @@ function initSettings() {
             setTimeout(() => {
                 localStorage.removeItem('geminiApiKey');
                 settingsApiKeyInput.value = '';
+                
+                // Also clear in Sarthi setup screen
+                const sarthiSetupInput = document.getElementById('api-key-input');
+                if (sarthiSetupInput) {
+                    sarthiSetupInput.value = '';
+                }
+                
+                // Reload geminiApiKey in app-saarthi.js
+                if (typeof window.AppSarthi !== 'undefined' && window.AppSarthi.reloadApiKey) {
+                    window.AppSarthi.reloadApiKey();
+                }
                 
                 // Success feedback
                 removeBtn.innerHTML = '<i class="fas fa-check"></i>';
