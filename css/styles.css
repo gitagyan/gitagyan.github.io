@@ -139,11 +139,12 @@ header h1 {
     justify-content: center;
     gap: 4px;
     font-weight: 500;
-    visibility: hidden; /* Use visibility instead of display for better control */
-    width: 0;
-    height: 0;
-    padding: 0;
-    overflow: hidden;
+    /* Start visible by default - show on all platforms */
+    visibility: visible;
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+    overflow: visible;
 }
 
 #pwa-install-btn:hover {

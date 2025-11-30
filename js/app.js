@@ -34,42 +34,37 @@ const bookmarkBtn = document.getElementById('bookmark-btn');
 // PWA Install component setup
 const pwaInstallBtn = document.getElementById('pwa-install-btn');
 if (pwaInstallBtn) {
+    console.log('PWA Install button found - initializing');
+    
     // Make the button clickable to show install dialog
     pwaInstallBtn.addEventListener('click', (event) => {
         event.preventDefault();
+        event.stopPropagation();
         console.log('PWA install button clicked - showing dialog');
         if (pwaInstallBtn.showDialog && typeof pwaInstallBtn.showDialog === 'function') {
             pwaInstallBtn.showDialog();
+            document.body.classList.add('pwa-modal-open');
         }
     });
 
     // Listen for install availability
     pwaInstallBtn.addEventListener('pwa-install-available-event', (event) => {
         console.log('PWA install available');
-        pwaInstallBtn.style.visibility = 'visible';
-        pwaInstallBtn.style.width = 'auto';
-        pwaInstallBtn.style.height = 'auto';
-        pwaInstallBtn.style.padding = '8px 12px';
-        pwaInstallBtn.style.display = 'flex';
     });
 
     // Listen for successful installation
     pwaInstallBtn.addEventListener('pwa-install-success-event', (event) => {
-        console.log('PWA installed successfully:', event.detail.message);
+        console.log('PWA installed successfully:', event.detail?.message);
         document.body.classList.remove('pwa-modal-open');
         // Hide install button after successful install
         setTimeout(() => {
-            pwaInstallBtn.style.visibility = 'hidden';
-            pwaInstallBtn.style.width = '0';
-            pwaInstallBtn.style.height = '0';
-            pwaInstallBtn.style.padding = '0';
-            pwaInstallBtn.style.display = 'flex';
+            pwaInstallBtn.style.display = 'none';
         }, 2000);
     });
 
     // Listen for installation failure
     pwaInstallBtn.addEventListener('pwa-install-fail-event', (event) => {
-        console.log('PWA install failed:', event.detail.message);
+        console.log('PWA install failed:', event.detail?.message);
         document.body.classList.remove('pwa-modal-open');
     });
 
@@ -77,7 +72,6 @@ if (pwaInstallBtn) {
     pwaInstallBtn.addEventListener('pwa-install-how-to-event', (event) => {
         console.log('PWA install how-to modal opened');
         document.body.classList.add('pwa-modal-open');
-        // Remove the class after 30 seconds in case user closes modal without action
         setTimeout(() => {
             document.body.classList.remove('pwa-modal-open');
         }, 30000);
@@ -87,33 +81,20 @@ if (pwaInstallBtn) {
     pwaInstallBtn.addEventListener('pwa-install-gallery-event', (event) => {
         console.log('PWA install gallery modal opened');
         document.body.classList.add('pwa-modal-open');
-        // Remove the class after 30 seconds in case user closes modal without action
         setTimeout(() => {
             document.body.classList.remove('pwa-modal-open');
         }, 30000);
     });
 
-    // Check if already installed after a short delay to ensure component is loaded
+    // Hide button if already installed
     setTimeout(() => {
         if (pwaInstallBtn.isUnderStandaloneMode || pwaInstallBtn.isRelatedAppsInstalled) {
-            pwaInstallBtn.style.visibility = 'hidden';
-            pwaInstallBtn.style.width = '0';
-            pwaInstallBtn.style.height = '0';
-        } else if (pwaInstallBtn.isInstallAvailable) {
-            pwaInstallBtn.style.visibility = 'visible';
-            pwaInstallBtn.style.width = 'auto';
-            pwaInstallBtn.style.height = 'auto';
-            pwaInstallBtn.style.padding = '8px 12px';
-            pwaInstallBtn.style.display = 'flex';
+            console.log('App already installed, hiding button');
+            pwaInstallBtn.style.display = 'none';
         } else {
-            // Show button even if install check isn't available (for manual mode)
-            pwaInstallBtn.style.visibility = 'visible';
-            pwaInstallBtn.style.width = 'auto';
-            pwaInstallBtn.style.height = 'auto';
-            pwaInstallBtn.style.padding = '8px 12px';
-            pwaInstallBtn.style.display = 'flex';
+            console.log('App not installed, button visible for install');
         }
-    }, 1000);
+    }, 500);
 }
 
 // Initialize app
