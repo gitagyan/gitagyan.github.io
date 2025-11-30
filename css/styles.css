@@ -373,6 +373,62 @@ footer p {
     padding: 0 10px;
 }
 
+/* Video Carousel */
+.video-carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.video-carousel-track {
+    display: flex;
+    width: 200%;
+    transition: transform 0.3s ease;
+}
+
+.video-slide {
+    width: 50%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.video-lang-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.video-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.video-carousel-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(165, 37, 44, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.video-carousel-dots .dot.active {
+    background: #A5252C;
+    width: 24px;
+    border-radius: 4px;
+}
+
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */

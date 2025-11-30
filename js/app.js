@@ -128,31 +128,41 @@ function showChapter(chapter) {
         <div class="chapter-title-meaning">(${chapter.name_meaning})</div>
     `;
     
-    // Load YouTube video for this chapter
+    // Load YouTube videos for this chapter (Hindi and English)
     const videoContainer = document.getElementById('chapter-video-container');
-    const videoIframe = document.getElementById('chapter-video-iframe');
+    const hindiIframe = document.getElementById('chapter-video-iframe-hindi');
+    const englishIframe = document.getElementById('chapter-video-iframe-english');
     
     if (youtubeVideos && youtubeVideos.length > 0) {
-        // Find video for current chapter (chapter_number - 1 because array is 0-indexed)
-        const chapterVideo = youtubeVideos[chapter.chapter_number - 1];
+        // Find video data for current chapter
+        const chapterVideo = youtubeVideos.find(v => v.chapter === chapter.chapter_number);
         
-        if (chapterVideo && chapterVideo.video_id) {
-            // Clear iframe src first to force a clean reload (fixes iOS stuck video issue)
-            videoIframe.src = '';
+        if (chapterVideo && chapterVideo.hindi && chapterVideo.english) {
+            // Clear iframe srcs first to force a clean reload
+            hindiIframe.src = '';
+            englishIframe.src = '';
             
-            // Set new video with a small delay to ensure clean load
+            // Set new videos with a small delay to ensure clean load
             setTimeout(() => {
-                // iOS-compatible YouTube embed URL with playsinline and autoplay parameters
-                videoIframe.src = `https://www.youtube.com/embed/${chapterVideo.video_id}?playsinline=1&rel=0`;
+                hindiIframe.src = `https://www.youtube.com/embed/${chapterVideo.hindi.video_id}?playsinline=1&rel=0`;
+                englishIframe.src = `https://www.youtube.com/embed/${chapterVideo.english.video_id}?playsinline=1&rel=0`;
             }, 100);
             
             videoContainer.style.display = 'block';
+            
+            // Reset carousel to English (default)
+            resetVideoCarousel();
+            
+            // Setup carousel swipe
+            setupVideoCarousel();
         } else {
-            videoIframe.src = '';
+            hindiIframe.src = '';
+            englishIframe.src = '';
             videoContainer.style.display = 'none';
         }
     } else {
-        videoIframe.src = '';
+        hindiIframe.src = '';
+        englishIframe.src = '';
         videoContainer.style.display = 'none';
     }
     
@@ -969,6 +979,96 @@ async function displayCacheVersion() {
         console.error('Failed to fetch cache version:', error);
         document.getElementById('cache-version').textContent = 'App Version: error';
     }
+}
+
+// Video Carousel Functions
+let currentVideoLang = 'english';
+let videoCarouselStartX = 0;
+let videoCarouselEndX = 0;
+
+function resetVideoCarousel() {
+    currentVideoLang = 'english';
+    const track = document.querySelector('.video-carousel-track');
+    const dots = document.querySelectorAll('.video-carousel-dots .dot');
+    
+    if (track) {
+        track.style.transform = 'translateX(0%)';
+    }
+    
+    dots.forEach(dot => {
+        dot.classList.remove('active');
+        if (dot.dataset.lang === 'english') {
+            dot.classList.add('active');
+        }
+    });
+}
+
+function setupVideoCarousel() {
+    const carousel = document.querySelector('.video-carousel');
+    const track = document.querySelector('.video-carousel-track');
+    const dots = document.querySelectorAll('.video-carousel-dots .dot');
+    
+    if (!carousel || !track) return;
+    
+    // Remove existing listeners
+    carousel.removeEventListener('touchstart', handleVideoCarouselTouchStart);
+    carousel.removeEventListener('touchend', handleVideoCarouselTouchEnd);
+    
+    // Add touch listeners
+    carousel.addEventListener('touchstart', handleVideoCarouselTouchStart);
+    carousel.addEventListener('touchend', handleVideoCarouselTouchEnd);
+    
+    // Add dot click listeners
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            switchVideoLanguage(dot.dataset.lang);
+        });
+    });
+}
+
+function handleVideoCarouselTouchStart(e) {
+    videoCarouselStartX = e.touches[0].clientX;
+}
+
+function handleVideoCarouselTouchEnd(e) {
+    videoCarouselEndX = e.changedTouches[0].clientX;
+    handleVideoCarouselSwipe();
+}
+
+function handleVideoCarouselSwipe() {
+    const deltaX = videoCarouselEndX - videoCarouselStartX;
+    const threshold = 50;
+    
+    if (Math.abs(deltaX) > threshold) {
+        if (deltaX < 0 && currentVideoLang === 'english') {
+            // Swipe left - switch to Hindi
+            switchVideoLanguage('hindi');
+        } else if (deltaX > 0 && currentVideoLang === 'hindi') {
+            // Swipe right - switch to English
+            switchVideoLanguage('english');
+        }
+    }
+}
+
+function switchVideoLanguage(lang) {
+    currentVideoLang = lang;
+    const track = document.querySelector('.video-carousel-track');
+    const dots = document.querySelectorAll('.video-carousel-dots .dot');
+    
+    if (track) {
+        if (lang === 'english') {
+            track.style.transform = 'translateX(0%)';
+        } else {
+            track.style.transform = 'translateX(-50%)';
+        }
+    }
+    
+    dots.forEach(dot => {
+        dot.classList.remove('active');
+        if (dot.dataset.lang === lang) {
+            dot.classList.add('active');
+        }
+    });
 }
 
 // Register service worker

@@ -28,14 +28,37 @@
         <div id="verses-screen" class="screen">
             <h2 id="chapter-title"></h2>
             <div id="chapter-video-container" class="chapter-video-container" style="display: none;">
-                <div class="video-wrapper">
-                    <iframe id="chapter-video-iframe" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            playsinline
-                            allowfullscreen>
-                    </iframe>
+                <div class="video-carousel">
+                    <div class="video-carousel-track">
+                        <div class="video-slide" data-lang="english">
+                            <div class="video-lang-badge">🇬🇧 English</div>
+                            <div class="video-wrapper">
+                                <iframe id="chapter-video-iframe-english" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        playsinline
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                        <div class="video-slide" data-lang="hindi">
+                            <div class="video-lang-badge">🇮🇳 हिंदी</div>
+                            <div class="video-wrapper">
+                                <iframe id="chapter-video-iframe-hindi" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        playsinline
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-carousel-dots">
+                        <span class="dot active" data-lang="english"></span>
+                        <span class="dot" data-lang="hindi"></span>
+                    </div>
                 </div>
             </div>
             <div id="verses-list"></div>
