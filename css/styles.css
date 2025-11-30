@@ -155,12 +155,18 @@ pwa-install {
 }
 
 /* When PWA install modal is active, hide interfering elements */
+body.pwa-modal-open header,
 body.pwa-modal-open footer,
 body.pwa-modal-open #audio-controls,
 body.pwa-modal-open .floating-settings-btn,
 body.pwa-modal-open #floating-audio-btn,
 body.pwa-modal-open #verse-navigation {
     display: none !important;
+}
+
+/* Adjust main content when PWA modal is open */
+body.pwa-modal-open main {
+    padding-top: 10px !important; /* Reduce top padding since header is hidden */
 }
 
 /* Force modal to be positioned relative to viewport */
@@ -170,8 +176,12 @@ pwa-install::part(modal) {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 #back-btn {
