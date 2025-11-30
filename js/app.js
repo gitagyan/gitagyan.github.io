@@ -37,6 +37,10 @@ if (pwaInstallBtn) {
     // Wait for component to be ready
     pwaInstallBtn.addEventListener('pwa-install-available-event', (event) => {
         console.log('PWA install available');
+        pwaInstallBtn.style.visibility = 'visible';
+        pwaInstallBtn.style.width = 'auto';
+        pwaInstallBtn.style.height = 'auto';
+        pwaInstallBtn.style.padding = '8px 12px';
         pwaInstallBtn.style.display = 'flex';
     });
 
@@ -46,7 +50,11 @@ if (pwaInstallBtn) {
         document.body.classList.remove('pwa-modal-open');
         // Hide install button after successful install
         setTimeout(() => {
-            pwaInstallBtn.style.display = 'none';
+            pwaInstallBtn.style.visibility = 'hidden';
+            pwaInstallBtn.style.width = '0';
+            pwaInstallBtn.style.height = '0';
+            pwaInstallBtn.style.padding = '0';
+            pwaInstallBtn.style.display = 'flex';
         }, 2000);
     });
 

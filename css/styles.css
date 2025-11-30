@@ -134,11 +134,16 @@ header h1 {
     transition: all 0.3s;
     backdrop-filter: none;
     font-size: 1rem;
-    display: none; /* Hidden by default, shown when install is available */
+    display: flex; /* Use flex as default */
     align-items: center;
     justify-content: center;
     gap: 4px;
     font-weight: 500;
+    visibility: hidden; /* Use visibility instead of display for better control */
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 #pwa-install-btn:hover {
@@ -148,9 +153,9 @@ header h1 {
 
 #pwa-install-btn::part(install-button) {
     background: transparent;
-    color: #A5252C;
+    color: inherit;
     border: none;
-    font-size: 1rem;
+    font-size: inherit;
     padding: 0;
     font-weight: 500;
 }
@@ -163,10 +168,11 @@ pwa-install {
 
 /* iOS-specific PWA install button positioning */
 @supports (-webkit-touch-callout: none) {
-    /* iOS detection */
+    /* On iOS, reposition button to bottom as floating button */
     #pwa-install-btn {
+        visibility: visible !important;
         position: fixed !important;
-        bottom: 90px !important; /* Above audio controls */
+        bottom: 90px !important;
         right: 20px !important;
         left: auto !important;
         top: auto !important;
@@ -175,11 +181,15 @@ pwa-install {
         width: 50px !important;
         height: 50px !important;
         padding: 0 !important;
+        margin: 0 !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         background: #E6A623 !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+        overflow: visible !important;
+        font-size: 1.5rem !important;
+        line-height: 1 !important;
     }
     
     #pwa-install-btn:hover {
@@ -187,14 +197,20 @@ pwa-install {
         transform: none !important;
     }
     
-    /* Hide the emoji text on iOS, just show the 📱 emoji */
-    #pwa-install-btn::before {
-        content: "📱";
-        font-size: 1.5rem;
+    /* Hide from header on iOS */
+    .header-buttons #pwa-install-btn {
+        display: none !important;
     }
-    
-    #pwa-install-btn::after {
-        display: none;
+}
+
+/* Non-iOS: Show button in header normally */
+@supports not (-webkit-touch-callout: none) {
+    #pwa-install-btn {
+        visibility: visible !important;
+        width: auto !important;
+        height: auto !important;
+        padding: 8px 12px !important;
+        display: flex !important;
     }
 }
 
