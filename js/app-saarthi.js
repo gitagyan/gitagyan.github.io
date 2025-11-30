@@ -2,7 +2,6 @@
 // This module handles all Sarthi AI functionality including chat and enhanced translations
 
 // Global variables for Sarthi
-let geminiApiKey = null;
 let sarthiLanguage = 'english'; // Default language for Sarthi translations
 
 // Gemini API Model Configuration
@@ -11,9 +10,6 @@ const GEMINI_TRANSLATION_MODEL = 'gemini-2.5-flash-lite';
 
 // Initialize Sarthi AI
 function initSarthi() {
-    // Check if API key exists in localStorage
-    geminiApiKey = localStorage.getItem('geminiApiKey');
-    
     // Setup AI button click handler
     const aiBtn = document.getElementById('ai-btn');
     if (aiBtn) {
@@ -72,10 +68,10 @@ function initSarthi() {
 
 // Handle AI button click
 function handleAIButtonClick() {
-    // Reload geminiApiKey from localStorage in case Settings was updated
-    geminiApiKey = localStorage.getItem('geminiApiKey');
+    // Check API key directly from localStorage
+    const apiKey = localStorage.getItem('geminiApiKey');
     
-    if (geminiApiKey) {
+    if (apiKey) {
         // Show chat screen - access switchScreen from global scope
         if (typeof window.switchScreen === 'function') {
             const aiChatScreen = document.getElementById('ai-chat-screen');
@@ -109,7 +105,6 @@ function saveApiKey() {
     
     // Save to localStorage
     localStorage.setItem('geminiApiKey', apiKey);
-    geminiApiKey = apiKey;
     
     // Show success message and switch to chat
     alert('API key saved successfully!');
@@ -776,16 +771,10 @@ CRITICAL REQUIREMENTS:
 }
 
 // Reload API key from localStorage (called when Settings are updated)
-function reloadApiKey() {
-    geminiApiKey = localStorage.getItem('geminiApiKey');
-    console.log('Sarthi AI: API key reloaded from Settings');
-}
 
-// Export functions to window
 window.AppSarthi = {
     initSarthi,
     handleSarthiAIPillClick,
     getSarthiTranslation,
-    navigateToSloka,
-    reloadApiKey
+    navigateToSloka
 };

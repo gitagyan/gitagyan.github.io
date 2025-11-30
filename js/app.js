@@ -891,18 +891,14 @@ function initSettings() {
             return;
         }
         
-        // Show loading state
+        // Save immediately without delay
+        localStorage.setItem('geminiApiKey', apiKey);
+        
+        // Show loading state briefly for user feedback
         updateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
         updateBtn.disabled = true;
         
         setTimeout(() => {
-            localStorage.setItem('geminiApiKey', apiKey);
-            
-            // Reload geminiApiKey in app-saarthi.js
-            if (typeof window.AppSarthi !== 'undefined' && window.AppSarthi.reloadApiKey) {
-                window.AppSarthi.reloadApiKey();
-            }
-            
             // Success feedback
             updateBtn.innerHTML = '<i class="fas fa-check"></i>';
             settingsApiKeyInput.style.borderColor = '#28a745';
@@ -912,7 +908,7 @@ function initSettings() {
                 updateBtn.disabled = false;
                 settingsApiKeyInput.style.borderColor = '';
             }, 2000);
-        }, 500);
+        }, 100);
     });
     
     // Remove API key
@@ -1100,8 +1096,8 @@ function switchVideoLanguage(lang) {
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
-            .then(registration => console.log('SW registered'))
-            .catch(error => console.log('SW registration failed'));
+            .then(registration => {})
+            .catch(error => {});
     });
 }
 
