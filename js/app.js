@@ -153,11 +153,11 @@ function showChapter(chapter) {
             
             videoContainer.style.display = 'block';
             
-            // Reset carousel to English (default)
-            resetVideoCarousel();
+            // Reset tabs to English (default)
+            resetVideoTabs();
             
-            // Setup carousel swipe
-            setupVideoCarousel();
+            // Setup tab click handlers
+            setupVideoTabs();
         } else {
             hindiIframe.src = '';
             englishIframe.src = '';
@@ -611,7 +611,7 @@ function switchScreen(screen) {
     screen.classList.add('active');
     
     // Add a class to the body for screen-specific styling
-    document.body.classList.remove('verse-detail-active', 'chapters-active', 'verses-active', 'settings-active', 'ai-chat-active', 'bookmarks-active');
+    document.body.classList.remove('verse-detail-active', 'chapters-active', 'verses-active', 'settings-active', 'ai-chat-active', 'bookmarks-active', 'setup-instructions-active');
     if (screen === verseDetailScreen) {
         document.body.classList.add('verse-detail-active');
     } else if (screen === chaptersScreen) {
@@ -1002,92 +1002,55 @@ async function displayCacheVersion() {
     }
 }
 
-// Video Carousel Functions
+// Video Tab Functions
 let currentVideoLang = 'english';
-let videoCarouselStartX = 0;
-let videoCarouselEndX = 0;
 
-function resetVideoCarousel() {
+function resetVideoTabs() {
     currentVideoLang = 'english';
-    const track = document.querySelector('.video-carousel-track');
-    const dots = document.querySelectorAll('.video-carousel-dots .dot');
+    const tabBtns = document.querySelectorAll('.video-tab-btn');
+    const tabPanes = document.querySelectorAll('.video-tab-pane');
     
-    if (track) {
-        track.style.transform = 'translateX(0%)';
-    }
+    tabBtns.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.lang === 'english') {
+            btn.classList.add('active');
+        }
+    });
     
-    dots.forEach(dot => {
-        dot.classList.remove('active');
-        if (dot.dataset.lang === 'english') {
-            dot.classList.add('active');
+    tabPanes.forEach(pane => {
+        pane.classList.remove('active');
+        if (pane.dataset.lang === 'english') {
+            pane.classList.add('active');
         }
     });
 }
 
-function setupVideoCarousel() {
-    const carousel = document.querySelector('.video-carousel');
-    const track = document.querySelector('.video-carousel-track');
-    const dots = document.querySelectorAll('.video-carousel-dots .dot');
+function setupVideoTabs() {
+    const tabBtns = document.querySelectorAll('.video-tab-btn');
     
-    if (!carousel || !track) return;
-    
-    // Remove existing listeners
-    carousel.removeEventListener('touchstart', handleVideoCarouselTouchStart);
-    carousel.removeEventListener('touchend', handleVideoCarouselTouchEnd);
-    
-    // Add touch listeners
-    carousel.addEventListener('touchstart', handleVideoCarouselTouchStart);
-    carousel.addEventListener('touchend', handleVideoCarouselTouchEnd);
-    
-    // Add dot click listeners
-    dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-            switchVideoLanguage(dot.dataset.lang);
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            switchVideoTab(btn.dataset.lang);
         });
     });
 }
 
-function handleVideoCarouselTouchStart(e) {
-    videoCarouselStartX = e.touches[0].clientX;
-}
-
-function handleVideoCarouselTouchEnd(e) {
-    videoCarouselEndX = e.changedTouches[0].clientX;
-    handleVideoCarouselSwipe();
-}
-
-function handleVideoCarouselSwipe() {
-    const deltaX = videoCarouselEndX - videoCarouselStartX;
-    const threshold = 50;
-    
-    if (Math.abs(deltaX) > threshold) {
-        if (deltaX < 0 && currentVideoLang === 'english') {
-            // Swipe left - switch to Hindi
-            switchVideoLanguage('hindi');
-        } else if (deltaX > 0 && currentVideoLang === 'hindi') {
-            // Swipe right - switch to English
-            switchVideoLanguage('english');
-        }
-    }
-}
-
-function switchVideoLanguage(lang) {
+function switchVideoTab(lang) {
     currentVideoLang = lang;
-    const track = document.querySelector('.video-carousel-track');
-    const dots = document.querySelectorAll('.video-carousel-dots .dot');
+    const tabBtns = document.querySelectorAll('.video-tab-btn');
+    const tabPanes = document.querySelectorAll('.video-tab-pane');
     
-    if (track) {
-        if (lang === 'english') {
-            track.style.transform = 'translateX(0%)';
-        } else {
-            track.style.transform = 'translateX(-50%)';
+    tabBtns.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.lang === lang) {
+            btn.classList.add('active');
         }
-    }
+    });
     
-    dots.forEach(dot => {
-        dot.classList.remove('active');
-        if (dot.dataset.lang === lang) {
-            dot.classList.add('active');
+    tabPanes.forEach(pane => {
+        pane.classList.remove('active');
+        if (pane.dataset.lang === lang) {
+            pane.classList.add('active');
         }
     });
 }

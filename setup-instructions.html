@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Setup Instructions - Bhagavad Gita App</title>
+    <meta name="description" content="Step-by-step guide to set up the Bhagavad Gita App with Sarthi AI and install it on your iPhone/iPad">
+    <meta name="theme-color" content="#E6A623">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bhagavad Gita App - Setup Instructions">
+    <meta property="og:description" content="Learn how to set up Sarthi AI with Gemini API and install the app on your iPhone/iPad for the best experience.">
+    <meta property="og:image" content="https://gitagyan.github.io/images/icon-512.png">
+    <meta property="og:url" content="https://gitagyan.github.io/setup-instructions.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bhagavad Gita App - Setup Instructions">
+    <meta name="twitter:description" content="Learn how to set up Sarthi AI with Gemini API and install the app on your iPhone/iPad.">
+    
+    <link rel="icon" type="image/png" href="images/icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('images/yellow_bg.png') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, rgba(165, 37, 44, 0.95), rgba(139, 0, 0, 0.95));
+            color: white;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .header .back-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .header .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .header .header-text {
+            flex: 1;
+        }
+        
+        .header h1 {
+            font-size: 1.3rem;
+            margin-bottom: 2px;
+        }
+        
+        .header p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        .header a {
+            color: #E6A623;
+            text-decoration: none;
+        }
+        
+        .header a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 25px 20px 80px;
+        }
+        
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+        
+        .intro h2 {
+            color: #A5252C;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+        
+        .intro p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .intro .app-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #A5252C, #c9302c);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .intro .app-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(165, 37, 44, 0.4);
+        }
+        
+        /* Section Tabs */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 8px;
+            border-radius: 16px;
+        }
+        
+        .tab-btn {
+            flex: 1;
+            padding: 14px 16px;
+            border: none;
+            background: transparent;
+            color: #5D4037;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .tab-btn:hover {
+            background: rgba(165, 37, 44, 0.1);
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, #A5252C, #c9302c);
+            color: white;
+            box-shadow: 0 4px 15px rgba(165, 37, 44, 0.3);
+        }
+        
+        /* Sections */
+        .section {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 16px;
+        }
+        
+        .section-header h3 {
+            color: #A5252C;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .section-header p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .section-header a {
+            color: #A5252C;
+            font-weight: 600;
+        }
+        
+        /* Carousel */
+        .carousel {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            padding: 20px;
+            border: 2px solid rgba(230, 166, 35, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .carousel-container {
+            overflow: hidden;
+            border-radius: 16px;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+        
+        .slide {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-image {
+            max-width: 280px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .slide-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .slide-caption {
+            padding: 20px 10px;
+            text-align: center;
+        }
+        
+        .step-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #E6A623, #D4A017);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        
+        .slide-caption h4 {
+            color: #A5252C;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+        
+        .slide-caption p {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* Carousel Controls */
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(165, 37, 44, 0.1);
+        }
+        
+        .carousel-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #A5252C, #c9302c);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        
+        .carousel-btn:hover:not(:disabled) {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(165, 37, 44, 0.4);
+        }
+        
+        .carousel-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        
+        .dots {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(165, 37, 44, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: #A5252C;
+            width: 28px;
+            border-radius: 5px;
+        }
+        
+        /* Tip Box */
+        .tip-box {
+            display: flex;
+            gap: 15px;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 14px;
+            border: 1px solid rgba(230, 166, 35, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-top: 25px;
+        }
+        
+        .tip-box i {
+            color: #E6A623;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        
+        .tip-box div {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .tip-box strong {
+            color: #A5252C;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        .footer a {
+            color: #A5252C;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 480px) {
+            .tab-btn {
+                padding: 12px 8px;
+                font-size: 13px;
+            }
+            
+            .tab-btn i {
+                display: none;
+            }
+            
+            .slide-image {
+                max-width: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="back-btn" title="Back to App">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <div class="header-text">
+            <h1>Setup Instructions</h1>
+            <p>Complete guides for Bhagavad Gita App</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="intro">
+            <h2>🙏 Welcome!</h2>
+            <p>Follow these simple guides to get the most out of the Bhagavad Gita App. Set up AI-powered features and install the app on your device.</p>
+            <a href="/" class="app-link"><i class="fas fa-external-link-alt"></i> Open the App</a>
+        </div>
+        
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-section="gemini">
+                <i class="fas fa-key"></i> Gemini API Key
+            </button>
+            <button class="tab-btn" data-section="pwa">
+                <i class="fas fa-mobile-alt"></i> Install App (iOS)
+            </button>
+        </div>
+        
+        <!-- Gemini API Section -->
+        <div class="section active" id="gemini-section">
+            <div class="section-header">
+                <h3>🔑 Setting up Gemini API Key</h3>
+                <p>Get your free API key from Google AI Studio to unlock Sarthi AI features like personalized verse recommendations and AI-powered translations.</p>
+            </div>
+            
+            <div class="carousel" id="gemini-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="images/screenshots/gemini-instructions/IMG_6670.PNG" alt="Step 1" loading="lazy">
+                            </div>
+                            <div class="slide-caption">
+                                <span class="step-badge">Step 1</span>
+                                <h4>Create API Key</h4>
+                                <p>Click on "Create API key" button to generate a new key for the Bhagavad Gita app.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="images/screenshots/gemini-instructions/IMG_6671.PNG" alt="Step 2" loading="lazy">
+                            </div>
+                            <div class="slide-caption">
+                                <span class="step-badge">Step 2</span>
+                                <h4>Give API Key Name</h4>
+                                <p>Give name for new key for the Bhagavad Gita app.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="images/screenshots/gemini-instructions/IMG_6672.PNG" alt="Step 3" loading="lazy">
+                            </div>
+                            <div class="slide-caption">
+                                <span class="step-badge">Step 3</span>
+                                <h4>Select Project</h4>
+                                <p>Choose "Create Project" to create new project.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="images/screenshots/gemini-instructions/IMG_6673.PNG" alt="Step 4" loading="lazy">
+                            </div>
+                            <div class="slide-caption">
+                                <span class="step-badge">Step 4</span>
+                                <h4>Finalize API Key Creation</h4>
+                                <p>Click Create to finalize key creation.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="images/screenshots/gemini-instructions/IMG_6674.PNG" alt="Step 5" loading="lazy">
+                            </div>
+                            <div class="slide-caption">
+                                <span class="step-badge">Step 5</span>
+                                <h4>API Key Generated</h4>
+                                <p>Your API key is now generated!</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="images/screenshots/gemini-instructions/IMG_6675.PNG" alt="Step 6" loading="lazy">
+                            </div>
+                            <div class="slide-caption">
+                                <span class="step-badge">Step 6</span>
+                                <h4>Copy & Paste</h4>
+                                <p>Click the copy button to copy it to your clipboard. Paste your API key in the input field and tap "Save". You're all set to use Sarthi AI! ✨</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="dots"></div>
+                    <button class="carousel-btn next" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i>
+                <div>
+                    <strong>Pro Tip:</strong> The Gemini API has a generous free tier. Your personal use of Sarthi AI will likely stay within the free limits.
+                </div>
+            </div>
+        </div>
+        
+        <!-- PWA Section -->
+        <div class="section" id="pwa-section">
+            <div class="section-header">
+                <h3>📱 Install App on iPhone/iPad</h3>
+                <p>Add the Bhagavad Gita app to your home screen for a native app experience - works offline and launches instantly!</p>
+            </div>
+            
+            <div class="carousel" id="pwa-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="images/screenshots/pwa-instructions-ios/IMG_6677.PNG" alt="Step 1" loading="lazy">
+                            </div>
+                            <div class="slide-caption">
+                                <span class="step-badge">Step 1</span>
+                                <h4>Open in Safari</h4>
+                                <p>Make sure you're viewing the app in Safari browser. Tap the "three dot" button at the bottom of the screen.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="images/screenshots/pwa-instructions-ios/IMG_6678.PNG" alt="Step 2" loading="lazy">
+                            </div>
+                            <div class="slide-caption">
+                                <span class="step-badge">Step 2</span>
+                                <h4>Tap Share button</h4>
+                                <p>Tap the "Share" button on screen.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="images/screenshots/pwa-instructions-ios/IMG_6679.PNG" alt="Step 3" loading="lazy">
+                            </div>
+                            <div class="slide-caption">
+                                <span class="step-badge">Step 3</span>
+                                <h4>Tap More button</h4>
+                                <p>Tap the "More" button on screen.</p>
+                            </div> 
+                        </div>
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="images/screenshots/pwa-instructions-ios/IMG_6680.PNG" alt="Step 4" loading="lazy">
+                            </div>
+                            <div class="slide-caption">
+                                <span class="step-badge">Step 4</span>
+                                <h4>Find Add to Home Screen</h4>
+                                <p>Scroll down in the share menu and tap "Add to Home Screen" option.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="images/screenshots/pwa-instructions-ios/IMG_6681.PNG" alt="Step 5" loading="lazy">
+                            </div>
+                            <div class="slide-caption">
+                                <span class="step-badge">Step 5</span>
+                                 <h4>Confirm App Name</h4>
+                                <p>You can customize the app name or keep "Bhagavad Gita". Tap "Add" in the top right corner.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="dots"></div>
+                    <button class="carousel-btn next" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <i class="fas fa-lightbulb"></i>
+                <div>
+                    <strong>Benefits:</strong> The installed app works offline, loads instantly, and provides a distraction-free reading experience without browser UI.
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const section = btn.dataset.section;
+                
+                // Update tabs
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update sections
+                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                document.getElementById(`${section}-section`).classList.add('active');
+            });
+        });
+        
+        // Initialize carousels
+        function initCarousel(carouselId, slideCount) {
+            const carousel = document.getElementById(carouselId);
+            const track = carousel.querySelector('.carousel-track');
+            const dotsContainer = carousel.querySelector('.dots');
+            const prevBtn = carousel.querySelector('.prev');
+            const nextBtn = carousel.querySelector('.next');
+            
+            let currentSlide = 0;
+            
+            // Create dots
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('span');
+                dot.className = `dot ${i === 0 ? 'active' : ''}`;
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+            
+            function updateCarousel() {
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentSlide);
+                });
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === slideCount - 1;
+            }
+            
+            function goToSlide(index) {
+                currentSlide = Math.max(0, Math.min(index, slideCount - 1));
+                updateCarousel();
+            }
+            
+            prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+            nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+            
+            // Touch support
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                    goToSlide(currentSlide + (diff > 0 ? 1 : -1));
+                }
+            }, { passive: true });
+            
+            updateCarousel();
+        }
+        
+        initCarousel('gemini-carousel', 6);
+        initCarousel('pwa-carousel', 5);
+    </script>
+</body>
+</html>

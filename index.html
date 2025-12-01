@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <meta name="theme-color" content="#E6A623">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -30,10 +30,13 @@
         <div id="verses-screen" class="screen">
             <h2 id="chapter-title"></h2>
             <div id="chapter-video-container" class="chapter-video-container" style="display: none;">
-                <div class="video-carousel">
-                    <div class="video-carousel-track">
-                        <div class="video-slide" data-lang="english">
-                            <div class="video-lang-badge">🇬🇧 English</div>
+                <div class="video-tabs">
+                    <div class="video-tab-buttons">
+                        <button class="video-tab-btn active" data-lang="english">🇬🇧 English</button>
+                        <button class="video-tab-btn" data-lang="hindi">🇮🇳 हिंदी</button>
+                    </div>
+                    <div class="video-tab-content">
+                        <div class="video-tab-pane active" data-lang="english">
                             <div class="video-wrapper">
                                 <iframe id="chapter-video-iframe-english" 
                                         frameborder="0" 
@@ -44,8 +47,7 @@
                                 </iframe>
                             </div>
                         </div>
-                        <div class="video-slide" data-lang="hindi">
-                            <div class="video-lang-badge">🇮🇳 हिंदी</div>
+                        <div class="video-tab-pane" data-lang="hindi">
                             <div class="video-wrapper">
                                 <iframe id="chapter-video-iframe-hindi" 
                                         frameborder="0" 
@@ -56,10 +58,6 @@
                                 </iframe>
                             </div>
                         </div>
-                    </div>
-                    <div class="video-carousel-dots">
-                        <span class="dot active" data-lang="english"></span>
-                        <span class="dot" data-lang="hindi"></span>
                     </div>
                 </div>
             </div>
@@ -221,6 +219,14 @@
                             </label>
                             <small class="setting-description">Enable audio playback for Sanskrit verses on the translation screen</small>
                         </div>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <h3>📖 Setup Instructions</h3>
+                        <p>Step-by-step guides for setting up the app</p>
+                        <a href="setup-instructions.html" class="api-key-btn" style="display: inline-flex; text-decoration: none;">
+                            <i class="fas fa-book-open"></i> View Instructions
+                        </a>
                     </div>
                 </div>
                 <div class="settings-footer">
