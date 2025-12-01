@@ -42,24 +42,25 @@
         
         /* Header */
         .header {
-            background: linear-gradient(135deg, rgba(165, 37, 44, 0.95), rgba(139, 0, 0, 0.95));
-            color: white;
-            padding: 15px 20px;
+            background: #E6A623;
+            color: #A5252C;
+            padding: 10px 15px;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .header .back-btn {
-            background: rgba(255, 255, 255, 0.15);
+            background: transparent;
             border: none;
-            color: white;
-            width: 40px;
-            height: 40px;
+            color: #A5252C;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -67,10 +68,11 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
+            font-size: 18px;
         }
         
         .header .back-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(165, 37, 44, 0.1);
         }
         
         .header .header-text {
@@ -78,17 +80,19 @@
         }
         
         .header h1 {
-            font-size: 1.3rem;
-            margin-bottom: 2px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #A5252C;
         }
         
         .header p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            color: #5D4037;
             opacity: 0.9;
         }
         
-        .header a {
-            color: #E6A623;
+        .header a.back-btn {
+            color: #A5252C;
             text-decoration: none;
         }
         
@@ -100,37 +104,34 @@
         .container {
             max-width: 650px;
             margin: 0 auto;
-            padding: 25px 20px 80px;
+            padding: 15px 15px 80px;
         }
         
         /* Intro Section */
         .intro {
             text-align: center;
-            margin-bottom: 30px;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 20px;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            margin-bottom: 15px;
+            padding: 12px 15px;
         }
         
         .intro h2 {
             color: #A5252C;
-            font-size: 1.6rem;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 6px;
         }
         
         .intro p {
             color: #555;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
         
         .intro .app-link {
             display: inline-block;
             margin-top: 15px;
             padding: 12px 30px;
-            background: linear-gradient(135deg, #A5252C, #c9302c);
-            color: white;
+            background: #E6A623;
+            color: #A5252C;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
@@ -139,7 +140,7 @@
         
         .intro .app-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(165, 37, 44, 0.4);
+            box-shadow: 0 6px 20px rgba(230, 166, 35, 0.4);
         }
         
         /* Section Tabs */
@@ -260,7 +261,7 @@
         }
         
         .slide-caption {
-            padding: 20px 10px;
+            padding: 12px 10px 8px;
             text-align: center;
         }
         
@@ -268,25 +269,25 @@
             display: inline-block;
             background: linear-gradient(135deg, #E6A623, #D4A017);
             color: white;
-            padding: 6px 16px;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
         
         .slide-caption h4 {
             color: #A5252C;
-            font-size: 1.15rem;
-            margin-bottom: 8px;
+            font-size: 1.05rem;
+            margin-bottom: 5px;
         }
         
         .slide-caption p {
             color: #555;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.85rem;
+            line-height: 1.4;
         }
         
         /* Carousel Controls */
@@ -294,15 +295,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            padding-top: 15px;
+            gap: 12px;
+            margin-top: 10px;
+            padding-top: 10px;
             border-top: 1px solid rgba(165, 37, 44, 0.1);
         }
         
         .carousel-btn {
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             border: none;
             background: linear-gradient(135deg, #A5252C, #c9302c);
@@ -419,8 +420,7 @@
     <main class="container">
         <div class="intro">
             <h2>🙏 Welcome!</h2>
-            <p>Follow these simple guides to get the most out of the Bhagavad Gita App. Set up AI-powered features and install the app on your device.</p>
-            <a href="/" class="app-link"><i class="fas fa-external-link-alt"></i> Open the App</a>
+            <p>Set up AI features and install the app on your device.</p>
         </div>
         
         <!-- Tabs -->
@@ -449,8 +449,8 @@
                             </div>
                             <div class="slide-caption">
                                 <span class="step-badge">Step 1</span>
-                                <h4>Create API Key</h4>
-                                <p>Click on "Create API key" button to generate a new key for the Bhagavad Gita app.</p>
+                                <h4>Open Google AI Studio</h4>
+                                <p>Visit <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color: #A5252C; font-weight: 600;">aistudio.google.com/apikey</a> and click "Create API key" button.</p>
                             </div>
                         </div>
                         <div class="slide">
@@ -631,6 +631,9 @@
             const nextBtn = carousel.querySelector('.next');
             
             let currentSlide = 0;
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let isSwiping = false;
             
             // Create dots
             for (let i = 0; i < slideCount; i++) {
@@ -657,10 +660,28 @@
             prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
             nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
             
-            // Touch support
-            let touchStartX = 0;
-            track.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX, { passive: true });
-            track.addEventListener('touchend', e => {
+            // Touch support - attach to carousel container for better capture
+            const container = carousel.querySelector('.carousel-container');
+            
+            container.addEventListener('touchstart', e => {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                isSwiping = true;
+            }, { passive: true });
+            
+            container.addEventListener('touchmove', e => {
+                if (!isSwiping) return;
+                const diffX = Math.abs(e.touches[0].clientX - touchStartX);
+                const diffY = Math.abs(e.touches[0].clientY - touchStartY);
+                // If horizontal swipe is greater than vertical, prevent scroll
+                if (diffX > diffY && diffX > 10) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+            
+            container.addEventListener('touchend', e => {
+                if (!isSwiping) return;
+                isSwiping = false;
                 const diff = touchStartX - e.changedTouches[0].clientX;
                 if (Math.abs(diff) > 50) {
                     goToSlide(currentSlide + (diff > 0 ? 1 : -1));

@@ -948,7 +948,7 @@ function initSettings() {
     
     // Audio player toggle setting
     const audioPlayerToggle = document.getElementById('show-audio-player-toggle');
-    const showAudioPlayer = localStorage.getItem('showAudioPlayer') === 'true';
+    const showAudioPlayer = localStorage.getItem('showAudioPlayer') !== 'false';
     
     // Set initial state
     audioPlayerToggle.checked = showAudioPlayer;
@@ -968,7 +968,7 @@ function initSettings() {
 
 // Update audio player visibility based on setting
 function updateAudioPlayerVisibility() {
-    const showAudioPlayer = localStorage.getItem('showAudioPlayer') === 'true';
+    const showAudioPlayer = localStorage.getItem('showAudioPlayer') !== 'false';
     const floatingAudioBtn = document.getElementById('floating-audio-btn');
     
     if (floatingAudioBtn) {
