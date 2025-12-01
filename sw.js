@@ -1,4 +1,4 @@
-const CACHE_NAME = '1.0.2';
+const CACHE_NAME = '1.0.8';
 const urlsToCache = [
     '/',
     '/index.html',

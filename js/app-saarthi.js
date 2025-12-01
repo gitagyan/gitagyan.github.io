@@ -5,8 +5,12 @@
 let sarthiLanguage = 'english'; // Default language for Sarthi translations
 
 // Gemini API Model Configuration
-const GEMINI_CHAT_MODEL = 'gemini-2.5-flash-lite';
-const GEMINI_TRANSLATION_MODEL = 'gemini-2.5-flash-lite';
+const DEFAULT_GEMINI_MODEL = 'gemini-2.5-flash-lite';
+
+// Get current model from localStorage or use default
+function getGeminiModel() {
+    return localStorage.getItem('geminiModel') || DEFAULT_GEMINI_MODEL;
+}
 
 // Initialize Sarthi AI
 function initSarthi() {
@@ -181,6 +185,9 @@ async function sendMessage() {
     // Add user message
     addMessage('user', message);
     
+    // Save user message to conversation history
+    addToConversationHistory('user', message);
+    
     // Clear input
     input.value = '';
     
@@ -196,6 +203,9 @@ async function sendMessage() {
         
         // Parse response and show slokas
         displaySlokaResponse(response);
+        
+        // Save AI response to conversation history (strip HTML for context)
+        addToConversationHistory('assistant', response);
         
     } catch (error) {
         console.error('AI Error:', error);
@@ -213,21 +223,38 @@ async function callGeminiAPI(userMessage) {
         throw new Error('API key not configured');
     }
     
-    const combinedPrompt = `You are Sarthi AI. Help users by recommending 3 relevant Bhagavad Gita verses for their questions.
+    // Get conversation history for context (last 10 exchanges)
+    const conversationHistory = getConversationHistory();
+    
+    // Build conversation context string
+    let conversationContext = '';
+    if (conversationHistory.length > 0) {
+        conversationContext = '\n\nPrevious conversation for context:\n' + 
+            conversationHistory.map(msg => 
+                `${msg.role === 'user' ? 'User' : 'Sarthi AI'}: ${msg.content}`
+            ).join('\n') + '\n\n';
+    }
+    
+    const systemPrompt = `You are Sarthi AI, a spiritual guide helping users understand the Bhagavad Gita. Help users by recommending relevant Bhagavad Gita verses for their questions.
 
-User Question: ${userMessage}
+When responding:
+- Provide brief, practical guidance (2-3 sentences)
+- Recommend 1-3 relevant verses using format: Chapter X, Verse Y
+- Keep responses concise and helpful
+- If the user is asking a follow-up question, use the conversation context to understand what they're referring to`;
+
+    const combinedPrompt = `${systemPrompt}${conversationContext}User Question: ${userMessage}
 
 Respond in this format:
 Brief guidance (2-3 sentences)
 
 Recommended Verses:
 Chapter X, Verse Y: Why this verse helps
-Chapter X, Verse Y: Why this verse helps  
-Chapter X, Verse Y: Why this verse helps
+(Include 1-3 verses as relevant)
 
 Keep it concise and practical.`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_CHAT_MODEL}:generateContent?key=${apiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${getGeminiModel()}:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -240,7 +267,7 @@ Keep it concise and practical.`;
             }],
             generationConfig: {
                 temperature: 0.7,
-                maxOutputTokens: 800,
+                maxOutputTokens: 1500,
             }
         })
     });
@@ -262,21 +289,15 @@ Keep it concise and practical.`;
     
     // Check if candidate has content
     if (!candidate.content) {
+        // Check if this is a safety/content filter issue
+        if (candidate.finishReason === 'SAFETY' || candidate.finishReason === 'BLOCKED_REASON_UNSPECIFIED') {
+            throw new Error('Response was blocked by content filters. Please try rephrasing your question.');
+        }
         throw new Error('AI service returned empty response');
     }
     
     // Check if content has parts
     if (!candidate.content.parts || candidate.content.parts.length === 0) {
-        // Check if this is a safety/content filter issue
-        if (candidate.finishReason === 'SAFETY' || candidate.finishReason === 'BLOCKED_REASON_UNSPECIFIED') {
-            throw new Error('Response was blocked by content filters. Please try rephrasing your question.');
-        }
-        
-        // Check if response was cut off due to token limit
-        if (candidate.finishReason === 'MAX_TOKENS') {
-            throw new Error('Response was too long and got cut off. Please try a more specific question.');
-        }
-        
         throw new Error('AI service returned no content. Please try again with a different question.');
     }
     
@@ -287,15 +308,50 @@ Keep it concise and practical.`;
         throw new Error('AI service returned no text');
     }
     
+    // Return text even if truncated (MAX_TOKENS) - partial response is better than error
     return part.text.trim();
 }
 
 // Display sloka response
 function displaySlokaResponse(response) {
-    // Extract sloka numbers from the response using regex
-    const slokaPattern = /Chapter\s+(\d+),\s+Verse\s+(\d+)/gi;
-    const matches = [...response.matchAll(slokaPattern)];
-    const slokaNumbers = matches.map(match => `${match[1]}.${match[2]}`);
+    // Extract sloka numbers from the response using multiple regex patterns
+    // Pattern 1: Chapter X, Verse Y or Chapter X Verse Y
+    const pattern1 = /Chapter\s+(\d+),?\s*Verse\s+(\d+)/gi;
+    // Pattern 2: BG X.Y or Gita X.Y
+    const pattern2 = /(?:BG|Gita|Bhagavad\s*Gita)\s*(\d+)\.(\d+)/gi;
+    // Pattern 3: X.Y format (common shorthand)
+    const pattern3 = /\b(\d+)\.(\d+)\b/g;
+    // Pattern 4: Verse X.Y
+    const pattern4 = /Verse\s+(\d+)\.(\d+)/gi;
+    
+    const slokaSet = new Set();
+    
+    // Try pattern 1 first (most explicit)
+    let matches = [...response.matchAll(pattern1)];
+    matches.forEach(match => slokaSet.add(`${match[1]}.${match[2]}`));
+    
+    // Try pattern 2
+    matches = [...response.matchAll(pattern2)];
+    matches.forEach(match => slokaSet.add(`${match[1]}.${match[2]}`));
+    
+    // Try pattern 4
+    matches = [...response.matchAll(pattern4)];
+    matches.forEach(match => slokaSet.add(`${match[1]}.${match[2]}`));
+    
+    // Only use pattern 3 (generic X.Y) if no matches found yet, and validate chapter range
+    if (slokaSet.size === 0) {
+        matches = [...response.matchAll(pattern3)];
+        matches.forEach(match => {
+            const chapter = parseInt(match[1]);
+            const verse = parseInt(match[2]);
+            // Validate: Gita has 18 chapters, verses typically 1-78
+            if (chapter >= 1 && chapter <= 18 && verse >= 1 && verse <= 78) {
+                slokaSet.add(`${match[1]}.${match[2]}`);
+            }
+        });
+    }
+    
+    const slokaNumbers = [...slokaSet];
     
     // Add the AI's complete response
     addMessage('ai', response, slokaNumbers.length > 0 ? slokaNumbers : null);
@@ -495,6 +551,38 @@ function loadChatHistory() {
 
 function clearChatHistory() {
     localStorage.removeItem('sarthiChatHistory');
+    localStorage.removeItem('sarthiConversationContext');
+}
+
+// Conversation context functions (for API calls - keeps last 10 exchanges)
+const MAX_CONVERSATION_HISTORY = 10; // 10 exchanges = 20 messages (user + assistant)
+
+function getConversationHistory() {
+    const saved = localStorage.getItem('sarthiConversationContext');
+    if (!saved) return [];
+    try {
+        return JSON.parse(saved);
+    } catch (e) {
+        return [];
+    }
+}
+
+function addToConversationHistory(role, content) {
+    const history = getConversationHistory();
+    
+    // Add new message
+    history.push({
+        role: role,
+        content: content.substring(0, 500) // Limit content length to avoid token overflow
+    });
+    
+    // Keep only last 20 messages (10 exchanges of user + assistant)
+    const maxMessages = MAX_CONVERSATION_HISTORY * 2;
+    if (history.length > maxMessages) {
+        history.splice(0, history.length - maxMessages);
+    }
+    
+    localStorage.setItem('sarthiConversationContext', JSON.stringify(history));
 }
 
 // Sarthi Translate Functions
@@ -513,6 +601,12 @@ function setupSarthiTranslate() {
     const saveLanguageBtn = document.getElementById('save-translate-language-btn');
     if (saveLanguageBtn) {
         saveLanguageBtn.addEventListener('click', saveSarthiLanguage);
+    }
+    
+    // Setup reset translations button
+    const resetTranslationsBtn = document.getElementById('reset-translations-btn');
+    if (resetTranslationsBtn) {
+        resetTranslationsBtn.addEventListener('click', resetSarthiTranslations);
     }
     
     // Setup SarthiAI pill click handler
@@ -551,6 +645,39 @@ function saveSarthiLanguage() {
         setTimeout(() => {
             saveBtn.innerHTML = '<i class="fas fa-save"></i>';
             saveBtn.disabled = false;
+        }, 2000);
+    }, 500);
+}
+
+function resetSarthiTranslations() {
+    const resetBtn = document.getElementById('reset-translations-btn');
+    
+    if (!confirm('This will clear all cached AI translations. You will need to regenerate them. Continue?')) {
+        return;
+    }
+    
+    // Show loading state
+    resetBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+    resetBtn.disabled = true;
+    
+    setTimeout(() => {
+        // Remove all sarthi_chapter_* keys from localStorage
+        const keysToRemove = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && key.startsWith('sarthi_chapter_')) {
+                keysToRemove.push(key);
+            }
+        }
+        
+        keysToRemove.forEach(key => localStorage.removeItem(key));
+        
+        // Success feedback
+        resetBtn.innerHTML = '<i class="fas fa-check"></i> Done';
+        
+        setTimeout(() => {
+            resetBtn.innerHTML = '<i class="fas fa-sync-alt"></i> Reset';
+            resetBtn.disabled = false;
         }, 2000);
     }, 500);
 }
@@ -715,7 +842,7 @@ CRITICAL REQUIREMENTS:
 - If Hindi, use Devanagari script; if Gujarati, use Gujarati script
 - Do not mix languages or use English words unless absolutely necessary`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_TRANSLATION_MODEL}:generateContent?key=${apiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${getGeminiModel()}:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -836,14 +836,35 @@ function navigateToBookmarkedVerse(bookmark) {
 // Settings Functions
 function initSettings() {
     const geminiApiKey = localStorage.getItem('geminiApiKey');
+    const geminiModel = localStorage.getItem('geminiModel') || 'gemini-2.5-flash-lite';
     
     // Load current API key into settings
     const settingsApiKeyInput = document.getElementById('settings-api-key-input');
+    const modelSelectorContainer = document.getElementById('model-selector-container');
+    const modelSelect = document.getElementById('gemini-model-select');
+    
     if (geminiApiKey) {
         settingsApiKeyInput.value = geminiApiKey;
         // Show visual indication that API key is configured
         settingsApiKeyInput.style.borderColor = '#28a745';
         settingsApiKeyInput.style.background = 'rgba(40, 167, 69, 0.1)';
+        // Show model selector when API key is present
+        if (modelSelectorContainer) {
+            modelSelectorContainer.style.display = 'block';
+        }
+        // Ensure model is set in localStorage for existing users
+        if (!localStorage.getItem('geminiModel')) {
+            localStorage.setItem('geminiModel', 'gemini-2.5-flash-lite');
+        }
+    }
+    
+    // Set current model in dropdown
+    if (modelSelect) {
+        modelSelect.value = localStorage.getItem('geminiModel') || 'gemini-2.5-flash-lite';
+        // Handle model change
+        modelSelect.addEventListener('change', (e) => {
+            localStorage.setItem('geminiModel', e.target.value);
+        });
     }
     
     // Also sync the Sarthi setup input field if it exists
@@ -894,6 +915,17 @@ function initSettings() {
         // Save immediately without delay
         localStorage.setItem('geminiApiKey', apiKey);
         
+        // Ensure default model is set for new users
+        if (!localStorage.getItem('geminiModel')) {
+            localStorage.setItem('geminiModel', 'gemini-2.5-flash-lite');
+        }
+        
+        // Show model selector after saving API key
+        const modelSelectorContainer = document.getElementById('model-selector-container');
+        if (modelSelectorContainer) {
+            modelSelectorContainer.style.display = 'block';
+        }
+        
         // Show loading state briefly for user feedback
         updateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
         updateBtn.disabled = true;
@@ -902,6 +934,7 @@ function initSettings() {
             // Success feedback
             updateBtn.innerHTML = '<i class="fas fa-check"></i>';
             settingsApiKeyInput.style.borderColor = '#28a745';
+            settingsApiKeyInput.style.background = 'rgba(40, 167, 69, 0.1)';
             
             setTimeout(() => {
                 updateBtn.innerHTML = '<i class="fas fa-save"></i>';
@@ -922,7 +955,22 @@ function initSettings() {
             
             setTimeout(() => {
                 localStorage.removeItem('geminiApiKey');
+                localStorage.removeItem('geminiModel');
                 settingsApiKeyInput.value = '';
+                settingsApiKeyInput.style.borderColor = '';
+                settingsApiKeyInput.style.background = '';
+                
+                // Hide model selector
+                const modelSelectorContainer = document.getElementById('model-selector-container');
+                if (modelSelectorContainer) {
+                    modelSelectorContainer.style.display = 'none';
+                }
+                
+                // Reset model dropdown to default
+                const modelSelect = document.getElementById('gemini-model-select');
+                if (modelSelect) {
+                    modelSelect.value = 'gemini-2.5-flash-lite';
+                }
                 
                 // Also clear in Sarthi setup screen
                 const sarthiSetupInput = document.getElementById('api-key-input');

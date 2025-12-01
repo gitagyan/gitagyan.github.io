@@ -1586,6 +1586,47 @@ footer p {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.setting-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.setting-header-row h3 {
+    margin-bottom: 0;
+}
+
+.reset-cache-pill {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.3s ease;
+}
+
+.reset-cache-pill:hover {
+    background: linear-gradient(135deg, #ff5252 0%, #e53935 100%);
+    transform: scale(1.05);
+}
+
+.reset-cache-pill:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.reset-cache-pill i {
+    font-size: 10px;
+}
+
 .setting-item h3 {
     color: #A5252C;
     margin-bottom: 10px;
@@ -1700,6 +1741,53 @@ footer p {
 .api-key-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(230, 166, 35, 0.4);
+}
+
+/* Model Selector Styles */
+.model-selector-container {
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(230, 166, 35, 0.08);
+    border-radius: 10px;
+    border: 1px solid rgba(230, 166, 35, 0.2);
+}
+
+.model-selector-container label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #5D4037;
+    margin-bottom: 8px;
+}
+
+.model-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid rgba(165, 37, 44, 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.model-select:focus {
+    outline: none;
+    border-color: #E6A623;
+    box-shadow: 0 0 0 3px rgba(230, 166, 35, 0.2);
+}
+
+.model-help {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+.model-help i {
+    color: #E6A623;
+    margin-right: 4px;
 }
 
 /* Settings API Key Input Styles */

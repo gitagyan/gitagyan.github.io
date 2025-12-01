@@ -169,7 +169,8 @@
                             </button>
                         </div>
                         <div class="api-key-help">
-                            <small><i class="fas fa-info-circle"></i> Get your free API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></small>
+                            <small><i class="fas fa-info-circle"></i> Get your free API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></small><br>
+                            <small><i class="fas fa-book-open"></i> Need help? View our <a href="setup-instructions.html" target="_blank">Setup Guide</a></small>
                         </div>
                         <div class="api-key-buttons">
                             <button id="update-api-key-btn" class="api-key-btn">
@@ -179,10 +180,24 @@
                                 <i class="fas fa-trash"></i> Delete
                             </button>
                         </div>
+                        <div id="model-selector-container" class="model-selector-container" style="display: none;">
+                            <label for="gemini-model-select">AI Model:</label>
+                            <select id="gemini-model-select" class="model-select">
+                                <option value="gemini-2.5-flash-lite">Gemini 2.5 Flash Lite (1K/day)</option>
+                                <option value="gemini-2.5-flash">Gemini 2.5 Flash (250/day)</option>
+                                <option value="gemini-2.5-pro">Gemini 2.5 Pro (50/day)</option>
+                            </select>
+                            <small class="model-help"><i class="fas fa-info-circle"></i> Higher tier models provide better responses but have lower free limits</small>
+                        </div>
                     </div>
                     
                     <div class="setting-item">
-                        <h3>✨ Sarthi Translate</h3>
+                        <div class="setting-header-row">
+                            <h3>✨ Sarthi Translate</h3>
+                            <button id="reset-translations-btn" class="reset-cache-pill" title="Clear cached translations">
+                                <i class="fas fa-sync-alt"></i> Reset
+                            </button>
+                        </div>
                         <p>Set your preferred language for AI-powered verse translation and summary</p>
                         <div class="language-preference-group">
                             <select id="sarthi-translate-language" class="language-select">
