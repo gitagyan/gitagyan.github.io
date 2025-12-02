@@ -389,6 +389,58 @@
             text-decoration: none;
         }
         
+        /* Platform Tabs (iOS/Android) */
+        .platform-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 6px;
+            border-radius: 12px;
+        }
+        
+        .platform-tab-btn {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            background: transparent;
+            color: rgba(93, 64, 55, 0.7);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .platform-tab-btn:hover {
+            color: rgba(93, 64, 55, 0.9);
+            background: rgba(165, 37, 44, 0.05);
+        }
+        
+        .platform-tab-btn.active {
+            color: #A5252C;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .platform-tab-content {
+            position: relative;
+        }
+        
+        .platform-tab-pane {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .platform-tab-pane.active {
+            display: block;
+        }
+        
         /* Responsive */
         @media (max-width: 480px) {
             .tab-btn {
@@ -426,10 +478,10 @@
         <!-- Tabs -->
         <div class="tabs">
             <button class="tab-btn active" data-section="gemini">
-                <i class="fas fa-key"></i> Gemini API Key
+                ✨ Gemini API Key
             </button>
             <button class="tab-btn" data-section="pwa">
-                <i class="fas fa-mobile-alt"></i> Install App (iOS)
+                📱 Install App
             </button>
         </div>
         
@@ -527,73 +579,147 @@
         <!-- PWA Section -->
         <div class="section" id="pwa-section">
             <div class="section-header">
-                <h3>📱 Install App on iPhone/iPad</h3>
+                <h3>📱 Install App on Your Device</h3>
                 <p>Add the Bhagavad Gita app to your home screen for a native app experience - works offline and launches instantly!</p>
             </div>
             
-            <div class="carousel" id="pwa-carousel">
-                <div class="carousel-container">
-                    <div class="carousel-track">
-                        <div class="slide">
-                            <div class="slide-image">
-                                <img src="images/screenshots/pwa-instructions-ios/IMG_6677.PNG" alt="Step 1" loading="lazy">
-                            </div>
-                            <div class="slide-caption">
-                                <span class="step-badge">Step 1</span>
-                                <h4>Open in Safari</h4>
-                                <p>Make sure you're viewing the app in Safari browser. Tap the "three dot" button at the bottom of the screen.</p>
+            <!-- Platform Tabs -->
+            <div class="platform-tabs">
+                <button class="platform-tab-btn active" data-platform="ios">
+                    <i class="fab fa-apple"></i> iOS
+                </button>
+                <button class="platform-tab-btn" data-platform="android">
+                    <i class="fab fa-android"></i> Android
+                </button>
+            </div>
+            
+            <div class="platform-tab-content">
+                <!-- iOS Instructions -->
+                <div class="platform-tab-pane active" data-platform="ios">
+                    <div class="carousel" id="pwa-ios-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="slide">
+                                    <div class="slide-image">
+                                        <img src="images/screenshots/pwa-instructions-ios/IMG_6677.PNG" alt="Step 1" loading="lazy">
+                                    </div>
+                                    <div class="slide-caption">
+                                        <span class="step-badge">Step 1</span>
+                                        <h4>Open in Safari</h4>
+                                        <p>Make sure you're viewing the app in Safari browser. Tap the "three dot" button at the bottom of the screen.</p>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="slide-image">
+                                        <img src="images/screenshots/pwa-instructions-ios/IMG_6678.PNG" alt="Step 2" loading="lazy">
+                                    </div>
+                                    <div class="slide-caption">
+                                        <span class="step-badge">Step 2</span>
+                                        <h4>Tap Share button</h4>
+                                        <p>Tap the "Share" button on screen.</p>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="slide-image">
+                                        <img src="images/screenshots/pwa-instructions-ios/IMG_6679.PNG" alt="Step 3" loading="lazy">
+                                    </div>
+                                    <div class="slide-caption">
+                                        <span class="step-badge">Step 3</span>
+                                        <h4>Tap More button</h4>
+                                        <p>Tap the "More" button on screen.</p>
+                                    </div> 
+                                </div>
+                                <div class="slide">
+                                    <div class="slide-image">
+                                        <img src="images/screenshots/pwa-instructions-ios/IMG_6680.PNG" alt="Step 4" loading="lazy">
+                                    </div>
+                                    <div class="slide-caption">
+                                        <span class="step-badge">Step 4</span>
+                                        <h4>Find Add to Home Screen</h4>
+                                        <p>Scroll down in the share menu and tap "Add to Home Screen" option.</p>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="slide-image">
+                                        <img src="images/screenshots/pwa-instructions-ios/IMG_6681.PNG" alt="Step 5" loading="lazy">
+                                    </div>
+                                    <div class="slide-caption">
+                                        <span class="step-badge">Step 5</span>
+                                         <h4>Confirm App Name</h4>
+                                        <p>You can customize the app name or keep "Bhagavad Gita". Tap "Add" in the top right corner.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="slide">
-                            <div class="slide-image">
-                                <img src="images/screenshots/pwa-instructions-ios/IMG_6678.PNG" alt="Step 2" loading="lazy">
-                            </div>
-                            <div class="slide-caption">
-                                <span class="step-badge">Step 2</span>
-                                <h4>Tap Share button</h4>
-                                <p>Tap the "Share" button on screen.</p>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="slide-image">
-                                <img src="images/screenshots/pwa-instructions-ios/IMG_6679.PNG" alt="Step 3" loading="lazy">
-                            </div>
-                            <div class="slide-caption">
-                                <span class="step-badge">Step 3</span>
-                                <h4>Tap More button</h4>
-                                <p>Tap the "More" button on screen.</p>
-                            </div> 
-                        </div>
-                        <div class="slide">
-                            <div class="slide-image">
-                                <img src="images/screenshots/pwa-instructions-ios/IMG_6680.PNG" alt="Step 4" loading="lazy">
-                            </div>
-                            <div class="slide-caption">
-                                <span class="step-badge">Step 4</span>
-                                <h4>Find Add to Home Screen</h4>
-                                <p>Scroll down in the share menu and tap "Add to Home Screen" option.</p>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="slide-image">
-                                <img src="images/screenshots/pwa-instructions-ios/IMG_6681.PNG" alt="Step 5" loading="lazy">
-                            </div>
-                            <div class="slide-caption">
-                                <span class="step-badge">Step 5</span>
-                                 <h4>Confirm App Name</h4>
-                                <p>You can customize the app name or keep "Bhagavad Gita". Tap "Add" in the top right corner.</p>
-                            </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn prev" aria-label="Previous">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="dots"></div>
+                            <button class="carousel-btn next" aria-label="Next">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev" aria-label="Previous">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="dots"></div>
-                    <button class="carousel-btn next" aria-label="Next">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+                
+                <!-- Android Instructions -->
+                <div class="platform-tab-pane" data-platform="android">
+                    <div class="carousel" id="pwa-android-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="slide">
+                                    <div class="slide-image">
+                                        <img src="images/screenshots/pwa-instructions-android/android-1.png" alt="Step 1" loading="lazy">
+                                    </div>
+                                    <div class="slide-caption">
+                                        <span class="step-badge">Step 1</span>
+                                         <h4>Open in Chrome</h4>
+                                        <p>Open the app in Chrome browser (https://gitagyan.github.io). Tap the Install button if prompted. It not, dont worry, move to step-2.</p>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="slide-image">
+                                        <img src="images/screenshots/pwa-instructions-android/android-2.png" alt="Step 2" loading="lazy">
+                                    </div>
+                                    <div class="slide-caption">
+                                        <span class="step-badge">Step 2</span>
+                                        <h4>Tap Menu (⋮)</h4>
+                                        <p>Open the app in Chrome browser. Tap the three-dot menu icon (⋮) in the top right corner of the screen.</p>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="slide-image">
+                                        <img src="images/screenshots/pwa-instructions-android/android-3.png" alt="Step 3" loading="lazy">
+                                    </div>
+                                    <div class="slide-caption">
+                                        <span class="step-badge">Step 3</span>
+                                        <h4>Add to Home Screen</h4>
+                                        <p>Scroll down in the menu and tap "Add to Home screen" option.</p>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="slide-image">
+                                        <img src="images/screenshots/pwa-instructions-android/android-4.png" alt="Step 4" loading="lazy">
+                                    </div>
+                                    <div class="slide-caption">
+                                        <span class="step-badge">Step 4</span>
+                                        <h4>Confirm Installation</h4>
+                                        <p>A dialog will appear. You can customize the app name or keep "Bhagavad Gita". Tap "Install" to confirm.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn prev" aria-label="Previous">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="dots"></div>
+                            <button class="carousel-btn next" aria-label="Next">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -622,9 +748,26 @@
             });
         });
         
+        // Platform tab switching (iOS/Android)
+        document.querySelectorAll('.platform-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const platform = btn.dataset.platform;
+                
+                // Update platform tabs
+                document.querySelectorAll('.platform-tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update platform panes
+                document.querySelectorAll('.platform-tab-pane').forEach(p => p.classList.remove('active'));
+                document.querySelector(`.platform-tab-pane[data-platform="${platform}"]`).classList.add('active');
+            });
+        });
+        
         // Initialize carousels
         function initCarousel(carouselId, slideCount) {
             const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
+            
             const track = carousel.querySelector('.carousel-track');
             const dotsContainer = carousel.querySelector('.dots');
             const prevBtn = carousel.querySelector('.prev');
@@ -692,7 +835,8 @@
         }
         
         initCarousel('gemini-carousel', 6);
-        initCarousel('pwa-carousel', 5);
+        initCarousel('pwa-ios-carousel', 5);
+        initCarousel('pwa-android-carousel', 4);
     </script>
 </body>
 </html>
