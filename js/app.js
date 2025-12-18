@@ -40,7 +40,7 @@ async function init() {
         // Load data from assets folder
         chapters = await fetch('./assets/chapters.json').then(r => r.json());
         verses = await fetch('./assets/verse.json').then(r => r.json());
-        
+
         // Make chapters and verses data available globally for Sarthi AI
         window.chaptersData = chapters;
         window.versesData = verses;
@@ -77,12 +77,12 @@ async function init() {
             currentLang = savedTranslationLang;
         }
 
-    // Initialize Sarthi AI if module is loaded
-    if (window.AppSarthi && window.AppSarthi.initSarthi) {
-        window.AppSarthi.initSarthi();
-    }        // Initialize settings
+        // Initialize Sarthi AI if module is loaded
+        if (window.AppSarthi && window.AppSarthi.initSarthi) {
+            window.AppSarthi.initSarthi();
+        }        // Initialize settings
         initSettings();
-        
+
         // Initialize floating menu
         initFloatingMenu();
 
@@ -130,32 +130,32 @@ function showChapter(chapter) {
         <div class="chapter-title-name">${chapter.name}</div>
         <div class="chapter-title-meaning">(${chapter.name_meaning})</div>
     `;
-    
+
     // Load YouTube videos for this chapter (Hindi and English)
     const videoContainer = document.getElementById('chapter-video-container');
     const hindiIframe = document.getElementById('chapter-video-iframe-hindi');
     const englishIframe = document.getElementById('chapter-video-iframe-english');
-    
+
     if (youtubeVideos && youtubeVideos.length > 0) {
         // Find video data for current chapter
         const chapterVideo = youtubeVideos.find(v => v.chapter === chapter.chapter_number);
-        
+
         if (chapterVideo && chapterVideo.hindi && chapterVideo.english) {
             // Clear iframe srcs first to force a clean reload
             hindiIframe.src = '';
             englishIframe.src = '';
-            
+
             // Set new videos with a small delay to ensure clean load
             setTimeout(() => {
                 hindiIframe.src = `https://www.youtube.com/embed/${chapterVideo.hindi.video_id}?playsinline=1&rel=0`;
                 englishIframe.src = `https://www.youtube.com/embed/${chapterVideo.english.video_id}?playsinline=1&rel=0`;
             }, 100);
-            
+
             videoContainer.style.display = 'block';
-            
+
             // Reset tabs to English (default)
             resetVideoTabs();
-            
+
             // Setup tab click handlers
             setupVideoTabs();
         } else {
@@ -168,7 +168,7 @@ function showChapter(chapter) {
         englishIframe.src = '';
         videoContainer.style.display = 'none';
     }
-    
+
     const chapterVerses = verses.filter(v => v.chapter_number === chapter.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
     versesList.innerHTML = '';
     chapterVerses.forEach(verse => {
@@ -183,7 +183,7 @@ function showChapter(chapter) {
     });
     switchScreen(versesScreen);
     backBtn.style.display = 'block';
-    
+
     // Scroll to top of verses list
     setTimeout(() => {
         const main = document.querySelector('main');
@@ -198,17 +198,17 @@ function updateVerseContent() {
     if (!currentVerse) return;
 
     const verseTranslation = document.getElementById('verse-translation');
-    
+
     // Find translation for current verse from the appropriate chapter
     const chapterTranslations = translations[currentVerse.chapter_number] || [];
     const translation = chapterTranslations.find(t => t.verse_id === currentVerse.id);
-    
+
     if (translation && translation.languages && translation.languages[currentLang]) {
         verseTranslation.innerHTML = translation.languages[currentLang].description;
     } else {
         verseTranslation.innerHTML = 'Translation not available';
     }
-    
+
     // Restore floating audio button opacity when showing normal translation
     const floatingAudioBtn = document.getElementById('floating-audio-btn');
     if (floatingAudioBtn) {
@@ -220,7 +220,7 @@ function updateVerseContent() {
 function showVerse(verse) {
     currentVerse = verse;
     window.currentVerse = verse;
-    
+
     // Update Sanskrit card with sloka number pill
     const sanskritCard = document.getElementById('verse-sanskrit-card');
     sanskritCard.innerHTML = `
@@ -236,12 +236,12 @@ function showVerse(verse) {
     audioPlayer.src = audioSrc;
     audioPlayer.load();
     audioPlayer.currentTime = 0;
-    
+
     // Update floating button
     const floatingBtn = document.getElementById('floating-play-pause');
     const floatingTime = document.getElementById('floating-time');
     const progressCircle = document.querySelector('.progress-ring-circle');
-    
+
     floatingBtn.innerHTML = '<i class="fas fa-play"></i>';
     floatingTime.textContent = '0:00';
     progressCircle.style.strokeDashoffset = 182.21;
@@ -257,29 +257,29 @@ function showVerse(verse) {
 // Setup verse navigation
 function setupVerseNavigation() {
     if (!currentVerse || !currentChapter) return;
-    
+
     const chapterVerses = verses.filter(v => v.chapter_number === currentVerse.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
     const currentIndex = chapterVerses.findIndex(v => v.id === currentVerse.id);
-    
+
     // Update slider and counter
     const verseSlider = document.getElementById('verse-slider');
     const verseCounter = document.getElementById('verse-counter');
     const prevBtn = document.getElementById('prev-verse-btn');
     const nextBtn = document.getElementById('next-verse-btn');
-    
+
     verseSlider.max = chapterVerses.length;
     verseSlider.value = currentIndex + 1;
     verseCounter.textContent = `${currentIndex + 1}/${chapterVerses.length}`;
-    
+
     // Update button states
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex === chapterVerses.length - 1;
-    
+
     // Remove existing listeners
     prevBtn.removeEventListener('click', handlePrevVerse);
     nextBtn.removeEventListener('click', handleNextVerse);
     verseSlider.removeEventListener('input', handleVerseSliderChange);
-    
+
     // Add new listeners
     prevBtn.addEventListener('click', handlePrevVerse);
     nextBtn.addEventListener('click', handleNextVerse);
@@ -297,7 +297,7 @@ function handleNextVerse() {
 function handleVerseSliderChange(e) {
     const chapterVerses = verses.filter(v => v.chapter_number === currentVerse.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
     const selectedIndex = parseInt(e.target.value) - 1;
-    
+
     if (selectedIndex >= 0 && selectedIndex < chapterVerses.length) {
         showVerse(chapterVerses[selectedIndex]);
     }
@@ -306,14 +306,14 @@ function handleVerseSliderChange(e) {
 // Setup language dropdown
 function setupLanguagePills() {
     const languageDropdown = document.getElementById('language-dropdown');
-    
+
     if (languageDropdown) {
         // Set current language in dropdown
         languageDropdown.value = currentLang;
-        
+
         // Remove existing listener
         languageDropdown.removeEventListener('change', handleLanguageChange);
-        
+
         // Add new listener
         languageDropdown.addEventListener('change', handleLanguageChange);
     }
@@ -334,17 +334,17 @@ function handleLanguageChange(e) {
 // Setup bookmark button
 function setupBookmarkButton() {
     updateBookmarkButton();
-    
+
     // Remove existing listener
     bookmarkBtn.removeEventListener('click', handleBookmarkClick);
-    
+
     // Add new listener
     bookmarkBtn.addEventListener('click', handleBookmarkClick);
 }
 
 function handleBookmarkClick() {
     if (!currentVerse) return;
-    
+
     if (isBookmarked(currentVerse.id)) {
         removeBookmark(currentVerse.id);
     } else {
@@ -356,14 +356,14 @@ function handleBookmarkClick() {
 function setupSwipeGestures() {
     // Setup global swipe gestures on body
     setupGlobalSwipeGestures();
-    
+
     // Setup verse-specific swipe gestures
     const verseScreen = document.getElementById('verse-detail-screen');
-    
+
     // Remove existing listeners to prevent duplicates
     verseScreen.removeEventListener('touchstart', handleTouchStart);
     verseScreen.removeEventListener('touchend', handleTouchEnd);
-    
+
     // Add new listeners
     verseScreen.addEventListener('touchstart', handleTouchStart);
     verseScreen.addEventListener('touchend', handleTouchEnd);
@@ -372,11 +372,11 @@ function setupSwipeGestures() {
 // Global swipe gestures for screen navigation
 function setupGlobalSwipeGestures() {
     const body = document.body;
-    
+
     // Remove existing listeners to prevent duplicates
     body.removeEventListener('touchstart', handleGlobalTouchStart);
     body.removeEventListener('touchend', handleGlobalTouchEnd);
-    
+
     // Add global swipe listeners
     body.addEventListener('touchstart', handleGlobalTouchStart);
     body.addEventListener('touchend', handleGlobalTouchEnd);
@@ -399,7 +399,7 @@ function handleGlobalSwipe() {
     const threshold = 100; // Larger threshold for screen navigation
     const screenWidth = window.innerWidth;
     const edgeThreshold = screenWidth * 0.1; // 10% of screen width from edge
-    
+
     // Only trigger if swipe starts from left edge and is a right swipe
     if (globalStartX <= edgeThreshold && deltaX > threshold) {
         goToPreviousScreen();
@@ -408,9 +408,9 @@ function handleGlobalSwipe() {
 
 function goToPreviousScreen() {
     const currentActiveScreen = document.querySelector('.screen.active');
-    
+
     if (!currentActiveScreen) return;
-    
+
     // Determine which screen to go back to
     if (currentActiveScreen === verseDetailScreen) {
         if (previousScreen === aiChatScreen) {
@@ -444,12 +444,12 @@ function handleTouchEnd(e) {
 
 function handleVerseSwipe() {
     if (!currentVerse) return;
-    
+
     const deltaX = endX - startX;
     const threshold = 50; // Minimum swipe distance for verse navigation
     const screenWidth = window.innerWidth;
     const edgeThreshold = screenWidth * 0.1; // 10% of screen width from edge
-    
+
     // Don't handle verse navigation if swipe starts from left edge (reserved for screen navigation)
     if (startX <= edgeThreshold) {
         return;
@@ -468,10 +468,10 @@ function handleVerseSwipe() {
 
 function goToNextVerse() {
     if (!currentVerse) return;
-    
+
     const chapterVerses = verses.filter(v => v.chapter_number === currentVerse.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
     const currentIndex = chapterVerses.findIndex(v => v.id === currentVerse.id);
-    
+
     if (currentIndex >= 0 && currentIndex < chapterVerses.length - 1) {
         showVerse(chapterVerses[currentIndex + 1]);
     }
@@ -479,10 +479,10 @@ function goToNextVerse() {
 
 function goToPreviousVerse() {
     if (!currentVerse) return;
-    
+
     const chapterVerses = verses.filter(v => v.chapter_number === currentVerse.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
     const currentIndex = chapterVerses.findIndex(v => v.id === currentVerse.id);
-    
+
     if (currentIndex > 0) {
         showVerse(chapterVerses[currentIndex - 1]);
     }
@@ -491,13 +491,13 @@ function goToPreviousVerse() {
 // Setup floating audio controls
 function setupFloatingAudioControls() {
     const floatingBtn = document.getElementById('floating-play-pause');
-    
+
     // Remove existing listeners to prevent duplicates
     floatingBtn.removeEventListener('click', toggleFloatingPlayPause);
     audioPlayer.removeEventListener('timeupdate', updateFloatingTime);
     audioPlayer.removeEventListener('loadedmetadata', updateFloatingDuration);
     audioPlayer.removeEventListener('ended', resetFloatingButton);
-    
+
     // Add new listeners
     floatingBtn.addEventListener('click', toggleFloatingPlayPause);
     audioPlayer.addEventListener('timeupdate', updateFloatingTime);
@@ -530,11 +530,11 @@ function updateFloatingTime() {
     const progressCircle = document.querySelector('.progress-ring-circle');
     const current = audioPlayer.currentTime;
     const duration = audioPlayer.duration;
-    
+
     if (duration) {
         const remaining = duration - current;
         floatingTime.textContent = formatTime(remaining);
-        
+
         // Update progress ring
         const circumference = 182.21;
         const progress = current / duration;
@@ -552,16 +552,16 @@ function resetFloatingButton() {
     const floatingBtn = document.getElementById('floating-play-pause');
     const floatingTime = document.getElementById('floating-time');
     const progressCircle = document.querySelector('.progress-ring-circle');
-    
+
     floatingBtn.innerHTML = '<i class="fas fa-play"></i>';
     floatingTime.textContent = formatTime(audioPlayer.duration);
     progressCircle.style.strokeDashoffset = 182.21;
-    
+
     // Auto-advance to next verse (but don't auto-play)
     if (currentVerse) {
         const chapterVerses = verses.filter(v => v.chapter_number === currentVerse.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
         const currentIndex = chapterVerses.findIndex(v => v.id === currentVerse.id);
-        
+
         // If there's a next verse, move to it (user must press play manually)
         if (currentIndex >= 0 && currentIndex < chapterVerses.length - 1) {
             setTimeout(() => {
@@ -606,10 +606,10 @@ function switchScreen(screen) {
     if (currentActiveScreen && currentActiveScreen !== screen) {
         previousScreen = currentActiveScreen;
     }
-    
+
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     screen.classList.add('active');
-    
+
     // Add a class to the body for screen-specific styling
     document.body.classList.remove('verse-detail-active', 'chapters-active', 'verses-active', 'settings-active', 'ai-chat-active', 'bookmarks-active', 'setup-instructions-active');
     if (screen === verseDetailScreen) {
@@ -632,7 +632,7 @@ function switchScreen(screen) {
     } else {
         backBtn.style.display = 'block';
     }
-    
+
     // Handle footer visibility and AI button
     if (screen === verseDetailScreen) {
         document.getElementById('footer').style.display = 'none';
@@ -666,16 +666,16 @@ function initFloatingMenu() {
     // Remove any existing listeners first
     const newMainFloatingBtn = mainFloatingBtn.cloneNode(true);
     mainFloatingBtn.parentNode.replaceChild(newMainFloatingBtn, mainFloatingBtn);
-    
+
     // Update the reference
     const updatedMainFloatingBtn = document.getElementById('main-floating-btn');
     const updatedFloatingMenu = document.getElementById('floating-menu');
-    
+
     // Toggle menu visibility
     updatedMainFloatingBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         const isOpen = updatedFloatingMenu.classList.contains('show');
-        
+
         if (isOpen) {
             updatedFloatingMenu.classList.remove('show');
             updatedMainFloatingBtn.classList.remove('opened');
@@ -686,7 +686,7 @@ function initFloatingMenu() {
             updatedMainFloatingBtn.innerHTML = '<i class="fas fa-times"></i>';
         }
     });
-    
+
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.floating-settings-btn')) {
@@ -695,7 +695,7 @@ function initFloatingMenu() {
             updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
         }
     });
-    
+
     // Settings button
     document.getElementById('settings-btn').addEventListener('click', (e) => {
         e.stopPropagation();
@@ -704,7 +704,7 @@ function initFloatingMenu() {
         updatedMainFloatingBtn.classList.remove('opened');
         updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
     });
-    
+
     // Bookmarks button
     document.getElementById('bookmarks-btn').addEventListener('click', (e) => {
         e.stopPropagation();
@@ -735,7 +735,7 @@ function addBookmark(verse) {
     const bookmarks = getBookmarks();
     const chapterTranslations = translations[verse.chapter_number] || [];
     const translation = chapterTranslations.find(t => t.verse_id === verse.id);
-    
+
     const bookmark = {
         verseId: verse.id,
         chapterNumber: verse.chapter_number,
@@ -746,7 +746,7 @@ function addBookmark(verse) {
         language: currentLang,
         dateAdded: new Date().toISOString()
     };
-    
+
     bookmarks.push(bookmark);
     saveBookmarks(bookmarks);
     updateBookmarkButton();
@@ -761,7 +761,7 @@ function removeBookmark(verseId) {
 
 function updateBookmarkButton() {
     if (!currentVerse || !bookmarkBtn) return;
-    
+
     if (isBookmarked(currentVerse.id)) {
         bookmarkBtn.classList.add('bookmarked');
         bookmarkBtn.innerHTML = '<i class="fas fa-heart"></i>';
@@ -774,7 +774,7 @@ function updateBookmarkButton() {
 function renderBookmarks() {
     const bookmarksList = document.getElementById('bookmarks-list');
     const bookmarks = getBookmarks();
-    
+
     if (bookmarks.length === 0) {
         bookmarksList.innerHTML = `
             <div class="glass-card" style="text-align: center; padding: 40px; margin: 20px;">
@@ -785,7 +785,7 @@ function renderBookmarks() {
         `;
         return;
     }
-    
+
     bookmarksList.innerHTML = '';
     bookmarks.reverse().forEach(bookmark => {
         const bookmarkItem = document.createElement('div');
@@ -800,14 +800,14 @@ function renderBookmarks() {
             <div class="bookmark-text">${bookmark.text.replace(/।/, '।<br>')}</div>
             <div class="bookmark-translation">${bookmark.translation}</div>
         `;
-        
+
         // Add click handler to navigate to verse
         bookmarkItem.addEventListener('click', (e) => {
             if (!e.target.closest('.remove-bookmark-btn')) {
                 navigateToBookmarkedVerse(bookmark);
             }
         });
-        
+
         // Add remove handler
         const removeBtn = bookmarkItem.querySelector('.remove-bookmark-btn');
         removeBtn.addEventListener('click', (e) => {
@@ -815,7 +815,7 @@ function renderBookmarks() {
             removeBookmark(bookmark.verseId);
             renderBookmarks();
         });
-        
+
         bookmarksList.appendChild(bookmarkItem);
     });
 }
@@ -824,7 +824,7 @@ function navigateToBookmarkedVerse(bookmark) {
     // Find the chapter and verse
     const chapter = chapters.find(c => c.chapter_number === bookmark.chapterNumber);
     const verse = verses.find(v => v.id === bookmark.verseId);
-    
+
     if (chapter && verse) {
         currentChapter = chapter;
         currentVerse = verse;
@@ -836,13 +836,12 @@ function navigateToBookmarkedVerse(bookmark) {
 // Settings Functions
 function initSettings() {
     const geminiApiKey = localStorage.getItem('geminiApiKey');
-    const geminiModel = localStorage.getItem('geminiModel') || 'gemini-2.5-flash-lite';
-    
+
     // Load current API key into settings
     const settingsApiKeyInput = document.getElementById('settings-api-key-input');
     const modelSelectorContainer = document.getElementById('model-selector-container');
     const modelSelect = document.getElementById('gemini-model-select');
-    
+
     if (geminiApiKey) {
         settingsApiKeyInput.value = geminiApiKey;
         // Show visual indication that API key is configured
@@ -852,32 +851,21 @@ function initSettings() {
         if (modelSelectorContainer) {
             modelSelectorContainer.style.display = 'block';
         }
-        // Ensure model is set in localStorage for existing users
-        if (!localStorage.getItem('geminiModel')) {
-            localStorage.setItem('geminiModel', 'gemini-2.5-flash-lite');
-        }
     }
-    
-    // Set current model in dropdown
-    if (modelSelect) {
-        modelSelect.value = localStorage.getItem('geminiModel') || 'gemini-2.5-flash-lite';
-        // Handle model change
-        modelSelect.addEventListener('change', (e) => {
-            localStorage.setItem('geminiModel', e.target.value);
-        });
-    }
-    
+
+    // Remove visual indication of model loading if any
+
     // Also sync the Sarthi setup input field if it exists
     const sarthiSetupInput = document.getElementById('api-key-input');
     if (sarthiSetupInput && geminiApiKey) {
         sarthiSetupInput.value = geminiApiKey;
     }
-    
+
     // Toggle API key visibility in settings
     document.getElementById('toggle-settings-api-key-visibility').addEventListener('click', () => {
         const input = document.getElementById('settings-api-key-input');
         const icon = document.querySelector('#toggle-settings-api-key-visibility i');
-        
+
         if (input.type === 'password') {
             input.type = 'text';
             icon.classList.remove('fa-eye');
@@ -888,12 +876,12 @@ function initSettings() {
             icon.classList.add('fa-eye');
         }
     });
-    
+
     // Update API key
     document.getElementById('update-api-key-btn').addEventListener('click', () => {
         const apiKey = settingsApiKeyInput.value.trim();
         const updateBtn = document.getElementById('update-api-key-btn');
-        
+
         if (!apiKey) {
             settingsApiKeyInput.style.borderColor = '#dc3545';
             settingsApiKeyInput.focus();
@@ -902,7 +890,7 @@ function initSettings() {
             }, 2000);
             return;
         }
-        
+
         if (apiKey.length < 10) {
             settingsApiKeyInput.style.borderColor = '#dc3545';
             settingsApiKeyInput.focus();
@@ -911,31 +899,20 @@ function initSettings() {
             }, 2000);
             return;
         }
-        
+
         // Save immediately without delay
         localStorage.setItem('geminiApiKey', apiKey);
-        
-        // Ensure default model is set for new users
-        if (!localStorage.getItem('geminiModel')) {
-            localStorage.setItem('geminiModel', 'gemini-2.5-flash-lite');
-        }
-        
-        // Show model selector after saving API key
-        const modelSelectorContainer = document.getElementById('model-selector-container');
-        if (modelSelectorContainer) {
-            modelSelectorContainer.style.display = 'block';
-        }
-        
+
         // Show loading state briefly for user feedback
         updateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
         updateBtn.disabled = true;
-        
+
         setTimeout(() => {
             // Success feedback
             updateBtn.innerHTML = '<i class="fas fa-check"></i>';
             settingsApiKeyInput.style.borderColor = '#28a745';
             settingsApiKeyInput.style.background = 'rgba(40, 167, 69, 0.1)';
-            
+
             setTimeout(() => {
                 updateBtn.innerHTML = '<i class="fas fa-save"></i>';
                 updateBtn.disabled = false;
@@ -943,49 +920,42 @@ function initSettings() {
             }, 2000);
         }, 100);
     });
-    
+
     // Remove API key
     document.getElementById('remove-api-key-btn').addEventListener('click', () => {
         const removeBtn = document.getElementById('remove-api-key-btn');
-        
+
         if (confirm('Are you sure you want to remove your API key? You will need to re-enter it to use Sarthi AI.')) {
             // Show loading state
             removeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
             removeBtn.disabled = true;
-            
+
             setTimeout(() => {
                 localStorage.removeItem('geminiApiKey');
-                localStorage.removeItem('geminiModel');
                 settingsApiKeyInput.value = '';
                 settingsApiKeyInput.style.borderColor = '';
                 settingsApiKeyInput.style.background = '';
-                
+
                 // Hide model selector
                 const modelSelectorContainer = document.getElementById('model-selector-container');
                 if (modelSelectorContainer) {
                     modelSelectorContainer.style.display = 'none';
                 }
-                
-                // Reset model dropdown to default
-                const modelSelect = document.getElementById('gemini-model-select');
-                if (modelSelect) {
-                    modelSelect.value = 'gemini-2.5-flash-lite';
-                }
-                
+
                 // Also clear in Sarthi setup screen
                 const sarthiSetupInput = document.getElementById('api-key-input');
                 if (sarthiSetupInput) {
                     sarthiSetupInput.value = '';
                 }
-                
+
                 // Reload geminiApiKey in app-saarthi.js
                 if (typeof window.AppSarthi !== 'undefined' && window.AppSarthi.reloadApiKey) {
                     window.AppSarthi.reloadApiKey();
                 }
-                
+
                 // Success feedback
                 removeBtn.innerHTML = '<i class="fas fa-check"></i>';
-                
+
                 setTimeout(() => {
                     removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
                     removeBtn.disabled = false;
@@ -993,23 +963,23 @@ function initSettings() {
             }, 500);
         }
     });
-    
+
     // Audio player toggle setting
     const audioPlayerToggle = document.getElementById('show-audio-player-toggle');
     const showAudioPlayer = localStorage.getItem('showAudioPlayer') !== 'false';
-    
+
     // Set initial state
     audioPlayerToggle.checked = showAudioPlayer;
-    
+
     // Update audio player visibility when toggled
     audioPlayerToggle.addEventListener('change', (e) => {
         const isEnabled = e.target.checked;
         localStorage.setItem('showAudioPlayer', isEnabled);
-        
+
         // Update visibility immediately if on verse detail screen
         updateAudioPlayerVisibility();
     });
-    
+
     // Display cache version
     displayCacheVersion();
 }
@@ -1018,7 +988,7 @@ function initSettings() {
 function updateAudioPlayerVisibility() {
     const showAudioPlayer = localStorage.getItem('showAudioPlayer') !== 'false';
     const floatingAudioBtn = document.getElementById('floating-audio-btn');
-    
+
     if (floatingAudioBtn) {
         if (showAudioPlayer && verseDetailScreen.classList.contains('active')) {
             floatingAudioBtn.style.display = 'block';
@@ -1034,10 +1004,10 @@ async function displayCacheVersion() {
         // Fetch the service worker file to extract CACHE_NAME
         const response = await fetch('/sw.js');
         const swContent = await response.text();
-        
+
         // Extract CACHE_NAME value using regex
         const match = swContent.match(/CACHE_NAME\s*=\s*['"]([^'"]+)['"]/);
-        
+
         if (match && match[1]) {
             const cacheVersion = match[1];
             document.getElementById('cache-version').textContent = `App Version: ${cacheVersion}`;
@@ -1057,14 +1027,14 @@ function resetVideoTabs() {
     currentVideoLang = 'english';
     const tabBtns = document.querySelectorAll('.video-tab-btn');
     const tabPanes = document.querySelectorAll('.video-tab-pane');
-    
+
     tabBtns.forEach(btn => {
         btn.classList.remove('active');
         if (btn.dataset.lang === 'english') {
             btn.classList.add('active');
         }
     });
-    
+
     tabPanes.forEach(pane => {
         pane.classList.remove('active');
         if (pane.dataset.lang === 'english') {
@@ -1075,7 +1045,7 @@ function resetVideoTabs() {
 
 function setupVideoTabs() {
     const tabBtns = document.querySelectorAll('.video-tab-btn');
-    
+
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             switchVideoTab(btn.dataset.lang);
@@ -1087,14 +1057,14 @@ function switchVideoTab(lang) {
     currentVideoLang = lang;
     const tabBtns = document.querySelectorAll('.video-tab-btn');
     const tabPanes = document.querySelectorAll('.video-tab-pane');
-    
+
     tabBtns.forEach(btn => {
         btn.classList.remove('active');
         if (btn.dataset.lang === lang) {
             btn.classList.add('active');
         }
     });
-    
+
     tabPanes.forEach(pane => {
         pane.classList.remove('active');
         if (pane.dataset.lang === lang) {
@@ -1107,8 +1077,8 @@ function switchVideoTab(lang) {
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
-            .then(registration => {})
-            .catch(error => {});
+            .then(registration => { })
+            .catch(error => { });
     });
 }
 

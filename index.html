@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -13,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header id="header">
         <button id="back-btn" style="display:none;"><i class="fas fa-arrow-left"></i></button>
@@ -38,23 +40,17 @@
                     <div class="video-tab-content">
                         <div class="video-tab-pane active" data-lang="english">
                             <div class="video-wrapper">
-                                <iframe id="chapter-video-iframe-english" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerpolicy="strict-origin-when-cross-origin"
-                                        playsinline
-                                        allowfullscreen>
+                                <iframe id="chapter-video-iframe-english" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" playsinline allowfullscreen>
                                 </iframe>
                             </div>
                         </div>
                         <div class="video-tab-pane" data-lang="hindi">
                             <div class="video-wrapper">
-                                <iframe id="chapter-video-iframe-hindi" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerpolicy="strict-origin-when-cross-origin"
-                                        playsinline
-                                        allowfullscreen>
+                                <iframe id="chapter-video-iframe-hindi" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" playsinline allowfullscreen>
                                 </iframe>
                             </div>
                         </div>
@@ -68,7 +64,7 @@
                 <div id="verse-text"></div>
                 <div id="verse-transliteration"></div>
             </div>
-            
+
             <div id="verse-translation-card" class="glass-card">
                 <div class="verse-card-header">
                     <div class="language-controls">
@@ -79,7 +75,8 @@
                                 <option value="gujarati">ગુજરાતી</option>
                             </select>
                         </div>
-                        <button id="sarthi-ai-pill" class="sarthi-ai-pill" title="AI-powered translation and summary">✨SarthiAI</button>
+                        <button id="sarthi-ai-pill" class="sarthi-ai-pill"
+                            title="AI-powered translation and summary">✨SarthiAI</button>
                     </div>
                     <button id="bookmark-btn" class="bookmark-btn">
                         <i class="fas fa-heart"></i>
@@ -105,7 +102,8 @@
                     </div>
                     <button id="save-api-key-btn" class="ai-save-btn">Save & Continue</button>
                     <div class="api-key-help">
-                        <p><small>Get your free API key from <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a></small></p>
+                        <p><small>Get your free API key from <a href="https://makersuite.google.com/app/apikey"
+                                    target="_blank">Google AI Studio</a></small></p>
                     </div>
                 </div>
             </div>
@@ -150,7 +148,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Settings Screen -->
         <div id="settings-screen" class="screen">
             <div class="glass-card settings-card">
@@ -160,17 +158,23 @@
                 </div>
                 <div class="settings-content">
                     <div class="setting-item">
-                        <h3><img src="images/SarthiAI.png" alt="Sarthi AI" class="sarthi-icon"> Sarthi AI Configuration</h3>
-                        <p>Enter your Google Gemini API key to enable AI-powered spiritual guidance and verse recommendations</p>
+                        <h3><img src="images/SarthiAI.png" alt="Sarthi AI" class="sarthi-icon"> Sarthi AI Configuration
+                        </h3>
+                        <p>Enter your Google Gemini API key to enable AI-powered spiritual guidance and verse
+                            recommendations</p>
                         <div class="api-key-input-group">
-                            <input type="password" id="settings-api-key-input" placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+                            <input type="password" id="settings-api-key-input"
+                                placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
                             <button id="toggle-settings-api-key-visibility">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </div>
                         <div class="api-key-help">
-                            <small><i class="fas fa-info-circle"></i> Get your free API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></small><br>
-                            <small><i class="fas fa-book-open"></i> Need help? View our <a href="setup-instructions.html" target="_blank">Setup Guide</a></small>
+                            <small><i class="fas fa-info-circle"></i> Get your free API key from <a
+                                    href="https://aistudio.google.com/app/apikey" target="_blank">Google AI
+                                    Studio</a></small><br>
+                            <small><i class="fas fa-book-open"></i> Need help? View our <a
+                                    href="setup-instructions.html" target="_blank">Setup Guide</a></small>
                         </div>
                         <div class="api-key-buttons">
                             <button id="update-api-key-btn" class="api-key-btn">
@@ -181,20 +185,15 @@
                             </button>
                         </div>
                         <div id="model-selector-container" class="model-selector-container" style="display: none;">
-                            <label for="gemini-model-select">AI Model:</label>
-                            <select id="gemini-model-select" class="model-select">
-                                <option value="gemini-2.5-flash-lite">Gemini 2.5 Flash Lite (1K/day)</option>
-                                <option value="gemini-2.5-flash">Gemini 2.5 Flash (250/day)</option>
-                                <option value="gemini-2.5-pro">Gemini 2.5 Pro (50/day)</option>
-                            </select>
-                            <small class="model-help"><i class="fas fa-info-circle"></i> Higher tier models provide better responses but have lower free limits</small>
+                            <!-- Automatic model selection active -->
                         </div>
                     </div>
-                    
+
                     <div class="setting-item">
                         <div class="setting-header-row">
                             <h3>✨ Sarthi Translate</h3>
-                            <button id="reset-translations-btn" class="reset-cache-pill" title="Clear cached translations">
+                            <button id="reset-translations-btn" class="reset-cache-pill"
+                                title="Clear cached translations">
                                 <i class="fas fa-sync-alt"></i> Reset
                             </button>
                         </div>
@@ -219,7 +218,8 @@
                             <i class="fas fa-save"></i> Save
                         </button>
                         <div class="api-key-help">
-                            <small><i class="fas fa-info-circle"></i> This language will be used for AI-powered verse translations and summaries</small>
+                            <small><i class="fas fa-info-circle"></i> This language will be used for AI-powered verse
+                                translations and summaries</small>
                         </div>
                     </div>
 
@@ -232,10 +232,11 @@
                                 <span class="toggle-switch"></span>
                                 <span class="toggle-text">Show Sanskrit Sloka Audio Player</span>
                             </label>
-                            <small class="setting-description">Enable audio playback for Sanskrit verses on the translation screen</small>
+                            <small class="setting-description">Enable audio playback for Sanskrit verses on the
+                                translation screen</small>
                         </div>
                     </div>
-                    
+
                     <div class="setting-item">
                         <h3>📖 Setup Instructions</h3>
                         <p>Step-by-step guides for setting up the app</p>
@@ -250,7 +251,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Bookmarks Screen -->
         <div id="bookmarks-screen" class="screen">
             <div class="bookmarks-header">
@@ -262,7 +263,7 @@
             </div>
         </div>
     </main>
-    
+
     <!-- Floating Settings/Bookmarks Button -->
     <div id="floating-settings-btn" class="floating-settings-btn">
         <button id="main-floating-btn" class="main-floating-btn">
@@ -292,14 +293,8 @@
     <div id="floating-audio-btn" style="display: none;">
         <div class="progress-ring">
             <svg class="progress-ring-svg" width="64" height="64">
-                <circle
-                    class="progress-ring-circle"
-                    stroke="#A5252C"
-                    stroke-width="2"
-                    fill="transparent"
-                    r="29"
-                    cx="32"
-                    cy="32"/>
+                <circle class="progress-ring-circle" stroke="#A5252C" stroke-width="2" fill="transparent" r="29" cx="32"
+                    cy="32" />
             </svg>
             <button id="floating-play-pause">
                 <i class="fas fa-play"></i>
@@ -320,4 +315,5 @@
     <script src="js/app-saarthi.js"></script>
     <script src="js/app.js"></script>
 </body>
+
 </html>

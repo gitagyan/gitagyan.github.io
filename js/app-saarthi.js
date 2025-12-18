@@ -5,11 +5,25 @@
 let sarthiLanguage = 'english'; // Default language for Sarthi translations
 
 // Gemini API Model Configuration
-const DEFAULT_GEMINI_MODEL = 'gemini-2.5-flash-lite';
+const PRIMARY_MODEL = 'gemini-3-flash-preview';
+const BACKUP_MODEL = 'gemma-3-27b-it';
 
-// Get current model from localStorage or use default
-function getGeminiModel() {
-    return localStorage.getItem('geminiModel') || DEFAULT_GEMINI_MODEL;
+// Helper function to call Gemini API with failover
+async function fetchGeminiContent(model, payload, apiKey) {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        throw { status: response.status, statusText: response.statusText, text: errorText };
+    }
+
+    return await response.json();
 }
 
 // Initialize Sarthi AI
@@ -19,24 +33,24 @@ function initSarthi() {
     if (aiBtn) {
         aiBtn.addEventListener('click', handleAIButtonClick);
     }
-    
+
     // Setup API key save functionality
     const saveApiKeyBtn = document.getElementById('save-api-key-btn');
     if (saveApiKeyBtn) {
         saveApiKeyBtn.addEventListener('click', saveApiKey);
     }
-    
+
     const toggleApiKeyBtn = document.getElementById('toggle-api-key-visibility');
     if (toggleApiKeyBtn) {
         toggleApiKeyBtn.addEventListener('click', toggleApiKeyVisibility);
     }
-    
+
     // Setup chat functionality
     const sendBtn = document.getElementById('ai-send-btn');
     if (sendBtn) {
         sendBtn.addEventListener('click', sendMessage);
     }
-    
+
     const chatInput = document.getElementById('ai-chat-input');
     if (chatInput) {
         chatInput.addEventListener('keypress', (e) => {
@@ -45,7 +59,7 @@ function initSarthi() {
             }
         });
     }
-    
+
     // Setup starter prompts
     document.querySelectorAll('.starter-prompt').forEach(prompt => {
         prompt.addEventListener('click', () => {
@@ -54,7 +68,7 @@ function initSarthi() {
             sendMessage();
         });
     });
-    
+
     // Setup clear chat button
     const clearChatBtn = document.getElementById('clear-chat-btn');
     if (clearChatBtn) {
@@ -65,7 +79,7 @@ function initSarthi() {
             }
         });
     }
-    
+
     // Setup Sarthi translate
     setupSarthiTranslate();
 }
@@ -74,7 +88,7 @@ function initSarthi() {
 function handleAIButtonClick() {
     // Check API key directly from localStorage
     const apiKey = localStorage.getItem('geminiApiKey');
-    
+
     if (apiKey) {
         // Show chat screen - access switchScreen from global scope
         if (typeof window.switchScreen === 'function') {
@@ -101,15 +115,15 @@ function handleAIButtonClick() {
 // Save API key
 function saveApiKey() {
     const apiKey = document.getElementById('api-key-input').value.trim();
-    
+
     if (!apiKey) {
         alert('Please enter a valid API key');
         return;
     }
-    
+
     // Save to localStorage
     localStorage.setItem('geminiApiKey', apiKey);
-    
+
     // Show success message and switch to chat
     alert('API key saved successfully!');
     const aiChatScreen = document.getElementById('ai-chat-screen');
@@ -123,7 +137,7 @@ function saveApiKey() {
 function toggleApiKeyVisibility() {
     const input = document.getElementById('api-key-input');
     const icon = document.querySelector('#toggle-api-key-visibility i');
-    
+
     if (input.type === 'password') {
         input.type = 'text';
         icon.classList.remove('fa-eye');
@@ -139,21 +153,21 @@ function toggleApiKeyVisibility() {
 function initializeChatScreen() {
     const messagesContainer = document.getElementById('ai-chat-messages');
     const starterPrompts = document.getElementById('ai-starter-prompts');
-    
+
     // Try to load chat history first
     const hasHistory = loadChatHistory();
-    
+
     if (!hasHistory) {
         // Clear previous messages if no history
         messagesContainer.innerHTML = '';
-        
+
         // Add welcome message
         addMessage('ai', 'Hello! I am Sarthi AI. I can help you find relevant verses from the Bhagavad Gita to answer your questions. Please ask your question.');
     }
-    
+
     // Check if there are any user messages (not just AI welcome message)
     const hasUserMessages = hasHistory && checkForUserMessages();
-    
+
     if (!hasUserMessages) {
         // Show starter prompts if no user messages
         starterPrompts.style.display = 'flex';
@@ -167,7 +181,7 @@ function initializeChatScreen() {
 function checkForUserMessages() {
     const savedHistory = localStorage.getItem('sarthiChatHistory');
     if (!savedHistory) return false;
-    
+
     const messages = JSON.parse(savedHistory);
     return messages.some(message => message.sender === 'user');
 }
@@ -176,37 +190,37 @@ function checkForUserMessages() {
 async function sendMessage() {
     const input = document.getElementById('ai-chat-input');
     const message = input.value.trim();
-    
+
     if (!message) return;
-    
+
     // Hide starter prompts
     document.getElementById('ai-starter-prompts').style.display = 'none';
-    
+
     // Add user message
     addMessage('user', message);
-    
+
     // Save user message to conversation history
     addToConversationHistory('user', message);
-    
+
     // Clear input
     input.value = '';
-    
+
     // Show typing indicator
     showTypingIndicator();
-    
+
     try {
         // Make API call to Gemini
         const response = await callGeminiAPI(message);
-        
+
         // Remove typing indicator
         removeTypingIndicator();
-        
+
         // Parse response and show slokas
         displaySlokaResponse(response);
-        
+
         // Save AI response to conversation history (strip HTML for context)
         addToConversationHistory('assistant', response);
-        
+
     } catch (error) {
         console.error('AI Error:', error);
         removeTypingIndicator();
@@ -214,27 +228,27 @@ async function sendMessage() {
     }
 }
 
-// Call Gemini API
+// Call Gemini API with automatic failover
 async function callGeminiAPI(userMessage) {
     // Get API key directly from localStorage (always fresh)
     const apiKey = localStorage.getItem('geminiApiKey');
-    
+
     if (!apiKey) {
         throw new Error('API key not configured');
     }
-    
+
     // Get conversation history for context (last 10 exchanges)
     const conversationHistory = getConversationHistory();
-    
+
     // Build conversation context string
     let conversationContext = '';
     if (conversationHistory.length > 0) {
-        conversationContext = '\n\nPrevious conversation for context:\n' + 
-            conversationHistory.map(msg => 
+        conversationContext = '\n\nPrevious conversation for context:\n' +
+            conversationHistory.map(msg =>
                 `${msg.role === 'user' ? 'User' : 'Sarthi AI'}: ${msg.content}`
             ).join('\n') + '\n\n';
     }
-    
+
     const systemPrompt = `You are Sarthi AI, a spiritual guide helping users understand the Bhagavad Gita. Help users by recommending relevant Bhagavad Gita verses for their questions.
 
 When responding:
@@ -254,39 +268,42 @@ Chapter X, Verse Y: Why this verse helps
 
 Keep it concise and practical.`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${getGeminiModel()}:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            contents: [{
-                parts: [
-                    { text: combinedPrompt }
-                ]
-            }],
-            generationConfig: {
-                temperature: 0.7,
-                maxOutputTokens: 1500,
-            }
-        })
-    });
+    const payload = {
+        contents: [{
+            parts: [
+                { text: combinedPrompt }
+            ]
+        }],
+        generationConfig: {
+            temperature: 0.7,
+            maxOutputTokens: 1500,
+        }
+    };
 
-    if (!response.ok) {
-        const errorText = await response.text();
-        console.error('API Error Response:', errorText);
-        throw new Error(`API call failed: ${response.status} ${response.statusText}`);
+    let data;
+    try {
+        // Try Primary Model
+        console.log(`Trying primary model: ${PRIMARY_MODEL}`);
+        data = await fetchGeminiContent(PRIMARY_MODEL, payload, apiKey);
+    } catch (error) {
+        // If primary fails with any error, try backup
+        console.warn(`Primary model (${PRIMARY_MODEL}) failed:`, error.status || error, error.statusText || '');
+        console.log(`Trying backup model: ${BACKUP_MODEL}`);
+        try {
+            data = await fetchGeminiContent(BACKUP_MODEL, payload, apiKey);
+        } catch (backupError) {
+            console.error('Backup model also failed:', backupError.status || backupError, backupError.statusText || '');
+            throw new Error(`AI service unavailable: ${backupError.status || 'Error'} ${backupError.statusText || ''}`);
+        }
     }
 
-    const data = await response.json();
-    
     // Check if candidates array exists and has content
     if (!data.candidates || data.candidates.length === 0) {
         throw new Error('No response from AI service');
     }
-    
+
     const candidate = data.candidates[0];
-    
+
     // Check if candidate has content
     if (!candidate.content) {
         // Check if this is a safety/content filter issue
@@ -295,22 +312,23 @@ Keep it concise and practical.`;
         }
         throw new Error('AI service returned empty response');
     }
-    
+
     // Check if content has parts
     if (!candidate.content.parts || candidate.content.parts.length === 0) {
         throw new Error('AI service returned no content. Please try again with a different question.');
     }
-    
+
     const part = candidate.content.parts[0];
-    
+
     // Check if part has text
     if (!part.text) {
         throw new Error('AI service returned no text');
     }
-    
+
     // Return text even if truncated (MAX_TOKENS) - partial response is better than error
     return part.text.trim();
 }
+
 
 // Display sloka response
 function displaySlokaResponse(response) {
@@ -323,21 +341,21 @@ function displaySlokaResponse(response) {
     const pattern3 = /\b(\d+)\.(\d+)\b/g;
     // Pattern 4: Verse X.Y
     const pattern4 = /Verse\s+(\d+)\.(\d+)/gi;
-    
+
     const slokaSet = new Set();
-    
+
     // Try pattern 1 first (most explicit)
     let matches = [...response.matchAll(pattern1)];
     matches.forEach(match => slokaSet.add(`${match[1]}.${match[2]}`));
-    
+
     // Try pattern 2
     matches = [...response.matchAll(pattern2)];
     matches.forEach(match => slokaSet.add(`${match[1]}.${match[2]}`));
-    
+
     // Try pattern 4
     matches = [...response.matchAll(pattern4)];
     matches.forEach(match => slokaSet.add(`${match[1]}.${match[2]}`));
-    
+
     // Only use pattern 3 (generic X.Y) if no matches found yet, and validate chapter range
     if (slokaSet.size === 0) {
         matches = [...response.matchAll(pattern3)];
@@ -350,9 +368,9 @@ function displaySlokaResponse(response) {
             }
         });
     }
-    
+
     const slokaNumbers = [...slokaSet];
-    
+
     // Add the AI's complete response
     addMessage('ai', response, slokaNumbers.length > 0 ? slokaNumbers : null);
 }
@@ -362,54 +380,54 @@ function parseMarkdown(text) {
     // Bold
     text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     text = text.replace(/__(.*?)__/g, '<strong>$1</strong>');
-    
+
     // Italic
     text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
     text = text.replace(/_(.*?)_/g, '<em>$1</em>');
-    
+
     // Headers
     text = text.replace(/^### (.*$)/gim, '<h3>$1</h3>');
     text = text.replace(/^## (.*$)/gim, '<h2>$1</h2>');
     text = text.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-    
+
     // Code blocks (triple backticks)
     text = text.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
-    
+
     // Inline code
     text = text.replace(/`(.*?)`/g, '<code>$1</code>');
-    
+
     // Line breaks
     text = text.replace(/\n/g, '<br>');
-    
+
     // Lists
     text = text.replace(/^\- (.*$)/gim, '<li>$1</li>');
     text = text.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
-    
+
     return text;
 }
 
 // Add message to chat
 function addMessage(sender, text, slokaNumbers = null, isHTML = false) {
     const messagesContainer = document.getElementById('ai-chat-messages');
-    
+
     const messageDiv = document.createElement('div');
     messageDiv.className = `chat-message ${sender}`;
-    
+
     const bubbleDiv = document.createElement('div');
     bubbleDiv.className = 'message-bubble';
-    
+
     if (sender === 'ai' && slokaNumbers) {
         // AI message with sloka pills - render markdown or use HTML
         const renderedText = isHTML ? text : parseMarkdown(text);
         bubbleDiv.innerHTML = `
             <div class="sarthi-response">${renderedText}</div>
             <div class="sloka-pills-container">
-                ${slokaNumbers.map(sloka => 
-                    `<button class="sloka-pill" data-sloka="${sloka}">Verse ${sloka}</button>`
-                ).join('')}
+                ${slokaNumbers.map(sloka =>
+            `<button class="sloka-pill" data-sloka="${sloka}">Verse ${sloka}</button>`
+        ).join('')}
             </div>
         `;
-        
+
         // Add click handlers to sloka pills
         setTimeout(() => {
             messageDiv.querySelectorAll('.sloka-pill').forEach(pill => {
@@ -426,11 +444,11 @@ function addMessage(sender, text, slokaNumbers = null, isHTML = false) {
         // User message - plain text
         bubbleDiv.textContent = text;
     }
-    
+
     messageDiv.appendChild(bubbleDiv);
     messagesContainer.appendChild(messageDiv);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    
+
     // Save chat history after adding message
     saveChatHistory();
 }
@@ -439,20 +457,20 @@ function addMessage(sender, text, slokaNumbers = null, isHTML = false) {
 function navigateToSloka(slokaRef) {
     // Parse chapter.verse format
     const [chapterNum, verseNum] = slokaRef.split('.').map(n => parseInt(n));
-    
+
     // Get chapters and verses from global scope
     const chapters = window.chaptersData || [];
     const verses = window.versesData || [];
-    
+
     // Find the chapter and verse
     const chapter = chapters.find(c => c.chapter_number === chapterNum);
     const verse = verses.find(v => v.chapter_number === chapterNum && v.verse_number === verseNum);
-    
+
     if (chapter && verse) {
         // Set current chapter and verse in global scope
         window.currentChapter = chapter;
         window.currentVerse = verse;
-        
+
         // Navigate to verse detail screen using global showVerse function
         if (typeof window.showVerse === 'function') {
             window.showVerse(verse);
@@ -465,7 +483,7 @@ function navigateToSloka(slokaRef) {
 // Show typing indicator
 function showTypingIndicator() {
     const messagesContainer = document.getElementById('ai-chat-messages');
-    
+
     const typingDiv = document.createElement('div');
     typingDiv.className = 'chat-message ai typing-indicator-message';
     typingDiv.innerHTML = `
@@ -477,7 +495,7 @@ function showTypingIndicator() {
             </div>
         </div>
     `;
-    
+
     messagesContainer.appendChild(typingDiv);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
@@ -494,15 +512,15 @@ function removeTypingIndicator() {
 function saveChatHistory() {
     const messages = [];
     const messageElements = document.querySelectorAll('.chat-message');
-    
+
     messageElements.forEach(messageEl => {
         const sender = messageEl.classList.contains('user') ? 'user' : 'ai';
         const bubble = messageEl.querySelector('.message-bubble');
-        
+
         if (sender === 'ai' && bubble.querySelector('.sloka-pills-container')) {
             // AI message with sloka pills
             const responseText = bubble.querySelector('.sarthi-response').innerHTML;
-            const slokaPills = Array.from(bubble.querySelectorAll('.sloka-pill')).map(pill => 
+            const slokaPills = Array.from(bubble.querySelectorAll('.sloka-pill')).map(pill =>
                 pill.getAttribute('data-sloka')
             );
             messages.push({
@@ -521,20 +539,20 @@ function saveChatHistory() {
             });
         }
     });
-    
+
     localStorage.setItem('sarthiChatHistory', JSON.stringify(messages));
 }
 
 function loadChatHistory() {
     const savedHistory = localStorage.getItem('sarthiChatHistory');
     if (!savedHistory) return false;
-    
+
     const messages = JSON.parse(savedHistory);
     const messagesContainer = document.getElementById('ai-chat-messages');
-    
+
     // Clear current messages
     messagesContainer.innerHTML = '';
-    
+
     // Restore messages
     messages.forEach(message => {
         if (message.sender === 'ai' && message.slokaNumbers) {
@@ -545,7 +563,7 @@ function loadChatHistory() {
             addMessage(message.sender, message.text, null, message.isHTML);
         }
     });
-    
+
     return messages.length > 0;
 }
 
@@ -569,19 +587,19 @@ function getConversationHistory() {
 
 function addToConversationHistory(role, content) {
     const history = getConversationHistory();
-    
+
     // Add new message
     history.push({
         role: role,
         content: content.substring(0, 500) // Limit content length to avoid token overflow
     });
-    
+
     // Keep only last 20 messages (10 exchanges of user + assistant)
     const maxMessages = MAX_CONVERSATION_HISTORY * 2;
     if (history.length > maxMessages) {
         history.splice(0, history.length - maxMessages);
     }
-    
+
     localStorage.setItem('sarthiConversationContext', JSON.stringify(history));
 }
 
@@ -596,21 +614,21 @@ function setupSarthiTranslate() {
             languageSelect.value = savedLanguage;
         }
     }
-    
+
     // Setup save language button
     const saveLanguageBtn = document.getElementById('save-translate-language-btn');
     if (saveLanguageBtn) {
         saveLanguageBtn.addEventListener('click', saveSarthiLanguage);
     }
-    
+
     // Setup reset translations button
     const resetTranslationsBtn = document.getElementById('reset-translations-btn');
     if (resetTranslationsBtn) {
         resetTranslationsBtn.addEventListener('click', resetSarthiTranslations);
     }
-    
+
     // Setup SarthiAI pill click handler
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (e.target.closest('.sarthi-ai-pill')) {
             handleSarthiAIPillClick();
         }
@@ -620,28 +638,28 @@ function setupSarthiTranslate() {
 function saveSarthiLanguage() {
     const languageSelect = document.getElementById('sarthi-translate-language');
     const saveBtn = document.getElementById('save-translate-language-btn');
-    
+
     if (!languageSelect) return;
-    
+
     const selectedLanguage = languageSelect.value;
-    
+
     if (!selectedLanguage) {
         alert('Please select a language');
         return;
     }
-    
+
     // Show loading state
     saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
     saveBtn.disabled = true;
-    
+
     setTimeout(() => {
         // Save to localStorage
         localStorage.setItem('sarthiLanguage', selectedLanguage);
         sarthiLanguage = selectedLanguage;
-        
+
         // Success feedback
         saveBtn.innerHTML = '<i class="fas fa-check"></i>';
-        
+
         setTimeout(() => {
             saveBtn.innerHTML = '<i class="fas fa-save"></i>';
             saveBtn.disabled = false;
@@ -651,15 +669,15 @@ function saveSarthiLanguage() {
 
 function resetSarthiTranslations() {
     const resetBtn = document.getElementById('reset-translations-btn');
-    
+
     if (!confirm('This will clear all cached AI translations. You will need to regenerate them. Continue?')) {
         return;
     }
-    
+
     // Show loading state
     resetBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
     resetBtn.disabled = true;
-    
+
     setTimeout(() => {
         // Remove all sarthi_chapter_* keys from localStorage
         const keysToRemove = [];
@@ -669,12 +687,12 @@ function resetSarthiTranslations() {
                 keysToRemove.push(key);
             }
         }
-        
+
         keysToRemove.forEach(key => localStorage.removeItem(key));
-        
+
         // Success feedback
         resetBtn.innerHTML = '<i class="fas fa-check"></i> Done';
-        
+
         setTimeout(() => {
             resetBtn.innerHTML = '<i class="fas fa-sync-alt"></i> Reset';
             resetBtn.disabled = false;
@@ -685,39 +703,39 @@ function resetSarthiTranslations() {
 async function handleSarthiAIPillClick() {
     // Get API key directly from localStorage (always fresh)
     const apiKey = localStorage.getItem('geminiApiKey');
-    
+
     if (!apiKey) {
         alert('Please configure your API key in Settings first to use Sarthi AI.');
         return;
     }
-    
+
     // Access currentVerse from global scope (defined in app.js)
     const currentVerse = window.currentVerse;
-    
+
     if (!currentVerse) {
         alert('No verse selected for translation.');
         return;
     }
-    
+
     // Get the SarthiAI pill and show loading state
     const sarthiPill = document.querySelector('.sarthi-ai-pill');
     const verseTranslation = document.getElementById('verse-translation');
-    
+
     if (sarthiPill && verseTranslation) {
         const originalContent = sarthiPill.innerHTML;
         const originalTranslation = verseTranslation.innerHTML;
-        
+
         sarthiPill.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
         sarthiPill.style.pointerEvents = 'none';
         verseTranslation.innerHTML = '<div style="text-align: center; color: #666; padding: 20px;">✨ Generating AI summary...</div>';
-        
+
         try {
             const aiSummary = await getSarthiTranslation(currentVerse);
-            
+
             // Show AI summary in the translation card
             const languageNames = {
                 'english': 'English',
-                'hindi': 'Hindi', 
+                'hindi': 'Hindi',
                 'gujarati': 'Gujarati',
                 'bengali': 'Bengali',
                 'tamil': 'Tamil',
@@ -730,7 +748,7 @@ async function handleSarthiAIPillClick() {
                 'chinese': 'Chinese'
             };
             const displayLanguage = languageNames[sarthiLanguage] || sarthiLanguage.charAt(0).toUpperCase() + sarthiLanguage.slice(1);
-            
+
             verseTranslation.innerHTML = `
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
                     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4px 8px; border-radius: 14px; font-size: 9px; font-weight: 600;">
@@ -742,13 +760,13 @@ async function handleSarthiAIPillClick() {
                 </div>
                 <div>${parseMarkdown(aiSummary)}</div>
             `;
-            
+
             // Make floating audio button semi-transparent
             const floatingAudioBtn = document.getElementById('floating-audio-btn');
             if (floatingAudioBtn) {
                 floatingAudioBtn.style.opacity = '0.7';
             }
-            
+
             // Add click handler for settings button
             setTimeout(() => {
                 const settingsBtn = document.getElementById('sarthi-settings-btn');
@@ -761,7 +779,7 @@ async function handleSarthiAIPillClick() {
                     });
                 }
             }, 100);
-            
+
         } catch (error) {
             console.error('Error getting Sarthi translation:', error);
             // Restore original translation on error
@@ -778,14 +796,14 @@ async function handleSarthiAIPillClick() {
 async function getSarthiTranslation(verse) {
     // Get API key directly from localStorage (always fresh)
     const apiKey = localStorage.getItem('geminiApiKey');
-    
+
     if (!apiKey) {
         throw new Error('API key not configured');
     }
-    
+
     // Create cache key for this chapter
     const chapterCacheKey = `sarthi_chapter_${verse.chapter_number}`;
-    
+
     // Get existing chapter cache or create new one
     let chapterCache = {};
     const existingCache = localStorage.getItem(chapterCacheKey);
@@ -797,13 +815,13 @@ async function getSarthiTranslation(verse) {
             chapterCache = {};
         }
     }
-    
+
     // Check if we have cached response for this verse and language
     const verseKey = `${verse.verse_number}_${sarthiLanguage}`;
     if (chapterCache[verseKey]) {
         return chapterCache[verseKey];
     }
-    
+
     // Language mapping for proper AI prompting
     const languageNames = {
         'english': 'English',
@@ -819,9 +837,27 @@ async function getSarthiTranslation(verse) {
         'arabic': 'Arabic',
         'chinese': 'Chinese'
     };
-    
+
     const languageName = languageNames[sarthiLanguage] || 'English';
-    
+
+    // Localized headers for "Core Teaching"
+    const teachingHeaders = {
+        'english': 'Core Teaching',
+        'hindi': 'मुख्य शिक्षा',
+        'gujarati': 'મુખ્ય બોધ',
+        'bengali': 'মূল শিক্ষা',
+        'tamil': 'முக்கிய போதனை',
+        'telugu': 'ముఖ్య బోధన',
+        'marathi': 'मुख्य शिकवण',
+        'kannada': 'ಮುಖ್ಯ ಬೋಧನೆ',
+        'punjabi': 'ਮੁੱਖ ਸਿੱਖਿਆ',
+        'spanish': 'Enseñanza Principal',
+        'arabic': 'التعليم الأساسي',
+        'chinese': '核心教义'
+    };
+
+    const teachingHeader = teachingHeaders[sarthiLanguage] || 'Core Teaching';
+
     const prompt = `You are an AI spiritual guide. Provide a deep, spiritually-aligned meaning of this Bhagavad Gita verse in ${languageName}:
 
 Chapter ${verse.chapter_number}, Verse ${verse.verse_number}:
@@ -831,7 +867,7 @@ You must follow this EXACT FORMAT (do not include chapter/verse numbers in your 
 
 [First paragraph: Brief meaning of the verse in 1-2 sentences]
 
-Core Teaching: [Deep spiritual insight explaining the essence and practical wisdom of this teaching in 2-3 sentences]
+${teachingHeader}: [Deep spiritual insight explaining the essence and practical wisdom of this teaching in 2-3 sentences]
 
 CRITICAL REQUIREMENTS:
 - Maximum 150 words total
@@ -839,61 +875,66 @@ CRITICAL REQUIREMENTS:
 - Do NOT mention chapter or verse numbers
 - Focus on deep spiritual meaning and practical application
 - Response must be ONLY in ${languageName} language
-- If Hindi, use Devanagari script; if Gujarati, use Gujarati script
-- Do not mix languages or use English words unless absolutely necessary`;
+- Content MUST NOT contain any English words or labels unless absolutely unavoidable
+- Use ${teachingHeader} as the section title, do NOT use "Core Teaching" in English
+- If Hindi, use Devanagari script; if Gujarati, use Gujarati script; if Punjabi, use Gurmukhi script
+- Do not mix languages`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${getGeminiModel()}:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            contents: [{
-                parts: [{
-                    text: prompt
-                }]
+    const payload = {
+        contents: [{
+            parts: [{
+                text: prompt
             }]
-        })
-    });
+        }]
+    };
 
-    if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Sarthi API Error Response:', errorText);
-        throw new Error(`Failed to get translation from Gemini API: ${response.status} ${response.statusText}`);
+    let data;
+    try {
+        // Try Primary Model
+        console.log(`Trying primary model for translation: ${PRIMARY_MODEL}`);
+        data = await fetchGeminiContent(PRIMARY_MODEL, payload, apiKey);
+    } catch (error) {
+        // If primary fails with any error, try backup
+        console.warn(`Primary model (${PRIMARY_MODEL}) for translation failed:`, error.status || error, error.statusText || '');
+        console.log(`Trying backup model for translation: ${BACKUP_MODEL}`);
+        try {
+            data = await fetchGeminiContent(BACKUP_MODEL, payload, apiKey);
+        } catch (backupError) {
+            console.error('Backup model for translation also failed:', backupError.status || backupError, backupError.statusText || '');
+            throw new Error(`Failed to get translation from Gemini API: ${backupError.status || 'Error'} ${backupError.statusText || ''}`);
+        }
     }
 
-    const data = await response.json();
-    
     // Check if candidates array exists and has content
     if (!data.candidates || data.candidates.length === 0) {
         throw new Error('No response from Sarthi AI service');
     }
-    
+
     const candidate = data.candidates[0];
-    
+
     // Check if candidate has content
     if (!candidate.content) {
         throw new Error('Sarthi AI service returned empty response');
     }
-    
+
     // Check if content has parts
     if (!candidate.content.parts || candidate.content.parts.length === 0) {
         throw new Error('Sarthi AI service returned malformed response');
     }
-    
+
     const part = candidate.content.parts[0];
-    
+
     // Check if part has text
     if (!part.text) {
         throw new Error('Sarthi AI service returned no text');
     }
-    
+
     const aiResponse = part.text;
-    
+
     // Cache the response in chapter-based structure
     chapterCache[verseKey] = aiResponse;
     localStorage.setItem(chapterCacheKey, JSON.stringify(chapterCache));
-    
+
     return aiResponse;
 }
 

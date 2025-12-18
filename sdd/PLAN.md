@@ -242,12 +242,13 @@ const staticAssets = [
 https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent
 ```
 
-**Supported Models:**
-| Model ID | Name | Use Case |
-|----------|------|----------|
-| gemini-2.5-flash-lite | Flash Lite | Fast, economical |
-| gemini-2.5-flash | Flash | Balanced |
-| gemini-2.5-pro | Pro | Complex queries |
+**Automatic Failover Mechanism:**
+The application uses a robust failover strategy to ensure high availability:
+1. **Primary Attempt**: Every request first attempts to use **Gemini 3 Flash (Preview)**.
+2. **Backup Failover**: If the primary request fails for any reason (e.g., 429 rate limit, 500 error), the application automatically catches the error and retries the exact same request using **Gemma 3 27B (IT)**.
+3. **Error Reporting**: Users only see an error message if both models fail consecutively.
+
+This approach provides the best possible performance while ensuring the service remains available even when primary limits are reached.
 
 **Request Format:**
 ```javascript
