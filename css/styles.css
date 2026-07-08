@@ -800,7 +800,7 @@ footer p {
     -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 15px 15px 0 0;
-    padding: 15px 15px calc(15px + env(safe-area-inset-bottom, 0px));
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -939,7 +939,7 @@ footer p {
     background: #E6A623;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    padding: 15px 20px calc(15px + env(safe-area-inset-bottom, 0px));
+    padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
