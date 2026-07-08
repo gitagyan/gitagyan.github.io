@@ -1393,6 +1393,21 @@ async function generateShareImage() {
     const imageTitle = document.getElementById('share-option-image-title');
     const iconWrapper = shareImageBtn.querySelector('.share-option-icon');
 
+    // Helper: load any image URL as a base64 data URL (bypasses iOS canvas CORS)
+    const toDataUrl = (url) => new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => {
+            const c = document.createElement('canvas');
+            c.width = img.naturalWidth;
+            c.height = img.naturalHeight;
+            c.getContext('2d').drawImage(img, 0, 0);
+            resolve(c.toDataURL('image/png'));
+        };
+        img.onerror = reject;
+        img.src = url + '?t=' + Date.now(); // cache-bust to force fresh load
+    });
+
     // Show generating state
     shareImageBtn.disabled = true;
     imageTitle.textContent = 'Generating...';
@@ -1460,11 +1475,25 @@ async function generateShareImage() {
         const cardEl = document.getElementById('share-card');
         cardEl.style.left = '0px';
 
+        // Inject logo as base64 data URL so iOS PWA canvas can render it
+        const logoImg = cardEl.querySelector('img[alt="Bhagavad Gita"]');
+        const originalLogoSrc = logoImg ? logoImg.src : null;
+        if (logoImg) {
+            try {
+                logoImg.src = await toDataUrl('images/navbar-logo.png');
+            } catch (e) {
+                console.warn('Could not preload logo as data URL', e);
+            }
+        }
+
         // Wait two animation frames for DOM styling to settle
         await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
 
         // Capture content card PNG
         const contentDataUrl = await htmlToImage.toPng(cardEl, { pixelRatio: 3, skipFonts: true });
+
+        // Restore original logo src
+        if (logoImg && originalLogoSrc) logoImg.src = originalLogoSrc;
 
         // Hide card offscreen again
         cardEl.style.left = '-9999px';
