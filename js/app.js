@@ -1405,7 +1405,7 @@ async function generateShareImage() {
             resolve(c.toDataURL('image/png'));
         };
         img.onerror = reject;
-        img.src = url + '?t=' + Date.now(); // cache-bust to force fresh load
+        img.src = url;
     });
 
     // Show generating state
@@ -1486,11 +1486,25 @@ async function generateShareImage() {
             }
         }
 
+        // Wait for the logo to be fully decoded before capture
+        if (logoImg && logoImg.decode) {
+            try { await logoImg.decode(); } catch (e) { /* ignore */ }
+        }
+
         // Wait two animation frames for DOM styling to settle
         await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
 
-        // Capture content card PNG
-        const contentDataUrl = await htmlToImage.toPng(cardEl, { pixelRatio: 3, skipFonts: true });
+        // Capture content card PNG. WebKit (all iOS browsers + Safari) renders
+        // <img> elements inside the SVG foreignObject blank on the first pass,
+        // so run warm-up captures and keep only the final one.
+        const captureOptions = { pixelRatio: 3, skipFonts: true };
+        const isWebKitOnly = /iP(hone|ad|od)/.test(navigator.userAgent) ||
+            (/AppleWebKit/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent));
+        if (isWebKitOnly) {
+            await htmlToImage.toPng(cardEl, captureOptions);
+            await htmlToImage.toPng(cardEl, captureOptions);
+        }
+        const contentDataUrl = await htmlToImage.toPng(cardEl, captureOptions);
 
         // Restore original logo src
         if (logoImg && originalLogoSrc) logoImg.src = originalLogoSrc;

@@ -1,4 +1,4 @@
-const CACHE_NAME = '1.2.5';
+const CACHE_NAME = '1.2.6';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -9,6 +9,8 @@ const urlsToCache = [
     '/images/icon-192.png',
     '/images/icon-512.png',
     '/images/app-icon.png',
+    '/images/navbar-logo.png',
+    '/images/yellow_bg.png',
     '/images/SarthiAI.png',
     '/images/krishna-and-arjuna.jpg',
     '/images/screenshots/pwa-instructions-ios/IMG_6677.PNG',

@@ -60,6 +60,12 @@
     }
 }
 
+html {
+    /* Shows behind the iOS status bar (black-translucent PWA) and on overscroll;
+       must match the header color so the navbar looks continuous */
+    background-color: #E6A623;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background: url('../images/krishna-and-arjuna.jpg') no-repeat center center fixed;
@@ -110,7 +116,7 @@ header {
     background: #E6A623;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    padding: 5px 20px;
+    padding: calc(5px + env(safe-area-inset-top, 0px)) 20px 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,7 +213,8 @@ header h1 {
 
 main {
     flex: 1;
-    padding: 75px 10px 80px 10px; /* Account for header and audio controls */
+    /* Account for header and audio controls */
+    padding: calc(75px + env(safe-area-inset-top, 0px)) 10px calc(80px + env(safe-area-inset-bottom, 0px)) 10px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -241,7 +248,7 @@ footer {
     background: #E6A623;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    padding: 10px;
+    padding: 10px 10px calc(10px + env(safe-area-inset-bottom, 0px));
     text-align: center;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
@@ -793,7 +800,7 @@ footer p {
     -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 15px 15px 0 0;
-    padding: 15px;
+    padding: 15px 15px calc(15px + env(safe-area-inset-bottom, 0px));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -932,7 +939,7 @@ footer p {
     background: #E6A623;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    padding: 15px 20px;
+    padding: 15px 20px calc(15px + env(safe-area-inset-bottom, 0px));
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1030,7 +1037,7 @@ footer p {
         max-height: 50px;
     }
     main {
-        padding: 60px 5px 50px 5px;
+        padding: calc(60px + env(safe-area-inset-top, 0px)) 5px calc(50px + env(safe-area-inset-bottom, 0px)) 5px;
     }
     .header-buttons {
         gap: 5px;
