@@ -1107,9 +1107,9 @@ function initSettings() {
         });
     }
 
-    const journeyLastRead = document.getElementById('journey-last-read');
-    if (journeyLastRead) {
-        journeyLastRead.addEventListener('click', () => {
+    const journeyLastReadCell = document.getElementById('journey-last-read-cell');
+    if (journeyLastReadCell) {
+        journeyLastReadCell.addEventListener('click', () => {
             const lastReadRaw = localStorage.getItem('gita_last_read');
             if (lastReadRaw) {
                 const lastRead = JSON.parse(lastReadRaw);
@@ -1645,15 +1645,9 @@ function renderJourneyStats() {
 
     const readPct = Math.min(100, Math.round((readVerses.length / 700) * 100));
 
-    // Update progress ring
-    const circle = document.getElementById('journey-progress-ring-circle');
-    if (circle) {
-        const radius = 34;
-        const circumference = 2 * Math.PI * radius; // ~213.628
-        circle.style.strokeDasharray = circumference;
-        const offset = circumference - (readPct / 100) * circumference;
-        circle.style.strokeDashoffset = offset;
-    }
+    // Update compact progress bar
+    const barFill = document.getElementById('journey-compact-bar-fill');
+    if (barFill) barFill.style.width = `${readPct}%`;
 
     const pctEl = document.getElementById('journey-progress-pct');
     if (pctEl) pctEl.textContent = `${readPct}%`;
@@ -1685,9 +1679,13 @@ function renderJourneyStats() {
         } else {
             if (nameWrapper) nameWrapper.style.display = 'none';
         }
-        lastReadEl.style.display = 'inline-block';
+        lastReadEl.style.display = 'flex';
+        const emptyEl = document.getElementById('journey-last-read-empty');
+        if (emptyEl) emptyEl.style.display = 'none';
     } else if (lastReadEl) {
         lastReadEl.style.display = 'none';
+        const emptyEl = document.getElementById('journey-last-read-empty');
+        if (emptyEl) emptyEl.style.display = 'block';
     }
 
     // Update streak

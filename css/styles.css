@@ -3234,3 +3234,241 @@ footer p {
     color: #1b7a1b;
     border-color: rgba(34, 139, 34, 0.28);
 }
+
+/* Compact Journey Card */
+.journey-card-compact {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 16px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.journey-compact-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.journey-compact-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #A5252C;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.journey-compact-title i {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.journey-compact-progress-text {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #2C2C2C;
+}
+
+.journey-compact-total {
+    font-weight: 500;
+    color: #888;
+}
+
+.journey-compact-bar-track {
+    height: 5px;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.journey-compact-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #A5252C, #E6A623);
+    border-radius: 3px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.journey-compact-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 12px;
+}
+
+.journey-compact-stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    justify-content: center;
+}
+
+.journey-compact-stat-icon {
+    font-size: 0.85rem;
+}
+
+.journey-compact-stat-val {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #2C2C2C;
+}
+
+.journey-compact-stat-label {
+    font-size: 0.68rem;
+    color: #888;
+    font-weight: 500;
+}
+
+.journey-compact-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+}
+
+.journey-compact-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.journey-compact-last-read {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    color: #666;
+    background: rgba(165, 37, 44, 0.05);
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(165, 37, 44, 0.1);
+    transition: all 0.2s ease;
+    max-width: calc(100% - 44px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.journey-compact-last-read:hover {
+    background: rgba(165, 37, 44, 0.1);
+    color: #A5252C;
+}
+
+.journey-compact-last-read i {
+    color: #A5252C;
+    font-size: 0.65rem;
+    flex-shrink: 0;
+}
+
+.journey-compact-reset-btn {
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 5px 9px;
+    font-size: 0.7rem;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.journey-compact-reset-btn:hover {
+    background: rgba(165, 37, 44, 0.06);
+    border-color: rgba(165, 37, 44, 0.25);
+    color: #A5252C;
+}
+
+/* Journey bar + count row */
+.journey-compact-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.journey-compact-bar-row .journey-compact-bar-track {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.journey-compact-progress-text {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #A5252C;
+    flex-shrink: 0;
+    min-width: 30px;
+    text-align: right;
+}
+
+.journey-compact-verse-count {
+    font-size: 0.72rem;
+    color: #888;
+    margin-bottom: 14px;
+}
+
+.journey-compact-verse-count span:first-child {
+    font-weight: 700;
+    color: #444;
+}
+
+/* 2×2 stat grid */
+.journey-stats-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.journey-stat-cell {
+    background: rgba(0, 0, 0, 0.025);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    transition: background 0.2s ease;
+}
+
+.journey-stat-cell[style*="cursor:pointer"]:hover {
+    background: rgba(165, 37, 44, 0.04);
+    border-color: rgba(165, 37, 44, 0.12);
+}
+
+.journey-stat-cell-top {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #2C2C2C;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    line-height: 1.2;
+}
+
+.journey-stat-cell-top--link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #A5252C;
+}
+
+.journey-stat-cell-top--link i {
+    font-size: 0.7rem;
+}
+
+.journey-stat-cell-label {
+    font-size: 0.7rem;
+    color: #888;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

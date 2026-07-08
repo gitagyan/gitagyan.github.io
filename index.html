@@ -98,51 +98,52 @@
                     <p>Manage your app preferences</p>
                 </div>
                 <div class="settings-content">
-                    <!-- Your Journey Card -->
-                    <div id="journey-card" class="journey-card">
-                        <div style="position: absolute; top: -5px; right: 5px; font-size: 80px; opacity: 0.04; pointer-events: none;">📖</div>
-                        <div class="journey-header">
-                            <i class="fas fa-chart-bar"></i> Your Journey
-                        </div>
-                        <div class="journey-progress-container">
-                            <div class="journey-progress-ring-wrapper">
-                                <svg class="journey-progress-ring-svg" width="80" height="80">
-                                    <circle class="journey-progress-ring-bg" stroke="rgba(165,37,44,0.1)" stroke-width="6" fill="transparent" r="34" cx="40" cy="40"/>
-                                    <circle id="journey-progress-ring-circle" class="journey-progress-ring-circle" stroke="#A5252C" stroke-width="6" stroke-linecap="round" fill="transparent" r="34" cx="40" cy="40"/>
-                                </svg>
-                                <div id="journey-progress-pct" class="journey-progress-pct">0%</div>
+                    <!-- Your Journey -->
+                    <div id="journey-card" class="journey-card-compact">
+                        <!-- Row 1: Header + reset -->
+                        <div class="journey-compact-header">
+                            <div class="journey-compact-title">
+                                <i class="fas fa-chart-bar"></i> Your Journey
                             </div>
-                            <div class="journey-progress-text-wrapper">
-                                <div class="journey-progress-title">Reading Progress</div>
-                                <div class="journey-progress-stats"><span id="journey-verses-read">0</span> / 700 verses read</div>
-                                <div id="journey-last-read" class="journey-last-read" style="display: none; cursor: pointer;">
-                                    <i class="fas fa-bookmark"></i> Last: Ch. <span id="last-read-chapter">0</span> · V. <span id="last-read-verse">0</span> <span id="last-read-name-wrapper">— <span id="last-read-name"></span></span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="journey-stats-grid">
-                            <div class="journey-stat-tile tile-streak">
-                                <div class="journey-stat-icon">🔥</div>
-                                <div id="journey-streak-val" class="journey-stat-value">0</div>
-                                <div class="journey-stat-label">Day Streak</div>
-                            </div>
-                            <div class="journey-stat-tile tile-chapters">
-                                <div class="journey-stat-icon">📖</div>
-                                <div id="journey-chapters-val" class="journey-stat-value">0</div>
-                                <div class="journey-stat-label">Chapters</div>
-                            </div>
-                            <div class="journey-stat-tile tile-bookmarks">
-                                <div class="journey-stat-icon">🔖</div>
-                                <div id="journey-bookmarks-val" class="journey-stat-value">0</div>
-                                <div class="journey-stat-label">Bookmarked</div>
-                            </div>
+                            <button id="journey-reset-btn" class="journey-compact-reset-btn" title="Reset progress">
+                                <i class="fas fa-undo"></i>
+                            </button>
                         </div>
 
-                        <div class="journey-reset-container">
-                            <button id="journey-reset-btn" class="journey-reset-btn">
-                                <i class="fas fa-undo"></i> Reset Reading Progress
-                            </button>
+                        <!-- Row 2: Progress bar + count -->
+                        <div class="journey-compact-bar-row">
+                            <div class="journey-compact-bar-track">
+                                <div id="journey-compact-bar-fill" class="journey-compact-bar-fill" style="width: 0%;"></div>
+                            </div>
+                            <div class="journey-compact-progress-text">
+                                <span id="journey-progress-pct">0%</span>
+                            </div>
+                        </div>
+                        <div class="journey-compact-verse-count">
+                            <span id="journey-verses-read">0</span><span class="journey-compact-total"> of 700 verses read</span>
+                        </div>
+
+                        <!-- Row 3: 2x2 stats grid -->
+                        <div class="journey-stats-2x2">
+                            <div class="journey-stat-cell">
+                                <div class="journey-stat-cell-top">🔥 <span id="journey-streak-val">0</span></div>
+                                <div class="journey-stat-cell-label">Day Streak</div>
+                            </div>
+                            <div class="journey-stat-cell">
+                                <div class="journey-stat-cell-top">📖 <span id="journey-chapters-val">0</span></div>
+                                <div class="journey-stat-cell-label">Chapters</div>
+                            </div>
+                            <div class="journey-stat-cell">
+                                <div class="journey-stat-cell-top">🔖 <span id="journey-bookmarks-val">0</span></div>
+                                <div class="journey-stat-cell-label">Bookmarked</div>
+                            </div>
+                            <div class="journey-stat-cell" id="journey-last-read-cell" style="cursor:pointer;">
+                                <div id="journey-last-read" class="journey-stat-cell-top journey-stat-cell-top--link" style="display:none;">
+                                    <i class="fas fa-bookmark"></i> Ch.<span id="last-read-chapter">0</span>·V.<span id="last-read-verse">0</span>
+                                </div>
+                                <div id="journey-last-read-empty" class="journey-stat-cell-top" style="color:#ccc;">—</div>
+                                <div class="journey-stat-cell-label">Last Read<span id="last-read-name-wrapper" style="display:none;"> — <span id="last-read-name"></span></span></div>
+                            </div>
                         </div>
                     </div>
 
