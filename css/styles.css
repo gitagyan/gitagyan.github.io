@@ -110,7 +110,7 @@ header {
     background: #E6A623;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    padding: 10px 20px;
+    padding: 5px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,6 +126,16 @@ header h1 {
     color: #A5252C;
     font-weight: 950;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#navbar-logo {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+    display: block;
+    margin: 0 auto;
+    transition: height 0.3s ease;
 }
 
 .header-buttons {
@@ -197,7 +207,7 @@ header h1 {
 
 main {
     flex: 1;
-    padding: 85px 10px 80px 10px; /* Account for header and audio controls */
+    padding: 75px 10px 80px 10px; /* Account for header and audio controls */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -373,6 +383,7 @@ footer p {
 
 #chapter-title {
     text-align: center;
+    margin-top: 15px;
     margin-bottom: 20px;
     line-height: 1.3;
 }
@@ -595,12 +606,52 @@ footer p {
     box-shadow: 0 0 0 3px rgba(165, 37, 44, 0.1);
 }
 
+/* Translation and Explanation Tabs */
+.translation-tabs {
+    display: flex;
+    align-items: center;
+    background: rgba(165, 37, 44, 0.05);
+    border: 1.5px solid rgba(165, 37, 44, 0.18);
+    border-radius: 12px;
+    padding: 2px 4px;
+    gap: 3px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+
+.translation-tabs .tab-btn {
+    background: transparent;
+    border: none;
+    color: #A5252C;
+    padding: 4px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease;
+}
+
+.translation-tabs .tab-btn:hover {
+    background: rgba(165, 37, 44, 0.08);
+}
+
+.translation-tabs .tab-btn.active {
+    background: linear-gradient(135deg, #E6A623 0%, #A5252C 100%);
+    color: white;
+    box-shadow: 0 2px 6px rgba(165, 37, 44, 0.25);
+}
+
 /* Glass cards for verse content */
 .glass-card {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -610,6 +661,48 @@ footer p {
     margin-right: auto;
     position: relative;
     overflow: hidden;
+}
+
+/* Sanskrit Card Header Layout */
+.sanskrit-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.sanskrit-card-header .sloka-number-pill {
+    margin: 0; /* Override center margin */
+}
+
+/* Share button styling, mirroring bookmark button */
+.share-btn {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(165, 37, 44, 0.3);
+    border-radius: 15px;
+    padding: 4px 8px;
+    color: #A5252C;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 11px;
+    min-width: 35px;
+    min-height: 28px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.share-btn:hover {
+    background: rgba(165, 37, 44, 0.1);
+    border-color: #A5252C;
+    transform: translateY(-2px);
 }
 
 .glass-card::before {
@@ -932,8 +1025,12 @@ footer p {
         font-size: 1.8rem;
         font-weight: 950;
     }
+    #navbar-logo {
+        height: 50px;
+        max-height: 50px;
+    }
     main {
-        padding: 70px 5px 50px 5px;
+        padding: 60px 5px 50px 5px;
     }
     .header-buttons {
         gap: 5px;
@@ -2596,4 +2693,151 @@ footer p {
         width: 40px;
         height: 40px;
     }
+}
+
+/* Share Sheet Backdrop */
+.share-sheet-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 2000;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Share Sheet Container */
+.share-sheet-container {
+    width: 100%;
+    background: linear-gradient(160deg, #FFEDD5 0%, #FFDEB3 100%);
+    border-radius: 24px 24px 0 0;
+    padding: 0 0 calc(24px + env(safe-area-inset-bottom));
+    box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.2);
+    animation: shareSheetSlideUp 0.25s ease-out;
+}
+
+/* Share Sheet Slide Up Keyframes */
+@keyframes shareSheetSlideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.share-sheet-handle-bar {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0 4px;
+}
+
+.share-sheet-handle {
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(165, 37, 44, 0.25);
+}
+
+.share-sheet-header {
+    text-align: center;
+    padding: 8px 24px 16px;
+    border-bottom: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+#share-sheet-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #A5252C;
+    letter-spacing: 0.5px;
+}
+
+.share-sheet-options {
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Share Option Button */
+.share-option-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
+    text-align: left;
+    width: 100%;
+}
+
+.share-option-btn:hover {
+    background: #fafafa;
+    transform: translateY(-1px);
+}
+
+.share-option-btn:disabled {
+    opacity: 0.7;
+    cursor: default;
+    transform: none;
+}
+
+.share-option-btn:disabled:hover {
+    background: #ffffff;
+}
+
+.share-option-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.share-option-icon.link-icon {
+    background: rgba(165, 37, 44, 0.1);
+    color: #A5252C;
+}
+
+.share-option-btn.copied {
+    background: #f0fdf4 !important;
+}
+
+.share-option-btn.copied .share-option-icon.link-icon {
+    background: rgba(34, 197, 94, 0.15);
+    color: #16a34a;
+}
+
+.share-option-icon.image-icon {
+    background: rgba(124, 58, 237, 0.12);
+    color: #7c3aed;
+}
+
+.share-option-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.share-option-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2C2C2C;
+}
+
+.share-option-sub {
+    font-size: 11px;
+    color: #888;
+    margin-top: 2px;
 }

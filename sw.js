@@ -1,11 +1,9 @@
-const CACHE_NAME = '1.1.9';
+const CACHE_NAME = '1.2.3';
 const urlsToCache = [
     '/',
     '/index.html',
-    '/setup-instructions.html',
     '/css/styles.css',
     '/js/app.js',
-    '/js/app-saarthi.js',
     '/manifest.json',
     '/favicon.ico',
     '/images/icon-192.png',
@@ -13,12 +11,6 @@ const urlsToCache = [
     '/images/app-icon.png',
     '/images/SarthiAI.png',
     '/images/krishna-and-arjuna.jpg',
-    '/images/screenshots/gemini-instructions/IMG_6670.PNG',
-    '/images/screenshots/gemini-instructions/IMG_6671.PNG',
-    '/images/screenshots/gemini-instructions/IMG_6672.PNG',
-    '/images/screenshots/gemini-instructions/IMG_6673.PNG',
-    '/images/screenshots/gemini-instructions/IMG_6674.PNG',
-    '/images/screenshots/gemini-instructions/IMG_6675.PNG',
     '/images/screenshots/pwa-instructions-ios/IMG_6677.PNG',
     '/images/screenshots/pwa-instructions-ios/IMG_6678.PNG',
     '/images/screenshots/pwa-instructions-ios/IMG_6679.PNG',
@@ -49,7 +41,8 @@ const urlsToCache = [
     '/assets/verse_translation/chapter_16.json',
     '/assets/verse_translation/chapter_17.json',
     '/assets/verse_translation/chapter_18.json',
-    'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/js/all.min.js'
+    'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/js/all.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js'
 ];
 
 // Install SW

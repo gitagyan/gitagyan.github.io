@@ -6,19 +6,15 @@ let youtubeVideos = []; // YouTube videos for chapters
 let currentChapter = null;
 let currentVerse = null;
 let currentLang = 'english'; // 'english', 'hindi', or 'gujarati' - for verse translations
+let currentTab = 'translation'; // 'translation' or 'explanation'
 let startX = 0;
 let endX = 0;
 let previousScreen = null; // Track where user came from
-
-// Make key variables accessible to app-saarthi.js via window object
-window.currentVerse = null;
 
 // DOM elements
 const chaptersScreen = document.getElementById('chapters-screen');
 const versesScreen = document.getElementById('verses-screen');
 const verseDetailScreen = document.getElementById('verse-detail-screen');
-const aiSetupScreen = document.getElementById('ai-setup-screen');
-const aiChatScreen = document.getElementById('ai-chat-screen');
 const settingsScreen = document.getElementById('settings-screen');
 const bookmarksScreen = document.getElementById('bookmarks-screen');
 const chaptersList = document.getElementById('chapters-list');
@@ -26,17 +22,25 @@ const versesList = document.getElementById('verses-list');
 const chapterTitle = document.getElementById('chapter-title');
 const audioPlayer = document.getElementById('audio-player');
 const backBtn = document.getElementById('back-btn');
-const aiBtn = document.getElementById('ai-btn');
 const mainFloatingBtn = document.getElementById('main-floating-btn');
 const floatingMenu = document.getElementById('floating-menu');
-const bookmarkBtn = document.getElementById('bookmark-btn');
+let bookmarkBtn = document.getElementById('bookmark-btn');
 
 // PWA Install component setup
 
 
+// Global variables for share card generation
+let preGeneratedShareBlob = null;
+let isGeneratingShareImage = false;
+let shareBgImage = null;
+
 // Initialize app
 async function init() {
     try {
+        // Preload the share background image immediately
+        shareBgImage = new Image();
+        shareBgImage.src = './images/krishna-and-arjuna.jpg';
+
         // Load data from assets folder
         chapters = await fetch('./assets/chapters.json').then(r => r.json());
         verses = await fetch('./assets/verse.json').then(r => r.json());
@@ -77,14 +81,17 @@ async function init() {
             currentLang = savedTranslationLang;
         }
 
-        // Initialize Sarthi AI if module is loaded
-        if (window.AppSarthi && window.AppSarthi.initSarthi) {
-            window.AppSarthi.initSarthi();
-        }        // Initialize settings
+        // Setup Translation & Explain tabs
+        setupTabs();
+
+        // Initialize settings
         initSettings();
 
         // Initialize floating menu
         initFloatingMenu();
+
+        // Initialize Share Sheet Modal
+        initShareSheet();
 
         // Render chapters
         renderChapters();
@@ -147,8 +154,9 @@ function showChapter(chapter) {
 
             // Set new videos with a small delay to ensure clean load
             setTimeout(() => {
-                hindiIframe.src = `https://www.youtube.com/embed/${chapterVideo.hindi.video_id}?playsinline=1&rel=0`;
-                englishIframe.src = `https://www.youtube.com/embed/${chapterVideo.english.video_id}?playsinline=1&rel=0`;
+                const originParam = `&origin=${encodeURIComponent(window.location.origin)}`;
+                hindiIframe.src = `https://www.youtube.com/embed/${chapterVideo.hindi.video_id}?playsinline=1&rel=0${originParam}`;
+                englishIframe.src = `https://www.youtube.com/embed/${chapterVideo.english.video_id}?playsinline=1&rel=0${originParam}`;
             }, 100);
 
             videoContainer.style.display = 'block';
@@ -204,7 +212,16 @@ function updateVerseContent() {
     const translation = chapterTranslations.find(t => t.verse_id === currentVerse.id);
 
     if (translation && translation.languages && translation.languages[currentLang]) {
-        verseTranslation.innerHTML = translation.languages[currentLang].description;
+        if (currentTab === 'translation') {
+            verseTranslation.innerHTML = translation.languages[currentLang].description || 'Translation not available';
+        } else {
+            const meaning = translation.languages[currentLang].meaning;
+            if (meaning) {
+                verseTranslation.innerHTML = meaning;
+            } else {
+                verseTranslation.innerHTML = 'Explanation not available in this language.';
+            }
+        }
     } else {
         verseTranslation.innerHTML = 'Translation not available';
     }
@@ -224,11 +241,22 @@ function showVerse(verse) {
     // Update Sanskrit card with sloka number pill
     const sanskritCard = document.getElementById('verse-sanskrit-card');
     sanskritCard.innerHTML = `
-        <div class="sloka-number-pill">श्लोक ${verse.chapter_number}.${verse.verse_number}</div>
-        <div id="verse-text">${verse.text.replace(/।/, '।<br>')}</div>
-        <div id="verse-transliteration">${verse.transliteration.replace(/।/, '।<br>')}</div>
+        <div class="sanskrit-card-header">
+            <button id="bookmark-btn" class="bookmark-btn" title="Add bookmark">
+                <i class="far fa-heart"></i>
+            </button>
+            <div class="sloka-number-pill">श्लोक ${verse.chapter_number}.${verse.verse_number}</div>
+            <button id="share-btn" class="share-btn" title="Share verse">
+                <i class="fas fa-share-nodes"></i>
+            </button>
+        </div>
+        <div id="verse-text">${cleanVerseText(verse.text)}</div>
+        <div id="verse-transliteration">${cleanVerseText(verse.transliteration)}</div>
     `;
 
+    bookmarkBtn = document.getElementById('bookmark-btn');
+
+    updateTabsUI();
     updateVerseContent();
 
     // Audio - using assets folder structure
@@ -250,6 +278,7 @@ function showVerse(verse) {
     setupVerseNavigation();
     setupLanguagePills();
     setupBookmarkButton();
+    setupShareButton();
 
     switchScreen(verseDetailScreen);
 }
@@ -413,15 +442,8 @@ function goToPreviousScreen() {
 
     // Determine which screen to go back to
     if (currentActiveScreen === verseDetailScreen) {
-        if (previousScreen === aiChatScreen) {
-            switchScreen(aiChatScreen);
-        } else {
-            switchScreen(versesScreen);
-        }
+        switchScreen(versesScreen);
     } else if (currentActiveScreen === versesScreen) {
-        switchScreen(chaptersScreen);
-        backBtn.style.display = 'none';
-    } else if (currentActiveScreen === aiSetupScreen || currentActiveScreen === aiChatScreen) {
         switchScreen(chaptersScreen);
         backBtn.style.display = 'none';
     } else if (currentActiveScreen === settingsScreen || currentActiveScreen === bookmarksScreen) {
@@ -581,16 +603,8 @@ function formatTime(seconds) {
 function setupNavigation() {
     backBtn.addEventListener('click', () => {
         if (verseDetailScreen.classList.contains('active')) {
-            // Check if we came from AI chat screen
-            if (previousScreen === aiChatScreen) {
-                switchScreen(aiChatScreen);
-            } else {
-                switchScreen(versesScreen);
-            }
+            switchScreen(versesScreen);
         } else if (versesScreen.classList.contains('active')) {
-            switchScreen(chaptersScreen);
-            backBtn.style.display = 'none';
-        } else if (aiSetupScreen.classList.contains('active') || aiChatScreen.classList.contains('active')) {
             switchScreen(chaptersScreen);
             backBtn.style.display = 'none';
         } else if (settingsScreen.classList.contains('active') || bookmarksScreen.classList.contains('active')) {
@@ -611,7 +625,7 @@ function switchScreen(screen) {
     screen.classList.add('active');
 
     // Add a class to the body for screen-specific styling
-    document.body.classList.remove('verse-detail-active', 'chapters-active', 'verses-active', 'settings-active', 'ai-chat-active', 'bookmarks-active', 'setup-instructions-active');
+    document.body.classList.remove('verse-detail-active', 'chapters-active', 'verses-active', 'settings-active', 'bookmarks-active');
     if (screen === verseDetailScreen) {
         document.body.classList.add('verse-detail-active');
     } else if (screen === chaptersScreen) {
@@ -620,8 +634,6 @@ function switchScreen(screen) {
         document.body.classList.add('verses-active');
     } else if (screen === settingsScreen) {
         document.body.classList.add('settings-active');
-    } else if (screen === aiChatScreen) {
-        document.body.classList.add('ai-chat-active');
     } else if (screen === bookmarksScreen) {
         document.body.classList.add('bookmarks-active');
     }
@@ -633,30 +645,21 @@ function switchScreen(screen) {
         backBtn.style.display = 'block';
     }
 
-    // Handle footer visibility and AI button
+    // Handle footer visibility
     if (screen === verseDetailScreen) {
         document.getElementById('footer').style.display = 'none';
         updateAudioPlayerVisibility(); // Use new function to check setting
         document.getElementById('verse-navigation').style.display = 'flex';
-        aiBtn.style.display = 'block';
-        document.getElementById('floating-settings-btn').style.display = 'none';
-    } else if (screen === aiChatScreen || screen === aiSetupScreen) {
-        document.getElementById('footer').style.display = 'block';
-        document.getElementById('floating-audio-btn').style.display = 'none';
-        document.getElementById('verse-navigation').style.display = 'none';
-        aiBtn.style.display = 'none';
         document.getElementById('floating-settings-btn').style.display = 'none';
     } else if (screen === settingsScreen || screen === bookmarksScreen) {
         document.getElementById('footer').style.display = 'block';
         document.getElementById('floating-audio-btn').style.display = 'none';
         document.getElementById('verse-navigation').style.display = 'none';
-        aiBtn.style.display = 'block';
         document.getElementById('floating-settings-btn').style.display = 'none';
     } else {
         document.getElementById('footer').style.display = 'block';
         document.getElementById('floating-audio-btn').style.display = 'none';
         document.getElementById('verse-navigation').style.display = 'none';
-        aiBtn.style.display = 'block';
         document.getElementById('floating-settings-btn').style.display = 'block';
     }
 }
@@ -835,150 +838,46 @@ function navigateToBookmarkedVerse(bookmark) {
 
 // Settings Functions
 function initSettings() {
-    const geminiApiKey = localStorage.getItem('geminiApiKey');
-
-    // Load current API key into settings
-    const settingsApiKeyInput = document.getElementById('settings-api-key-input');
-    const modelSelectorContainer = document.getElementById('model-selector-container');
-    const modelSelect = document.getElementById('gemini-model-select');
-
-    if (geminiApiKey) {
-        settingsApiKeyInput.value = geminiApiKey;
-        // Show visual indication that API key is configured
-        settingsApiKeyInput.style.borderColor = '#28a745';
-        settingsApiKeyInput.style.background = 'rgba(40, 167, 69, 0.1)';
-        // Show model selector when API key is present
-        if (modelSelectorContainer) {
-            modelSelectorContainer.style.display = 'block';
-        }
+    // Preferred language dropdown in Settings
+    const settingsLangDropdown = document.getElementById('settings-language-dropdown');
+    if (settingsLangDropdown) {
+        settingsLangDropdown.value = currentLang;
+        settingsLangDropdown.addEventListener('change', (e) => {
+            const newLang = e.target.value;
+            if (currentLang !== newLang) {
+                currentLang = newLang;
+                localStorage.setItem('translationLanguage', newLang);
+                
+                // Sync with verse screen dropdown if it exists
+                const languageDropdown = document.getElementById('language-dropdown');
+                if (languageDropdown) {
+                    languageDropdown.value = newLang;
+                }
+                
+                if (currentVerse) {
+                    updateVerseContent();
+                }
+            }
+        });
     }
-
-    // Remove visual indication of model loading if any
-
-    // Also sync the Sarthi setup input field if it exists
-    const sarthiSetupInput = document.getElementById('api-key-input');
-    if (sarthiSetupInput && geminiApiKey) {
-        sarthiSetupInput.value = geminiApiKey;
-    }
-
-    // Toggle API key visibility in settings
-    document.getElementById('toggle-settings-api-key-visibility').addEventListener('click', () => {
-        const input = document.getElementById('settings-api-key-input');
-        const icon = document.querySelector('#toggle-settings-api-key-visibility i');
-
-        if (input.type === 'password') {
-            input.type = 'text';
-            icon.classList.remove('fa-eye');
-            icon.classList.add('fa-eye-slash');
-        } else {
-            input.type = 'password';
-            icon.classList.remove('fa-eye-slash');
-            icon.classList.add('fa-eye');
-        }
-    });
-
-    // Update API key
-    document.getElementById('update-api-key-btn').addEventListener('click', () => {
-        const apiKey = settingsApiKeyInput.value.trim();
-        const updateBtn = document.getElementById('update-api-key-btn');
-
-        if (!apiKey) {
-            settingsApiKeyInput.style.borderColor = '#dc3545';
-            settingsApiKeyInput.focus();
-            setTimeout(() => {
-                settingsApiKeyInput.style.borderColor = '';
-            }, 2000);
-            return;
-        }
-
-        if (apiKey.length < 10) {
-            settingsApiKeyInput.style.borderColor = '#dc3545';
-            settingsApiKeyInput.focus();
-            setTimeout(() => {
-                settingsApiKeyInput.style.borderColor = '';
-            }, 2000);
-            return;
-        }
-
-        // Save immediately without delay
-        localStorage.setItem('geminiApiKey', apiKey);
-
-        // Show loading state briefly for user feedback
-        updateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-        updateBtn.disabled = true;
-
-        setTimeout(() => {
-            // Success feedback
-            updateBtn.innerHTML = '<i class="fas fa-check"></i>';
-            settingsApiKeyInput.style.borderColor = '#28a745';
-            settingsApiKeyInput.style.background = 'rgba(40, 167, 69, 0.1)';
-
-            setTimeout(() => {
-                updateBtn.innerHTML = '<i class="fas fa-save"></i>';
-                updateBtn.disabled = false;
-                settingsApiKeyInput.style.borderColor = '';
-            }, 2000);
-        }, 100);
-    });
-
-    // Remove API key
-    document.getElementById('remove-api-key-btn').addEventListener('click', () => {
-        const removeBtn = document.getElementById('remove-api-key-btn');
-
-        if (confirm('Are you sure you want to remove your API key? You will need to re-enter it to use Sarthi AI.')) {
-            // Show loading state
-            removeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-            removeBtn.disabled = true;
-
-            setTimeout(() => {
-                localStorage.removeItem('geminiApiKey');
-                settingsApiKeyInput.value = '';
-                settingsApiKeyInput.style.borderColor = '';
-                settingsApiKeyInput.style.background = '';
-
-                // Hide model selector
-                const modelSelectorContainer = document.getElementById('model-selector-container');
-                if (modelSelectorContainer) {
-                    modelSelectorContainer.style.display = 'none';
-                }
-
-                // Also clear in Sarthi setup screen
-                const sarthiSetupInput = document.getElementById('api-key-input');
-                if (sarthiSetupInput) {
-                    sarthiSetupInput.value = '';
-                }
-
-                // Reload geminiApiKey in app-saarthi.js
-                if (typeof window.AppSarthi !== 'undefined' && window.AppSarthi.reloadApiKey) {
-                    window.AppSarthi.reloadApiKey();
-                }
-
-                // Success feedback
-                removeBtn.innerHTML = '<i class="fas fa-check"></i>';
-
-                setTimeout(() => {
-                    removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
-                    removeBtn.disabled = false;
-                }, 2000);
-            }, 500);
-        }
-    });
 
     // Audio player toggle setting
     const audioPlayerToggle = document.getElementById('show-audio-player-toggle');
     const showAudioPlayer = localStorage.getItem('showAudioPlayer') !== 'false';
 
     // Set initial state
-    audioPlayerToggle.checked = showAudioPlayer;
+    if (audioPlayerToggle) {
+        audioPlayerToggle.checked = showAudioPlayer;
 
-    // Update audio player visibility when toggled
-    audioPlayerToggle.addEventListener('change', (e) => {
-        const isEnabled = e.target.checked;
-        localStorage.setItem('showAudioPlayer', isEnabled);
+        // Update audio player visibility when toggled
+        audioPlayerToggle.addEventListener('change', (e) => {
+            const isEnabled = e.target.checked;
+            localStorage.setItem('showAudioPlayer', isEnabled);
 
-        // Update visibility immediately if on verse detail screen
-        updateAudioPlayerVisibility();
-    });
+            // Update visibility immediately if on verse detail screen
+            updateAudioPlayerVisibility();
+        });
+    }
 
     // Display cache version
     displayCacheVersion();
@@ -1080,6 +979,328 @@ if ('serviceWorker' in navigator) {
             .then(registration => { })
             .catch(error => { });
     });
+}
+
+// Setup Translation and Explanation tabs click handlers
+function setupTabs() {
+    const tabTranslation = document.getElementById('tab-translation');
+    const tabExplanation = document.getElementById('tab-explanation');
+
+    if (tabTranslation && tabExplanation) {
+        tabTranslation.addEventListener('click', () => {
+            if (currentTab !== 'translation') {
+                currentTab = 'translation';
+                tabTranslation.classList.add('active');
+                tabExplanation.classList.remove('active');
+                updateVerseContent();
+            }
+        });
+
+        tabExplanation.addEventListener('click', () => {
+            if (currentTab !== 'explanation') {
+                currentTab = 'explanation';
+                tabExplanation.classList.add('active');
+                tabTranslation.classList.remove('active');
+                updateVerseContent();
+            }
+        });
+    }
+}
+
+// Update the tabs UI based on active tab state
+function updateTabsUI() {
+    const tabTranslation = document.getElementById('tab-translation');
+    const tabExplanation = document.getElementById('tab-explanation');
+
+    if (tabTranslation && tabExplanation) {
+        tabTranslation.classList.remove('active');
+        tabExplanation.classList.remove('active');
+
+        if (currentTab === 'translation') {
+            tabTranslation.classList.add('active');
+        } else {
+            tabExplanation.classList.add('active');
+        }
+    }
+}
+
+// Clean Sanskrit/transliteration verse text
+function cleanVerseText(text) {
+    if (!text) return '';
+    let t = text.trim();
+    // Strip trailing verse numbers like ।॥ 1.1 ॥
+    t = t.replace(/[।॥]+\s*\d+\.\d+\s*[।॥]+\s*$/g, '');
+    t = t.trim();
+    // Replace all । with ।<br>
+    t = t.replace(/।/g, '।<br>');
+    // Remove duplicate <br>
+    t = t.replace(/(<br>\s*){2,}/g, '<br>');
+    t = t.replace(/<br>\s*$/, '');
+    return t;
+}
+
+// Setup share button click handler
+function setupShareButton() {
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+        shareBtn.removeEventListener('click', handleShareClick);
+        shareBtn.addEventListener('click', handleShareClick);
+    }
+}
+
+// Handle share button click to open share sheet
+function handleShareClick() {
+    openShareSheet();
+}
+
+// Initialize Share Sheet options & backdrop close handler
+function initShareSheet() {
+    const shareSheet = document.getElementById('share-sheet');
+    const copyLinkBtn = document.getElementById('share-option-copy');
+    const shareImageBtn = document.getElementById('share-option-image');
+
+    if (shareSheet) {
+        shareSheet.addEventListener('click', (e) => {
+            if (e.target === shareSheet) {
+                closeShareSheet();
+            }
+        });
+    }
+
+    if (copyLinkBtn) {
+        copyLinkBtn.addEventListener('click', handleCopyLink);
+    }
+
+    if (shareImageBtn) {
+        shareImageBtn.addEventListener('click', handleShareImage);
+    }
+}
+
+// Open Share Sheet
+function openShareSheet() {
+    if (!currentVerse) return;
+
+    if (navigator.vibrate) navigator.vibrate(10);
+
+    const shareSheet = document.getElementById('share-sheet');
+    const titleSpan = document.getElementById('share-sheet-title');
+    const linkSub = document.getElementById('share-option-link-sub');
+    const imageSub = document.getElementById('share-option-image-sub');
+
+    titleSpan.textContent = `श्लोक ${currentVerse.chapter_number}.${currentVerse.verse_number}`;
+    linkSub.textContent = `gitagyan.in/?c=${currentVerse.chapter_number}&v=${currentVerse.verse_number}`;
+
+    const langNames = {
+        english: 'English', hindi: 'Hindi', gujarati: 'Gujarati',
+        bengali: 'Bengali', tamil: 'Tamil', telugu: 'Telugu',
+        marathi: 'Marathi', kannada: 'Kannada', punjabi: 'Punjabi',
+        spanish: 'Spanish', arabic: 'Arabic', chinese: 'Chinese'
+    };
+    imageSub.textContent = `Translation & Explanation in ${langNames[currentLang] || currentLang}`;
+
+    // Reset Copy button visual state
+    const copyBtn = document.getElementById('share-option-copy');
+    if (copyBtn) {
+        copyBtn.classList.remove('copied');
+        copyBtn.querySelector('.share-option-title').textContent = 'Copy Link';
+        copyBtn.querySelector('.share-option-icon').innerHTML = '<i class="fas fa-link"></i>';
+    }
+
+    shareSheet.style.display = 'flex';
+
+    // Start generating image immediately
+    generateShareImage();
+}
+
+// Close Share Sheet
+function closeShareSheet() {
+    const shareSheet = document.getElementById('share-sheet');
+    if (shareSheet) {
+        shareSheet.style.display = 'none';
+    }
+}
+
+// Copy Link Handler
+function handleCopyLink() {
+    if (!currentVerse) return;
+    if (navigator.vibrate) navigator.vibrate(10);
+
+    const url = `${window.location.origin}/?c=${currentVerse.chapter_number}&v=${currentVerse.verse_number}`;
+    const copyBtn = document.getElementById('share-option-copy');
+
+    navigator.clipboard.writeText(url).then(() => {
+        if (copyBtn) {
+            copyBtn.classList.add('copied');
+            copyBtn.querySelector('.share-option-title').textContent = 'Link Copied!';
+            copyBtn.querySelector('.share-option-icon').innerHTML = '<i class="fas fa-check"></i>';
+        }
+        setTimeout(() => {
+            closeShareSheet();
+        }, 1200);
+    }).catch(err => {
+        console.error('Failed to copy link:', err);
+    });
+}
+
+// Generate the high-fidelity share image using html-to-image + Canvas
+async function generateShareImage() {
+    if (!currentVerse) return;
+
+    preGeneratedShareBlob = null;
+    isGeneratingShareImage = true;
+
+    const shareImageBtn = document.getElementById('share-option-image');
+    const imageTitle = document.getElementById('share-option-image-title');
+    const iconWrapper = shareImageBtn.querySelector('.share-option-icon');
+
+    // Show generating state
+    shareImageBtn.disabled = true;
+    imageTitle.textContent = 'Generating...';
+    iconWrapper.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+
+    try {
+        // Load background image
+        let bgImg = shareBgImage;
+        if (!bgImg || !bgImg.complete) {
+            bgImg = new Image();
+            bgImg.crossOrigin = "anonymous";
+            bgImg.src = './images/krishna-and-arjuna.jpg';
+            await new Promise((resolve, reject) => {
+                bgImg.onload = resolve;
+                bgImg.onerror = reject;
+            });
+        }
+
+        // Render card content details
+        document.getElementById('share-card-pill').textContent = `श्लोक ${currentVerse.chapter_number}.${currentVerse.verse_number}`;
+
+        // Clean Devanagari Sanskrit text
+        const cleanText = cleanVerseText(currentVerse.text).replace(/<br>/g, '\n');
+        document.getElementById('share-card-text').textContent = cleanText;
+
+        // Clean Transliteration text
+        const cleanTranslit = cleanVerseText(currentVerse.transliteration).replace(/<br>/g, '\n');
+        document.getElementById('share-card-translit').textContent = cleanTranslit;
+
+        // Populate translation text
+        const chapterTrans = translations[currentVerse.chapter_number] || [];
+        const transData = chapterTrans.find(t => t.verse_id === currentVerse.id);
+        const transLang = transData?.languages?.[currentLang];
+
+        const transText = transLang?.description || '';
+        const translationContainer = document.getElementById('share-card-translation-container');
+        if (transText) {
+            document.getElementById('share-card-translation-text').textContent = transText;
+            translationContainer.style.display = 'block';
+        } else {
+            translationContainer.style.display = 'none';
+        }
+
+        // Populate explanation text
+        const explanationText = transLang?.meaning || '';
+        const explanationContainer = document.getElementById('share-card-explanation-container');
+        if (explanationText) {
+            document.getElementById('share-card-explanation-text').textContent = explanationText;
+            explanationContainer.style.display = 'block';
+        } else {
+            explanationContainer.style.display = 'none';
+        }
+
+        // Show card offscreen for screenshotting
+        const cardEl = document.getElementById('share-card');
+        cardEl.style.left = '0px';
+
+        // Wait two animation frames for DOM styling to settle
+        await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+        // Capture content card PNG
+        const contentDataUrl = await htmlToImage.toPng(cardEl, { pixelRatio: 3, skipFonts: true });
+
+        // Hide card offscreen again
+        cardEl.style.left = '-9999px';
+
+        // Load content image
+        const contentImg = new Image();
+        contentImg.src = contentDataUrl;
+        await new Promise((resolve, reject) => {
+            contentImg.onload = resolve;
+            contentImg.onerror = reject;
+        });
+
+        // Composite background, gradient overlay, and content screenshot via Canvas
+        const canvas = document.createElement('canvas');
+        canvas.width = contentImg.width;
+        canvas.height = contentImg.height;
+        const ctx = canvas.getContext('2d');
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+
+        // Draw background cover
+        const iw = bgImg.naturalWidth, ih = bgImg.naturalHeight;
+        const scale = Math.max(canvas.width / iw, canvas.height / ih);
+        const sw = iw * scale, sh = ih * scale;
+        ctx.drawImage(bgImg, (canvas.width - sw) / 2, (canvas.height - sh) / 2, sw, sh);
+
+        // Draw linear gradient overlay
+        const grad = ctx.createLinearGradient(0, 0, canvas.width * 0.6, canvas.height);
+        grad.addColorStop(0, 'rgba(255,220,100,0.78)');
+        grad.addColorStop(0.4, 'rgba(255,180,40,0.72)');
+        grad.addColorStop(1, 'rgba(230,100,0,0.55)');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw content text card on top
+        ctx.drawImage(contentImg, 0, 0);
+
+        // Export final canvas to blob
+        const finalDataUrl = canvas.toDataURL('image/png');
+        const res = await fetch(finalDataUrl);
+        preGeneratedShareBlob = await res.blob();
+
+        // Update button to active state
+        shareImageBtn.disabled = false;
+        imageTitle.textContent = 'Share as Image';
+        iconWrapper.innerHTML = '<i class="fas fa-image"></i>';
+        isGeneratingShareImage = false;
+
+    } catch (error) {
+        console.error('Failed to generate share card image:', error);
+        shareImageBtn.disabled = true;
+        imageTitle.textContent = 'Generation Failed';
+        iconWrapper.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+        isGeneratingShareImage = false;
+    }
+}
+
+// Share Image Button Handler
+async function handleShareImage() {
+    if (!currentVerse || !preGeneratedShareBlob) return;
+    if (navigator.vibrate) navigator.vibrate(10);
+
+    const fileName = `gita-${currentVerse.chapter_number}-${currentVerse.verse_number}.png`;
+    const file = new File([preGeneratedShareBlob], fileName, { type: 'image/png' });
+
+    try {
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            await navigator.share({
+                files: [file],
+                title: `Bhagavad Gita ${currentVerse.chapter_number}.${currentVerse.verse_number}`
+            });
+        } else {
+            // Fallback: download file
+            const url = URL.createObjectURL(preGeneratedShareBlob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = fileName;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        closeShareSheet();
+    } catch (e) {
+        if (e.name !== 'AbortError') {
+            console.error('Share action failed:', e);
+        }
+    }
 }
 
 // Start app
