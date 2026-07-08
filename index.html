@@ -22,9 +22,6 @@
     </header>
     <main id="main-content">
         <div id="chapters-screen" class="screen active">
-            <div class="migration-notice">
-                🚀 We have moved! Visit our new home at <a href="https://gitagyan.in/" target="_blank">gitagyan.in</a>. This app is no longer maintained.
-            </div>
             <div id="chapters-list"></div>
         </div>
         <div id="verses-screen" class="screen">
@@ -101,13 +98,65 @@
                     <p>Manage your app preferences</p>
                 </div>
                 <div class="settings-content">
-                    <div class="setting-item">
-                        <div class="setting-header-row">
-                            <h3>✨ Preferred Language</h3>
+                    <!-- Your Journey Card -->
+                    <div id="journey-card" class="journey-card">
+                        <div style="position: absolute; top: -5px; right: 5px; font-size: 80px; opacity: 0.04; pointer-events: none;">📖</div>
+                        <div class="journey-header">
+                            <i class="fas fa-chart-bar"></i> Your Journey
                         </div>
-                        <p>Set your preferred language for verse translation and explanation</p>
-                        <div class="language-preference-group">
-                            <select id="settings-language-dropdown" class="language-select">
+                        <div class="journey-progress-container">
+                            <div class="journey-progress-ring-wrapper">
+                                <svg class="journey-progress-ring-svg" width="80" height="80">
+                                    <circle class="journey-progress-ring-bg" stroke="rgba(165,37,44,0.1)" stroke-width="6" fill="transparent" r="34" cx="40" cy="40"/>
+                                    <circle id="journey-progress-ring-circle" class="journey-progress-ring-circle" stroke="#A5252C" stroke-width="6" stroke-linecap="round" fill="transparent" r="34" cx="40" cy="40"/>
+                                </svg>
+                                <div id="journey-progress-pct" class="journey-progress-pct">0%</div>
+                            </div>
+                            <div class="journey-progress-text-wrapper">
+                                <div class="journey-progress-title">Reading Progress</div>
+                                <div class="journey-progress-stats"><span id="journey-verses-read">0</span> / 700 verses read</div>
+                                <div id="journey-last-read" class="journey-last-read" style="display: none; cursor: pointer;">
+                                    <i class="fas fa-bookmark"></i> Last: Ch. <span id="last-read-chapter">0</span> · V. <span id="last-read-verse">0</span> <span id="last-read-name-wrapper">— <span id="last-read-name"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="journey-stats-grid">
+                            <div class="journey-stat-tile tile-streak">
+                                <div class="journey-stat-icon">🔥</div>
+                                <div id="journey-streak-val" class="journey-stat-value">0</div>
+                                <div class="journey-stat-label">Day Streak</div>
+                            </div>
+                            <div class="journey-stat-tile tile-chapters">
+                                <div class="journey-stat-icon">📖</div>
+                                <div id="journey-chapters-val" class="journey-stat-value">0</div>
+                                <div class="journey-stat-label">Chapters</div>
+                            </div>
+                            <div class="journey-stat-tile tile-bookmarks">
+                                <div class="journey-stat-icon">🔖</div>
+                                <div id="journey-bookmarks-val" class="journey-stat-value">0</div>
+                                <div class="journey-stat-label">Bookmarked</div>
+                            </div>
+                        </div>
+
+                        <div class="journey-reset-container">
+                            <button id="journey-reset-btn" class="journey-reset-btn">
+                                <i class="fas fa-undo"></i> Reset Reading Progress
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Preferences Section -->
+                    <div class="settings-section">
+                        <div class="settings-section-header">
+                            <i class="fas fa-cog"></i> Preferences
+                        </div>
+                        <div class="settings-row-item">
+                            <div class="settings-row-label">
+                                <div class="settings-row-title">Preferred Language</div>
+                                <div class="settings-row-desc">Translation & explanation language</div>
+                            </div>
+                            <select id="settings-language-dropdown" class="language-select-minimal">
                                 <option value="english">🇬🇧 English</option>
                                 <option value="hindi">🇮🇳 हिंदी (Hindi)</option>
                                 <option value="gujarati">🇮🇳 ગુજરાતી (Gujarati)</option>
@@ -124,17 +173,65 @@
                         </div>
                     </div>
 
-                    <div class="setting-item">
-                        <h3>🎵 Audio Preferences</h3>
-                        <p>Customize your audio experience</p>
-                        <div class="setting-toggle">
-                            <label class="toggle-label">
-                                <input type="checkbox" id="show-audio-player-toggle" class="toggle-checkbox">
-                                <span class="toggle-switch"></span>
-                                <span class="toggle-text">Show Sanskrit Sloka Audio Player</span>
-                            </label>
-                            <small class="setting-description">Enable audio playback for Sanskrit verses on the
-                                translation screen</small>
+                    <!-- App Features Section -->
+                    <div class="settings-section">
+                        <div class="settings-section-header">
+                            <i class="fas fa-sliders-h"></i> App Features
+                        </div>
+                        <div class="settings-features-list">
+                            <!-- Audio Recitation Row -->
+                            <div class="settings-row-item toggle-row" id="toggle-audio-card">
+                                <div class="settings-row-left">
+                                    <div class="settings-row-icon-wrapper">
+                                        <i class="fas fa-headphones"></i>
+                                    </div>
+                                    <div class="settings-row-label">
+                                        <div class="settings-row-title">Audio Recitation</div>
+                                        <div class="settings-row-desc">Audio player on each verse</div>
+                                    </div>
+                                </div>
+                                <div class="settings-row-right">
+                                    <div class="toggle-card-status">
+                                        <i class="fas fa-eye"></i> <span>Enabled</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- YouTube Lectures Row -->
+                            <div class="settings-row-item toggle-row" id="toggle-youtube-card">
+                                <div class="settings-row-left">
+                                    <div class="settings-row-icon-wrapper">
+                                        <i class="fab fa-youtube"></i>
+                                    </div>
+                                    <div class="settings-row-label">
+                                        <div class="settings-row-title">YouTube Lectures</div>
+                                        <div class="settings-row-desc">Chapter lecture videos</div>
+                                    </div>
+                                </div>
+                                <div class="settings-row-right">
+                                    <div class="toggle-card-status">
+                                        <i class="fas fa-eye"></i> <span>Enabled</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Reading Progress Row -->
+                            <div class="settings-row-item toggle-row" id="toggle-progress-card">
+                                <div class="settings-row-left">
+                                    <div class="settings-row-icon-wrapper">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="settings-row-label">
+                                        <div class="settings-row-title">Reading Progress</div>
+                                        <div class="settings-row-desc">Track verses & calculate active streak</div>
+                                    </div>
+                                </div>
+                                <div class="settings-row-right">
+                                    <div class="toggle-card-status">
+                                        <i class="fas fa-eye"></i> <span>Enabled</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -247,8 +344,8 @@
                 <div style="width: 4px; background: linear-gradient(180deg, #E65100, #FFC107, #E65100);"></div>
                 <div style="flex: 1; position: relative;">
                     <!-- Header -->
-                    <div style="text-align: center; padding: 16px 20px 12px; border-bottom: 1px solid rgba(180,100,0,0.35); background: rgba(255,193,7,0.72);">
-                        <div style="font-size: 34px; font-weight: 950; color: #A5252C; font-family: 'Noto Sans Devanagari', 'Arial Unicode MS', sans-serif; letter-spacing: 2px; line-height: 1.25; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">भगवद् गीता</div>
+                    <div style="text-align: center; padding: 12px 20px; border-bottom: 1px solid rgba(180,100,0,0.35); background: #E6A623;">
+                        <img src="images/navbar-logo.png" alt="Bhagavad Gita" style="height: 55px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15)); display: block; margin: 0 auto;">
                     </div>
                     <div style="padding: 16px 18px 14px;">
                         <!-- Verse tag -->
@@ -297,6 +394,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+    <script src="js/sql-wasm.js"></script>
     <script src="js/app.js"></script>
     <script>
       (function () {

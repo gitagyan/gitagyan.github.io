@@ -1,4 +1,4 @@
-const CACHE_NAME = '1.2.3';
+const CACHE_NAME = '1.2.4';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -20,27 +20,9 @@ const urlsToCache = [
     '/images/screenshots/pwa-instructions-android/android-2.png',
     '/images/screenshots/pwa-instructions-android/android-3.png',
     '/images/screenshots/pwa-instructions-android/android-4.png',
-    '/assets/chapters.json',
-    '/assets/verse.json',
-    '/assets/youtube_videos.json',
-    '/assets/verse_translation/chapter_1.json',
-    '/assets/verse_translation/chapter_2.json',
-    '/assets/verse_translation/chapter_3.json',
-    '/assets/verse_translation/chapter_4.json',
-    '/assets/verse_translation/chapter_5.json',
-    '/assets/verse_translation/chapter_6.json',
-    '/assets/verse_translation/chapter_7.json',
-    '/assets/verse_translation/chapter_8.json',
-    '/assets/verse_translation/chapter_9.json',
-    '/assets/verse_translation/chapter_10.json',
-    '/assets/verse_translation/chapter_11.json',
-    '/assets/verse_translation/chapter_12.json',
-    '/assets/verse_translation/chapter_13.json',
-    '/assets/verse_translation/chapter_14.json',
-    '/assets/verse_translation/chapter_15.json',
-    '/assets/verse_translation/chapter_16.json',
-    '/assets/verse_translation/chapter_17.json',
-    '/assets/verse_translation/chapter_18.json',
+    '/assets/gita.db',
+    '/js/sql-wasm.js',
+    '/js/sql-wasm.wasm',
     'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/js/all.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js'
 ];

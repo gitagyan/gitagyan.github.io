@@ -34,6 +34,46 @@ let preGeneratedShareBlob = null;
 let isGeneratingShareImage = false;
 let shareBgImage = null;
 
+// SQLite global references
+let SQL = null;
+let db = null;
+
+async function initSql() {
+    if (!SQL) {
+        SQL = await initSqlJs({
+            locateFile: file => `js/${file}`
+        });
+    }
+    if (!db) {
+        const response = await fetch('./assets/gita.db');
+        const arrayBuffer = await response.arrayBuffer();
+        db = new SQL.Database(new Uint8Array(arrayBuffer));
+    }
+}
+
+function queryAll(sql, params = {}) {
+    const stmt = db.prepare(sql);
+    if (Object.keys(params).length > 0) {
+        stmt.bind(params);
+    }
+    const results = [];
+    while (stmt.step()) {
+        results.push(stmt.getAsObject());
+    }
+    stmt.free();
+    return results;
+}
+
+function queryOne(sql, params = {}) {
+    const stmt = db.prepare(sql);
+    if (Object.keys(params).length > 0) {
+        stmt.bind(params);
+    }
+    const result = stmt.step() ? stmt.getAsObject() : null;
+    stmt.free();
+    return result;
+}
+
 // Initialize app
 async function init() {
     try {
@@ -41,39 +81,80 @@ async function init() {
         shareBgImage = new Image();
         shareBgImage.src = './images/krishna-and-arjuna.jpg';
 
-        // Load data from assets folder
-        chapters = await fetch('./assets/chapters.json').then(r => r.json());
-        verses = await fetch('./assets/verse.json').then(r => r.json());
+        // Load data from SQLite database
+        await initSql();
+
+        // 1. Load chapters
+        const dbChapters = queryAll("SELECT * FROM chapters ORDER BY chapter_number ASC");
+        chapters = dbChapters.map(c => ({
+            id: c.id,
+            chapter_number: c.chapter_number,
+            chapter_summary: c.chapter_summary,
+            chapter_summary_hindi: c.chapter_summary_hindi,
+            image_name: c.image_name,
+            name: c.name,
+            name_meaning: c.name_meaning,
+            name_translation: c.name_translation,
+            name_transliterated: c.name_transliterated,
+            verses_count: c.verses_count
+        }));
+
+        // 2. Load verses
+        const dbVerses = queryAll("SELECT * FROM verses ORDER BY chapter_number ASC, verse_number ASC");
+        verses = dbVerses.map(v => ({
+            id: v.id,
+            chapter_id: v.chapter_id,
+            chapter_number: v.chapter_number,
+            externalId: v.external_id,
+            text: v.text,
+            title: v.title,
+            verse_number: v.verse_number,
+            verse_order: v.verse_order,
+            transliteration: v.transliteration,
+            word_meanings: v.word_meanings
+        }));
 
         // Make chapters and verses data available globally for Sarthi AI
         window.chaptersData = chapters;
         window.versesData = verses;
 
-        // Load all chapter translation files
+        // 3. Load all translations into structure: { chapterNumber: [ { id, verse_id, verseNumber, languages: { hindi: { description, meaning }, ... } } ] }
         translations = {};
-        const translationPromises = [];
-        for (let chapterNum = 1; chapterNum <= 18; chapterNum++) {
-            translationPromises.push(
-                fetch(`./assets/verse_translation/chapter_${chapterNum}.json`)
-                    .then(r => r.json())
-                    .then(data => {
-                        translations[chapterNum] = data;
-                    })
-                    .catch(error => {
-                        console.warn(`Failed to load translations for chapter ${chapterNum}:`, error);
-                        translations[chapterNum] = []; // Empty array as fallback
-                    })
-            );
-        }
-        await Promise.all(translationPromises);
+        const dbTranslations = queryAll("SELECT * FROM translations");
+        dbTranslations.forEach(row => {
+            const chNum = row.chapter_number;
+            if (!translations[chNum]) {
+                translations[chNum] = [];
+            }
+            let verseTrans = translations[chNum].find(t => t.verse_id === row.verse_id);
+            if (!verseTrans) {
+                verseTrans = {
+                    id: row.verse_id,
+                    verse_id: row.verse_id,
+                    verseNumber: row.verse_number,
+                    languages: {}
+                };
+                translations[chNum].push(verseTrans);
+            }
+            verseTrans.languages[row.lang] = {
+                description: row.description,
+                meaning: row.meaning
+            };
+        });
 
-        // Load YouTube videos data
-        try {
-            youtubeVideos = await fetch('./assets/youtube_videos.json').then(r => r.json());
-        } catch (error) {
-            console.warn('Failed to load YouTube videos:', error);
-            youtubeVideos = [];
-        }
+        // 4. Load YouTube videos data
+        const dbVideos = queryAll("SELECT * FROM youtube_videos");
+        youtubeVideos = dbVideos.map(vid => ({
+            chapter: vid.chapter,
+            hindi: {
+                title: vid.hindi_title,
+                video_id: vid.hindi_video_id
+            },
+            english: {
+                title: vid.english_title,
+                video_id: vid.english_video_id
+            }
+        }));
 
         // Load saved translation language preference
         const savedTranslationLang = localStorage.getItem('translationLanguage');
@@ -109,9 +190,39 @@ async function init() {
 // Render chapters
 function renderChapters() {
     chaptersList.innerHTML = '';
+    
+    let readVerses = [];
+    try {
+        const raw = localStorage.getItem('gita_read_verses');
+        readVerses = raw ? JSON.parse(raw) : [];
+    } catch (e) {
+        readVerses = [];
+    }
+    if (!Array.isArray(readVerses)) readVerses = [];
+
     chapters.forEach(chapter => {
         const card = document.createElement('div');
         card.className = 'chapter-card';
+        
+        // Calculate progress
+        const readCount = readVerses.filter(id => id.startsWith(`${chapter.chapter_number}.`)).length;
+        const pct = Math.min(100, Math.round((readCount / chapter.verses_count) * 100));
+        
+        let progressHtml = '';
+        if (readCount > 0) {
+            progressHtml = `
+                <div class="chapter-progress-container-small">
+                    <div class="chapter-progress-header">
+                        <span>${pct}% Read</span>
+                        <span>${readCount} / ${chapter.verses_count}</span>
+                    </div>
+                    <div class="chapter-progress-bar-track">
+                        <div class="chapter-progress-bar-fill" style="width: ${pct}%;"></div>
+                    </div>
+                </div>
+            `;
+        }
+
         card.innerHTML = `
             <div class="chapter-header">
                 <span class="chapter-number">${chapter.chapter_number}</span>
@@ -124,6 +235,7 @@ function renderChapters() {
                 </div>
             </div>
             <p>${chapter.chapter_summary.substring(0, 150)}...</p>
+            ${progressHtml}
         `;
         card.addEventListener('click', () => showChapter(chapter));
         chaptersList.appendChild(card);
@@ -143,7 +255,8 @@ function showChapter(chapter) {
     const hindiIframe = document.getElementById('chapter-video-iframe-hindi');
     const englishIframe = document.getElementById('chapter-video-iframe-english');
 
-    if (youtubeVideos && youtubeVideos.length > 0) {
+    const showYoutube = localStorage.getItem('showYoutubeEmbeds') !== 'false';
+    if (showYoutube && youtubeVideos && youtubeVideos.length > 0) {
         // Find video data for current chapter
         const chapterVideo = youtubeVideos.find(v => v.chapter === chapter.chapter_number);
 
@@ -179,9 +292,20 @@ function showChapter(chapter) {
 
     const chapterVerses = verses.filter(v => v.chapter_number === chapter.chapter_number).sort((a, b) => a.verse_number - b.verse_number);
     versesList.innerHTML = '';
+
+    let readVerses = [];
+    try {
+        const raw = localStorage.getItem('gita_read_verses');
+        readVerses = raw ? JSON.parse(raw) : [];
+    } catch (e) {
+        readVerses = [];
+    }
+    if (!Array.isArray(readVerses)) readVerses = [];
+
     chapterVerses.forEach(verse => {
         const item = document.createElement('div');
-        item.className = 'verse-item';
+        const isRead = readVerses.includes(`${chapter.chapter_number}.${verse.verse_number}`);
+        item.className = isRead ? 'verse-item read' : 'verse-item';
         item.innerHTML = `
             <span class="verse-number">${verse.verse_number}</span>
             <div class="verse-text">${verse.text.replace(/।/, '।<br>')}</div>
@@ -237,6 +361,9 @@ function updateVerseContent() {
 function showVerse(verse) {
     currentVerse = verse;
     window.currentVerse = verse;
+
+    // Mark verse as read for progress tracking
+    markVerseAsRead(verse.chapter_number, verse.verse_number);
 
     // Update Sanskrit card with sloka number pill
     const sanskritCard = document.getElementById('verse-sanskrit-card');
@@ -630,10 +757,12 @@ function switchScreen(screen) {
         document.body.classList.add('verse-detail-active');
     } else if (screen === chaptersScreen) {
         document.body.classList.add('chapters-active');
+        renderChapters(); // Refresh progress bars when returning to home screen!
     } else if (screen === versesScreen) {
         document.body.classList.add('verses-active');
     } else if (screen === settingsScreen) {
         document.body.classList.add('settings-active');
+        renderJourneyStats();
     } else if (screen === bookmarksScreen) {
         document.body.classList.add('bookmarks-active');
     }
@@ -861,26 +990,137 @@ function initSettings() {
         });
     }
 
-    // Audio player toggle setting
-    const audioPlayerToggle = document.getElementById('show-audio-player-toggle');
+    // Helper to update toggle card visual state
+    function updateToggleCardUI(cardId, isChecked) {
+        const card = document.getElementById(cardId);
+        if (!card) return;
+        
+        if (isChecked) {
+            card.classList.add('checked');
+            const icon = card.querySelector('.toggle-card-status i');
+            if (icon) {
+                icon.className = 'fas fa-eye';
+            }
+            const text = card.querySelector('.toggle-card-status span');
+            if (text) {
+                text.textContent = 'Enabled';
+            }
+        } else {
+            card.classList.remove('checked');
+            const icon = card.querySelector('.toggle-card-status i');
+            if (icon) {
+                icon.className = 'fas fa-eye-slash';
+            }
+            const text = card.querySelector('.toggle-card-status span');
+            if (text) {
+                text.textContent = 'Disabled';
+            }
+        }
+    }
+
+    // Load initial states from localStorage
     const showAudioPlayer = localStorage.getItem('showAudioPlayer') !== 'false';
+    const showYoutubeEmbeds = localStorage.getItem('showYoutubeEmbeds') !== 'false';
+    const showProgressTracking = localStorage.getItem('showProgressTracking') !== 'false';
 
-    // Set initial state
-    if (audioPlayerToggle) {
-        audioPlayerToggle.checked = showAudioPlayer;
+    // Apply initial card UIs
+    updateToggleCardUI('toggle-audio-card', showAudioPlayer);
+    updateToggleCardUI('toggle-youtube-card', showYoutubeEmbeds);
+    updateToggleCardUI('toggle-progress-card', showProgressTracking);
 
-        // Update audio player visibility when toggled
-        audioPlayerToggle.addEventListener('change', (e) => {
-            const isEnabled = e.target.checked;
-            localStorage.setItem('showAudioPlayer', isEnabled);
+    // Apply initial Journey card visibility based on progress tracking
+    const journeyCard = document.getElementById('journey-card');
+    if (journeyCard) {
+        journeyCard.style.display = showProgressTracking ? 'block' : 'none';
+    }
 
-            // Update visibility immediately if on verse detail screen
+    // Bind Toggle listeners
+    const toggleAudioCard = document.getElementById('toggle-audio-card');
+    if (toggleAudioCard) {
+        toggleAudioCard.addEventListener('click', () => {
+            const currentVal = localStorage.getItem('showAudioPlayer') !== 'false';
+            const newVal = !currentVal;
+            localStorage.setItem('showAudioPlayer', newVal);
+            updateToggleCardUI('toggle-audio-card', newVal);
             updateAudioPlayerVisibility();
+        });
+    }
+
+    const toggleYoutubeCard = document.getElementById('toggle-youtube-card');
+    if (toggleYoutubeCard) {
+        toggleYoutubeCard.addEventListener('click', () => {
+            const currentVal = localStorage.getItem('showYoutubeEmbeds') !== 'false';
+            const newVal = !currentVal;
+            localStorage.setItem('showYoutubeEmbeds', newVal);
+            updateToggleCardUI('toggle-youtube-card', newVal);
+            
+            // Side effect: update video container visibility immediately if we are on the verses screen
+            const videoContainer = document.getElementById('chapter-video-container');
+            if (videoContainer) {
+                if (newVal && currentChapter && youtubeVideos && youtubeVideos.length > 0) {
+                    const chapterVideo = youtubeVideos.find(v => v.chapter === currentChapter.chapter_number);
+                    if (chapterVideo && chapterVideo.hindi && chapterVideo.english) {
+                        videoContainer.style.display = 'block';
+                    }
+                } else {
+                    videoContainer.style.display = 'none';
+                }
+            }
+        });
+    }
+
+    const toggleProgressCard = document.getElementById('toggle-progress-card');
+    if (toggleProgressCard) {
+        toggleProgressCard.addEventListener('click', () => {
+            const currentVal = localStorage.getItem('showProgressTracking') !== 'false';
+            const newVal = !currentVal;
+            localStorage.setItem('showProgressTracking', newVal);
+            updateToggleCardUI('toggle-progress-card', newVal);
+            
+            // Side effect: show/hide Journey card
+            if (journeyCard) {
+                journeyCard.style.display = newVal ? 'block' : 'none';
+                if (newVal) {
+                    renderJourneyStats();
+                }
+            }
+            
+            // Refresh chapters rendering (home screen) to show/hide progress bars immediately
+            renderChapters();
         });
     }
 
     // Display cache version
     displayCacheVersion();
+
+    // Reading Journey click listeners
+    const journeyResetBtn = document.getElementById('journey-reset-btn');
+    if (journeyResetBtn) {
+        journeyResetBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to reset your reading progress and history? This cannot be undone.')) {
+                localStorage.removeItem('gita_read_verses');
+                localStorage.removeItem('gita_last_read');
+                localStorage.removeItem('gita_activity_dates');
+                renderJourneyStats();
+                renderChapters(); // Refresh home screen too!
+            }
+        });
+    }
+
+    const journeyLastRead = document.getElementById('journey-last-read');
+    if (journeyLastRead) {
+        journeyLastRead.addEventListener('click', () => {
+            const lastReadRaw = localStorage.getItem('gita_last_read');
+            if (lastReadRaw) {
+                const lastRead = JSON.parse(lastReadRaw);
+                const targetVerse = verses.find(v => v.chapter_number === lastRead.chapter && v.verse_number === lastRead.verse);
+                if (targetVerse) {
+                    currentChapter = chapters.find(c => c.chapter_number === lastRead.chapter);
+                    showVerse(targetVerse);
+                }
+            }
+        });
+    }
 }
 
 // Update audio player visibility based on setting
@@ -1175,11 +1415,21 @@ async function generateShareImage() {
         document.getElementById('share-card-pill').textContent = `श्लोक ${currentVerse.chapter_number}.${currentVerse.verse_number}`;
 
         // Clean Devanagari Sanskrit text
-        const cleanText = cleanVerseText(currentVerse.text).replace(/<br>/g, '\n');
+        const cleanText = cleanVerseText(currentVerse.text)
+            .replace(/<br>/g, '\n')
+            .split('\n')
+            .map(line => line.trim())
+            .filter(line => line.length > 0)
+            .join('\n');
         document.getElementById('share-card-text').textContent = cleanText;
 
         // Clean Transliteration text
-        const cleanTranslit = cleanVerseText(currentVerse.transliteration).replace(/<br>/g, '\n');
+        const cleanTranslit = cleanVerseText(currentVerse.transliteration)
+            .replace(/<br>/g, '\n')
+            .split('\n')
+            .map(line => line.trim())
+            .filter(line => line.length > 0)
+            .join('\n');
         document.getElementById('share-card-translit').textContent = cleanTranslit;
 
         // Populate translation text
@@ -1300,6 +1550,172 @@ async function handleShareImage() {
         if (e.name !== 'AbortError') {
             console.error('Share action failed:', e);
         }
+    }
+}
+
+// Reading Progress Tracking Functions
+function markVerseAsRead(chapterNumber, verseNumber) {
+    const showProgress = localStorage.getItem('showProgressTracking') !== 'false';
+    if (!showProgress) return;
+
+    const id = `${chapterNumber}.${verseNumber}`;
+    let readVerses = [];
+    try {
+        const raw = localStorage.getItem('gita_read_verses');
+        readVerses = raw ? JSON.parse(raw) : [];
+    } catch (e) {
+        readVerses = [];
+    }
+    if (!Array.isArray(readVerses)) readVerses = [];
+
+    if (!readVerses.includes(id)) {
+        readVerses.push(id);
+        localStorage.setItem('gita_read_verses', JSON.stringify(readVerses));
+    }
+
+    // Save last read
+    const lastRead = {
+        chapter: chapterNumber,
+        verse: verseNumber,
+        chapterName: currentChapter ? currentChapter.name_translation : ''
+    };
+    localStorage.setItem('gita_last_read', JSON.stringify(lastRead));
+
+    // Save activity date
+    const today = new Date();
+    const offset = today.getTimezoneOffset();
+    const localToday = new Date(today.getTime() - (offset * 60 * 1000));
+    const todayStr = localToday.toISOString().split('T')[0];
+
+    let activityDates = [];
+    try {
+        const rawDates = localStorage.getItem('gita_activity_dates');
+        activityDates = rawDates ? JSON.parse(rawDates) : [];
+    } catch (e) {
+        activityDates = [];
+    }
+    if (!Array.isArray(activityDates)) activityDates = [];
+
+    if (!activityDates.includes(todayStr)) {
+        activityDates.push(todayStr);
+        localStorage.setItem('gita_activity_dates', JSON.stringify(activityDates));
+    }
+}
+
+function computeStreak(dates) {
+    if (!dates || dates.length === 0) return 0;
+    const unique = [...new Set(dates)].sort().reverse();
+    let streak = 0;
+    
+    const today = new Date();
+    const offset = today.getTimezoneOffset();
+    const localToday = new Date(today.getTime() - (offset * 60 * 1000));
+    let checkDateStr = localToday.toISOString().split('T')[0];
+
+    if (!unique.includes(checkDateStr)) {
+        const yesterday = new Date(localToday.getTime() - 24 * 60 * 60 * 1000);
+        checkDateStr = yesterday.toISOString().split('T')[0];
+        if (!unique.includes(checkDateStr)) {
+            return 0;
+        }
+    }
+
+    for (const d of unique) {
+        if (d === checkDateStr) {
+            streak++;
+            const cur = new Date(checkDateStr + 'T00:00:00');
+            const prev = new Date(cur.getTime() - 24 * 60 * 60 * 1000);
+            checkDateStr = prev.toISOString().split('T')[0];
+        } else {
+            break;
+        }
+    }
+    return streak;
+}
+
+function renderJourneyStats() {
+    let readVerses = [];
+    try {
+        const raw = localStorage.getItem('gita_read_verses');
+        readVerses = raw ? JSON.parse(raw) : [];
+    } catch (e) {
+        readVerses = [];
+    }
+    if (!Array.isArray(readVerses)) readVerses = [];
+
+    const readPct = Math.min(100, Math.round((readVerses.length / 700) * 100));
+
+    // Update progress ring
+    const circle = document.getElementById('journey-progress-ring-circle');
+    if (circle) {
+        const radius = 34;
+        const circumference = 2 * Math.PI * radius; // ~213.628
+        circle.style.strokeDasharray = circumference;
+        const offset = circumference - (readPct / 100) * circumference;
+        circle.style.strokeDashoffset = offset;
+    }
+
+    const pctEl = document.getElementById('journey-progress-pct');
+    if (pctEl) pctEl.textContent = `${readPct}%`;
+
+    const versesReadEl = document.getElementById('journey-verses-read');
+    if (versesReadEl) versesReadEl.textContent = readVerses.length;
+
+    // Update last read
+    const lastReadEl = document.getElementById('journey-last-read');
+    const chEl = document.getElementById('last-read-chapter');
+    const vEl = document.getElementById('last-read-verse');
+    const nameEl = document.getElementById('last-read-name');
+    const nameWrapper = document.getElementById('last-read-name-wrapper');
+
+    let lastRead = null;
+    try {
+        const raw = localStorage.getItem('gita_last_read');
+        lastRead = raw ? JSON.parse(raw) : null;
+    } catch (e) {
+        lastRead = null;
+    }
+
+    if (lastReadEl && lastRead) {
+        if (chEl) chEl.textContent = lastRead.chapter;
+        if (vEl) vEl.textContent = lastRead.verse;
+        if (nameEl && lastRead.chapterName) {
+            nameEl.textContent = lastRead.chapterName;
+            if (nameWrapper) nameWrapper.style.display = 'inline';
+        } else {
+            if (nameWrapper) nameWrapper.style.display = 'none';
+        }
+        lastReadEl.style.display = 'inline-block';
+    } else if (lastReadEl) {
+        lastReadEl.style.display = 'none';
+    }
+
+    // Update streak
+    let activityDates = [];
+    try {
+        const rawDates = localStorage.getItem('gita_activity_dates');
+        activityDates = rawDates ? JSON.parse(rawDates) : [];
+    } catch (e) {
+        activityDates = [];
+    }
+    if (!Array.isArray(activityDates)) activityDates = [];
+
+    const streakVal = document.getElementById('journey-streak-val');
+    if (streakVal) {
+        streakVal.textContent = computeStreak(activityDates);
+    }
+
+    // Chapters count
+    const chaptersVal = document.getElementById('journey-chapters-val');
+    if (chaptersVal) {
+        const chaptersStarted = new Set(readVerses.map(v => parseInt(v.split('.')[0]))).size;
+        chaptersVal.textContent = `${chaptersStarted} / 18`;
+    }
+
+    // Bookmarks count
+    const bookmarksVal = document.getElementById('journey-bookmarks-val');
+    if (bookmarksVal) {
+        bookmarksVal.textContent = getBookmarks().length;
     }
 }
 
