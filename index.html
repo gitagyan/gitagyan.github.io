@@ -161,6 +161,7 @@
     <header id="header">
         <button id="back-btn" style="display:none;"><i class="fas fa-arrow-left"></i></button>
         <img src="images/navbar-logo.png" alt="Bhagavad Gita" id="navbar-logo">
+        <button id="navbar-journey-btn" style="display:none;"><i class="fas fa-route"></i></button>
     </header>
     <main id="main-content">
         <div id="chapters-screen" class="screen active">
@@ -240,51 +241,40 @@
                     <p>Manage your app preferences</p>
                 </div>
                 <div class="settings-content">
-                    <!-- Your Journey -->
-                    <div id="journey-card" class="journey-card-compact">
-                        <!-- Row 1: Header + reset -->
-                        <div class="journey-compact-header">
-                            <div class="journey-compact-title">
-                                <i class="fas fa-chart-bar"></i> Your Journey
-                            </div>
-                            <button id="journey-reset-btn" class="journey-compact-reset-btn" title="Reset progress">
-                                <i class="fas fa-undo"></i>
-                            </button>
+                    <!-- Library Section -->
+                    <div class="settings-section">
+                        <div class="settings-section-header">
+                            <i class="fas fa-heart"></i> Library
                         </div>
-
-                        <!-- Row 2: Progress bar + count -->
-                        <div class="journey-compact-bar-row">
-                            <div class="journey-compact-bar-track">
-                                <div id="journey-compact-bar-fill" class="journey-compact-bar-fill" style="width: 0%;"></div>
-                            </div>
-                            <div class="journey-compact-progress-text">
-                                <span id="journey-progress-pct">0%</span>
-                            </div>
-                        </div>
-                        <div class="journey-compact-verse-count">
-                            <span id="journey-verses-read">0</span><span class="journey-compact-total"> of 700 verses read</span>
-                        </div>
-
-                        <!-- Row 3: 2x2 stats grid -->
-                        <div class="journey-stats-2x2">
-                            <div class="journey-stat-cell">
-                                <div class="journey-stat-cell-top">🔥 <span id="journey-streak-val">0</span></div>
-                                <div class="journey-stat-cell-label">Day Streak</div>
-                            </div>
-                            <div class="journey-stat-cell">
-                                <div class="journey-stat-cell-top">📖 <span id="journey-chapters-val">0</span></div>
-                                <div class="journey-stat-cell-label">Chapters</div>
-                            </div>
-                            <div class="journey-stat-cell">
-                                <div class="journey-stat-cell-top">🔖 <span id="journey-bookmarks-val">0</span></div>
-                                <div class="journey-stat-cell-label">Bookmarked</div>
-                            </div>
-                            <div class="journey-stat-cell" id="journey-last-read-cell" style="cursor:pointer;">
-                                <div id="journey-last-read" class="journey-stat-cell-top journey-stat-cell-top--link" style="display:none;">
-                                    <i class="fas fa-bookmark"></i> Ch.<span id="last-read-chapter">0</span>·V.<span id="last-read-verse">0</span>
+                        <div class="settings-features-list">
+                            <div class="settings-row-item toggle-row" id="settings-journey-row">
+                                <div class="settings-row-left">
+                                    <div class="settings-row-icon-wrapper">
+                                        <i class="fas fa-route"></i>
+                                    </div>
+                                    <div class="settings-row-label">
+                                        <div class="settings-row-title">Your Journey</div>
+                                        <div class="settings-row-desc">Progress, streak & milestones</div>
+                                    </div>
                                 </div>
-                                <div id="journey-last-read-empty" class="journey-stat-cell-top" style="color:#ccc;">—</div>
-                                <div class="journey-stat-cell-label">Last Read<span id="last-read-name-wrapper" style="display:none;"> — <span id="last-read-name"></span></span></div>
+                                <div class="settings-row-right">
+                                    <i class="fas fa-chevron-right settings-row-chevron"></i>
+                                </div>
+                            </div>
+                            <div class="settings-row-item toggle-row" id="settings-favorites-row">
+                                <div class="settings-row-left">
+                                    <div class="settings-row-icon-wrapper">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <div class="settings-row-label">
+                                        <div class="settings-row-title">Favorites</div>
+                                        <div class="settings-row-desc">Your saved slokas</div>
+                                    </div>
+                                </div>
+                                <div class="settings-row-right">
+                                    <span id="settings-favorites-count" class="settings-row-badge">0</span>
+                                    <i class="fas fa-chevron-right settings-row-chevron"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -387,12 +377,70 @@
 
         <!-- Bookmarks Screen -->
         <div id="bookmarks-screen" class="screen">
-            <div class="bookmarks-header">
-                <h2>Bookmarked Slokas</h2>
-                <p>Your favorite verses from the Bhagavad Gita</p>
+            <div class="glass-card favorites-page-card">
+                <div class="settings-header">
+                    <h2>Favorite Slokas</h2>
+                    <p>Your favorite verses from the Bhagavad Gita</p>
+                </div>
+                <div id="bookmarks-list" class="bookmarks-list">
+                    <!-- Bookmarked verses will be dynamically added here -->
+                </div>
             </div>
-            <div id="bookmarks-list" class="bookmarks-list">
-                <!-- Bookmarked verses will be dynamically added here -->
+        </div>
+
+        <!-- Journey Screen -->
+        <div id="journey-screen" class="screen">
+            <div class="glass-card journey-page-card">
+                <div class="settings-header">
+                    <h2>Your Journey</h2>
+                    <p>Your path through the Bhagavad Gita</p>
+                </div>
+
+                <!-- Hero: progress ring + continue reading -->
+                <div class="journey-hero">
+                    <div class="journey-ring-wrap">
+                        <svg class="journey-ring-svg" width="132" height="132" viewBox="0 0 132 132">
+                            <circle class="journey-ring-track" cx="66" cy="66" r="56"></circle>
+                            <circle id="journey-ring-fill" class="journey-ring-fill" cx="66" cy="66" r="56"></circle>
+                        </svg>
+                        <div class="journey-ring-center">
+                            <div id="journey-page-pct" class="journey-ring-pct">0%</div>
+                            <div class="journey-ring-sub"><span id="journey-page-read">0</span> / 700</div>
+                        </div>
+                    </div>
+                    <button id="journey-continue-btn" class="journey-continue-btn">
+                        <span class="journey-continue-text">
+                            <span id="journey-continue-label" class="journey-continue-label">Start your journey</span>
+                            <span id="journey-continue-target" class="journey-continue-target">Chapter 1 · Verse 1</span>
+                        </span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Chapter map -->
+                <div class="journey-section-title"><i class="fas fa-map"></i> Chapter Map</div>
+                <div id="journey-chapter-map" class="journey-chapter-map"></div>
+
+                <!-- Streak -->
+                <div class="journey-section-title"><i class="fas fa-fire"></i> Daily Streak</div>
+                <div class="journey-streak-card">
+                    <div id="journey-week-dots" class="journey-week-dots"></div>
+                    <div class="journey-streak-count"><span id="journey-page-streak">0</span><span class="journey-streak-unit">day streak</span></div>
+                </div>
+
+                <!-- Stats chips -->
+                <div class="journey-chips">
+                    <div class="journey-chip"><i class="fas fa-book-open"></i><span id="journey-page-chapters"><b>0</b> chapters completed</span></div>
+                    <button id="journey-favorites-chip" class="journey-chip journey-chip-link"><i class="fas fa-heart"></i><span id="journey-page-favs"><b>0</b> favorites</span><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <!-- Milestones -->
+                <div class="journey-section-title"><i class="fas fa-award"></i> Milestones</div>
+                <div id="journey-milestones" class="journey-milestones"></div>
+
+                <div class="journey-reset-row">
+                    <button id="journey-reset-btn" class="journey-reset-link"><i class="fas fa-undo"></i> Reset progress</button>
+                </div>
             </div>
         </div>
     </main>
@@ -408,6 +456,9 @@
             </button>
             <button id="bookmarks-btn" class="floating-option-btn">
                 <i class="fas fa-heart"></i>
+            </button>
+            <button id="journey-btn" class="floating-option-btn">
+                <i class="fas fa-route"></i>
             </button>
         </div>
     </div>

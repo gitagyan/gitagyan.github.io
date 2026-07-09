@@ -17,6 +17,7 @@ const versesScreen = document.getElementById('verses-screen');
 const verseDetailScreen = document.getElementById('verse-detail-screen');
 const settingsScreen = document.getElementById('settings-screen');
 const bookmarksScreen = document.getElementById('bookmarks-screen');
+const journeyScreen = document.getElementById('journey-screen');
 const chaptersList = document.getElementById('chapters-list');
 const versesList = document.getElementById('verses-list');
 const chapterTitle = document.getElementById('chapter-title');
@@ -369,11 +370,11 @@ function showVerse(verse) {
     const sanskritCard = document.getElementById('verse-sanskrit-card');
     sanskritCard.innerHTML = `
         <div class="sanskrit-card-header">
-            <button id="bookmark-btn" class="bookmark-btn" title="Add bookmark">
+            <button id="bookmark-btn" class="bookmark-btn" aria-label="Add to favorites">
                 <i class="far fa-heart"></i>
             </button>
             <div class="sloka-number-pill">श्लोक ${verse.chapter_number}.${verse.verse_number}</div>
-            <button id="share-btn" class="share-btn" title="Share verse">
+            <button id="share-btn" class="share-btn" aria-label="Share verse">
                 <i class="fas fa-share-nodes"></i>
             </button>
         </div>
@@ -573,7 +574,7 @@ function goToPreviousScreen() {
     } else if (currentActiveScreen === versesScreen) {
         switchScreen(chaptersScreen);
         backBtn.style.display = 'none';
-    } else if (currentActiveScreen === settingsScreen || currentActiveScreen === bookmarksScreen) {
+    } else if (currentActiveScreen === settingsScreen || currentActiveScreen === bookmarksScreen || currentActiveScreen === journeyScreen) {
         switchScreen(chaptersScreen);
         backBtn.style.display = 'none';
     }
@@ -734,11 +735,19 @@ function setupNavigation() {
         } else if (versesScreen.classList.contains('active')) {
             switchScreen(chaptersScreen);
             backBtn.style.display = 'none';
-        } else if (settingsScreen.classList.contains('active') || bookmarksScreen.classList.contains('active')) {
+        } else if (settingsScreen.classList.contains('active') || bookmarksScreen.classList.contains('active') || journeyScreen.classList.contains('active')) {
             switchScreen(chaptersScreen);
             backBtn.style.display = 'none';
         }
     });
+
+    const navbarJourneyBtn = document.getElementById('navbar-journey-btn');
+    if (navbarJourneyBtn) {
+        navbarJourneyBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            switchScreen(journeyScreen);
+        });
+    }
 }
 
 function switchScreen(screen) {
@@ -752,7 +761,7 @@ function switchScreen(screen) {
     screen.classList.add('active');
 
     // Add a class to the body for screen-specific styling
-    document.body.classList.remove('verse-detail-active', 'chapters-active', 'verses-active', 'settings-active', 'bookmarks-active');
+    document.body.classList.remove('verse-detail-active', 'chapters-active', 'verses-active', 'settings-active', 'bookmarks-active', 'journey-active');
     if (screen === verseDetailScreen) {
         document.body.classList.add('verse-detail-active');
     } else if (screen === chaptersScreen) {
@@ -762,9 +771,11 @@ function switchScreen(screen) {
         document.body.classList.add('verses-active');
     } else if (screen === settingsScreen) {
         document.body.classList.add('settings-active');
-        renderJourneyStats();
     } else if (screen === bookmarksScreen) {
         document.body.classList.add('bookmarks-active');
+    } else if (screen === journeyScreen) {
+        document.body.classList.add('journey-active');
+        renderJourneyPage();
     }
 
     // Show/hide back button based on screen
@@ -774,13 +785,23 @@ function switchScreen(screen) {
         backBtn.style.display = 'block';
     }
 
+    // Show/hide navbar journey button based on screen
+    const navbarJourneyBtn = document.getElementById('navbar-journey-btn');
+    if (navbarJourneyBtn) {
+        if (screen === verseDetailScreen) {
+            navbarJourneyBtn.style.display = 'block';
+        } else {
+            navbarJourneyBtn.style.display = 'none';
+        }
+    }
+
     // Handle footer visibility
     if (screen === verseDetailScreen) {
         document.getElementById('footer').style.display = 'none';
         updateAudioPlayerVisibility(); // Use new function to check setting
         document.getElementById('verse-navigation').style.display = 'flex';
         document.getElementById('floating-settings-btn').style.display = 'none';
-    } else if (screen === settingsScreen || screen === bookmarksScreen) {
+    } else if (screen === settingsScreen || screen === bookmarksScreen || screen === journeyScreen) {
         document.getElementById('footer').style.display = 'block';
         document.getElementById('floating-audio-btn').style.display = 'none';
         document.getElementById('verse-navigation').style.display = 'none';
@@ -832,10 +853,38 @@ function initFloatingMenu() {
     document.getElementById('settings-btn').addEventListener('click', (e) => {
         e.stopPropagation();
         switchScreen(settingsScreen);
+        const favCount = document.getElementById('settings-favorites-count');
+        if (favCount) favCount.textContent = getBookmarks().length;
         updatedFloatingMenu.classList.remove('show');
         updatedMainFloatingBtn.classList.remove('opened');
         updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
     });
+
+    // Journey button
+    document.getElementById('journey-btn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        switchScreen(journeyScreen);
+        updatedFloatingMenu.classList.remove('show');
+        updatedMainFloatingBtn.classList.remove('opened');
+        updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
+    });
+
+    // Journey row inside Settings
+    const journeyRow = document.getElementById('settings-journey-row');
+    if (journeyRow) {
+        journeyRow.addEventListener('click', () => {
+            switchScreen(journeyScreen);
+        });
+    }
+
+    // Favorites row inside Settings
+    const favoritesRow = document.getElementById('settings-favorites-row');
+    if (favoritesRow) {
+        favoritesRow.addEventListener('click', () => {
+            switchScreen(bookmarksScreen);
+            renderBookmarks();
+        });
+    }
 
     // Bookmarks button
     document.getElementById('bookmarks-btn').addEventListener('click', (e) => {
@@ -909,10 +958,10 @@ function renderBookmarks() {
 
     if (bookmarks.length === 0) {
         bookmarksList.innerHTML = `
-            <div class="glass-card" style="text-align: center; padding: 40px; margin: 20px;">
-                <i class="fas fa-heart" style="font-size: 48px; color: #ccc; margin-bottom: 20px;"></i>
-                <h3 style="color: #666; margin-bottom: 10px;">No Bookmarks Yet</h3>
-                <p style="color: #999;">Start bookmarking your favorite verses to see them here.</p>
+            <div style="text-align: center; padding: 40px 20px;">
+                <i class="fas fa-heart" style="font-size: 48px; color: rgba(165, 37, 44, 0.18); margin-bottom: 20px;"></i>
+                <h3 style="color: #666; margin-bottom: 10px; font-weight: 700;">No Favorites Yet</h3>
+                <p style="color: #999; font-size: 0.9rem;">Tap the heart on any sloka to save it here.</p>
             </div>
         `;
         return;
@@ -994,28 +1043,11 @@ function initSettings() {
     function updateToggleCardUI(cardId, isChecked) {
         const card = document.getElementById(cardId);
         if (!card) return;
-        
-        if (isChecked) {
-            card.classList.add('checked');
-            const icon = card.querySelector('.toggle-card-status i');
-            if (icon) {
-                icon.className = 'fas fa-eye';
-            }
-            const text = card.querySelector('.toggle-card-status span');
-            if (text) {
-                text.textContent = 'Enabled';
-            }
-        } else {
-            card.classList.remove('checked');
-            const icon = card.querySelector('.toggle-card-status i');
-            if (icon) {
-                icon.className = 'fas fa-eye-slash';
-            }
-            const text = card.querySelector('.toggle-card-status span');
-            if (text) {
-                text.textContent = 'Disabled';
-            }
-        }
+        card.classList.toggle('checked', isChecked);
+        const icon = card.querySelector('.toggle-card-status i');
+        if (icon) icon.className = isChecked ? 'fas fa-eye' : 'fas fa-eye-slash';
+        const text = card.querySelector('.toggle-card-status span');
+        if (text) text.textContent = isChecked ? 'Enabled' : 'Disabled';
     }
 
     // Load initial states from localStorage
@@ -1028,11 +1060,6 @@ function initSettings() {
     updateToggleCardUI('toggle-youtube-card', showYoutubeEmbeds);
     updateToggleCardUI('toggle-progress-card', showProgressTracking);
 
-    // Apply initial Journey card visibility based on progress tracking
-    const journeyCard = document.getElementById('journey-card');
-    if (journeyCard) {
-        journeyCard.style.display = showProgressTracking ? 'block' : 'none';
-    }
 
     // Bind Toggle listeners
     const toggleAudioCard = document.getElementById('toggle-audio-card');
@@ -1076,15 +1103,7 @@ function initSettings() {
             const newVal = !currentVal;
             localStorage.setItem('showProgressTracking', newVal);
             updateToggleCardUI('toggle-progress-card', newVal);
-            
-            // Side effect: show/hide Journey card
-            if (journeyCard) {
-                journeyCard.style.display = newVal ? 'block' : 'none';
-                if (newVal) {
-                    renderJourneyStats();
-                }
-            }
-            
+
             // Refresh chapters rendering (home screen) to show/hide progress bars immediately
             renderChapters();
         });
@@ -1101,24 +1120,39 @@ function initSettings() {
                 localStorage.removeItem('gita_read_verses');
                 localStorage.removeItem('gita_last_read');
                 localStorage.removeItem('gita_activity_dates');
-                renderJourneyStats();
+                renderJourneyPage();
                 renderChapters(); // Refresh home screen too!
             }
         });
     }
 
-    const journeyLastReadCell = document.getElementById('journey-last-read-cell');
-    if (journeyLastReadCell) {
-        journeyLastReadCell.addEventListener('click', () => {
-            const lastReadRaw = localStorage.getItem('gita_last_read');
-            if (lastReadRaw) {
-                const lastRead = JSON.parse(lastReadRaw);
-                const targetVerse = verses.find(v => v.chapter_number === lastRead.chapter && v.verse_number === lastRead.verse);
-                if (targetVerse) {
-                    currentChapter = chapters.find(c => c.chapter_number === lastRead.chapter);
-                    showVerse(targetVerse);
-                }
+    // Journey page: continue reading button
+    const journeyContinueBtn = document.getElementById('journey-continue-btn');
+    if (journeyContinueBtn) {
+        journeyContinueBtn.addEventListener('click', () => {
+            let lastRead = null;
+            try {
+                const raw = localStorage.getItem('gita_last_read');
+                lastRead = raw ? JSON.parse(raw) : null;
+            } catch (e) {
+                lastRead = null;
             }
+            const targetChapter = lastRead ? lastRead.chapter : 1;
+            const targetVerseNum = lastRead ? lastRead.verse : 1;
+            const targetVerse = verses.find(v => v.chapter_number === targetChapter && v.verse_number === targetVerseNum);
+            if (targetVerse) {
+                currentChapter = chapters.find(c => c.chapter_number === targetChapter);
+                showVerse(targetVerse);
+            }
+        });
+    }
+
+    // Journey page: favorites chip
+    const journeyFavoritesChip = document.getElementById('journey-favorites-chip');
+    if (journeyFavoritesChip) {
+        journeyFavoritesChip.addEventListener('click', () => {
+            switchScreen(bookmarksScreen);
+            renderBookmarks();
         });
     }
 }
@@ -1676,7 +1710,25 @@ function computeStreak(dates) {
     return streak;
 }
 
-function renderJourneyStats() {
+// Longest consecutive-day run in the activity history (for the streak milestone)
+function computeLongestStreak(dates) {
+    if (!dates || dates.length === 0) return 0;
+    const unique = [...new Set(dates)].sort();
+    let longest = 1, run = 1;
+    for (let i = 1; i < unique.length; i++) {
+        const prev = new Date(unique[i - 1] + 'T00:00:00');
+        const cur = new Date(unique[i] + 'T00:00:00');
+        if (cur - prev === 24 * 60 * 60 * 1000) {
+            run++;
+            longest = Math.max(longest, run);
+        } else {
+            run = 1;
+        }
+    }
+    return longest;
+}
+
+function renderJourneyPage() {
     let readVerses = [];
     try {
         const raw = localStorage.getItem('gita_read_verses');
@@ -1686,52 +1738,6 @@ function renderJourneyStats() {
     }
     if (!Array.isArray(readVerses)) readVerses = [];
 
-    const readPct = Math.min(100, Math.round((readVerses.length / 700) * 100));
-
-    // Update compact progress bar
-    const barFill = document.getElementById('journey-compact-bar-fill');
-    if (barFill) barFill.style.width = `${readPct}%`;
-
-    const pctEl = document.getElementById('journey-progress-pct');
-    if (pctEl) pctEl.textContent = `${readPct}%`;
-
-    const versesReadEl = document.getElementById('journey-verses-read');
-    if (versesReadEl) versesReadEl.textContent = readVerses.length;
-
-    // Update last read
-    const lastReadEl = document.getElementById('journey-last-read');
-    const chEl = document.getElementById('last-read-chapter');
-    const vEl = document.getElementById('last-read-verse');
-    const nameEl = document.getElementById('last-read-name');
-    const nameWrapper = document.getElementById('last-read-name-wrapper');
-
-    let lastRead = null;
-    try {
-        const raw = localStorage.getItem('gita_last_read');
-        lastRead = raw ? JSON.parse(raw) : null;
-    } catch (e) {
-        lastRead = null;
-    }
-
-    if (lastReadEl && lastRead) {
-        if (chEl) chEl.textContent = lastRead.chapter;
-        if (vEl) vEl.textContent = lastRead.verse;
-        if (nameEl && lastRead.chapterName) {
-            nameEl.textContent = lastRead.chapterName;
-            if (nameWrapper) nameWrapper.style.display = 'inline';
-        } else {
-            if (nameWrapper) nameWrapper.style.display = 'none';
-        }
-        lastReadEl.style.display = 'flex';
-        const emptyEl = document.getElementById('journey-last-read-empty');
-        if (emptyEl) emptyEl.style.display = 'none';
-    } else if (lastReadEl) {
-        lastReadEl.style.display = 'none';
-        const emptyEl = document.getElementById('journey-last-read-empty');
-        if (emptyEl) emptyEl.style.display = 'block';
-    }
-
-    // Update streak
     let activityDates = [];
     try {
         const rawDates = localStorage.getItem('gita_activity_dates');
@@ -1741,22 +1747,126 @@ function renderJourneyStats() {
     }
     if (!Array.isArray(activityDates)) activityDates = [];
 
-    const streakVal = document.getElementById('journey-streak-val');
-    if (streakVal) {
-        streakVal.textContent = computeStreak(activityDates);
+    let lastRead = null;
+    try {
+        const raw = localStorage.getItem('gita_last_read');
+        lastRead = raw ? JSON.parse(raw) : null;
+    } catch (e) {
+        lastRead = null;
     }
 
-    // Chapters count
-    const chaptersVal = document.getElementById('journey-chapters-val');
-    if (chaptersVal) {
-        const chaptersStarted = new Set(readVerses.map(v => parseInt(v.split('.')[0]))).size;
-        chaptersVal.textContent = `${chaptersStarted} / 18`;
+    const totalVerses = 700;
+    const readCount = Math.min(readVerses.length, totalVerses);
+    const readPct = Math.min(100, Math.round((readCount / totalVerses) * 100));
+
+    // Progress ring
+    const ring = document.getElementById('journey-ring-fill');
+    if (ring) {
+        const radius = ring.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+        ring.style.strokeDasharray = `${circumference}`;
+        ring.style.strokeDashoffset = `${circumference * (1 - readPct / 100)}`;
+    }
+    const pctEl = document.getElementById('journey-page-pct');
+    if (pctEl) pctEl.textContent = `${readPct}%`;
+    const readEl = document.getElementById('journey-page-read');
+    if (readEl) readEl.textContent = readCount;
+
+    // Continue reading button
+    const continueLabel = document.getElementById('journey-continue-label');
+    const continueTarget = document.getElementById('journey-continue-target');
+    if (continueLabel && continueTarget) {
+        if (lastRead) {
+            continueLabel.textContent = 'Continue reading';
+            const name = lastRead.chapterName ? ` · ${lastRead.chapterName}` : '';
+            continueTarget.textContent = `Chapter ${lastRead.chapter}, Verse ${lastRead.verse}${name}`;
+        } else {
+            continueLabel.textContent = 'Start your journey';
+            continueTarget.textContent = 'Chapter 1, Verse 1';
+        }
     }
 
-    // Bookmarks count
-    const bookmarksVal = document.getElementById('journey-bookmarks-val');
-    if (bookmarksVal) {
-        bookmarksVal.textContent = getBookmarks().length;
+    // Chapter map
+    const map = document.getElementById('journey-chapter-map');
+    let chaptersCompleted = 0;
+    if (map && chapters && chapters.length) {
+        map.innerHTML = '';
+        chapters.forEach(chapter => {
+            const cnt = readVerses.filter(id => id.startsWith(`${chapter.chapter_number}.`)).length;
+            const pct = Math.min(100, Math.round((cnt / chapter.verses_count) * 100));
+            if (pct >= 100) chaptersCompleted++;
+            const cell = document.createElement('button');
+            cell.className = 'journey-map-cell' + (pct >= 100 ? ' complete' : (cnt > 0 ? ' started' : ''));
+            cell.innerHTML = `
+                <span class="journey-map-fill" style="height: ${pct}%;"></span>
+                <span class="journey-map-num">${pct >= 100 ? '<i class="fas fa-check"></i>' : chapter.chapter_number}</span>
+            `;
+            cell.addEventListener('click', () => showChapter(chapter));
+            map.appendChild(cell);
+        });
+    }
+
+    // Streak: current week starting from Monday
+    const weekDots = document.getElementById('journey-week-dots');
+    if (weekDots) {
+        weekDots.innerHTML = '';
+        const dateSet = new Set(activityDates);
+        
+        const today = new Date();
+        const currentDay = today.getDay(); // 0 is Sunday, 1 is Monday, ..., 6 is Saturday
+        const mondayOffset = currentDay === 0 ? -6 : 1 - currentDay;
+        
+        const monday = new Date();
+        monday.setDate(today.getDate() + mondayOffset);
+
+        for (let i = 0; i < 7; i++) {
+            const d = new Date(monday);
+            d.setDate(monday.getDate() + i);
+            const offset = d.getTimezoneOffset();
+            const local = new Date(d.getTime() - (offset * 60 * 1000));
+            const dayStr = local.toISOString().split('T')[0];
+            const dot = document.createElement('div');
+            dot.className = 'journey-week-day' + (dateSet.has(dayStr) ? ' active' : '');
+            dot.innerHTML = `
+                <span class="journey-week-dot">${dateSet.has(dayStr) ? '<i class="fas fa-check"></i>' : ''}</span>
+                <span class="journey-week-letter">${d.toLocaleDateString('en-US', { weekday: 'narrow' })}</span>
+            `;
+            weekDots.appendChild(dot);
+        }
+    }
+    const streak = computeStreak(activityDates);
+    const streakEl = document.getElementById('journey-page-streak');
+    if (streakEl) streakEl.textContent = streak;
+
+    // Stats chips
+    const chaptersEl = document.getElementById('journey-page-chapters');
+    if (chaptersEl) chaptersEl.innerHTML = `<b>${chaptersCompleted}</b> ${chaptersCompleted === 1 ? 'chapter' : 'chapters'} completed`;
+    const favsEl = document.getElementById('journey-page-favs');
+    const favCount = getBookmarks().length;
+    if (favsEl) favsEl.innerHTML = `<b>${favCount}</b> ${favCount === 1 ? 'favorite' : 'favorites'}`;
+
+    // Milestones
+    const milestonesEl = document.getElementById('journey-milestones');
+    if (milestonesEl) {
+        const longestStreak = computeLongestStreak(activityDates);
+        const milestones = [
+            { icon: 'fa-seedling', name: 'First Sloka', desc: 'Read your first verse', done: readCount >= 1 },
+            { icon: 'fa-om', name: 'Mala of Wisdom', desc: 'Read 108 slokas', done: readCount >= 108 },
+            { icon: 'fa-book-open', name: 'First Chapter', desc: 'Complete a chapter', done: chaptersCompleted >= 1 },
+            { icon: 'fa-mountain', name: 'Halfway There', desc: 'Read 350 slokas', done: readCount >= 350 },
+            { icon: 'fa-fire', name: 'Steady Sadhana', desc: '7-day reading streak', done: longestStreak >= 7 },
+            { icon: 'fa-crown', name: 'Gita Complete', desc: 'Read all 700 slokas', done: readCount >= totalVerses },
+        ];
+        milestonesEl.innerHTML = milestones.map(m => `
+            <div class="journey-milestone${m.done ? ' done' : ''}">
+                <div class="journey-milestone-icon"><i class="fas ${m.icon}"></i></div>
+                <div class="journey-milestone-text">
+                    <div class="journey-milestone-name">${m.name}</div>
+                    <div class="journey-milestone-desc">${m.desc}</div>
+                </div>
+                ${m.done ? '<i class="fas fa-check-circle journey-milestone-check"></i>' : ''}
+            </div>
+        `).join('');
     }
 }
 
