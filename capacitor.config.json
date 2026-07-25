@@ -2,6 +2,15 @@
   "appId": "com.bhagvadgeeta.app",
   "appName": "Bhagvad Geeta",
   "webDir": "www",
+  "server": {
+    "allowNavigation": [
+      "www.youtube.com",
+      "youtube.com",
+      "*.youtube.com",
+      "*.ytimg.com",
+      "*.googlevideo.com"
+    ]
+  },
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0,
