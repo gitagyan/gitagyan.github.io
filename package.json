@@ -1,0 +1,20 @@
+{
+  "name": "bhagvadgeeta-app",
+  "version": "1.0.0",
+  "description": "Bhagvad Geeta — Capacitor app (web/PWA, iOS, Android)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor/android": "^8.4.2",
+    "@capacitor/cli": "^8.4.2",
+    "@capacitor/core": "^8.4.2",
+    "@capacitor/ios": "^8.4.2",
+    "@capacitor/splash-screen": "^8.0.2"
+  }
+}

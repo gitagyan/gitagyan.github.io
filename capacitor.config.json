@@ -1,0 +1,17 @@
+{
+  "appId": "com.bhagvadgeeta.app",
+  "appName": "Bhagvad Geeta",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0,
+      "launchAutoHide": true,
+      "backgroundColor": "#FFF8E1",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP",
+      "splashFullScreen": true,
+      "splashImmersive": true,
+      "showSpinner": false
+    }
+  }
+}

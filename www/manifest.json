@@ -1,0 +1,71 @@
+{
+  "name": "Geeta - Bhagavad Gita - भगवद्‌ गीता",
+  "short_name": "Bhagvad Geeta",
+  "description": "Web App for reading the Bhagavad Gita with AI-powered spiritual guidance, translations, and audio recitation. Search: Geeta, Gita, Bhagavad Gita, भगवद्‌ गीता",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF8E1",
+  "theme_color": "#E6A623",
+  "version": "2.0.0",
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "categories": [
+    "lifestyle",
+    "books"
+  ],
+  "keywords": [
+    "geeta",
+    "gita",
+    "bhagavad",
+    "bhagvad",
+    "krishna",
+    "arjuna",
+    "spiritual",
+    "hindu",
+    "scripture",
+    "भगवद्‌ गीता"
+  ],
+  "icons": [
+    {
+      "src": "assets/icons/icon-48.webp",
+      "type": "image/png",
+      "sizes": "48x48",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-72.webp",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-96.webp",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-128.webp",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-192.webp",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-256.webp",
+      "type": "image/png",
+      "sizes": "256x256",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.webp",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}
