@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shrimad Bhagavatam - Canto 10</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="theme-color" content="#E6A623">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <button id="back-btn" aria-label="Back to Bhagavad Gita" title="Back to Bhagavad Gita / भगवद्गीता"><i class="fas fa-arrow-left"></i></button>
+        <h1 id="header-title"><img src="images/app-navbar-logo-yellow-transparent.png" alt="श्रीमद्भागवत पुराण" id="header-logo"></h1>
+        <div class="header-buttons">
+            <button id="header-timeline-btn" title="Krishna Timeline">
+                <i class="fas fa-stream"></i>
+            </button>
+            <button id="header-bookmark-btn" style="display:none;" title="Bookmark">
+                <i class="far fa-bookmark"></i>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Chapters List View (Home Screen) -->
+        <div id="chapters-screen" class="screen active">
+            <div class="chapters-header-section">
+                <h2>दशम स्कंध: श्रीकृष्ण लीला</h2>
+                <p>Canto 10: Krishna Lila • 90 Chapters</p>
+            </div>
+            <div id="bookmark-resume-banner" class="bookmark-resume-banner" style="display: none;">
+                <div class="bookmark-resume-content">
+                    <i class="fas fa-bookmark bookmark-resume-icon"></i>
+                    <div class="bookmark-resume-text">
+                        <span class="bookmark-resume-title">Resume Reading</span>
+                        <span id="bookmark-resume-verse" class="bookmark-resume-details">Verse 10.1.1</span>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right bookmark-resume-arrow"></i>
+            </div>
+            <div id="chapters-list"></div>
+        </div>
+
+        <!-- Verses List View -->
+        <div id="verses-screen" class="screen">
+            <h2 id="chapter-title"></h2>
+
+            <!-- Sentinel to detect when sticky controls are stuck -->
+            <div id="reader-sticky-sentinel" style="height: 0; margin: 0; padding: 0; pointer-events: none; visibility: hidden;"></div>
+
+            <!-- Sticky Reader Controls (Language Selector) -->
+            <div id="reader-sticky-controls" class="reader-sticky-header" style="display: none;">
+                <span class="reader-sticky-title"><i class="fas fa-language"></i> Translation</span>
+                <select id="chapter-language-dropdown" class="language-dropdown">
+                    <option value="english" selected>English</option>
+                    <option value="gujarati">ગુજરાતી</option>
+                    <option value="hindi">हिंदी</option>
+                </select>
+            </div>
+
+            <div id="chapter-summary-card" class="glass-card" style="display: none; margin-bottom: 20px; padding: 16px 20px;">
+                <div class="chapter-summary-header" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 700; color: var(--color-royal-blue); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">
+                    <span><i class="fas fa-file-alt"></i> Chapter Summary</span>
+                    <div class="view-toggle-group">
+                        <button id="view-mode-scroll" class="view-mode-btn active" title="Reader View">
+                            <i class="fas fa-book-open"></i>
+                        </button>
+                        <button id="view-mode-list" class="view-mode-btn" title="List View / सूची">
+                            <i class="fas fa-list-ul"></i>
+                        </button>
+                    </div>
+                </div>
+                <p id="chapter-summary-text" style="font-size: 0.92rem; line-height: 1.55; color: var(--color-text-main); margin: 0; text-align: justify;"></p>
+            </div>
+
+            <div id="verses-list"></div>
+        </div>
+
+        <!-- Verse Detail View -->
+        <div id="verse-detail-screen" class="screen">
+            <div id="verse-sanskrit-card" class="glass-card">
+                <div class="verse-sanskrit-header">
+                    <button id="favorite-btn" class="bookmark-btn" title="Add to Favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div id="verse-pill" class="sloka-number-pill"></div>
+                    <button id="share-btn" class="share-btn" title="Share Verse">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                </div>
+                <div id="verse-text"></div>
+                <div id="verse-transliteration"></div>
+            </div>
+
+            <div id="verse-translation-card" class="glass-card">
+                <div class="translation-header">
+                    <span class="translation-title"><i class="fas fa-language"></i> Translation</span>
+                    <select id="language-dropdown" class="language-dropdown">
+                        <option value="english" selected>English</option>
+                        <option value="gujarati">ગુજરાતી</option>
+                        <option value="hindi">हिंदी</option>
+                    </select>
+                </div>
+                <div id="verse-translation"></div>
+            </div>
+        </div>
+
+        <!-- Settings View -->
+        <div id="settings-screen" class="screen">
+            <div class="glass-card settings-card">
+                <div class="settings-header">
+                    <h2>Settings</h2>
+                    <p>Manage your app preferences</p>
+                </div>
+                <div class="settings-content">
+                    <!-- Translation Language Preference -->
+                    <div class="setting-item">
+                        <div class="setting-header-row">
+                            <h3><i class="fas fa-language"></i> Translation Language</h3>
+                        </div>
+                        <p class="setting-description">Choose your default translation language for scriptures.</p>
+                        <select id="settings-language-dropdown" class="language-dropdown" style="width: 100%; max-width: 300px; margin-top: 10px;">
+                            <option value="english" selected>English</option>
+                            <option value="gujarati">ગુજરાતી</option>
+                            <option value="hindi">हिंदी</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item">
+                        <h3>App Version</h3>
+                        <p>This is a completely client-side application running offline with cached resources.</p>
+                    </div>
+                </div>
+                <div class="settings-footer">
+                    <span id="cache-version">App Version: loading...</span>
+                    <div><a href="https://simkeyur.github.io" target="_blank">Submit Feedback</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Krishna Timeline View -->
+        <div id="timeline-screen" class="screen">
+            <div class="timeline-header">
+                <h2>श्रीकृष्ण लीला</h2>
+                <p>दशम स्कंध — ९ लीला-चरण (९० अध्याय)</p>
+            </div>
+            <!-- Sentinel for timeline language bar stuck state -->
+            <div id="timeline-sticky-sentinel" style="height: 0; margin: 0; padding: 0; pointer-events: none; visibility: hidden;"></div>
+
+            <!-- Sticky Timeline Controls (Language Selector) -->
+            <div id="timeline-sticky-controls" class="reader-sticky-header" style="display: none;">
+                <span class="reader-sticky-title"><i class="fas fa-stream"></i> Timeline View</span>
+                <select id="timeline-language-dropdown" class="language-dropdown">
+                    <option value="english" selected>English</option>
+                    <option value="gujarati">ગુજરાતી</option>
+                    <option value="hindi">हिंदी</option>
+                </select>
+            </div>
+            <!-- Timeline Controls (Search & Global controls) -->
+            <div class="timeline-controls" style="padding: 0 15px; margin-bottom: 15px;">
+                <div class="timeline-search-wrapper" style="position: relative; display: flex; align-items: center;">
+                    <i class="fas fa-search" style="position: absolute; left: 15px; color: var(--color-royal-blue); opacity: 0.7; font-size: 0.95rem;"></i>
+                    <input type="text" id="timeline-search" placeholder="Search chapters, meanings, or events..." style="width: 100%; padding: 12px 15px 12px 40px; border-radius: 12px; border: 1.5px solid var(--glass-border); background: var(--glass-bg); color: var(--color-text-main); font-weight: 500; font-size: 0.92rem; outline: none; transition: var(--transition-smooth); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);">
+                    <button id="timeline-search-clear" style="position: absolute; right: 15px; background: transparent; border: none; color: var(--color-text-muted); cursor: pointer; display: none; font-size: 1rem;"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+            <!-- Sentinel to detect when timeline ribbon is stuck -->
+            <div id="timeline-ribbon-sentinel" style="height: 0; margin: 0; padding: 0; pointer-events: none; visibility: hidden;"></div>
+
+            <!-- Sticky Merged Ribbon & Phase Title Header -->
+            <div id="timeline-sticky-header" class="timeline-merged-header" style="display: none;">
+                <div class="timeline-active-phase-title">
+                    <h3 id="timeline-current-phase-name">Krishna Leela</h3>
+                    <span id="timeline-current-phase-range">Chapters 1-3</span>
+                </div>
+                <div class="timeline-ribbon-wrapper">
+                    <div id="timeline-navigation-ribbon" class="timeline-nav-ribbon">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                    <div class="timeline-ribbon-fade-left"></div>
+                    <div class="timeline-ribbon-fade-right"></div>
+                </div>
+            </div>
+
+            <div id="timeline-content" style="position: relative; z-index: 10;"></div>
+        </div>
+
+        <!-- Bookmarks (Favorites) View -->
+        <div id="bookmarks-screen" class="screen">
+            <div class="bookmarks-header">
+                <h2>Favorite Verses</h2>
+                <p>Your favorite verses from the 10th Canto</p>
+            </div>
+            <div id="bookmarks-list" class="bookmarks-list"></div>
+        </div>
+    </main>
+
+    <!-- Floating Navigation Menu -->
+    <div id="floating-settings-btn" class="floating-settings-btn">
+        <button id="main-floating-btn" class="main-floating-btn">
+            <i class="fas fa-cog"></i>
+        </button>
+        <div id="floating-menu" class="floating-menu">
+            <button id="floating-bookmark-btn" class="floating-option-btn" title="Go to Bookmark">
+                <i class="fas fa-bookmark"></i>
+            </button>
+            <button id="bookmarks-btn" class="floating-option-btn" title="Favorites">
+                <i class="fas fa-heart"></i>
+            </button>
+            <button id="settings-btn" class="floating-option-btn" title="Settings">
+                <i class="fas fa-cog"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Verse Slider Navigation -->
+    <div id="verse-navigation" style="display: none;">
+        <button id="prev-verse-btn">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div id="verse-slider-container">
+            <input type="range" id="verse-slider" min="1" max="10" value="1">
+            <div id="verse-counter">1/10</div>
+        </div>
+        <button id="next-verse-btn">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <footer id="footer">
+        <p>🙏 श्री कृष्णः शरणं ममः 🙏</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/js/all.min.js"></script>
+    <script src="../js/sql-wasm.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

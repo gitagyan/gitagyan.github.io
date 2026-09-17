@@ -3915,3 +3915,34 @@ footer,
         grid-template-columns: 1fr;
     }
 }
+
+/* Standalone Floating Action Button - Shrimad Bhagavatam (positioned right above bottom tab bar) */
+.fab-bhagvatam-btn {
+    position: fixed;
+    bottom: calc(58px + env(safe-area-inset-bottom, 0px) * 0.25);
+    right: 14px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #E6A623;
+    color: #A5252C;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10005;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fab-bhagvatam-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.fab-bhagvatam-btn:active {
+    transform: scale(0.95);
+}
+

@@ -26,6 +26,7 @@ const backBtn = document.getElementById('back-btn');
 const footer = document.getElementById('footer');
 const footerJourneyBtn = document.getElementById('footer-journey-btn');
 const footerSettingsBtn = document.getElementById('footer-settings-btn');
+const fabBhagvatamBtn = document.getElementById('fab-bhagvatam-btn');
 let bookmarkBtn = document.getElementById('bookmark-btn');
 
 // PWA Install component setup
@@ -791,6 +792,11 @@ function switchScreen(screen) {
         backBtn.style.display = 'block';
     }
 
+    // Show Bhagavatam launcher FAB only on chapters home screen
+    if (fabBhagvatamBtn) {
+        fabBhagvatamBtn.style.display = (screen === chaptersScreen) ? 'flex' : 'none';
+    }
+
     // Show/hide navbar journey button based on screen
     const navbarJourneyBtn = document.getElementById('navbar-journey-btn');
     if (navbarJourneyBtn) {
@@ -829,6 +835,12 @@ function switchScreen(screen) {
 
 // Bottom Tab Bar & Navigation Functions
 function setupFooterTabs() {
+    if (fabBhagvatamBtn) {
+        fabBhagvatamBtn.addEventListener('click', () => {
+            window.location.href = './bhagvatam/';
+        });
+    }
+
     if (footerJourneyBtn) {
         footerJourneyBtn.addEventListener('click', () => {
             if (journeyScreen && journeyScreen.classList.contains('active')) {
