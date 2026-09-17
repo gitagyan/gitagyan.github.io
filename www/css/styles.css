@@ -3925,7 +3925,7 @@ footer,
     height: 52px;
     border-radius: 50%;
     background: #E6A623;
-    border: 1.5px solid rgba(255, 215, 0, 0.6);
+    border: 2px solid #A5252C;
     padding: 0;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
     cursor: pointer;
@@ -3940,7 +3940,7 @@ footer,
 .fab-bhagvatam-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
-    border-color: rgba(255, 215, 0, 0.9);
+    border-color: #881c22;
 }
 
 .fab-bhagvatam-btn:active {
