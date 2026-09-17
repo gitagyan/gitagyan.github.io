@@ -3921,13 +3921,13 @@ footer,
     position: fixed;
     bottom: calc(58px + env(safe-area-inset-bottom, 0px) * 0.25);
     right: 14px;
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     background: #E6A623;
-    border: none;
+    border: 1.5px solid rgba(255, 215, 0, 0.6);
     padding: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -3939,7 +3939,8 @@ footer,
 
 .fab-bhagvatam-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
+    border-color: rgba(255, 215, 0, 0.9);
 }
 
 .fab-bhagvatam-btn:active {
