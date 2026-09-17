@@ -268,7 +268,12 @@ function showChapter(chapter) {
 
             // Set new videos with a small delay to ensure clean load
             setTimeout(() => {
-                const originParam = `&origin=${encodeURIComponent(window.location.origin)}`;
+                // Only send `origin` when running on a real http(s) origin — YouTube's
+                // embed player treats it as an invalid/unsafe origin otherwise (e.g. the
+                // native app's capacitor://localhost), which breaks the embed entirely.
+                const originParam = window.location.protocol.startsWith('http')
+                    ? `&origin=${encodeURIComponent(window.location.origin)}`
+                    : '';
                 hindiIframe.src = `https://www.youtube.com/embed/${chapterVideo.hindi.video_id}?playsinline=1&rel=0${originParam}`;
                 englishIframe.src = `https://www.youtube.com/embed/${chapterVideo.english.video_id}?playsinline=1&rel=0${originParam}`;
             }, 100);
@@ -1362,7 +1367,7 @@ function openShareSheet() {
     const imageSub = document.getElementById('share-option-image-sub');
 
     titleSpan.textContent = `श्लोक ${currentVerse.chapter_number}.${currentVerse.verse_number}`;
-    linkSub.textContent = `gitagyan.web.app/?c=${currentVerse.chapter_number}&v=${currentVerse.verse_number}`;
+    linkSub.textContent = `gitagyan.in/?c=${currentVerse.chapter_number}&v=${currentVerse.verse_number}`;
 
     const langNames = {
         english: 'English', hindi: 'Hindi', gujarati: 'Gujarati',

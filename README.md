@@ -5,7 +5,7 @@ A [Capacitor](https://capacitorjs.com/) app with three deployment targets sharin
 - **App name:** Bhagvad Geeta
 - **Bundle/Application ID:** `com.bhagvadgeeta.app`
 - **Web assets (canonical source):** [`www/`](www) (plain HTML/CSS/JS — no frontend framework/bundler) — edit here directly, this is not a copy of anything
-- **Web/PWA deploy:** Firebase Hosting, auto-deployed by [`.github/workflows/firebase-hosting-deploy.yml`](.github/workflows/firebase-hosting-deploy.yml) whenever `www/**` changes on `main`. Project `gitagyan1`, site `gitagyan` → https://gitagyan.web.app
+- **Web/PWA deploy:** GitHub Pages (`gitagyan.in`), auto-deployed by [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) whenever `www/**` changes on `main`.
 - **Native projects:** [`ios/App`](ios/App) (Xcode, Swift Package Manager) and [`android`](android) (Gradle) — both built from the same `www/` via `npx cap sync`
 - **iOS CI:** [`codemagic.yaml`](codemagic.yaml) builds and publishes to TestFlight on push to `main`, skipped automatically for commits that only touch `www/` (see [pre-publish checklist](#pre-publish-checklist))
 
@@ -19,9 +19,9 @@ The original site also had a newer, in-progress React/Vite rewrite (with server-
 
 `www/` is the single source for all three targets:
 
-1. **Web/PWA** — deployed straight from `www/` to Firebase Hosting by
-   [`.github/workflows/firebase-hosting-deploy.yml`](.github/workflows/firebase-hosting-deploy.yml)
-   on every push to `main` that touches `www/**`. Config: [`firebase.json`](firebase.json), [`.firebaserc`](.firebaserc).
+1. **Web/PWA** — deployed straight from `www/` to GitHub Pages (`gitagyan.in`) by
+   [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml)
+   on every push to `main` that touches `www/**`. Domain config: [`www/CNAME`](www/CNAME).
 2. **iOS** — `npx cap sync` copies `www/` into `ios/App/App/public`; [`codemagic.yaml`](codemagic.yaml) builds and ships to TestFlight.
 3. **Android** — `npx cap sync` copies `www/` into `android/app/src/main/assets/public`; build locally (see below) or wire up Codemagic/other CI the same way as iOS if needed.
 
@@ -162,7 +162,7 @@ npx cap run android
 
 - [ ] Store listing content (description, keywords, age rating, privacy/data-collection answers, etc.)
 - [ ] iOS builds/TestFlight without a local Mac for every collaborator — wire up a Codemagic team, App Store Connect integration named `codemagic_asc_integration`, and signing before relying on [`codemagic.yaml`](codemagic.yaml).
-- [ ] GitHub secret `FIREBASE_SERVICE_ACCOUNT_GITAGYAN1` set on this repo so [`firebase-hosting-deploy.yml`](.github/workflows/firebase-hosting-deploy.yml) can deploy (generate via Firebase Console → Project Settings → Service Accounts, or `firebase init hosting:github`).
+- [ ] GitHub Pages enabled on repository with custom domain `gitagyan.in` and HTTPS enforced.
 - [ ] App icons and splash screens generated from `resources/` via [`@capacitor/assets`](https://github.com/ionic-team/capacitor-assets) — verify how they look on real devices before shipping.
 - [ ] Version/build numbers bumped on both platforms.
 - [ ] Privacy policy URL ready (required by both stores) — note the app requests no accounts/logins, but does store user bookmarks/settings locally.
