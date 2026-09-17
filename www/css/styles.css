@@ -260,23 +260,120 @@ body.journey-active {
     background-size: cover;
 }
 
-footer {
+/* App Bottom Tab Bar Footer */
+footer,
+.app-tab-bar {
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
+    height: auto;
     background: #E6A623;
+    /* Match Header Color */
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: #A5252C;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    /* Only a sliver of the home-indicator inset, so tabs sit at the very bottom */
+    padding: 0 0 calc(env(safe-area-inset-bottom, 0px) * 0.25) 0;
+    margin: 0;
+    box-shadow: 0 -3px 18px rgba(0, 0, 0, 0.12);
+    z-index: 10000; /* Match header z-index */
+    border-top: 1px solid rgba(165, 37, 44, 0.22);
+    box-sizing: border-box;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    overflow: hidden;
 }
 
-footer p {
+/* Two Big Tabs */
+.footer-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
     color: #A5252C;
-    margin: 0;
+    cursor: pointer;
+    position: relative;
+    padding: 4px 12px;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.2s ease, transform 0.15s ease, color 0.2s ease;
+}
+
+/* Subtle vertical separator between the two big tabs */
+.footer-tab:first-child::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 18%;
+    height: 64%;
+    width: 1px;
+    background: rgba(165, 37, 44, 0.18);
+}
+
+.footer-tab:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.footer-tab:active {
+    background: rgba(165, 37, 44, 0.08);
+    transform: scale(0.98);
+}
+
+.footer-tab.active {
+    background: rgba(165, 37, 44, 0.12);
+    color: #701016;
+}
+
+.footer-tab.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 3px;
+    background: #A5252C;
+    border-radius: 0 0 3px 3px;
+}
+
+.footer-tab-icon {
+    font-size: 1.2rem;
+    color: inherit;
+    line-height: 1;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-tab.active .footer-tab-icon {
+    transform: scale(1.1);
+}
+
+.footer-tab-label {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: inherit;
+    line-height: 1;
+    letter-spacing: 0.3px;
+}
+
+/* Home Screen Tagline */
+.home-tagline {
+    text-align: center;
+    color: #A5252C;
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin: 24px auto 16px auto;
+    padding: 8px 16px;
+    opacity: 0.9;
+    letter-spacing: 0.3px;
 }
 
 /* Chapters list */
@@ -1056,7 +1153,7 @@ footer p {
         max-height: 50px;
     }
     main {
-        padding: calc(60px + env(safe-area-inset-top, 0px)) 5px calc(50px + env(safe-area-inset-bottom, 0px)) 5px;
+        padding: calc(60px + env(safe-area-inset-top, 0px)) 5px calc(70px + env(safe-area-inset-bottom, 0px)) 5px;
     }
     .header-buttons {
         gap: 5px;
@@ -1533,105 +1630,9 @@ footer p {
     }
 }
 
-/* Floating Settings Button */
+/* Floating Settings Button (removed in favor of bottom tab bar) */
 .floating-settings-btn {
-    position: fixed;
-    bottom: 55px;
-    right: 5px;
-    z-index: 1000;
-}
-
-.main-floating-btn {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: #E6A623;
-    border: none;
-    color: #A5252C;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main-floating-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-}
-
-.floating-menu {
-    position: absolute;
-    bottom: 55px;
-    right: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    pointer-events: none;
-}
-
-.floating-menu.show {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-.floating-option-btn {
-    position: absolute;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: #E6A623;
-    border: none;
-    color: #A5252C;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: 0;
-}
-
-.floating-option-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Position each button with proper spacing */
-.floating-option-btn:nth-child(1) { /* Settings button */
-    bottom: 5px;
-}
-
-.floating-option-btn:nth-child(2) { /* Bookmarks button */
-    bottom: 65px;
-}
-
-.floating-option-btn:nth-child(3) { /* Journey button */
-    bottom: 125px;
-}
-
-/* Remove the close button styling since we'll use main button transformation */
-.close-btn {
-    display: none;
-}
-
-/* Animation for showing buttons */
-.floating-menu:not(.show) .floating-option-btn {
-    transform: scale(0) rotate(180deg);
-    opacity: 0;
-}
-
-.floating-menu.show .floating-option-btn {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
+    display: none !important;
 }
 
 .floating-menu.show .floating-option-btn:nth-child(1) {
@@ -2205,16 +2206,7 @@ footer p {
     border-color: #8B1F24;
 }
 
-/* Hide floating settings button on specific screens */
-.screen.active ~ .floating-settings-btn {
-    display: block;
-}
 
-#verse-detail-screen.active ~ .floating-settings-btn,
-#ai-chat-screen.active ~ .floating-settings-btn,
-#ai-setup-screen.active ~ .floating-settings-btn {
-    display: none;
-}
 
 /* Sarthi Translate Settings */
 .sarthi-translate-settings {

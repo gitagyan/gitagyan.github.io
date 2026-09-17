@@ -23,8 +23,9 @@ const versesList = document.getElementById('verses-list');
 const chapterTitle = document.getElementById('chapter-title');
 const audioPlayer = document.getElementById('audio-player');
 const backBtn = document.getElementById('back-btn');
-const mainFloatingBtn = document.getElementById('main-floating-btn');
-const floatingMenu = document.getElementById('floating-menu');
+const footer = document.getElementById('footer');
+const footerJourneyBtn = document.getElementById('footer-journey-btn');
+const footerSettingsBtn = document.getElementById('footer-settings-btn');
 let bookmarkBtn = document.getElementById('bookmark-btn');
 
 // PWA Install component setup
@@ -169,8 +170,8 @@ async function init() {
         // Initialize settings
         initSettings();
 
-        // Initialize floating menu
-        initFloatingMenu();
+        // Setup footer tab bar
+        setupFooterTabs();
 
         // Initialize Share Sheet Modal
         initShareSheet();
@@ -800,79 +801,55 @@ function switchScreen(screen) {
         }
     }
 
+    // Update footer tab states
+    if (footerJourneyBtn && footerSettingsBtn) {
+        if (screen === journeyScreen) {
+            footerJourneyBtn.classList.add('active');
+            footerSettingsBtn.classList.remove('active');
+        } else if (screen === settingsScreen) {
+            footerSettingsBtn.classList.add('active');
+            footerJourneyBtn.classList.remove('active');
+        } else {
+            footerJourneyBtn.classList.remove('active');
+            footerSettingsBtn.classList.remove('active');
+        }
+    }
+
     // Handle footer visibility
     if (screen === verseDetailScreen) {
-        document.getElementById('footer').style.display = 'none';
+        if (footer) footer.style.display = 'none';
         updateAudioPlayerVisibility(); // Use new function to check setting
         document.getElementById('verse-navigation').style.display = 'flex';
-        document.getElementById('floating-settings-btn').style.display = 'none';
-    } else if (screen === settingsScreen || screen === bookmarksScreen || screen === journeyScreen) {
-        document.getElementById('footer').style.display = 'block';
-        document.getElementById('floating-audio-btn').style.display = 'none';
-        document.getElementById('verse-navigation').style.display = 'none';
-        document.getElementById('floating-settings-btn').style.display = 'none';
     } else {
-        document.getElementById('footer').style.display = 'block';
+        if (footer) footer.style.display = 'flex';
         document.getElementById('floating-audio-btn').style.display = 'none';
         document.getElementById('verse-navigation').style.display = 'none';
-        document.getElementById('floating-settings-btn').style.display = 'block';
     }
 }
 
-// Floating Menu Functions
-function initFloatingMenu() {
-    // Remove any existing listeners first
-    const newMainFloatingBtn = mainFloatingBtn.cloneNode(true);
-    mainFloatingBtn.parentNode.replaceChild(newMainFloatingBtn, mainFloatingBtn);
+// Bottom Tab Bar & Navigation Functions
+function setupFooterTabs() {
+    if (footerJourneyBtn) {
+        footerJourneyBtn.addEventListener('click', () => {
+            if (journeyScreen && journeyScreen.classList.contains('active')) {
+                switchScreen(chaptersScreen);
+            } else {
+                switchScreen(journeyScreen);
+            }
+        });
+    }
 
-    // Update the reference
-    const updatedMainFloatingBtn = document.getElementById('main-floating-btn');
-    const updatedFloatingMenu = document.getElementById('floating-menu');
-
-    // Toggle menu visibility
-    updatedMainFloatingBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = updatedFloatingMenu.classList.contains('show');
-
-        if (isOpen) {
-            updatedFloatingMenu.classList.remove('show');
-            updatedMainFloatingBtn.classList.remove('opened');
-            updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
-        } else {
-            updatedFloatingMenu.classList.add('show');
-            updatedMainFloatingBtn.classList.add('opened');
-            updatedMainFloatingBtn.innerHTML = '<i class="fas fa-times"></i>';
-        }
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.floating-settings-btn')) {
-            updatedFloatingMenu.classList.remove('show');
-            updatedMainFloatingBtn.classList.remove('opened');
-            updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
-        }
-    });
-
-    // Settings button
-    document.getElementById('settings-btn').addEventListener('click', (e) => {
-        e.stopPropagation();
-        switchScreen(settingsScreen);
-        const favCount = document.getElementById('settings-favorites-count');
-        if (favCount) favCount.textContent = getBookmarks().length;
-        updatedFloatingMenu.classList.remove('show');
-        updatedMainFloatingBtn.classList.remove('opened');
-        updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
-    });
-
-    // Journey button
-    document.getElementById('journey-btn').addEventListener('click', (e) => {
-        e.stopPropagation();
-        switchScreen(journeyScreen);
-        updatedFloatingMenu.classList.remove('show');
-        updatedMainFloatingBtn.classList.remove('opened');
-        updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
-    });
+    if (footerSettingsBtn) {
+        footerSettingsBtn.addEventListener('click', () => {
+            if (settingsScreen && settingsScreen.classList.contains('active')) {
+                switchScreen(chaptersScreen);
+            } else {
+                switchScreen(settingsScreen);
+                const favCount = document.getElementById('settings-favorites-count');
+                if (favCount) favCount.textContent = getBookmarks().length;
+            }
+        });
+    }
 
     // Journey row inside Settings
     const journeyRow = document.getElementById('settings-journey-row');
@@ -890,16 +867,6 @@ function initFloatingMenu() {
             renderBookmarks();
         });
     }
-
-    // Bookmarks button
-    document.getElementById('bookmarks-btn').addEventListener('click', (e) => {
-        e.stopPropagation();
-        switchScreen(bookmarksScreen);
-        renderBookmarks();
-        updatedFloatingMenu.classList.remove('show');
-        updatedMainFloatingBtn.classList.remove('opened');
-        updatedMainFloatingBtn.innerHTML = '<i class="fas fa-cog"></i>';
-    });
 }
 
 // Bookmark Functions
@@ -1255,8 +1222,19 @@ function switchVideoTab(lang) {
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
-            .then(registration => { })
-            .catch(error => { });
+            .then(registration => {
+                console.log('SW registered');
+                registration.update();
+            })
+            .catch(error => { console.log('SW registration failed:', error); });
+    });
+
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!refreshing) {
+            refreshing = true;
+            window.location.reload();
+        }
     });
 }
 
