@@ -1,4 +1,4 @@
-const CACHE_NAME = '1.4.3';
+const CACHE_NAME = '1.4.4';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -9,6 +9,7 @@ const urlsToCache = [
     '/images/icon-192.png',
     '/images/icon-512.png',
     '/images/app-icon.png',
+    '/images/logo.png',
     '/images/navbar-logo.png',
     '/images/yellow_bg.png',
     '/images/SarthiAI.png',
